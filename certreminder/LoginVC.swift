@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginVC.swift
 //  certreminder
 //
 //  Created by Viktor Yamchinov on 18/08/2017.
