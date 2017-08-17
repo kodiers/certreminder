@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
+		AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42B91C1F464E1800DB975B /* RoundedBtn.swift */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
-		ACD22E8F1F46461B0056E0D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* ViewController.swift */; };
+		ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */; };
 		ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E901F46461B0056E0D2 /* Main.storyboard */; };
 		ACD22E941F46461B0056E0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E931F46461B0056E0D2 /* Assets.xcassets */; };
 		ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 
 /* Begin PBXFileReference section */
 		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
+		AC42B91C1F464E1800DB975B /* RoundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACD22E8E1F46461B0056E0D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		ACD22E911F46461B0056E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACD22E931F46461B0056E0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD22E961F46461B0056E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 				ACD22E9F1F4646320056E0D2 /* View */,
 				ACD22EA01F46463B0056E0D2 /* Controller */,
 				ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */,
-				ACD22E8E1F46461B0056E0D2 /* ViewController.swift */,
 				ACD22E901F46461B0056E0D2 /* Main.storyboard */,
 				ACD22E931F46461B0056E0D2 /* Assets.xcassets */,
 				ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */,
@@ -101,6 +102,7 @@
 		ACD22E9F1F4646320056E0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AC42B91C1F464E1800DB975B /* RoundedBtn.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 		ACD22EA01F46463B0056E0D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -235,7 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACD22E8F1F46461B0056E0D2 /* ViewController.swift in Sources */,
+				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
+				AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +404,7 @@
 				ACD22E9D1F46461B0056E0D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
