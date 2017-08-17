@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
 		ACD22E8F1F46461B0056E0D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* ViewController.swift */; };
 		ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E901F46461B0056E0D2 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD22E8E1F46461B0056E0D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		ACD22E931F46461B0056E0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD22E961F46461B0056E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACD22E981F46461B0056E0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
+		D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9347A166E3B5223BF8935C73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9D81C32051EB2512205D77B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */,
+				B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ACD22E801F46461B0056E0D2 = {
 			isa = PBXGroup;
 			children = (
 				ACD22E8B1F46461B0056E0D2 /* certreminder */,
 				ACD22E8A1F46461B0056E0D2 /* Products */,
+				A9D81C32051EB2512205D77B /* Pods */,
+				9347A166E3B5223BF8935C73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +78,9 @@
 		ACD22E8B1F46461B0056E0D2 /* certreminder */ = {
 			isa = PBXGroup;
 			children = (
+				ACD22E9E1F4646270056E0D2 /* Model */,
+				ACD22E9F1F4646320056E0D2 /* View */,
+				ACD22EA01F46463B0056E0D2 /* Controller */,
 				ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */,
 				ACD22E8E1F46461B0056E0D2 /* ViewController.swift */,
 				ACD22E901F46461B0056E0D2 /* Main.storyboard */,
@@ -64,6 +91,27 @@
 			path = certreminder;
 			sourceTree = "<group>";
 		};
+		ACD22E9E1F4646270056E0D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ACD22E9F1F4646320056E0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		ACD22EA01F46463B0056E0D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACD22E9B1F46461B0056E0D2 /* Build configuration list for PBXNativeTarget "certreminder" */;
 			buildPhases = (
+				0A09B2C13FCCF6615B82FED8 /* [CP] Check Pods Manifest.lock */,
 				ACD22E851F46461B0056E0D2 /* Sources */,
 				ACD22E861F46461B0056E0D2 /* Frameworks */,
 				ACD22E871F46461B0056E0D2 /* Resources */,
+				C368A8FE921F8DB0822D5CF3 /* [CP] Embed Pods Frameworks */,
+				4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +181,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A09B2C13FCCF6615B82FED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C368A8FE921F8DB0822D5CF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ACD22E851F46461B0056E0D2 /* Sources */ = {
@@ -258,6 +357,7 @@
 		};
 		ACD22E9C1F46461B0056E0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = certreminder/Info.plist;
@@ -270,6 +370,7 @@
 		};
 		ACD22E9D1F46461B0056E0D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = certreminder/Info.plist;

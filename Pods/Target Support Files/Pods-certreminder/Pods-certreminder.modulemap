@@ -1,0 +1,6 @@
+framework module Pods_certreminder {
+  umbrella header "Pods-certreminder-umbrella.h"
+
+  export *
+  module * { export * }
+}
