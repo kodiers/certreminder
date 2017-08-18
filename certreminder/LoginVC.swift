@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    // TODO: Add register stack view bottom margin
 
     override func viewDidLoad() {
         super.viewDidLoad()
