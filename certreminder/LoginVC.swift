@@ -22,6 +22,9 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func registerBtnTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "RegistrationVC", sender: self)
+    }
 
 }
 
