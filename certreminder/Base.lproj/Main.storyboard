@@ -175,7 +175,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter information for registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-gz-ZVm">
-                                <rect key="frame" x="32" y="40" width="311" height="66"/>
+                                <rect key="frame" x="32" y="30" width="311" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="9br-7I-48n"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wDI-3m-XBe"/>
@@ -185,7 +185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rAR-Ud-g00">
-                                <rect key="frame" x="109" y="126" width="157" height="44"/>
+                                <rect key="frame" x="109" y="116" width="157" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-fF-KWU">
                                         <rect key="frame" x="0.0" y="0.0" width="48.5" height="44"/>
@@ -202,7 +202,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-N7-mzp">
-                                <rect key="frame" x="24" y="200" width="327" height="106"/>
+                                <rect key="frame" x="24" y="180" width="327" height="106"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="93" translatesAutoresizingMaskIntoConstraints="NO" id="Wk3-Lp-6Hu">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="30"/>
@@ -258,7 +258,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rw-cv-puX" customClass="RoundedBtn" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="24" y="360" width="327" height="30"/>
+                                <rect key="frame" x="24" y="328" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vzH-gl-vLS"/>
@@ -268,8 +268,8 @@
                                     <color key="titleColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password and confirmation are not same" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-Xb-EDW">
-                                <rect key="frame" x="16" y="322" width="343" height="22"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password and confirmation are not same" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-Xb-EDW">
+                                <rect key="frame" x="16" y="296" width="343" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -298,8 +298,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ggd-Xb-EDW" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="16" id="01u-ii-qPv"/>
-                            <constraint firstItem="C0d-N7-mzp" firstAttribute="top" secondItem="rAR-Ud-g00" secondAttribute="bottom" constant="30" id="0xd-Yv-kaW"/>
+                            <constraint firstItem="ggd-Xb-EDW" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="10" id="01u-ii-qPv"/>
+                            <constraint firstItem="C0d-N7-mzp" firstAttribute="top" secondItem="rAR-Ud-g00" secondAttribute="bottom" constant="20" id="0xd-Yv-kaW"/>
                             <constraint firstItem="Aub-TI-isR" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="9km-kl-5l7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UBh-gz-ZVm" secondAttribute="trailing" constant="16" id="ART-dV-CPz"/>
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="BhD-v4-JHG"/>
@@ -315,8 +315,8 @@
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="8" id="hcq-od-e2h"/>
                             <constraint firstItem="6rw-cv-puX" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="8" id="mqd-Wp-5dh"/>
                             <constraint firstAttribute="trailing" secondItem="SBf-tJ-eJb" secondAttribute="trailing" id="sTP-Ug-MhK"/>
-                            <constraint firstItem="UBh-gz-ZVm" firstAttribute="top" secondItem="pGN-Qn-5WS" secondAttribute="bottom" constant="20" id="u6w-iZ-Qss"/>
-                            <constraint firstItem="6rw-cv-puX" firstAttribute="top" secondItem="ggd-Xb-EDW" secondAttribute="bottom" constant="16" id="v0a-bb-b4u"/>
+                            <constraint firstItem="UBh-gz-ZVm" firstAttribute="top" secondItem="pGN-Qn-5WS" secondAttribute="bottom" constant="10" id="u6w-iZ-Qss"/>
+                            <constraint firstItem="6rw-cv-puX" firstAttribute="top" secondItem="ggd-Xb-EDW" secondAttribute="bottom" constant="10" id="v0a-bb-b4u"/>
                             <constraint firstItem="ggd-Xb-EDW" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" id="wEz-Go-f5l"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="xCt-8x-t3Q"/>
                         </constraints>
