@@ -32,4 +32,7 @@ class RegistrationVC: UIViewController {
     }
     */
 
+    @IBAction func loginBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

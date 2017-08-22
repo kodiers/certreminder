@@ -10,6 +10,9 @@
 		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */; };
 		AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42B91C1F464E1800DB975B /* RoundedBtn.swift */; };
+		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
+		AC7922BB1F4CE664000C1D46 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BA1F4CE664000C1D46 /* Token.swift */; };
+		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
 		ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */; };
 		ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E901F46461B0056E0D2 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
 		AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		AC42B91C1F464E1800DB975B /* RoundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
+		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AC7922BA1F4CE664000C1D46 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -61,6 +67,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AC7922BC1F4CEA4C000C1D46 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
 		ACD22E801F46461B0056E0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +96,7 @@
 		ACD22E8B1F46461B0056E0D2 /* certreminder */ = {
 			isa = PBXGroup;
 			children = (
+				AC7922BC1F4CEA4C000C1D46 /* services */,
 				ACD22E9E1F4646270056E0D2 /* Model */,
 				ACD22E9F1F4646320056E0D2 /* View */,
 				ACD22EA01F46463B0056E0D2 /* Controller */,
@@ -97,6 +112,8 @@
 		ACD22E9E1F4646270056E0D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC7922B81F4CE57F000C1D46 /* User.swift */,
+				AC7922BA1F4CE664000C1D46 /* Token.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -243,7 +260,10 @@
 			files = (
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */,
+				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				AC7922BB1F4CE664000C1D46 /* Token.swift in Sources */,
+				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
