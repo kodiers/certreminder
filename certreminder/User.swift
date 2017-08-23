@@ -15,7 +15,7 @@ class User {
     private var _email: String?
     private var _first_name: String?
     private var _last_name: String?
-    private var _token: Token!
+    private var _token: String!
     private var _country: String?
     private var _date_of_birth: Date?
     private var _description: String?
@@ -50,7 +50,7 @@ class User {
         return self._last_name!
     }
     
-    var token: Token {
+    var token: String {
         return self._token
     }
     
@@ -82,6 +82,6 @@ class User {
     init(id: Int, username: String, token: String) {
         self._id = id
         self._username = username
-        self._token = Token(userId: id, token: token)
+        self._token = token
     }
 }
