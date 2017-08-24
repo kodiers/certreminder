@@ -51,7 +51,12 @@ class User {
     }
     
     var token: String {
-        return self._token
+        get {
+            return self._token
+        }
+        set {
+            self._token = newValue
+        }
     }
     
     var country: String {
