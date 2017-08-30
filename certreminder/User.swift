@@ -83,6 +83,10 @@ class User {
         }
         return self._avatar!
     }
+    init(id: Int, username: String) {
+        self._id = id
+        self._username = username
+    }
     
     init(id: Int, username: String, token: String) {
         self._id = id

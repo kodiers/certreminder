@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftKeychainWrapper
 
 class RegistrationVC: UIViewController {
 
@@ -62,9 +64,40 @@ class RegistrationVC: UIViewController {
             errorLbl.text = "Password and confirmation shoul be same"
             return
         }
-        WebRequestService.webservice.registerUser(username: login, password: password, confirm_password: passwordConfirmation)
-        if WebRequestService.webservice.user != nil {
-            performSegue(withIdentifier: "RegShowMainVC", sender: nil)
-        }
+        // Register and login new user
+        let registerUrl = "\(WebRequestService.WEB_API_URL)people/register/"
+        let headers = WebRequestService.webservice.createHeaders()
+        let registerData: Parameters = ["username": login, "password": password, "confirm_password": passwordConfirmation]
+        Alamofire.request(registerUrl, method: .post, parameters: registerData, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {(response) in
+            let result = response.result
+            if result.isSuccess {
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    if let userDict = dict["user"] as? Dictionary<String, AnyObject> {
+                        let user = User(id: userDict["id"] as! Int, username: userDict["username"] as! String)
+                        WebRequestService.webservice.user = user
+                        let loginUrl = "\(WebRequestService.WEB_API_URL)people/api-token-auth/"
+                        let loginData: Parameters = ["username": login, "password": password]
+                        // TODO: place login request in WebRequestService
+                        Alamofire.request(loginUrl, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {(response) in
+                            let result = response.result
+                            if result.isSuccess {
+                                if let tokenDict = result.value as? Dictionary<String, AnyObject> {
+                                    let token = tokenDict["token"] as! String
+                                    let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                                    WebRequestService.webservice.token = token
+                                    self.performSegue(withIdentifier: "RegShowMainVC", sender: nil)
+                                }
+                            } else {
+                                print(result.error!)
+                                self.errorLbl.text = "Error then try login new user"
+                            }
+                        })
+                    }
+                }
+            } else {
+                print(result.error!)
+                self.errorLbl.text = "Error then register new user"
+            }
+        })
     }
 }
