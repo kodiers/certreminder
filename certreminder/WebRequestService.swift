@@ -16,14 +16,11 @@ class WebRequestService {
     /*
      Web request service
     */
-    
-    // TODO Rewrite this service
+
     
     static let WEB_API_URL = "http://certapp.techforline.com/api/"
     static let webservice = WebRequestService()
     
-//    private var _responseDict: Dictionary<String, AnyObject>!
-//    private var _error: Error!
     private var _user: User?
     private var _token: String?
     
@@ -36,7 +33,7 @@ class WebRequestService {
         }
     }
     
-    var token: String {
+    var token: String? {
         get {
             if self._token == nil {
                 return ""
@@ -52,6 +49,7 @@ class WebRequestService {
     }
     
     func createHeaders() -> Dictionary<String, String> {
+        // Create headers
         var headers = ["Accept": "application/json"]
         if self._user == nil {
             if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
@@ -65,41 +63,28 @@ class WebRequestService {
         return headers
     }
     
-//    func sendRequest(url: String, data: Dictionary<String, AnyObject>, method: HTTPMethod ,completion: @escaping () -> ()) {
-//        // Handle get requests
-//        let queryUrl = URL(string: WebRequestService.WEB_API_URL + url)
-//        let headers = createHeaders()
-//        Alamofire.request(queryUrl!, method: method, headers: headers).responseJSON {(response) in
-//            let result = response.result
-//            if result.isSuccess {
-//                if let dict = result.value as? Dictionary<String, AnyObject> {
-//                    self._responseDict = dict
-//                }
-//            } else {
-//                self._error = result.error
-//            }
-//            completion()
-//        }
-//    }
-//    
-//    func registerUser(username: String, password: String, confirm_password: String) {
-//        // handle register user requests
-//        let data = ["username": username, "password": password, "confirm_password": confirm_password]
-//        sendRequest(url: "people/register/", data: data as Dictionary<String, AnyObject>, method: .post, completion: {
-//            if self._error == nil {
-//                if let dict = self._responseDict {
-//                    if let userDict = dict["user"] as? Dictionary<String, AnyObject> {
-//                        let _ = KeychainWrapper.standard.set(dict["token"] as! String, forKey: KEY_UID)
-//                        let token = dict["token"] as! String
-//                        self._token = token
-//                        let user = User(id: userDict["id"] as! Int, username: userDict["username"] as! String, token: token)
-//                        self._user = user
-//                    }
-//                }
-//            }
-//        })
-//    }
-//    
+    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // handle register user requests
+        let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password]
+        let headers = self.createHeaders()
+        let url = WebRequestService.WEB_API_URL + "people/register/"
+        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    if let userDict = dict["user"] as? Dictionary<String, AnyObject> {
+                        let user = User(id: userDict["id"] as! Int, username: userDict["username"] as! String)
+                        WebRequestService.webservice.user = user
+                        completionHandler(result.value as AnyObject, nil)
+                    }
+                }
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
     func loginUser(username: String, password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Login user function
         let data: Parameters = ["username": username, "password": password]
@@ -134,12 +119,63 @@ class WebRequestService {
         let _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
     }
     
-    func refreshToken() {
-        // TODO: implement function
+    func refreshToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Refresh token function
+        let headers = ["Accept": "application/json"]
+        let url = WebRequestService.WEB_API_URL + "people/api-token-refresh/"
+        if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            let data: Parameters = ["token": token]
+            Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON{response in
+                let result = response.result
+                if result.isSuccess {
+                    if let tokenDict = result.value as? Dictionary<String, AnyObject> {
+                        let token = tokenDict["token"] as! String
+                        let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                        WebRequestService.webservice.token = token
+                        completionHandler(result.value as AnyObject, nil)
+                    }
+                } else {
+                    print(result.error!)
+                    completionHandler(nil, result.error! as NSError)
+                }
+            }
+        } else {
+            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Token does not exist in keychain"])
+            completionHandler(nil, error)
+        }
     }
     
-    func verifyToken() {
-        // TODO: Implement function
+    func verifyToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Verify token function
+        let headers = ["Accept": "application/json"]
+        let url = WebRequestService.WEB_API_URL + "people/api-token-verify/"
+        if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            let data: Parameters = ["token": token]
+            Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON{response in
+                let result = response.result
+                if result.isSuccess {
+                    if let tokenDict = result.value as? Dictionary<String, AnyObject> {
+                        let token = tokenDict["token"] as! String
+                        let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                        WebRequestService.webservice.token = token
+                        completionHandler(result.value as AnyObject, nil)
+                    }
+                } else {
+                    // if error try refresh token
+                    self.refreshToken(completionHandler: {(value, error) in
+                        if error != nil {
+                            // if error logut user
+                            self.logoutUser()
+                            print(result.error!)
+                            completionHandler(nil, result.error! as NSError)
+                        } else {
+                            completionHandler(value, nil)
+                        }
+                    })
+                }
+            }
+        }
+
     }
     
 }
