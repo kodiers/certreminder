@@ -65,6 +65,8 @@ class RegistrationVC: UIViewController {
             return
         }
         // Register and login new user
+        WebRequestService.webservice.logoutUser()
+        // TODO: Move register function to web service
         let registerUrl = "\(WebRequestService.WEB_API_URL)people/register/"
         let headers = WebRequestService.webservice.createHeaders()
         let registerData: Parameters = ["username": login, "password": password, "confirm_password": passwordConfirmation]
@@ -75,21 +77,11 @@ class RegistrationVC: UIViewController {
                     if let userDict = dict["user"] as? Dictionary<String, AnyObject> {
                         let user = User(id: userDict["id"] as! Int, username: userDict["username"] as! String)
                         WebRequestService.webservice.user = user
-                        let loginUrl = "\(WebRequestService.WEB_API_URL)people/api-token-auth/"
-                        let loginData: Parameters = ["username": login, "password": password]
-                        // TODO: place login request in WebRequestService
-                        Alamofire.request(loginUrl, method: .post, parameters: loginData, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: {(response) in
-                            let result = response.result
-                            if result.isSuccess {
-                                if let tokenDict = result.value as? Dictionary<String, AnyObject> {
-                                    let token = tokenDict["token"] as! String
-                                    let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
-                                    WebRequestService.webservice.token = token
-                                    self.performSegue(withIdentifier: "RegShowMainVC", sender: nil)
-                                }
-                            } else {
-                                print(result.error!)
+                        WebRequestService.webservice.loginUser(username: login, password: password, completionHandler: {(value, error) in
+                            if error != nil {
                                 self.errorLbl.text = "Error then try login new user"
+                            } else {
+                                self.performSegue(withIdentifier: "RegShowMainVC", sender: nil)
                             }
                         })
                     }

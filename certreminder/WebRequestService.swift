@@ -46,7 +46,7 @@ class WebRequestService {
         set {
             self._token = newValue
             if self._user != nil {
-                self._user?.token = token
+                self._user?.token = newValue
             }
         }
     }
@@ -58,7 +58,9 @@ class WebRequestService {
                 headers = ["Authorization": "Token \(token)"]
             }
         } else {
-            headers = ["Authorization": "Token \(self._user!.token)"]
+            if let token = self._user?.token {
+                headers = ["Authorization": "Token \(token)"]
+            }
         }
         return headers
     }
@@ -98,20 +100,46 @@ class WebRequestService {
 //        })
 //    }
 //    
-//    func loginUser(username: String, password: String) {
-//        let data = ["username": username, "password": password]
-//        sendRequest(url: "api-token-auth/", data: data as Dictionary<String, AnyObject>, method: .post, completion: {
-//            if self._error == nil {
-//                if let dict = self._responseDict {
-//                    let token = dict["token"] as! String
-//                    let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
-//                    if self._user != nil {
-//                        self._user?.token = token
-//                    }
-//                    self._token = token
-//                }
-//            }
-//        })
-//    }
+    func loginUser(username: String, password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Login user function
+        let data: Parameters = ["username": username, "password": password]
+        let headers = self.createHeaders()
+        let url = WebRequestService.WEB_API_URL + "people/api-token-auth/"
+        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let tokenDict = result.value as? Dictionary<String, AnyObject> {
+                    let token = tokenDict["token"] as! String
+                    let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                    WebRequestService.webservice.token = token
+                    completionHandler(result.value as AnyObject, nil)
+                }
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+            
+        }
+    }
+    
+    func logoutUser() {
+        // Delete stored user credintial and data
+        if self.user != nil {
+            self.user = nil
+            self.user?.token = nil
+        }
+        if self._token != nil {
+            self._token = nil
+        }
+        let _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+    }
+    
+    func refreshToken() {
+        // TODO: implement function
+    }
+    
+    func verifyToken() {
+        // TODO: Implement function
+    }
     
 }
