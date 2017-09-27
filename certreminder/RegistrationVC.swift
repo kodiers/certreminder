@@ -76,7 +76,7 @@ class RegistrationVC: UIViewController {
                         self.errorLbl.text = "Error then try login new user"
                     } else {
                         self.performSegue(withIdentifier: "RegShowMainVC", sender: nil)
-                                                    }
+                    }
                 })
             }
         })
