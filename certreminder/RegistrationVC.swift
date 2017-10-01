@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftKeychainWrapper
 
 class RegistrationVC: UIViewController {
 
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var errorLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +39,46 @@ class RegistrationVC: UIViewController {
     }
     */
 
+    @IBAction func loginBtnTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func registerBtnTapped(_ sender: Any) {
+        guard let login = loginField.text, login != "" else {
+            errorLbl.isHidden = false
+            errorLbl.text = "You should enter login"
+            return
+        }
+        guard let password = passwordField.text, password != "" else {
+            errorLbl.isHidden = false
+            errorLbl.text = "You should enter your password"
+            return
+        }
+        guard let passwordConfirmation = confirmPasswordField.text, passwordConfirmation != "" else {
+            errorLbl.isHidden = false
+            errorLbl.text = "You should confirm your password"
+            return
+        }
+        if password != passwordConfirmation {
+            errorLbl.isHidden = false
+            errorLbl.text = "Password and confirmation shoul be same"
+            return
+        }
+        // Register and login new user
+        WebRequestService.webservice.logoutUser()
+        WebRequestService.webservice.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
+            if error != nil {
+                self.errorLbl.text = "Error then register new user"
+            } else {
+                // Login registered user
+                WebRequestService.webservice.loginUser(username: login, password: password, completionHandler: {(value, error) in
+                    if error != nil {
+                        self.errorLbl.text = "Error then try login new user"
+                    } else {
+                        self.performSegue(withIdentifier: "RegShowMainVC", sender: nil)
+                    }
+                })
+            }
+        })
+    }
 }
