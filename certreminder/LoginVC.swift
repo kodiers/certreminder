@@ -20,12 +20,19 @@ class LoginVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let token = KeychainWrapper.standard.string(forKey: KEY_UID)
-        // TODO: Complete login view
         if token != nil {
             WebRequestService.webservice.verifyToken(completionHandler: {(response, error) in
                 if error != nil {
-                    self.errorLbl.isHidden = false
-                    self.errorLbl.text = "Some error then access server"
+                    WebRequestService.webservice.refreshToken(completionHandler: {(response, error) in
+                        if error != nil {
+                            self.errorLbl.isHidden = false
+                            self.errorLbl.text = "Some error then access server"
+                        } else {
+                            self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
+                        }
+                    })
+                } else {
+                    self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
                 }
             })
         }
