@@ -10,6 +10,8 @@ import UIKit
 
 class MainVC: UIViewController {
 
+    @IBOutlet weak var certTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +34,12 @@ class MainVC: UIViewController {
     }
     */
 
+    @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
+    }
 }

@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */; };
-		AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42B91C1F464E1800DB975B /* RoundedBtn.swift */; };
+		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
+		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* MainVC.swift */; };
@@ -24,7 +25,8 @@
 /* Begin PBXFileReference section */
 		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
 		AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		AC42B91C1F464E1800DB975B /* RoundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
+		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
+		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -123,7 +125,8 @@
 		ACD22E9F1F4646320056E0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AC42B91C1F464E1800DB975B /* RoundedBtn.swift */,
+				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
+				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -269,8 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
+				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
-				AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,

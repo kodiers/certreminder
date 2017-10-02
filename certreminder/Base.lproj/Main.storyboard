@@ -131,7 +131,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-Cj-kT8" customClass="RoundedBtn" customModule="certreminder" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-Cj-kT8" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="24" y="323" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -141,6 +141,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c3D-TX-vkw"/>
                                 </connections>
@@ -199,7 +204,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter information for registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-gz-ZVm">
-                                <rect key="frame" x="32" y="30" width="311" height="66"/>
+                                <rect key="frame" x="65" y="30" width="245.5" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="9br-7I-48n"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wDI-3m-XBe"/>
@@ -281,7 +286,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rw-cv-puX" customClass="RoundedBtn" customModule="certreminder" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rw-cv-puX" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="24" y="328" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -291,6 +296,11 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerBtnTapped:" destination="cxt-Sq-YcF" eventType="touchUpInside" id="sbq-Hh-nVa"/>
                                 </connections>
@@ -329,12 +339,12 @@
                             <constraint firstItem="ggd-Xb-EDW" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="10" id="01u-ii-qPv"/>
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="top" secondItem="rAR-Ud-g00" secondAttribute="bottom" constant="20" id="0xd-Yv-kaW"/>
                             <constraint firstItem="Aub-TI-isR" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="9km-kl-5l7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UBh-gz-ZVm" secondAttribute="trailing" constant="16" id="ART-dV-CPz"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="UBh-gz-ZVm" secondAttribute="trailing" id="ART-dV-CPz"/>
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="BhD-v4-JHG"/>
                             <constraint firstItem="4fF-Il-0jZ" firstAttribute="top" secondItem="Aub-TI-isR" secondAttribute="bottom" constant="8" id="EyX-t5-H7o"/>
                             <constraint firstItem="4fF-Il-0jZ" firstAttribute="top" secondItem="SBf-tJ-eJb" secondAttribute="bottom" id="GmY-S4-HyS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C0d-N7-mzp" secondAttribute="trailing" constant="8" id="I3h-9l-5JN"/>
-                            <constraint firstItem="UBh-gz-ZVm" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="16" id="Me5-4U-iGx"/>
+                            <constraint firstItem="UBh-gz-ZVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" id="Me5-4U-iGx"/>
                             <constraint firstItem="ggd-Xb-EDW" firstAttribute="trailing" secondItem="VSp-PA-vUe" secondAttribute="trailingMargin" id="OqM-es-KYW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6rw-cv-puX" secondAttribute="trailing" constant="8" id="WVv-wg-kSf"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="top" secondItem="UBh-gz-ZVm" secondAttribute="bottom" constant="20" id="Wzc-cv-mgY"/>
@@ -373,49 +383,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgY-Iv-9tp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-SK-iIY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="523"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CertificationCell" rowHeight="70" id="8mB-af-m6b" customClass="CertificationCell" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8mB-af-m6b" id="4sF-f9-VdI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
+                                                    <rect key="frame" x="8" y="26" width="210" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23.02.2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
+                                                    <rect key="frame" x="232" y="24" width="74" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
+                                                    <rect key="frame" x="8" y="8" width="260" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="certificationLabel" destination="1Jy-zu-sYC" id="QPP-Qc-7Qa"/>
+                                            <outlet property="dateLabel" destination="rOM-fa-2Sc" id="fWJ-bn-54w"/>
+                                            <outlet property="vendorLabel" destination="ezP-sj-PNV" id="g6H-ag-L4E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZS-3g-Jr1" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="OOw-h3-lil"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="New certification">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="newSertificationButtonPressed:" destination="A8S-3n-4uh" eventType="touchUpInside" id="dpc-uW-GbI"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-20-Sq1">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
-                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="My certifications" id="2eL-no-Rwo">
-                                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="tMV-aC-0ui">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <navigationItem title="My certifications" id="ca1-KA-Gm9">
+                                        <barButtonItem key="leftBarButtonItem" title="Sign out" style="done" id="3kU-Ti-9zo">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="signOutBarItemTapped:" destination="A8S-3n-4uh" id="R9t-l9-NPM"/>
+                                            </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="Calendar icon" id="oKS-uw-pNd">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <barButtonItem key="rightBarButtonItem" image="Calendar icon" id="FZb-K2-B3h">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="calendarBarItemTapped:" destination="A8S-3n-4uh" id="uYt-Hv-e9I"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-SK-iIY">
-                                <rect key="frame" x="0.0" y="80" width="375" height="463"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZS-3g-Jr1" customClass="RoundedBtn" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="16" y="592" width="343" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431372549018" green="0.24313725490196078" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="pgY-Iv-9tp" secondAttribute="trailing" id="2N2-Bu-G1q"/>
-                            <constraint firstItem="pgY-Iv-9tp" firstAttribute="top" secondItem="zjl-nm-S7s" secondAttribute="bottom" id="IuM-ND-j0E"/>
-                            <constraint firstItem="pgY-Iv-9tp" firstAttribute="leading" secondItem="iaj-Ds-GbS" secondAttribute="leading" id="nS8-kt-Lnw"/>
+                            <constraint firstItem="qK8-20-Sq1" firstAttribute="top" secondItem="zjl-nm-S7s" secondAttribute="bottom" id="5EF-SB-dpk"/>
+                            <constraint firstItem="qj9-SK-iIY" firstAttribute="top" secondItem="qK8-20-Sq1" secondAttribute="bottom" id="CnN-Pl-F4q"/>
+                            <constraint firstItem="xZS-3g-Jr1" firstAttribute="top" secondItem="qj9-SK-iIY" secondAttribute="bottom" constant="15" id="N7i-6i-Ojg"/>
+                            <constraint firstItem="IiD-Cu-vMx" firstAttribute="top" secondItem="xZS-3g-Jr1" secondAttribute="bottom" constant="20" id="O3o-rM-aBo"/>
+                            <constraint firstItem="xZS-3g-Jr1" firstAttribute="trailing" secondItem="iaj-Ds-GbS" secondAttribute="trailingMargin" id="ZR6-dz-Hdj"/>
+                            <constraint firstItem="qK8-20-Sq1" firstAttribute="leading" secondItem="iaj-Ds-GbS" secondAttribute="leading" id="e7j-AF-Yly"/>
+                            <constraint firstItem="qj9-SK-iIY" firstAttribute="leading" secondItem="iaj-Ds-GbS" secondAttribute="leading" id="iGD-zP-gti"/>
+                            <constraint firstAttribute="trailing" secondItem="qj9-SK-iIY" secondAttribute="trailing" id="izI-sw-KmR"/>
+                            <constraint firstItem="xZS-3g-Jr1" firstAttribute="leading" secondItem="iaj-Ds-GbS" secondAttribute="leadingMargin" id="qTK-vC-bkB"/>
+                            <constraint firstAttribute="trailing" secondItem="qK8-20-Sq1" secondAttribute="trailing" id="yIT-Lj-7Vc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="certTableView" destination="qj9-SK-iIY" id="0bM-Uj-D68"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -427,6 +504,6 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="W1w-jA-vkM"/>
     </inferredMetricsTieBreakers>
 </document>
