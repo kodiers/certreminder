@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */; };
+		AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0372531F844E77008102BD /* CertificationCalendarCell.swift */; };
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
 		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
 		AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		AC0372531F844E77008102BD /* CertificationCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCalendarCell.swift; sourceTree = "<group>"; };
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
 		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
 				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
+				AC0372531F844E77008102BD /* CertificationCalendarCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -229,13 +232,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-certreminder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */ = {
@@ -259,9 +265,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -277,6 +290,7 @@
 			files = (
 				AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */,
 				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
+				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,
 				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
