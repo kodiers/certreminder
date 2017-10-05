@@ -22,7 +22,7 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         calendarView.calendarDelegate = self
 
         // Do any additional setup after loading the view.
-        configureCalendar()
+        configureCalendarView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,17 +54,32 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CertificationCalendarCell", for: indexPath) as! CertificationCalendarCell
         cell.dateLabel.text = cellState.text
+        handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
         return cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CertificationCalendarCell else {
-            return
-        }
-        validCell.selectedView.isHidden = false
+        handleCellSelected(view: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelected(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        configureVisibleDates(visibleDates: visibleDates)
+    }
+    
+    func configureCalendarView() {
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0
+        calendarView.visibleDates({visibleDates in
+            self.configureVisibleDates(visibleDates: visibleDates)
+        })
+    }
+    
+    func configureVisibleDates(visibleDates: DateSegmentInfo) {
         let date = visibleDates.monthDates.first!.date
         formatter.dateFormat = "yyyy"
         yearLabel.text = formatter.string(from: date)
@@ -72,14 +87,24 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         monthLabel.text = formatter.string(from: date)
     }
     
-    func configureCalendar() {
-        calendarView.visibleDates({visibleDates in
-            let date = visibleDates.monthDates.first!.date
-            self.formatter.dateFormat = "yyyy"
-            self.yearLabel.text = self.formatter.string(from: date)
-            self.formatter.dateFormat = "MMMM"
-            self.monthLabel.text = self.formatter.string(from: date)
-        })
+    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
+        guard let validCell = view as? CertificationCalendarCell else {
+            return
+        }
+        if cellState.dateBelongsTo != .thisMonth {
+            validCell.dateLabel.textColor = UIColor.gray
+        }
+    }
+    
+    func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
+        guard let validCell = view as? CertificationCalendarCell else {
+            return
+        }
+        if cellState.isSelected {
+            validCell.selectedView.isHidden = false
+        } else {
+            validCell.selectedView.isHidden = true
+        }
     }
 
 }

@@ -599,7 +599,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="93" height="90"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lo-CB-RWt">
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lo-CB-RWt" customClass="RoundedView" customModule="certreminder" customModuleProvider="target">
                                                             <rect key="frame" x="26" y="25" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.0" green="0.51372549020000002" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -607,8 +607,8 @@
                                                                 <constraint firstAttribute="height" constant="40" id="GTQ-zp-egX"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="20"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="20"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
@@ -662,6 +662,37 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3J0-du-6W2">
+                                <rect key="frame" x="0.0" y="430.5" width="375" height="236.5"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="50" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zdg-h1-Qwn" id="yc1-wg-vvF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfs-od-ip4">
+                                                    <rect key="frame" x="16" y="0.0" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.79607843137254897" green="0.65098039215686276" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
+                                                    <rect key="frame" x="16" y="28" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -671,7 +702,11 @@
                             <constraint firstItem="JYe-ks-mk2" firstAttribute="leading" secondItem="2pD-ju-O7x" secondAttribute="leading" id="GOR-yQ-m2W"/>
                             <constraint firstItem="RHg-SH-P8q" firstAttribute="leading" secondItem="2pD-ju-O7x" secondAttribute="leading" id="KYz-Hq-BZr"/>
                             <constraint firstAttribute="trailing" secondItem="JYe-ks-mk2" secondAttribute="trailing" id="KxG-la-o6n"/>
+                            <constraint firstAttribute="trailing" secondItem="3J0-du-6W2" secondAttribute="trailing" id="Mor-48-sz8"/>
                             <constraint firstAttribute="trailing" secondItem="RHg-SH-P8q" secondAttribute="trailing" id="YL7-HF-d9h"/>
+                            <constraint firstItem="3J0-du-6W2" firstAttribute="top" secondItem="JYe-ks-mk2" secondAttribute="bottom" id="cHW-Qh-xYg"/>
+                            <constraint firstAttribute="bottom" secondItem="3J0-du-6W2" secondAttribute="bottom" id="cgo-Qz-ODJ"/>
+                            <constraint firstItem="3J0-du-6W2" firstAttribute="leading" secondItem="2pD-ju-O7x" secondAttribute="leading" id="hdL-mb-PxK"/>
                             <constraint firstItem="RHg-SH-P8q" firstAttribute="top" secondItem="b2D-0p-ue1" secondAttribute="bottom" id="yqp-zL-sKp"/>
                             <constraint firstItem="JYe-ks-mk2" firstAttribute="top" secondItem="kGy-VH-8Ho" secondAttribute="bottom" constant="15" id="zVF-BW-asW"/>
                         </constraints>
