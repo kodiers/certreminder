@@ -618,17 +618,33 @@
                                                             <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8i-XV-vuI" customClass="RoundedView" customModule="certreminder" customModuleProvider="target">
+                                                            <rect key="frame" x="41" y="55" width="10" height="10"/>
+                                                            <color key="backgroundColor" red="0.79607843140000001" green="0.65098039220000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="Y1k-1K-1TL"/>
+                                                                <constraint firstAttribute="height" constant="10" id="oaT-cp-c90"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="8lo-CB-RWt" firstAttribute="centerY" secondItem="vUF-WF-lEa" secondAttribute="centerY" id="4da-tx-a4h"/>
                                                     <constraint firstItem="fAt-S1-0Wv" firstAttribute="centerY" secondItem="vUF-WF-lEa" secondAttribute="centerY" id="USS-W1-egM"/>
+                                                    <constraint firstItem="A8i-XV-vuI" firstAttribute="centerX" secondItem="vUF-WF-lEa" secondAttribute="centerX" id="cyj-JI-cJB"/>
                                                     <constraint firstItem="8lo-CB-RWt" firstAttribute="centerX" secondItem="vUF-WF-lEa" secondAttribute="centerX" id="m5D-RB-SZb"/>
                                                     <constraint firstItem="fAt-S1-0Wv" firstAttribute="centerX" secondItem="vUF-WF-lEa" secondAttribute="centerX" id="mBV-oQ-VYR"/>
+                                                    <constraint firstItem="A8i-XV-vuI" firstAttribute="centerY" secondItem="vUF-WF-lEa" secondAttribute="centerY" constant="15" id="wvf-0U-WG1"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="fAt-S1-0Wv" id="NhL-iS-TdX"/>
+                                                    <outlet property="markedView" destination="A8i-XV-vuI" id="2e8-Mm-6co"/>
                                                     <outlet property="selectedView" destination="8lo-CB-RWt" id="n95-vd-KEk"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -666,28 +682,38 @@
                                 <rect key="frame" x="0.0" y="430.5" width="375" height="236.5"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="50" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zdg-h1-Qwn" id="yc1-wg-vvF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfs-od-ip4">
-                                                    <rect key="frame" x="16" y="0.0" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.79607843137254897" green="0.65098039215686276" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
-                                                    <rect key="frame" x="16" y="28" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016: Virtualization and Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
+                                                    <rect key="frame" x="16" y="18" width="359" height="40.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification expire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfs-od-ip4">
+                                                    <rect key="frame" x="16" y="0.0" width="180" height="19.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="5gy-A1-ATB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
+                                                    <color key="textColor" red="0.79607843137254897" green="0.65098039215686276" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leadingMargin" constant="8" id="2vN-wH-RpP"/>
+                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="trailing" secondItem="yc1-wg-vvF" secondAttribute="trailingMargin" constant="8" id="Fpn-Cc-rzS"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hfs-od-ip4" secondAttribute="trailing" constant="20" symbolic="YES" id="TxZ-UL-x3T"/>
+                                                <constraint firstItem="hfs-od-ip4" firstAttribute="top" secondItem="yc1-wg-vvF" secondAttribute="top" id="ZPd-7H-4Ji"/>
+                                                <constraint firstItem="hfs-od-ip4" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leading" constant="16" id="pnZ-hg-9sW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BsQ-D8-jKw" secondAttribute="bottom" constant="8" id="wKu-DT-D2b"/>
+                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="top" secondItem="yc1-wg-vvF" secondAttribute="topMargin" constant="10" id="zqy-FX-7zc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
