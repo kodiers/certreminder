@@ -372,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="746.39999999999998" y="33.733133433283363"/>
         </scene>
-        <!--MainVC-->
+        <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
             <objects>
-                <viewController id="A8S-3n-4uh" customClass="MainVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjl-nm-S7s"/>
                         <viewControllerLayoutGuide type="bottom" id="IiD-Cu-vMx"/>

@@ -1,5 +1,5 @@
 //
-//  MainVC.swift
+//  CertificationVC.swift
 //  certreminder
 //
 //  Created by Viktor Yamchinov on 25/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class CertificationVC: UIViewController {
 
     @IBOutlet weak var certTableView: UITableView!
     
@@ -35,6 +35,8 @@ class MainVC: UIViewController {
     */
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
+        WebRequestService.webservice.logoutUser()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
