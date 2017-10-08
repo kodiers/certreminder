@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "70E6FA7BD7E66100055D127F7FE0A23C"
+               BlueprintIdentifier = "09461F1CB3AFA213E7FDCDC5569BD011"
                BuildableName = "Pods_certreminder.framework"
                BlueprintName = "Pods-certreminder"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "70E6FA7BD7E66100055D127F7FE0A23C"
+            BlueprintIdentifier = "09461F1CB3AFA213E7FDCDC5569BD011"
             BuildableName = "Pods_certreminder.framework"
             BlueprintName = "Pods-certreminder"
             ReferencedContainer = "container:Pods.xcodeproj">

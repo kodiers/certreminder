@@ -1,14 +1,15 @@
 //
-//  RoundedBtn.swift
+//  RoundedView.swift
 //  certreminder
 //
-//  Created by Viktor Yamchinov on 18/08/2017.
+//  Created by Viktor Yamchinov on 06/10/2017.
 //  Copyright © 2017 Viktor Yamchinov. All rights reserved.
 //
 
 import UIKit
 
-class RoundedBtn: UIButton {
+@IBDesignable
+class RoundedView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,9 +19,11 @@ class RoundedBtn: UIButton {
     }
     */
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = 5.0
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+        }
     }
 
 }

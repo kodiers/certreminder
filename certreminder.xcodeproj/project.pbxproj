@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */; };
-		AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC42B91C1F464E1800DB975B /* RoundedBtn.swift */; };
+		AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0372531F844E77008102BD /* CertificationCalendarCell.swift */; };
+		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
+		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
+		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
+		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
+		AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* MainVC.swift */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
 		ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */; };
@@ -24,9 +29,14 @@
 /* Begin PBXFileReference section */
 		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
 		AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		AC42B91C1F464E1800DB975B /* RoundedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
+		AC0372531F844E77008102BD /* CertificationCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCalendarCell.swift; sourceTree = "<group>"; };
+		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
+		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
+		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
+		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoTableCell.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +133,11 @@
 		ACD22E9F1F4646320056E0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AC42B91C1F464E1800DB975B /* RoundedBtn.swift */,
+				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
+				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
+				AC0372531F844E77008102BD /* CertificationCalendarCell.swift */,
+				AC9F52341F86E7690024E94E /* RoundedView.swift */,
+				AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 				ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */,
 				AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */,
 				ACAA4C0E1F4F9164002C6E8A /* MainVC.swift */,
+				AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,13 +238,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-certreminder-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */ = {
@@ -253,9 +271,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,11 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */,
+				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
+				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,
+				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
-				AC42B91D1F464E1800DB975B /* RoundedBtn.swift in Sources */,
+				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
+				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* MainVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
