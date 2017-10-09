@@ -618,7 +618,7 @@
                                                             <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8i-XV-vuI" customClass="RoundedView" customModule="certreminder" customModuleProvider="target">
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8i-XV-vuI" customClass="RoundedView" customModule="certreminder" customModuleProvider="target">
                                                             <rect key="frame" x="41" y="55" width="10" height="10"/>
                                                             <color key="backgroundColor" red="0.79607843140000001" green="0.65098039220000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>

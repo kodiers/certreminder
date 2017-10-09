@@ -11,6 +11,7 @@ import UIKit
 class CertificationVC: UIViewController {
 
     @IBOutlet weak var certTableView: UITableView!
+    var userCertifications = [UserCertification]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

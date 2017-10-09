@@ -175,7 +175,20 @@ class WebRequestService {
                 }
             }
         }
-
+    }
+    
+    func getUserCertification(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Get user certification from API
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "/remainder/certification/"
+        Alamofire.request(url, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            let result = response.result
+            if result.isSuccess {
+                // TODO: Complete parse response data
+            } else {
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
     }
     
 }
