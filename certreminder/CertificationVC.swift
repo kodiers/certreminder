@@ -8,15 +8,28 @@
 
 import UIKit
 
-class CertificationVC: UIViewController {
+class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var certTableView: UITableView!
+    
     var userCertifications = [UserCertification]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        certTableView.delegate = self
+        certTableView.dataSource = self
+        
+        // Get user certification
+        WebRequestService.webservice.getUserCertification(completionHandler: {(response, error) in
+            if error != nil {
+                // TODO: Show alert
+            } else {
+                self.userCertifications = response as! [UserCertification]
+                self.certTableView.reloadData()
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +47,14 @@ class CertificationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userCertifications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         WebRequestService.webservice.logoutUser()

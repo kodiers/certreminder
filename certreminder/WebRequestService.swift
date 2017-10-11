@@ -50,14 +50,14 @@ class WebRequestService {
     
     func createHeaders() -> Dictionary<String, String> {
         // Create headers
-        var headers = ["Accept": "application/json"]
+        var headers = ["Accept": "application/json", "Content-Type": "application/json"]
         if self._user == nil {
             if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
-                headers = ["Authorization": "Token \(token)"]
+                headers["Authorization"] = "Token \(token)"
             }
         } else {
             if let token = self._user?.token {
-                headers = ["Authorization": "Token \(token)"]
+                headers["Authorization"] = "Token \(token)"
             }
         }
         return headers
@@ -180,12 +180,40 @@ class WebRequestService {
     func getUserCertification(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Get user certification from API
         let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "/remainder/certification/"
+        let url = WebRequestService.WEB_API_URL + "remainder/certification/"
         Alamofire.request(url, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             let result = response.result
             if result.isSuccess {
-                // TODO: Complete parse response data
+                // TODO: Debug this
+                var userCertArr = [UserCertification]()
+                if let responseDict = result.value as? Dictionary<String, AnyObject> {
+                    // Parse user certification
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        // Return User's certification array
+                        if self.user == nil {
+                            let firstElem = resultsArr[0] as? Dictionary<String, AnyObject>
+                            let userDict = firstElem!["user"]
+                            let user = User.createUserFromDict(userDict: userDict as! Dictionary<String, AnyObject>)
+                            if user != nil {
+                                self.user = user
+                                self.user?.token = self.token
+                            }
+                        }
+                        for arr in resultsArr {
+                            if let certDict = arr["certification"] as? Dictionary<String, AnyObject> {
+                                if let certification = Certification.createCertificationFromDict(certDict: certDict) {
+                                    let userCertification = UserCertification.createUserCertificationFromDict(userCertDict: arr as! Dictionary<String, AnyObject>, certification: certification)
+                                    if userCertification != nil {
+                                        userCertArr.append(userCertification!)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                completionHandler(userCertArr as AnyObject, nil)
             } else {
+                print(result.error!)
                 completionHandler(nil, result.error! as NSError)
             }
         }

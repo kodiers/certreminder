@@ -107,4 +107,28 @@ class Certification {
         _vendor = vendor
         _deprecated = deprectated
     }
+    
+    class func createCertificationFromDict(certDict: Dictionary<String, AnyObject>) -> Certification? {
+        // Parse dictionary and create certification
+        if let id = certDict["id"] as? Int {
+            if let title = certDict["title"] as? String {
+                if let vendor = certDict["vendor"] as? Int  {
+                    if let deprecated = certDict["deprecated"] as? Bool {
+                        let certification = Certification(id: id, title: title, vendor: vendor, deprectated: deprecated)
+                        if let number = certDict["number"] as? String {
+                            certification.number = number
+                        }
+                        if let image = certDict["image"] as? String {
+                            certification.image = image
+                        }
+                        if let description = certDict["description"] as? String {
+                            certification.description = description
+                        }
+                        return certification
+                    }
+                }
+            }
+        }
+        return nil
+    }
 }
