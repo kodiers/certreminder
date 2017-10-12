@@ -25,6 +25,8 @@
 		ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E901F46461B0056E0D2 /* Main.storyboard */; };
 		ACD22E941F46461B0056E0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E931F46461B0056E0D2 /* Assets.xcassets */; };
 		ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */; };
+		ACD288831F901EB30017A5DE /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288821F901EB30017A5DE /* Vendor.swift */; };
+		ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288881F9021CF0017A5DE /* CommonModel.swift */; };
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		ACD22E931F46461B0056E0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD22E961F46461B0056E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACD22E981F46461B0056E0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD288821F901EB30017A5DE /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
+		ACD288881F9021CF0017A5DE /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		ACFEBC781F4E4498007E8594 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
 		D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,8 @@
 				AC7922B81F4CE57F000C1D46 /* User.swift */,
 				AC60B0191F8AE5A0004DFB77 /* Certification.swift */,
 				AC0824F91F8C3A27008B9C4C /* UserCertification.swift */,
+				ACD288821F901EB30017A5DE /* Vendor.swift */,
+				ACD288881F9021CF0017A5DE /* CommonModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,
 				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				AC0824FA1F8C3A27008B9C4C /* UserCertification.swift in Sources */,
+				ACD288831F901EB30017A5DE /* Vendor.swift in Sources */,
+				ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,

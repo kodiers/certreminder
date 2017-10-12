@@ -184,7 +184,6 @@ class WebRequestService {
         Alamofire.request(url, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
             let result = response.result
             if result.isSuccess {
-                // TODO: Debug this
                 var userCertArr = [UserCertification]()
                 if let responseDict = result.value as? Dictionary<String, AnyObject> {
                     // Parse user certification
@@ -212,6 +211,31 @@ class WebRequestService {
                     }
                 }
                 completionHandler(userCertArr as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
+    func getVendors(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "certifications/vendor/"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                var vendorsArr = [Vendor]()
+                if let responseDict = result.value as? Dictionary<String, AnyObject> {
+                    // Parse user certification
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for arr in resultsArr {
+                            if let vendor = Vendor.createVendorFromDict(vendorDict: arr as! Dictionary<String, AnyObject>) {
+                                vendorsArr.append(vendor)
+                            }
+                        }
+                    }
+                }
+                completionHandler(vendorsArr as AnyObject, nil)
             } else {
                 print(result.error!)
                 completionHandler(nil, result.error! as NSError)

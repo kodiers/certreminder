@@ -13,6 +13,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var certTableView: UITableView!
     
     var userCertifications = [UserCertification]()
+    var vendors = [Vendor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,18 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         // Get user certification
         WebRequestService.webservice.getUserCertification(completionHandler: {(response, error) in
             if error != nil {
-                // TODO: Show alert
+                // Show alert
+                self.showHttpAlert(message: "Can't get certifications from server")
             } else {
                 self.userCertifications = response as! [UserCertification]
+                self.certTableView.reloadData()
+            }
+        })
+        WebRequestService.webservice.getVendors(completionHandler: {(response, error) in
+            if error != nil {
+                self.showHttpAlert(message: "Can't get vendors from server")
+            } else {
+                self.vendors = response as! [Vendor]
                 self.certTableView.reloadData()
             }
         })
@@ -53,7 +63,16 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let userCert = userCertifications[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CertificationCell") as? CertificationCell {
+            cell.configureCell(userCert: userCert, vendors: vendors)
+            return cell
+        }
+        return CertificationCell()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
@@ -65,5 +84,11 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
+    }
+    
+    func showHttpAlert(message: String) {
+        let alert = UIAlertController(title: "HTTP Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

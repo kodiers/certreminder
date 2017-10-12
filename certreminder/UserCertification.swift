@@ -81,10 +81,16 @@ class UserCertification {
     class func createUserCertificationFromDict(userCertDict: Dictionary<String, AnyObject>, certification: Certification) -> UserCertification? {
         // Parse dictionary and create user certification
         if let id = userCertDict["id"] as? Int {
-            if let expiration_date = userCertDict["expiration_date"] as? Date {
-                let userCertification = UserCertification(id: id, certification: certification, expirationDate: expiration_date)
-                if let remind_at_date = userCertDict["remind_at_date"] as? Date {
-                    userCertification.remindAtDate = remind_at_date
+            if let expiration_date = userCertDict["expiration_date"] as? String {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                formatter.timeZone = Calendar.current.timeZone
+                formatter.locale = Calendar.current.locale
+                let expDate = formatter.date(from: expiration_date)
+                let userCertification = UserCertification(id: id, certification: certification, expirationDate: expDate!)
+                if let remind_at_date = userCertDict["remind_at_date"] as? String {
+                    let remindDate = formatter.date(from: remind_at_date)
+                    userCertification.remindAtDate = remindDate
                 }
                 return userCertification
             }
