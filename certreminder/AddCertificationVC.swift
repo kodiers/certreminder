@@ -1,17 +1,15 @@
 //
-//  MainVC.swift
+//  AddCertificationVC.swift
 //  certreminder
 //
-//  Created by Viktor Yamchinov on 25/08/2017.
+//  Created by Viktor Yamchinov on 17/10/2017.
 //  Copyright © 2017 Viktor Yamchinov. All rights reserved.
 //
 
 import UIKit
 
-class MainVC: UIViewController {
+class AddCertificationVC: UIViewController {
 
-    @IBOutlet weak var certTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,12 +32,4 @@ class MainVC: UIViewController {
     }
     */
 
-    @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
-    }
-    
-    @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
-    }
-    
-    @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
-    }
 }

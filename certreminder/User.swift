@@ -13,11 +13,11 @@ class User {
     private var _id: Int!
     private var _username: String!
     private var _email: String?
-    private var _first_name: String?
-    private var _last_name: String?
+    private var _firstName: String?
+    private var _lastName: String?
     private var _token: String?
     private var _country: String?
-    private var _date_of_birth: Date?
+    private var _dateOfBirth: Date?
     private var _description: String?
     private var _avatar: String?
     
@@ -36,18 +36,18 @@ class User {
         return self._email!
     }
     
-    var first_name: String {
-        if self._first_name == nil {
+    var firstName: String {
+        if self._firstName == nil {
             return ""
         }
-        return self._first_name!
+        return self._firstName!
     }
     
-    var last_name: String {
-        if self._last_name == nil {
+    var lastName: String {
+        if self._lastName == nil {
             return ""
         }
-        return self._last_name!
+        return self._lastName!
     }
     
     var token: String? {
@@ -67,7 +67,7 @@ class User {
     }
     
     var date_of_birth: Date? {
-        return self._date_of_birth
+        return self._dateOfBirth
     }
     
     var description: String {
@@ -92,5 +92,25 @@ class User {
         self._id = id
         self._username = username
         self._token = token
+    }
+    
+    class func createUserFromDict(userDict: Dictionary<String, AnyObject>) -> User? {
+        // Parse dict and create user object
+        if let id = userDict["id"] as? Int {
+            if let username = userDict["username"] as? String {
+                let user = User(id: id, username: username)
+                if let first_name = userDict["first_name"] as? String {
+                    user._firstName = first_name
+                }
+                if let last_name = userDict["last_name"] as? String {
+                    user._lastName = last_name
+                }
+                if let email = userDict["email"] as? String {
+                    user._email = email
+                }
+                return user
+            }
+        }
+        return nil
     }
 }
