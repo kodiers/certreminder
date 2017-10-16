@@ -388,37 +388,55 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="523"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CertificationCell" rowHeight="70" id="8mB-af-m6b" customClass="CertificationCell" customModule="certreminder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CertificationCell" rowHeight="85" id="8mB-af-m6b" customClass="CertificationCell" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8mB-af-m6b" id="4sF-f9-VdI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
-                                                    <rect key="frame" x="8" y="26" width="210" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
+                                                    <rect key="frame" x="8" y="36" width="332" height="40.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23.02.2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
-                                                    <rect key="frame" x="232" y="24" width="74" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
-                                                    <rect key="frame" x="8" y="8" width="260" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
+                                                    <rect key="frame" x="8" y="8" width="42" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="tJI-WJ-ye1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
+                                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-02-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
+                                                    <rect key="frame" x="257" y="8" width="75" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WeG-if-xhG"/>
+                                                        <constraint firstAttribute="width" constant="75" id="h4Q-sH-5JZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rOM-fa-2Sc" secondAttribute="trailing" constant="35" id="JKf-ml-AEu"/>
+                                                <constraint firstAttribute="bottom" secondItem="1Jy-zu-sYC" secondAttribute="bottom" constant="8" id="NUu-ta-BBw"/>
+                                                <constraint firstItem="rOM-fa-2Sc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ezP-sj-PNV" secondAttribute="trailing" constant="35" id="O3y-GR-fBc"/>
+                                                <constraint firstItem="1Jy-zu-sYC" firstAttribute="top" secondItem="rOM-fa-2Sc" secondAttribute="bottom" constant="8" id="P1r-Zi-t2L"/>
+                                                <constraint firstItem="1Jy-zu-sYC" firstAttribute="leading" secondItem="4sF-f9-VdI" secondAttribute="leading" constant="8" id="bkC-yw-gHl"/>
+                                                <constraint firstItem="ezP-sj-PNV" firstAttribute="leading" secondItem="4sF-f9-VdI" secondAttribute="leading" constant="8" id="d21-xs-JCf"/>
+                                                <constraint firstItem="ezP-sj-PNV" firstAttribute="top" secondItem="4sF-f9-VdI" secondAttribute="topMargin" id="hzu-VU-Lze"/>
+                                                <constraint firstItem="rOM-fa-2Sc" firstAttribute="top" secondItem="4sF-f9-VdI" secondAttribute="topMargin" id="m4S-Y2-nIl"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Jy-zu-sYC" secondAttribute="trailing" constant="35" id="ujy-yW-yzy"/>
+                                                <constraint firstItem="1Jy-zu-sYC" firstAttribute="top" secondItem="rOM-fa-2Sc" secondAttribute="bottom" constant="8" id="yuw-iD-gy2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="certificationLabel" destination="1Jy-zu-sYC" id="QPP-Qc-7Qa"/>
                                             <outlet property="dateLabel" destination="rOM-fa-2Sc" id="fWJ-bn-54w"/>
@@ -450,6 +468,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="newSertificationButtonPressed:" destination="A8S-3n-4uh" eventType="touchUpInside" id="dpc-uW-GbI"/>
+                                    <segue destination="an7-cQ-EEe" kind="show" identifier="AddCertificationVC" id="UOi-Kr-oaH"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-20-Sq1">
@@ -494,11 +513,48 @@
                     </view>
                     <connections>
                         <outlet property="certTableView" destination="qj9-SK-iIY" id="0bM-Uj-D68"/>
+                        <segue destination="8FM-FH-goS" kind="show" identifier="CertificationDetailVC" id="WNp-Uu-E5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405.60000000000002" y="785.75712143928047"/>
+            <point key="canvasLocation" x="405" y="785"/>
+        </scene>
+        <!--Add CertificationVC-->
+        <scene sceneID="lvb-7E-eZX">
+            <objects>
+                <viewController id="an7-cQ-EEe" customClass="AddCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZA-f0-1RG"/>
+                        <viewControllerLayoutGuide type="bottom" id="6wc-Li-SsQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V9b-Yo-gVD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="1564"/>
+        </scene>
+        <!--Certification DetailVC-->
+        <scene sceneID="xUG-ob-Isa">
+            <objects>
+                <viewController id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zZA-5d-W9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Hx-Sq-8ie"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="939-2U-WXC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2Y-er-tKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415" y="785"/>
         </scene>
         <!--Calendar CertfifcationVC-->
         <scene sceneID="apo-qW-gFG">

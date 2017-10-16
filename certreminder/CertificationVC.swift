@@ -74,6 +74,28 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let userCert = userCertifications[indexPath.row]
+            WebRequestService.webservice.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+                if error != nil {
+                    self.showHttpAlert(message: "Can't delete certification from server")
+                } else {
+                    self.userCertifications.remove(at: indexPath.row)
+                    self.certTableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CertificationDetailVC", sender: nil)
+    }
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         WebRequestService.webservice.logoutUser()

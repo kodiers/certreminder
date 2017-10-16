@@ -58,7 +58,7 @@ class UserCertification {
     }
     
     private func configureFormatter() {
-        formatter.dateFormat = "dd MM yyyy"
+        formatter.dateFormat = "dd-MM-yyyy"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
     }

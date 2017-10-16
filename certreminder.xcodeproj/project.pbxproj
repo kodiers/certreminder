@@ -27,6 +27,8 @@
 		ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */; };
 		ACD288831F901EB30017A5DE /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288821F901EB30017A5DE /* Vendor.swift */; };
 		ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288881F9021CF0017A5DE /* CommonModel.swift */; };
+		ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */; };
+		ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */; };
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		ACD22E981F46461B0056E0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACD288821F901EB30017A5DE /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		ACD288881F9021CF0017A5DE /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationDetailVC.swift; sourceTree = "<group>"; };
+		ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificationVC.swift; sourceTree = "<group>"; };
 		ACFEBC781F4E4498007E8594 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
 		D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +165,8 @@
 				AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */,
 				ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */,
 				AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */,
+				ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */,
+				ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -306,6 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */,
+				ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */,
 				AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */,
 				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
 				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,

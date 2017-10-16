@@ -189,7 +189,7 @@ class WebRequestService {
                     // Parse user certification
                     if let resultsArr = responseDict["results"] as? Array<AnyObject> {
                         // Return User's certification array
-                        if self.user == nil {
+                        if self.user == nil && responseDict["count"] as? Int != 0 {
                             let firstElem = resultsArr[0] as? Dictionary<String, AnyObject>
                             let userDict = firstElem!["user"]
                             let user = User.createUserFromDict(userDict: userDict as! Dictionary<String, AnyObject>)
@@ -219,6 +219,7 @@ class WebRequestService {
     }
     
     func getVendors(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Get vendors from API
         let headers = createHeaders()
         let url = WebRequestService.WEB_API_URL + "certifications/vendor/"
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
@@ -236,6 +237,22 @@ class WebRequestService {
                     }
                 }
                 completionHandler(vendorsArr as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
+    func deleteUserCertification(userCertId: Int, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Delete user certification
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/certification/\(userCertId)/"
+        Alamofire.request(url, method: .delete, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                // Return if deletion success, because no content
+                completionHandler(true as AnyObject, nil)
             } else {
                 print(result.error!)
                 completionHandler(nil, result.error! as NSError)

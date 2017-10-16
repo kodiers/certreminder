@@ -36,6 +36,12 @@ class CertificationCell: UITableViewCell {
         }
         certificationLabel.text = userCert.certification.title
         dateLabel.text = userCert.expirationDateAsString()
+        // Add custom detail button
+        self.accessoryType = .disclosureIndicator
+        let image = UIImage(named:"Shevron")?.withRenderingMode(.alwaysTemplate)
+        let checkmark  = UIImageView(frame:CGRect(x:0, y:0, width:((image?.size.width)! / 2), height:((image?.size.height)! / 2)));
+        checkmark.image = image
+        self.accessoryView = checkmark
     }
 
 }
