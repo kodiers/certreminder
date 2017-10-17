@@ -96,6 +96,17 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "CertificationDetailVC", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CalendarCertificationVC" {
+            if let destination = segue.destination as? CalendarCertfifcationVC {
+//                if let items = sender as? [UserCertification] {
+//                    print(items)
+                destination.userCertifications = userCertifications
+//                }
+            }
+        }
+    }
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         WebRequestService.webservice.logoutUser()
@@ -103,6 +114,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "CalendarCertificationVC", sender: userCertifications)
     }
     
     @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
