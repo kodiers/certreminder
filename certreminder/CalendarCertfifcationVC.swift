@@ -9,13 +9,15 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
+class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var userCertifications: [UserCertification]?
+    var selectedDate: Date?
     
     let formatter = DateFormatter()
     
@@ -23,6 +25,8 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         super.viewDidLoad()
         calendarView.calendarDataSource = self
         calendarView.calendarDelegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
         configureCalendarView()
@@ -69,15 +73,52 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
+        // TODO Complete show date certs in tableView
+        if userCertifications != nil {
+            if UserCertification.getCertificationByExpirationDate(userCerts: userCertifications!, date: date) != nil {
+//                cell.configureCell(certs: cellExpCerts)
+                self.selectedDate = date
+                tableView.isHidden = false
+                tableView.reloadData()
+            }
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
+        tableView.isHidden = true
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         configureVisibleDates(visibleDates: visibleDates)
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Complete method
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarInfoTableCell") as? CalendarInfoTableCell {
+            if selectedDate != nil && userCertifications != nil {
+                if let certs = UserCertification.getCertificationByExpirationDate(userCerts: userCertifications!, date: selectedDate!) {
+                    let userCert = certs[indexPath.row]
+                    cell.configureCell(userCert: userCert)
+                }
+            }
+        }
+        return CalendarInfoTableCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if selectedDate != nil && userCertifications != nil {
+            if let certs = UserCertification.getCertificationByExpirationDate(userCerts: userCertifications!, date: selectedDate!) {
+                return certs.count
+            }
+        }
+        return 1
+    }
+    
     
     func configureCalendarView() {
         calendarView.minimumLineSpacing = 0
