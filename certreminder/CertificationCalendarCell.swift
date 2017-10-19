@@ -15,4 +15,11 @@ class CertificationCalendarCell: JTAppleCell {
     @IBOutlet weak var selectedView: UIView!
     @IBOutlet weak var markedView: UIView!
     
+    var userCertifications: [UserCertification]!
+    
+    func configureCell(certs: [UserCertification]) {
+        userCertifications = certs
+        markedView.isHidden = false
+    }
+    
 }

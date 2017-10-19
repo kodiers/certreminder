@@ -98,4 +98,26 @@ class UserCertification {
         return nil
     }
     
+    
+    // TODO: Optimize this 2 methods (make as 1)
+    class func getCertificationByExpirationDate(userCerts: [UserCertification], date: Date) -> [UserCertification]? {
+        let certs = userCerts.filter {(userCert: UserCertification) -> Bool in
+            return userCert.expirationDate == date
+        }
+        if certs.count != 0 {
+            return certs
+        }
+        return nil
+    }
+    
+    class func getCertificationByRemindDate(userCerts: [UserCertification], date: Date) -> [UserCertification]? {
+        let certs = userCerts.filter {(userCert: UserCertification) -> Bool in
+            return userCert.remindAtDate == date
+        }
+        if certs.count != 0 {
+            return certs
+        }
+        return nil
+    }
+    
 }

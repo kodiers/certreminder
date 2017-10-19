@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -384,9 +384,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-SK-iIY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-SK-iIY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="523"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" red="0.16078431372549018" green="0.24313725490196078" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CertificationCell" rowHeight="85" id="8mB-af-m6b" customClass="CertificationCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
@@ -490,7 +493,7 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="calendarBarItemTapped:" destination="A8S-3n-4uh" id="uYt-Hv-e9I"/>
-                                                <segue destination="hRJ-aK-Xdm" kind="show" id="MwJ-xU-Jxg"/>
+                                                <segue destination="hRJ-aK-Xdm" kind="show" identifier="CalendarCertificationVC" id="vQK-W5-jIW"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -518,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="785"/>
+            <point key="canvasLocation" x="33" y="795"/>
         </scene>
         <!--Add CertificationVC-->
         <scene sceneID="lvb-7E-eZX">
@@ -536,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="1564"/>
+            <point key="canvasLocation" x="-86" y="1639"/>
         </scene>
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
@@ -554,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2Y-er-tKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="785"/>
+            <point key="canvasLocation" x="802" y="1623"/>
         </scene>
         <!--Calendar CertfifcationVC-->
         <scene sceneID="apo-qW-gFG">
@@ -578,9 +581,15 @@
                                     <navigationItem title="My certifications" id="ebd-ac-jGb">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="1h1-yj-a3a">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="hRJ-aK-Xdm" id="grj-mB-98h"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xs7-2P-gpV">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="an7-cQ-EEe" kind="show" id="ep0-Zd-dg3"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -734,11 +743,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3J0-du-6W2">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3J0-du-6W2">
                                 <rect key="frame" x="0.0" y="430.5" width="375" height="236.5"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zdg-h1-Qwn" id="yc1-wg-vvF">
@@ -746,7 +755,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016: Virtualization and Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
-                                                    <rect key="frame" x="16" y="18" width="359" height="40.5"/>
+                                                    <rect key="frame" x="16" y="18" width="359" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -761,9 +770,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leadingMargin" constant="8" id="2vN-wH-RpP"/>
                                                 <constraint firstItem="BsQ-D8-jKw" firstAttribute="trailing" secondItem="yc1-wg-vvF" secondAttribute="trailingMargin" constant="8" id="Fpn-Cc-rzS"/>
+                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leading" constant="16" id="SHJ-d5-E1E"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hfs-od-ip4" secondAttribute="trailing" constant="20" symbolic="YES" id="TxZ-UL-x3T"/>
                                                 <constraint firstItem="hfs-od-ip4" firstAttribute="top" secondItem="yc1-wg-vvF" secondAttribute="top" id="ZPd-7H-4Ji"/>
                                                 <constraint firstItem="hfs-od-ip4" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leading" constant="16" id="pnZ-hg-9sW"/>
@@ -772,6 +782,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="certificationLabel" destination="BsQ-D8-jKw" id="Pdy-v4-7hP"/>
+                                            <outlet property="certificationMessage" destination="hfs-od-ip4" id="d7t-EU-XLs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -796,12 +810,14 @@
                     <connections>
                         <outlet property="calendarView" destination="6Tm-eQ-YWC" id="W2N-qA-uF1"/>
                         <outlet property="monthLabel" destination="zXS-8f-6u9" id="kut-6K-Wl5"/>
+                        <outlet property="tableView" destination="3J0-du-6W2" id="BPu-ai-CXl"/>
                         <outlet property="yearLabel" destination="82z-45-wqO" id="icl-v3-w6C"/>
+                        <segue destination="8FM-FH-goS" kind="show" identifier="CalcCertificationDetailVC" id="WSy-ai-zRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EC-AS-fNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="794.75262368815595"/>
+            <point key="canvasLocation" x="746" y="795"/>
         </scene>
     </scenes>
     <resources>
@@ -809,6 +825,8 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WSy-ai-zRe"/>
+        <segue reference="ep0-Zd-dg3"/>
         <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>

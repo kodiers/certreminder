@@ -10,6 +10,9 @@ import UIKit
 
 class CalendarInfoTableCell: UITableViewCell {
 
+    @IBOutlet weak var certificationMessage: UILabel!
+    @IBOutlet weak var certificationLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,12 @@ class CalendarInfoTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(userCert: UserCertification) {
+        let certDate = userCert.expirationDateAsString()
+        self.certificationMessage.text = "Your certification will expire at this date: \(certDate)"
+        self.certificationLabel.text = userCert.certification.title
     }
 
 }
