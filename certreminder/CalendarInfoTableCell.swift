@@ -25,7 +25,8 @@ class CalendarInfoTableCell: UITableViewCell {
     }
     
     func configureCell(userCert: UserCertification) {
-        self.certificationMessage.text = "Your certification will expire"
+        let certDate = userCert.expirationDateAsString()
+        self.certificationMessage.text = "Your certification will expire at this date: \(certDate)"
         self.certificationLabel.text = userCert.certification.title
     }
 

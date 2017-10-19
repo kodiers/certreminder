@@ -521,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="785"/>
+            <point key="canvasLocation" x="33" y="795"/>
         </scene>
         <!--Add CertificationVC-->
         <scene sceneID="lvb-7E-eZX">
@@ -539,7 +539,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="1564"/>
+            <point key="canvasLocation" x="-86" y="1639"/>
         </scene>
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
@@ -557,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2Y-er-tKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-415" y="785"/>
+            <point key="canvasLocation" x="802" y="1623"/>
         </scene>
         <!--Calendar CertfifcationVC-->
         <scene sceneID="apo-qW-gFG">
@@ -581,9 +581,15 @@
                                     <navigationItem title="My certifications" id="ebd-ac-jGb">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="1h1-yj-a3a">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="hRJ-aK-Xdm" id="grj-mB-98h"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xs7-2P-gpV">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="an7-cQ-EEe" kind="show" id="ep0-Zd-dg3"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -741,7 +747,7 @@
                                 <rect key="frame" x="0.0" y="430.5" width="375" height="236.5"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zdg-h1-Qwn" id="yc1-wg-vvF">
@@ -749,7 +755,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016: Virtualization and Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
-                                                    <rect key="frame" x="16" y="18" width="359" height="40.5"/>
+                                                    <rect key="frame" x="16" y="18" width="359" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -766,8 +772,8 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leadingMargin" constant="8" id="2vN-wH-RpP"/>
                                                 <constraint firstItem="BsQ-D8-jKw" firstAttribute="trailing" secondItem="yc1-wg-vvF" secondAttribute="trailingMargin" constant="8" id="Fpn-Cc-rzS"/>
+                                                <constraint firstItem="BsQ-D8-jKw" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leading" constant="16" id="SHJ-d5-E1E"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hfs-od-ip4" secondAttribute="trailing" constant="20" symbolic="YES" id="TxZ-UL-x3T"/>
                                                 <constraint firstItem="hfs-od-ip4" firstAttribute="top" secondItem="yc1-wg-vvF" secondAttribute="top" id="ZPd-7H-4Ji"/>
                                                 <constraint firstItem="hfs-od-ip4" firstAttribute="leading" secondItem="yc1-wg-vvF" secondAttribute="leading" constant="16" id="pnZ-hg-9sW"/>
@@ -806,11 +812,12 @@
                         <outlet property="monthLabel" destination="zXS-8f-6u9" id="kut-6K-Wl5"/>
                         <outlet property="tableView" destination="3J0-du-6W2" id="BPu-ai-CXl"/>
                         <outlet property="yearLabel" destination="82z-45-wqO" id="icl-v3-w6C"/>
+                        <segue destination="8FM-FH-goS" kind="show" identifier="CalcCertificationDetailVC" id="WSy-ai-zRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0EC-AS-fNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="794.75262368815595"/>
+            <point key="canvasLocation" x="746" y="795"/>
         </scene>
     </scenes>
     <resources>
@@ -818,6 +825,8 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WSy-ai-zRe"/>
+        <segue reference="ep0-Zd-dg3"/>
         <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>

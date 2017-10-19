@@ -27,6 +27,7 @@
 		ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */; };
 		ACD288831F901EB30017A5DE /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288821F901EB30017A5DE /* Vendor.swift */; };
 		ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288881F9021CF0017A5DE /* CommonModel.swift */; };
+		ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC4BE1F995E9200B08234 /* AlertService.swift */; };
 		ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */; };
 		ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */; };
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
@@ -55,6 +56,7 @@
 		ACD22E981F46461B0056E0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACD288821F901EB30017A5DE /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		ACD288881F9021CF0017A5DE /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		ACDCC4BE1F995E9200B08234 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationDetailVC.swift; sourceTree = "<group>"; };
 		ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificationVC.swift; sourceTree = "<group>"; };
 		ACFEBC781F4E4498007E8594 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */,
+				ACDCC4BE1F995E9200B08234 /* AlertService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
+				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,

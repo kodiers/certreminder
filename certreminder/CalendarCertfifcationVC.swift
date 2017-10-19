@@ -73,10 +73,8 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
-        // TODO Complete show date certs in tableView
         if userCertifications != nil {
             if UserCertification.getCertificationByExpirationDate(userCerts: userCertifications!, date: date) != nil {
-//                cell.configureCell(certs: cellExpCerts)
                 self.selectedDate = date
                 tableView.isHidden = false
                 tableView.reloadData()
@@ -98,12 +96,12 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Complete method
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarInfoTableCell") as? CalendarInfoTableCell {
             if selectedDate != nil && userCertifications != nil {
                 if let certs = UserCertification.getCertificationByExpirationDate(userCerts: userCertifications!, date: selectedDate!) {
                     let userCert = certs[indexPath.row]
                     cell.configureCell(userCert: userCert)
+                    return cell
                 }
             }
         }
@@ -119,6 +117,38 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         return 1
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if let userCerts = userCertifications {
+                let userCert = userCerts[indexPath.row]
+                WebRequestService.webservice.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+                    if error != nil {
+                        AlertService.showHttpAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
+                    } else {
+                        self.userCertifications?.remove(at: indexPath.row)
+                        if (UserCertification.getCertificationByExpirationDate(userCerts: self.userCertifications!, date: self.selectedDate!) == nil) {
+                            self.tableView.isHidden = true
+                        }
+                        self.calendarView.reloadData()
+                        self.tableView.reloadData()
+                    }
+                })
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: send data to detail segue
+        performSegue(withIdentifier: "CalcCertificationDetailVC", sender: nil)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func configureCalendarView() {
         calendarView.minimumLineSpacing = 0
@@ -126,6 +156,11 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         calendarView.visibleDates({visibleDates in
             self.configureVisibleDates(visibleDates: visibleDates)
         })
+        let date = Date()
+        let cal = Calendar.current
+        let components = cal.dateComponents([.year, .month], from: date)
+        let startOfCurrentMonth = cal.date(from: components)
+        calendarView.scrollToDate(startOfCurrentMonth!)
     }
     
     func configureVisibleDates(visibleDates: DateSegmentInfo) {
