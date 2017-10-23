@@ -547,7 +547,7 @@
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="UhI-RS-xFw">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zvr-j4-qsd">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="zvr-j4-qsd">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
@@ -589,6 +589,9 @@
                                             <constraint firstAttribute="width" constant="30" id="rsC-Oe-43T"/>
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
+                                        <connections>
+                                            <segue destination="Vbj-VS-g8H" kind="show" identifier="ChooseDateVC" id="c5f-pG-RO1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.27058823529411763" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -617,6 +620,9 @@
                                             <constraint firstAttribute="width" constant="30" id="91V-dl-I6O"/>
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
+                                        <connections>
+                                            <segue destination="NKo-qE-5NQ" kind="show" identifier="ChooseVendorVC" id="dcb-rJ-tgJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2274509804" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -646,6 +652,9 @@
                                             <constraint firstAttribute="width" constant="30" id="o47-Fx-DYP"/>
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
+                                        <connections>
+                                            <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="IxY-I8-BUW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2274509804" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -689,6 +698,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="qiF-rI-shc" kind="show" identifier="AddExamsVC" id="Kxc-rI-TI2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -796,6 +808,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-87.200000000000003" y="1638.5307346326838"/>
+        </scene>
+        <!--Choose DateVC-->
+        <scene sceneID="8Bj-iJ-QWg">
+            <objects>
+                <viewController id="Vbj-VS-g8H" customClass="ChooseDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H8e-rg-GjW"/>
+                        <viewControllerLayoutGuide type="bottom" id="I0h-YQ-vMc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93O-ph-bRA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcZ-rH-Yiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1311" y="2418"/>
+        </scene>
+        <!--Choose VendorVC-->
+        <scene sceneID="ndM-qz-B9L">
+            <objects>
+                <viewController id="NKo-qE-5NQ" customClass="ChooseVendorVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lLt-2H-heH"/>
+                        <viewControllerLayoutGuide type="bottom" id="qXe-1a-utr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="arZ-1q-kp4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNM-dV-zSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="2442"/>
+        </scene>
+        <!--Choose CertificationVC-->
+        <scene sceneID="4V5-cs-dXG">
+            <objects>
+                <viewController id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="luY-iv-SZu"/>
+                        <viewControllerLayoutGuide type="bottom" id="VP9-gt-5IT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l8t-ae-GBX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYI-GI-Pyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="2442"/>
+        </scene>
+        <!--Add ExamsVC-->
+        <scene sceneID="zSN-HV-OAz">
+            <objects>
+                <viewController id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h6F-lN-t3e"/>
+                        <viewControllerLayoutGuide type="bottom" id="KEb-cX-eFB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pTe-Ke-RHI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5zB-eF-rlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="761" y="2442"/>
         </scene>
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
