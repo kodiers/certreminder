@@ -16,6 +16,9 @@
 		AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */; };
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
 		AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */; };
+		AC2C49F41FA13795009A4C7F /* ColoredPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */; };
+		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
+		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60B0191F8AE5A0004DFB77 /* Certification.swift */; };
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
@@ -48,6 +51,9 @@
 		AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationVC.swift; sourceTree = "<group>"; };
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
 		AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateCell.swift; sourceTree = "<group>"; };
+		AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredPickerView.swift; sourceTree = "<group>"; };
+		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
+		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC60B0191F8AE5A0004DFB77 /* Certification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certification.swift; sourceTree = "<group>"; };
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				AC9F52341F86E7690024E94E /* RoundedView.swift */,
 				AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */,
 				AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */,
+				AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */,
+				AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */,
+				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */,
 				AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */,
 				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
+				AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */,
 				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,
 				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				AC0824FA1F8C3A27008B9C4C /* UserCertification.swift in Sources */,
@@ -342,7 +352,9 @@
 				AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
+				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
+				AC2C49F41FA13795009A4C7F /* ColoredPickerView.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 				AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
