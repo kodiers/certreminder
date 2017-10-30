@@ -14,10 +14,16 @@ class AddCertificationVC: UIViewController {
     @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var certificationLabel: UILabel!
     @IBOutlet weak var examsTableView: UITableView!
+    
+    var certificationExpireDate: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if certificationExpireDate == nil {
+            dateLabel.text = "Choose date"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +43,7 @@ class AddCertificationVC: UIViewController {
     */
 
     @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func saveBtnPressed(_ sender: Any) {
     }

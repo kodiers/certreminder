@@ -26,6 +26,7 @@
 		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
+		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
 		AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
@@ -62,6 +63,7 @@
 		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
+		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoTableCell.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */,
 				AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */,
 				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
+				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				AC2C49F41FA13795009A4C7F /* ColoredPickerView.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
 				AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
