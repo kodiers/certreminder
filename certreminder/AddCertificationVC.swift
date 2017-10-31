@@ -15,13 +15,14 @@ class AddCertificationVC: UIViewController {
     @IBOutlet weak var certificationLabel: UILabel!
     @IBOutlet weak var examsTableView: UITableView!
     
-    var certificationExpireDate: String?
+    private let formatter = DateFormatter()
+    var certificationExpireDateStr: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if certificationExpireDate == nil {
+        if certificationExpireDateStr == nil {
             dateLabel.text = "Choose date"
         }
     }
@@ -41,6 +42,19 @@ class AddCertificationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChooseDateVC" {
+            if let destination = segue.destination as? ChooseDateVC {
+                if let certDateStr = certificationExpireDateStr {
+                    formatter.dateFormat = "dd.MM.yyyy"
+                    formatter.timeZone = Calendar.current.timeZone
+                    formatter.locale = Calendar.current.locale
+                    let certDate = formatter.date(from: certDateStr)
+                    destination.choosedDate = certDate
+                }
+            }
+        }
+    }
 
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

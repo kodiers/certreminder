@@ -9,7 +9,9 @@
 import UIKit
 
 class ChooseVendorVC: UIViewController {
-
+    
+    @IBOutlet weak var vendorPicker: ColoredPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +34,10 @@ class ChooseVendorVC: UIViewController {
     }
     */
 
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+    }
 }

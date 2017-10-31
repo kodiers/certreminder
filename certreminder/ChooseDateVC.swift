@@ -10,10 +10,18 @@ import UIKit
 
 class ChooseDateVC: UIViewController {
 
+    @IBOutlet weak var datePicker: ColoredDatePicker!
+    
+    var choosedDate: Date?
+    private let formatter = DateFormatter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let date = choosedDate {
+            datePicker.setDate(date, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +45,18 @@ class ChooseDateVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        // TODO: Implement method
+        // Set datepicker date to addcertificationvc.dateLabel
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        choosedDate = datePicker.date
+        if let date = choosedDate {
+            let dateStr = formatter.string(from: date)
+            if let destination = self.presentingViewController as? AddCertificationVC {
+                destination.dateLabel.text = dateStr
+                destination.certificationExpireDateStr = dateStr
+            }
+        }
+        dismiss(animated: true, completion: nil)
     }
 }
