@@ -17,7 +17,6 @@
 		AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */; };
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
 		AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */; };
-		AC2C49F41FA13795009A4C7F /* ColoredPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */; };
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60B0191F8AE5A0004DFB77 /* Certification.swift */; };
@@ -40,6 +39,8 @@
 		ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC4BE1F995E9200B08234 /* AlertService.swift */; };
 		ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */; };
 		ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */; };
+		ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08641FAA685F009FE996 /* VendorService.swift */; };
+		ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */; };
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +55,6 @@
 		AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationVC.swift; sourceTree = "<group>"; };
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
 		AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateCell.swift; sourceTree = "<group>"; };
-		AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredPickerView.swift; sourceTree = "<group>"; };
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC60B0191F8AE5A0004DFB77 /* Certification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certification.swift; sourceTree = "<group>"; };
@@ -79,6 +79,8 @@
 		ACDCC4BE1F995E9200B08234 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationDetailVC.swift; sourceTree = "<group>"; };
 		ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificationVC.swift; sourceTree = "<group>"; };
+		ACFD08641FAA685F009FE996 /* VendorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorService.swift; sourceTree = "<group>"; };
+		ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVendorsProtocol.swift; sourceTree = "<group>"; };
 		ACFEBC781F4E4498007E8594 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
 		D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 			children = (
 				AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */,
 				ACDCC4BE1F995E9200B08234 /* AlertService.swift */,
+				ACFD08641FAA685F009FE996 /* VendorService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 		ACD22E8B1F46461B0056E0D2 /* certreminder */ = {
 			isa = PBXGroup;
 			children = (
+				ACFD08661FAA6DEB009FE996 /* protocols */,
 				ACFEBC771F4E4483007E8594 /* util */,
 				AC7922BC1F4CEA4C000C1D46 /* services */,
 				ACD22E9E1F4646270056E0D2 /* Model */,
@@ -178,7 +182,6 @@
 				AC9F52341F86E7690024E94E /* RoundedView.swift */,
 				AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */,
 				AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */,
-				AC2C49F31FA13795009A4C7F /* ColoredPickerView.swift */,
 				AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */,
 				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
@@ -202,6 +205,14 @@
 				AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		ACFD08661FAA6DEB009FE996 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */,
+			);
+			name = protocols;
 			sourceTree = "<group>";
 		};
 		ACFEBC771F4E4483007E8594 /* util */ = {
@@ -361,8 +372,8 @@
 				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
-				AC2C49F41FA13795009A4C7F /* ColoredPickerView.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */,
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
 				AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
@@ -375,6 +386,7 @@
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
+				ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

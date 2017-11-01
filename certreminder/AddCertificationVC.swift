@@ -17,6 +17,7 @@ class AddCertificationVC: UIViewController {
     
     private let formatter = DateFormatter()
     var certificationExpireDateStr: String?
+    var vendor: Vendor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class AddCertificationVC: UIViewController {
         // Do any additional setup after loading the view.
         if certificationExpireDateStr == nil {
             dateLabel.text = "Choose date"
+        }
+        if vendor == nil {
+            vendorLabel.text = "Choose vendor"
         }
     }
 
@@ -51,6 +55,13 @@ class AddCertificationVC: UIViewController {
                     formatter.locale = Calendar.current.locale
                     let certDate = formatter.date(from: certDateStr)
                     destination.choosedDate = certDate
+                }
+            }
+        }
+        if segue.identifier == "ChooseVendorVC" {
+            if let destination = segue.destination as? ChooseVendorVC {
+                if let vendor = vendor {
+                    destination.choosedVendor = vendor
                 }
             }
         }

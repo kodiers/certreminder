@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SetVendorsProtocol {
 
     @IBOutlet weak var certTableView: UITableView!
     
@@ -32,14 +32,8 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.certTableView.reloadData()
             }
         })
-        WebRequestService.webservice.getVendors(completionHandler: {(response, error) in
-            if error != nil {
-                AlertService.showHttpAlert(header: "HTTP Error", message: "Can't get vendors from server", viewController: self)
-            } else {
-                self.vendors = response as! [Vendor]
-                self.certTableView.reloadData()
-            }
-        })
+        // Get vendors
+        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showHttpAlert)
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,5 +112,9 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
     }
     
+    func setVendors(vendors: [Vendor]) {
+        self.vendors = vendors
+        self.certTableView.reloadData()
+    }
 
 }
