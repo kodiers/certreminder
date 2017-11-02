@@ -21,7 +21,7 @@ class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate
         // Do any additional setup after loading the view.
         vendorPicker.delegate = self
         vendorPicker.dataSource = self
-        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showHttpAlert)
+        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showCancelAlert)
     }
 
     override func didReceiveMemoryWarning() {

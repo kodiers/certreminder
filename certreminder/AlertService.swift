@@ -10,7 +10,7 @@ import UIKit
 
 
 class AlertService {
-    static func showHttpAlert(header: String, message: String, viewController: UIViewController) {
+    static func showCancelAlert(header: String, message: String, viewController: UIViewController) {
         // Show alert message on view controller
         let alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))

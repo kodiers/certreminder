@@ -26,14 +26,14 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         WebRequestService.webservice.getUserCertification(completionHandler: {(response, error) in
             if error != nil {
                 // Show alert
-                AlertService.showHttpAlert(header: "HTTP Error", message: "Can't get certifications from server", viewController: self)
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Can't get certifications from server", viewController: self)
             } else {
                 self.userCertifications = response as! [UserCertification]
                 self.certTableView.reloadData()
             }
         })
         // Get vendors
-        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showHttpAlert)
+        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showCancelAlert)
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,7 +78,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             let userCert = userCertifications[indexPath.row]
             WebRequestService.webservice.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
                 if error != nil {
-                    AlertService.showHttpAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
+                    AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
                 } else {
                     self.userCertifications.remove(at: indexPath.row)
                     self.certTableView.reloadData()

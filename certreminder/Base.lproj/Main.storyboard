@@ -659,7 +659,7 @@
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
                                         <connections>
-                                            <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="IxY-I8-BUW"/>
+                                            <action selector="chooseCertificationBtnPressed:" destination="an7-cQ-EEe" eventType="touchUpInside" id="GIG-7F-0wB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -816,6 +816,7 @@
                         <outlet property="dateLabel" destination="FUw-lm-piz" id="xWg-49-gbE"/>
                         <outlet property="examsTableView" destination="Q1z-EH-bcT" id="teM-Wt-v6l"/>
                         <outlet property="vendorLabel" destination="04F-Jc-HNR" id="cIA-3P-Can"/>
+                        <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="YiQ-HF-OpU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1010,9 +1011,15 @@
                                     <navigationItem title="Choose certification" id="PXD-ix-d48">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="bvR-LG-8BH">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="HiH-yh-gm2" id="nhw-PD-Q55"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="vg6-ew-2xF">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="newCertBtnPressed:" destination="HiH-yh-gm2" id="Tpq-Oi-QzQ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1057,6 +1064,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="certLabel" destination="UGy-7g-fej" id="eQ3-R1-HIn"/>
+                                            <outlet property="checkmarkImageView" destination="AvH-NY-Yod" id="PHB-7L-vwZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1080,6 +1091,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="HiH-yh-gm2" eventType="touchUpInside" id="d5f-Fa-xc7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1097,6 +1111,9 @@
                             <constraint firstItem="rQi-Xw-o6x" firstAttribute="top" secondItem="Dtx-0w-ano" secondAttribute="bottom" constant="30" id="z7z-O0-TqJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Dtx-0w-ano" id="9S7-di-1XG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYI-GI-Pyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

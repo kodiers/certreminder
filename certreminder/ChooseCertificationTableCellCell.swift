@@ -10,6 +10,12 @@ import UIKit
 
 class ChooseCertificationTableCellCell: UITableViewCell {
 
+    @IBOutlet weak var certLabel: UILabel!
+    @IBOutlet weak var checkmarkImageView: UIImageView!
+    
+    var certification: Certification!
+    var choosed = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +25,15 @@ class ChooseCertificationTableCellCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(cert: Certification, isChoosed: Bool = false) {
+        certification = cert
+        choosed = isChoosed
+        certLabel.text = certification.title
+        if choosed {
+            checkmarkImageView.isHidden = false
+        }
     }
 
 }

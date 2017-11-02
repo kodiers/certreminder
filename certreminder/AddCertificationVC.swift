@@ -65,14 +65,30 @@ class AddCertificationVC: UIViewController {
                 }
             }
         }
+        if segue.identifier == "ChooseCertificationVC" {
+            if let vendor = vendor {
+                if let destination = segue.destination as? ChooseCertificationVC {
+                    destination.vendor = vendor
+                }
+            }
+        }
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func saveBtnPressed(_ sender: Any) {
     }
+    
     @IBAction func addExamBtnPressed(_ sender: Any) {
     }
     
+    @IBAction func chooseCertificationBtnPressed(_ sender: Any) {
+        if vendor != nil {
+            performSegue(withIdentifier: "ChooseCertificationVC", sender: self)
+        } else {
+            AlertService.showCancelAlert(header: "Vendor not choosed", message: "You should select vendor before", viewController: self)
+        }
+    }
 }

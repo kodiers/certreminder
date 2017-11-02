@@ -260,4 +260,35 @@ class WebRequestService {
         }
     }
     
+    func getCertifications(vendor: Vendor?, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Get certifications from API
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "certification/"
+        var parameters: Parameters? = nil
+        if let ven = vendor {
+            parameters = ["vendor": ven.id]
+        }
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                var certificationsArr = [Certification]()
+                if let responseDict = result.value as? Dictionary<String, AnyObject> {
+                    // Parse certification
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for arr in resultsArr {
+                            if let certification = Certification.createCertificationFromDict(certDict: arr as! Dictionary<String, AnyObject>) {
+                                certificationsArr.append(certification)
+                            }
+                        }
+                    }
+                }
+                completionHandler(certificationsArr as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+        
+    }
+    
 }
