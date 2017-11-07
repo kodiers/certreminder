@@ -29,10 +29,16 @@ class ChooseCertificationTableCellCell: UITableViewCell {
     
     func configureCell(cert: Certification, isChoosed: Bool = false) {
         certification = cert
-        choosed = isChoosed
         certLabel.text = certification.title
+        chooseCell(isChoosed: isChoosed)
+    }
+    
+    func chooseCell(isChoosed: Bool) {
+        choosed = isChoosed
         if choosed {
             checkmarkImageView.isHidden = false
+        } else {
+            checkmarkImageView.isHidden = true
         }
     }
 

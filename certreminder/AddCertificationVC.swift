@@ -18,6 +18,7 @@ class AddCertificationVC: UIViewController {
     private let formatter = DateFormatter()
     var certificationExpireDateStr: String?
     var vendor: Vendor?
+    var choosedCert: Certification?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class AddCertificationVC: UIViewController {
         }
         if vendor == nil {
             vendorLabel.text = "Choose vendor"
+        }
+        if choosedCert == nil {
+            certificationLabel.text = "Choose certification"
         }
     }
 
@@ -66,9 +70,12 @@ class AddCertificationVC: UIViewController {
             }
         }
         if segue.identifier == "ChooseCertificationVC" {
-            if let vendor = vendor {
-                if let destination = segue.destination as? ChooseCertificationVC {
+            if let destination = segue.destination as? ChooseCertificationVC {
+                if let vendor = vendor {
                     destination.vendor = vendor
+                }
+                if let cert = choosedCert {
+                    destination.choosedCert = cert
                 }
             }
         }

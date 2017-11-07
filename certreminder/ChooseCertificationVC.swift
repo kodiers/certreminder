@@ -27,7 +27,7 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
         } else {
             CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
                 if error != nil {
-                    AlertService.showCancelAlert(header: "HTTP Error", message: "Cannot get certifications from server", viewController: self)
+                    self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
                 } else {
                     self.setCertifications(certifications: certifications!)
                 }
@@ -55,38 +55,81 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: implement method
-        return 1
+        return certifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: implement method
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        // TODO: implement method
+        let cert = certifications[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseCertificationTableCellCell") as? ChooseCertificationTableCellCell {
+            var choosed = false
+            if choosedCert != nil && choosedCert?.id == cert.id {
+                choosed = true
+            }
+            cell.configureCell(cert: cert, isChoosed: choosed)
+            return cell
+        }
+        return ChooseCertificationTableCellCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: implement method
+        if let cell = tableView.cellForRow(at: indexPath) as? ChooseCertificationTableCellCell {
+            let cells = tableView.getAllCells()
+            for cl in cells {
+                if let c = cl as? ChooseCertificationTableCellCell {
+                    c.chooseCell(isChoosed: false)
+                }
+            }
+            choosedCert = certifications[indexPath.row]
+            cell.chooseCell(isChoosed: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ChooseCertificationTableCellCell {
+            choosedCert = nil
+            cell.chooseCell(isChoosed: false)
+        }
     }
 
     @IBAction func newCertBtnPressed(_ sender: Any) {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
+        if let cert = choosedCert {
+            if let destination = self.presentingViewController as? AddCertificationVC {
+                destination.choosedCert = cert
+                destination.certificationLabel.text = cert.title
+            }
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     func setCertifications(certifications: [Certification]) {
         self.certifications = certifications
         self.tableView.reloadData()
+    }
+    
+    func showAlert(header: String, message: String) {
+        // This function need to avoid hierarchy view warning
+        AlertService.showCancelAlert(header: header, message: message, viewController: self)
+    }
+}
+
+extension UITableView {
+    // Simple extension to get all cells in table view
+    func getAllCells() -> [UITableViewCell] {
+        var cells = [UITableViewCell]()
+        for i in 0...self.numberOfSections - 1 {
+            for j in 0...self.numberOfRows(inSection: i) - 1 {
+                if let cell = self.cellForRow(at: IndexPath(row: j, section: i)) {
+                    cells.append(cell)
+                }
+            }
+        }
+        return cells
     }
 }

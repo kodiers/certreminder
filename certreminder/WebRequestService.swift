@@ -263,12 +263,12 @@ class WebRequestService {
     func getCertifications(vendor: Vendor?, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Get certifications from API
         let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "certification/"
+        let url = WebRequestService.WEB_API_URL + "certifications/certification/"
         var parameters: Parameters? = nil
         if let ven = vendor {
             parameters = ["vendor": ven.id]
         }
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON {response in
             let result = response.result
             if result.isSuccess {
                 var certificationsArr = [Certification]()
