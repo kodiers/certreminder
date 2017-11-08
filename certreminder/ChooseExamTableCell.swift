@@ -10,6 +10,8 @@ import UIKit
 
 class ChooseExamTableCell: UITableViewCell {
 
+    @IBOutlet weak var examLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

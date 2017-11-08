@@ -9,6 +9,9 @@
 import UIKit
 
 class AddExamsVC: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
+    var certification: Certification!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +34,10 @@ class AddExamsVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

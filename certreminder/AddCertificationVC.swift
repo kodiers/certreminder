@@ -79,6 +79,13 @@ class AddCertificationVC: UIViewController {
                 }
             }
         }
+        if segue.identifier == "AddExamsVC" {
+            if let destination = segue.destination as? AddExamsVC {
+                if let cert = choosedCert {
+                    destination.certification = cert
+                }
+            }
+        }
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -89,6 +96,11 @@ class AddCertificationVC: UIViewController {
     }
     
     @IBAction func addExamBtnPressed(_ sender: Any) {
+        if choosedCert != nil {
+            performSegue(withIdentifier: "AddExamsVC", sender: self)
+        } else {
+            AlertService.showCancelAlert(header: "Certification not choosed", message: "You should select certification before", viewController: self)
+        }
     }
     
     @IBAction func chooseCertificationBtnPressed(_ sender: Any) {
