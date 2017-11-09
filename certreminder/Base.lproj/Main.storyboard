@@ -1052,9 +1052,6 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="59" id="Ycv-mr-AzU"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -1111,7 +1108,6 @@
                             <constraint firstItem="rQi-Xw-o6x" firstAttribute="leading" secondItem="l8t-ae-GBX" secondAttribute="leadingMargin" id="kUa-5I-rZe"/>
                             <constraint firstItem="Dtx-0w-ano" firstAttribute="top" secondItem="QFw-aW-UXk" secondAttribute="bottom" id="kcn-T3-W74"/>
                             <constraint firstItem="VP9-gt-5IT" firstAttribute="top" secondItem="rQi-Xw-o6x" secondAttribute="bottom" constant="20" id="wP1-nw-Rh9"/>
-                            <constraint firstItem="Dtx-0w-ano" firstAttribute="top" secondItem="QFw-aW-UXk" secondAttribute="bottom" id="yPh-sD-hNW"/>
                             <constraint firstItem="rQi-Xw-o6x" firstAttribute="top" secondItem="Dtx-0w-ano" secondAttribute="bottom" constant="30" id="z7z-O0-TqJ"/>
                         </constraints>
                     </view>
@@ -1178,10 +1174,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLU-WU-xMb">
-                                                    <rect key="frame" x="8" y="6.5" width="322" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="2Ki-gh-H57"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="8" y="7" width="322" height="44"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1207,7 +1200,6 @@
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KEb-cX-eFB" firstAttribute="top" secondItem="E4w-3S-tH5" secondAttribute="bottom" id="0qm-jU-sXb"/>
-                            <constraint firstItem="E4w-3S-tH5" firstAttribute="top" secondItem="vgp-km-BnH" secondAttribute="bottom" id="8jG-y8-gCm"/>
                             <constraint firstItem="E4w-3S-tH5" firstAttribute="leading" secondItem="pTe-Ke-RHI" secondAttribute="leading" id="8yv-kL-qO7"/>
                             <constraint firstItem="E4w-3S-tH5" firstAttribute="top" secondItem="vgp-km-BnH" secondAttribute="bottom" id="aFf-Yq-HgS"/>
                             <constraint firstAttribute="trailing" secondItem="E4w-3S-tH5" secondAttribute="trailing" id="uQz-VX-mxJ"/>

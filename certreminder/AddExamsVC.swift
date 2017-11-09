@@ -8,15 +8,27 @@
 
 import UIKit
 
-class AddExamsVC: UIViewController {
+class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
     
     var certification: Certification!
+    var exams = [Exam]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        WebRequestService.webservice.getExams(certification: certification, completionHandler: {(response, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
+            } else {
+                self.exams = response as! [Exam]
+                self.tableView.reloadData()
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +46,29 @@ class AddExamsVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return exams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let exam = exams[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseExamTableCell") as? ChooseExamTableCell {
+            cell.configureCell(exam: exam)
+            return cell
+        }
+        return ChooseExamTableCell()
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
 }

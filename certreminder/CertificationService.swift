@@ -33,4 +33,17 @@ class CertificationService {
         })
     }
     
+    func getCertificationById(id: Int) -> Certification? {
+        /*
+         Get certification by id
+         */
+        var certification: Certification? = nil
+        if let certs = certifications {
+            if let certIndex = certs.index(where: { $0.id == id }) {
+                certification = certs[certIndex]
+            }
+        }
+        return certification
+    }
+    
 }
