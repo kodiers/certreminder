@@ -10,10 +10,20 @@ import UIKit
 
 class ChooseExamDateVC: UIViewController {
 
+    @IBOutlet weak var examNumberLabel: UILabel!
+    @IBOutlet weak var examTitleLabel: UILabel!
+    @IBOutlet weak var datePicker: ColoredDatePicker!
+    
+    var exam: Exam!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let num = exam.number {
+            examNumberLabel.text = num
+        }
+        examTitleLabel.text = exam.title
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +42,10 @@ class ChooseExamDateVC: UIViewController {
     }
     */
 
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+    }
 }

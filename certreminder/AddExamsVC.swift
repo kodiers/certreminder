@@ -14,6 +14,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var certification: Certification!
     var exams = [Exam]()
+    var selectedExam: Exam?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +65,23 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return ChooseExamTableCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedExam = exams[indexPath.row]
+        performSegue(withIdentifier: "ChooseExamDateVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChooseExamDateVC" {
+            if let destination = segue.destination as? ChooseExamDateVC {
+                if let exam = selectedExam {
+                    destination.exam = exam
+                }
+            }
+        }
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
+        // TODO: Implement add new exam
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

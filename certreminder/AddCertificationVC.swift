@@ -83,6 +83,8 @@ class AddCertificationVC: UIViewController {
             if let destination = segue.destination as? AddExamsVC {
                 if let cert = choosedCert {
                     destination.certification = cert
+                } else {
+                    AlertService.showCancelAlert(header: "Certification not choosed", message: "You should select certification before", viewController: self)
                 }
             }
         }
