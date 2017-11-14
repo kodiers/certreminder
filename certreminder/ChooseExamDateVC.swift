@@ -15,6 +15,8 @@ class ChooseExamDateVC: UIViewController {
     @IBOutlet weak var datePicker: ColoredDatePicker!
     
     var exam: Exam!
+    var examDate: Date?
+    private let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,9 @@ class ChooseExamDateVC: UIViewController {
             examNumberLabel.text = num
         }
         examTitleLabel.text = exam.title
+        if let date = examDate {
+            datePicker.setDate(date, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +51,25 @@ class ChooseExamDateVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddCertificationExamChoosed" {
+            if let destination = segue.destination as? AddCertificationVC {
+                if let date = examDate {
+                    formatter.dateFormat = "dd.MM.yyyy"
+                    formatter.timeZone = Calendar.current.timeZone
+                    formatter.locale = Calendar.current.locale
+                    let dateStr = formatter.string(from: date)
+                    let examWithDate = (exam!, dateStr)
+                    print(examWithDate)
+                    destination.examsWithDate.append(examWithDate)
+                }
+                
+            }
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: Any) {
+        examDate = datePicker.date
+        performSegue(withIdentifier: "AddCertificationExamChoosed", sender: self)
     }
 }

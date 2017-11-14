@@ -30,6 +30,7 @@
 		AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
+		ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
 		ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */; };
 		ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD22E901F46461B0056E0D2 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoTableCell.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
+		ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedExamsWithDateTableViewCell.swift; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */,
 				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
+				ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */,
 				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
+				ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */,
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,

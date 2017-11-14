@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddCertificationVC: UIViewController {
+class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var vendorLabel: UILabel!
@@ -19,11 +19,15 @@ class AddCertificationVC: UIViewController {
     var certificationExpireDateStr: String?
     var vendor: Vendor?
     var choosedCert: Certification?
+    var examsWithDate = [(Exam, String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        examsTableView.delegate = self
+        examsTableView.dataSource = self
+        
         if certificationExpireDateStr == nil {
             dateLabel.text = "Choose date"
         }
@@ -33,6 +37,7 @@ class AddCertificationVC: UIViewController {
         if choosedCert == nil {
             certificationLabel.text = "Choose certification"
         }
+        examsTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +55,24 @@ class AddCertificationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return examsWithDate.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let examWithDate = examsWithDate[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChoosedExamsWithDateTableViewCell") as? ChoosedExamsWithDateTableViewCell {
+            print(examWithDate)
+            cell.configureCell(exam: examWithDate.0, dateStr: examWithDate.1)
+            return cell
+        }
+        return ChoosedExamsWithDateTableViewCell()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChooseDateVC" {
             if let destination = segue.destination as? ChooseDateVC {
