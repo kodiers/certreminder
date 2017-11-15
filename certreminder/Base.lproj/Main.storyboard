@@ -711,19 +711,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-EH-bcT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-EH-bcT">
                                 <rect key="frame" x="0.0" y="454" width="375" height="213"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCell" rowHeight="75" id="D0I-5g-Ql5" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCell" rowHeight="75" id="D0I-5g-Ql5" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0I-5g-Ql5" id="8d8-iD-tZw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ids-e5-xkh">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ids-e5-xkh">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-zz-kQK">
@@ -741,26 +742,21 @@
                                                                 <constraint firstAttribute="height" constant="25" id="Eey-vC-ItU"/>
                                                                 <constraint firstAttribute="bottom" secondItem="r70-Uy-snZ" secondAttribute="bottom" constant="2" id="W6o-Ql-Tt7"/>
                                                                 <constraint firstItem="r70-Uy-snZ" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="top" constant="2" id="WjR-Ii-9Yd"/>
+                                                                <constraint firstItem="r70-Uy-snZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JXZ-zz-kQK" secondAttribute="leading" constant="20" symbolic="YES" id="YFK-TO-2SR"/>
                                                                 <constraint firstAttribute="trailing" secondItem="r70-Uy-snZ" secondAttribute="trailing" constant="8" id="boa-Rh-kJg"/>
                                                             </constraints>
                                                         </view>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-pV-h6H">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-pV-h6H">
                                                             <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="49.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="300" id="D7k-nQ-HAu"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                                    <rect key="frame" x="310" y="0.0" width="65" height="49.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="65" id="yDU-X8-mIL"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -768,16 +764,16 @@
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="Sru-Af-yc2" firstAttribute="centerY" secondItem="JIc-pV-h6H" secondAttribute="centerY" id="Psx-4e-gF2"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZXN-Ji-cBi" secondAttribute="trailing" constant="8" id="jM6-iJ-otz"/>
                                                                 <constraint firstItem="ZXN-Ji-cBi" firstAttribute="centerY" secondItem="JIc-pV-h6H" secondAttribute="centerY" id="jWN-Ak-WCn"/>
                                                             </constraints>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="JIc-pV-h6H" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="bottom" id="1Zi-Tr-CD0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="JIc-pV-h6H" secondAttribute="trailing" id="KR0-GQ-gYQ"/>
                                                         <constraint firstItem="JXZ-zz-kQK" firstAttribute="top" secondItem="ids-e5-xkh" secondAttribute="top" id="YhZ-rv-vBp"/>
                                                         <constraint firstAttribute="bottom" secondItem="JIc-pV-h6H" secondAttribute="bottom" id="bft-b7-y8Y"/>
-                                                        <constraint firstItem="JIc-pV-h6H" firstAttribute="leading" secondItem="ids-e5-xkh" secondAttribute="leading" id="yrq-Po-GYl"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -789,6 +785,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.2274509804" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="r70-Uy-snZ" id="6p5-zO-jgq"/>
                                             <outlet property="examNumberLabel" destination="ZXN-Ji-cBi" id="7Vp-7q-7go"/>

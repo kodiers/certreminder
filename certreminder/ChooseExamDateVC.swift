@@ -54,13 +54,15 @@ class ChooseExamDateVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddCertificationExamChoosed" {
             if let destination = segue.destination as? AddCertificationVC {
+                destination.vendor = ChoosedDataService.instance.vendor
+                destination.choosedCert = ChoosedDataService.instance.choosedCert
+                destination.certificationExpireDateStr = ChoosedDataService.instance.certificationExpireDateStr
                 if let date = examDate {
                     formatter.dateFormat = "dd.MM.yyyy"
                     formatter.timeZone = Calendar.current.timeZone
                     formatter.locale = Calendar.current.locale
                     let dateStr = formatter.string(from: date)
                     let examWithDate = (exam!, dateStr)
-                    print(examWithDate)
                     destination.examsWithDate.append(examWithDate)
                 }
                 

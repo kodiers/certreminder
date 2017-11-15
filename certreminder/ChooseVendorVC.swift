@@ -71,6 +71,12 @@ class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate
             if let destination = self.presentingViewController as? AddCertificationVC {
                 destination.vendor = vendor
                 destination.vendorLabel.text = vendor.title
+                if let savedVendor = ChoosedDataService.instance.vendor {
+                    if savedVendor.id != vendor.id {
+                        destination.choosedCert = nil
+                        destination.examsWithDate.removeAll()
+                    }
+                }
             }
         }
         dismiss(animated: true, completion: nil)

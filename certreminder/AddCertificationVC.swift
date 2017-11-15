@@ -28,16 +28,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         examsTableView.delegate = self
         examsTableView.dataSource = self
         
-        if certificationExpireDateStr == nil {
-            dateLabel.text = "Choose date"
-        }
-        if vendor == nil {
-            vendorLabel.text = "Choose vendor"
-        }
-        if choosedCert == nil {
-            certificationLabel.text = "Choose certification"
-        }
-        examsTableView.reloadData()
+        configureVC()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +36,11 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureVC()
+    }
 
     /*
     // MARK: - Navigation
@@ -66,7 +62,6 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let examWithDate = examsWithDate[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ChoosedExamsWithDateTableViewCell") as? ChoosedExamsWithDateTableViewCell {
-            print(examWithDate)
             cell.configureCell(exam: examWithDate.0, dateStr: examWithDate.1)
             return cell
         }
@@ -89,6 +84,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
             if let destination = segue.destination as? ChooseVendorVC {
                 if let vendor = vendor {
                     destination.choosedVendor = vendor
+                    ChoosedDataService.instance.vendor = vendor
                 }
             }
         }
@@ -96,9 +92,11 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
             if let destination = segue.destination as? ChooseCertificationVC {
                 if let vendor = vendor {
                     destination.vendor = vendor
+                    ChoosedDataService.instance.vendor = vendor
                 }
                 if let cert = choosedCert {
                     destination.choosedCert = cert
+                    ChoosedDataService.instance.choosedCert = cert
                 }
             }
         }
@@ -122,6 +120,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addExamBtnPressed(_ sender: Any) {
         if choosedCert != nil {
+            ChoosedDataService.instance.saveData(vendor: vendor, certification: choosedCert, dateStr: certificationExpireDateStr)
             performSegue(withIdentifier: "AddExamsVC", sender: self)
         } else {
             AlertService.showCancelAlert(header: "Certification not choosed", message: "You should select certification before", viewController: self)
@@ -134,5 +133,18 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             AlertService.showCancelAlert(header: "Vendor not choosed", message: "You should select vendor before", viewController: self)
         }
+    }
+    
+    func configureVC() {
+        if certificationExpireDateStr == nil {
+            dateLabel.text = "Choose date"
+        }
+        if vendor == nil {
+            vendorLabel.text = "Choose vendor"
+        }
+        if choosedCert == nil {
+            certificationLabel.text = "Choose certification"
+        }
+        examsTableView.reloadData()
     }
 }

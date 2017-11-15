@@ -103,6 +103,11 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
             if let destination = self.presentingViewController as? AddCertificationVC {
                 destination.choosedCert = cert
                 destination.certificationLabel.text = cert.title
+                if let choosedCertification = ChoosedDataService.instance.choosedCert {
+                    if choosedCertification.id != cert.id {
+                        destination.examsWithDate.removeAll()
+                    }
+                }
             }
         }
         dismiss(animated: true, completion: nil)
