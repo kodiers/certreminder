@@ -22,17 +22,13 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        if let certs = CertificationService.instance.certifications {
-            setCertifications(certifications: certs)
-        } else {
-            CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
-                if error != nil {
-                    self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
-                } else {
+        CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
+            if error != nil {
+                self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
+            } else {
                     self.setCertifications(certifications: certifications!)
-                }
-            })
-        }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

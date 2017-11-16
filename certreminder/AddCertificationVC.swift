@@ -16,7 +16,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var examsTableView: UITableView!
     
     private let formatter = DateFormatter()
-    var certificationExpireDateStr: String?
+    var certificationExpireDate: Date?
     var vendor: Vendor?
     var choosedCert: Certification?
     var examsWithDate = [(Exam, String)]()
@@ -71,11 +71,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChooseDateVC" {
             if let destination = segue.destination as? ChooseDateVC {
-                if let certDateStr = certificationExpireDateStr {
-                    formatter.dateFormat = "dd.MM.yyyy"
-                    formatter.timeZone = Calendar.current.timeZone
-                    formatter.locale = Calendar.current.locale
-                    let certDate = formatter.date(from: certDateStr)
+                if let certDate = certificationExpireDate {
                     destination.choosedDate = certDate
                 }
             }
@@ -112,7 +108,6 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
@@ -120,7 +115,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func addExamBtnPressed(_ sender: Any) {
         if choosedCert != nil {
-            ChoosedDataService.instance.saveData(vendor: vendor, certification: choosedCert, dateStr: certificationExpireDateStr)
+            ChoosedDataService.instance.saveData(vendor: vendor, certification: choosedCert, date: certificationExpireDate)
             performSegue(withIdentifier: "AddExamsVC", sender: self)
         } else {
             AlertService.showCancelAlert(header: "Certification not choosed", message: "You should select certification before", viewController: self)
@@ -136,8 +131,14 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func configureVC() {
-        if certificationExpireDateStr == nil {
+        if certificationExpireDate == nil {
             dateLabel.text = "Choose date"
+        } else {
+            formatter.dateFormat = "dd.MM.yyyy"
+            formatter.timeZone = Calendar.current.timeZone
+            formatter.locale = Calendar.current.locale
+            let certExpireDateStr = formatter.string(from: certificationExpireDate!)
+            dateLabel.text = certExpireDateStr
         }
         if vendor == nil {
             vendorLabel.text = "Choose vendor"

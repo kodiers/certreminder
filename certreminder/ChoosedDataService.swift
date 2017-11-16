@@ -14,17 +14,17 @@ class ChoosedDataService {
      */
     static let instance = ChoosedDataService()
     
-    private var _certificationExpireDateStr: String?
+    private var _certificationExpireDate: Date?
     private var _vendor: Vendor?
     private var _choosedCert: Certification?
     private var _examsWithDate: [(Exam, String)]?
     
-    var certificationExpireDateStr: String? {
+    var certificationExpireDate: Date? {
         get {
-            return _certificationExpireDateStr
+            return _certificationExpireDate
         }
         set {
-            _certificationExpireDateStr = newValue
+            _certificationExpireDate = newValue
         }
     }
     
@@ -55,9 +55,9 @@ class ChoosedDataService {
         }
     }
     
-    func saveData(vendor: Vendor?, certification: Certification?, dateStr: String?) {
+    func saveData(vendor: Vendor?, certification: Certification?, date: Date?) {
         _vendor = vendor
         _choosedCert = certification
-        _certificationExpireDateStr = dateStr
+        _certificationExpireDate = date
     }
 }

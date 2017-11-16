@@ -23,6 +23,7 @@ class WebRequestService {
     
     private var _user: User?
     private var _token: String?
+    private let formatter = DateFormatter()
     
     var user: User? {
         set {
@@ -318,6 +319,34 @@ class WebRequestService {
                 completionHandler(nil, result.error! as NSError)
             }
         }
+    }
+    
+    func createUserCertification(cert: Certification, expireDate: Date, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Create user certifcation
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/certification/"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let certExpireDateStr = formatter.string(from: expireDate)
+        let data: Parameters = ["certification_id": cert.id, "expiration_date": certExpireDateStr, "remind_at_date": NSNull()]
+        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let userCertDict = result.value as? Dictionary<String, AnyObject> {
+                    if let certificationDict = userCertDict["certification"] as? Dictionary<String, AnyObject> {
+                        if let certification = CertificationService.instance.getCertificationById(id: certificationDict["id"] as! Int) {
+                            let userCertification = UserCertification.createUserCertificationFromDict(userCertDict: userCertDict, certification: certification)
+                            completionHandler(userCertification, nil)
+                        }
+                    }
+                }
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+        
     }
     
 }

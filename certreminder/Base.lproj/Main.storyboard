@@ -548,6 +548,7 @@
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backBtnPressed:" destination="an7-cQ-EEe" id="ire-pJ-gk1"/>
+                                                <segue destination="A8S-3n-4uh" kind="show" identifier="BackToCertificationList" id="24r-tT-agJ"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="zvr-j4-qsd">
@@ -1638,6 +1639,6 @@
         <segue reference="ni2-s2-HtD"/>
         <segue reference="WSy-ai-zRe"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>
 </document>

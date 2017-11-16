@@ -54,7 +54,7 @@ class ChooseDateVC: UIViewController {
             let dateStr = formatter.string(from: date)
             if let destination = self.presentingViewController as? AddCertificationVC {
                 destination.dateLabel.text = dateStr
-                destination.certificationExpireDateStr = dateStr
+                destination.certificationExpireDate = date
             }
         }
         dismiss(animated: true, completion: nil)

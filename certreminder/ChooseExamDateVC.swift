@@ -56,11 +56,11 @@ class ChooseExamDateVC: UIViewController {
             if let destination = segue.destination as? AddCertificationVC {
                 destination.vendor = ChoosedDataService.instance.vendor
                 destination.choosedCert = ChoosedDataService.instance.choosedCert
-                destination.certificationExpireDateStr = ChoosedDataService.instance.certificationExpireDateStr
+                destination.certificationExpireDate = ChoosedDataService.instance.certificationExpireDate
+                formatter.dateFormat = "dd.MM.yyyy"
+                formatter.timeZone = Calendar.current.timeZone
+                formatter.locale = Calendar.current.locale
                 if let date = examDate {
-                    formatter.dateFormat = "dd.MM.yyyy"
-                    formatter.timeZone = Calendar.current.timeZone
-                    formatter.locale = Calendar.current.locale
                     let dateStr = formatter.string(from: date)
                     let examWithDate = (exam!, dateStr)
                     destination.examsWithDate.append(examWithDate)
@@ -72,6 +72,6 @@ class ChooseExamDateVC: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         examDate = datePicker.date
-        performSegue(withIdentifier: "AddCertificationExamChoosed", sender: self)
+        performSegue(withIdentifier: "AddCertificationExamChoosed", sender: nil)
     }
 }
