@@ -16,7 +16,6 @@ class ChooseExamDateVC: UIViewController {
     
     var exam: Exam!
     var examDate: Date?
-    private let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +56,8 @@ class ChooseExamDateVC: UIViewController {
                 destination.vendor = ChoosedDataService.instance.vendor
                 destination.choosedCert = ChoosedDataService.instance.choosedCert
                 destination.certificationExpireDate = ChoosedDataService.instance.certificationExpireDate
-                formatter.dateFormat = "dd.MM.yyyy"
-                formatter.timeZone = Calendar.current.timeZone
-                formatter.locale = Calendar.current.locale
                 if let date = examDate {
-                    let dateStr = formatter.string(from: date)
-                    let examWithDate = (exam!, dateStr)
+                    let examWithDate = (exam!, date)
                     destination.examsWithDate.append(examWithDate)
                 }
                 

@@ -14,8 +14,10 @@ class ChoosedExamsWithDateTableViewCell: UITableViewCell {
     @IBOutlet weak var examNumberLabel: UILabel!
     @IBOutlet weak var examTitleLabel: UILabel!
     
+    private let formatter = DateFormatter()
+    
     var exam: Exam?
-    var dateStr: String?
+    var date: Date?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,12 +30,16 @@ class ChoosedExamsWithDateTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(exam: Exam, dateStr: String) {
+    func configureCell(exam: Exam, date: Date) {
         self.exam = exam
-        self.dateStr = dateStr
+        self.date = date
         if let num = exam.number {
             examNumberLabel.text = num
         }
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let dateStr = formatter.string(from: date)
         dateLabel.text = dateStr
         examTitleLabel.text = exam.title
     }

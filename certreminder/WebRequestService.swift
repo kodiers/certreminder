@@ -346,6 +346,50 @@ class WebRequestService {
                 completionHandler(nil, result.error! as NSError)
             }
         }
+    }
+    
+    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Add exams to user certification
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/exam/"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        var data = Array<Dictionary<String, AnyObject>>()
+        for examWithDate in examsWithDate {
+            let examDateStr = formatter.string(from: examWithDate.1)
+            let userExam = ["user_certification_id": certification.id, "exam_id": examWithDate.0.id, "date_of_pass": examDateStr, "remind_at_date": NSNull()] as [String : AnyObject]
+            data.append(userExam)
+        }
+        // TODO: Send array as params
+        
+//        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {
+//            if result.isSuccess {
+//                print(result.value)
+//                if let userCertDict = result.value as? Dictionary<String, AnyObject> {
+//                    completionHandler(userCertification, nil)
+//                }
+//            } else {
+//                print(result.error!)
+//                completionHandler(nil, result.error! as NSError)
+//            }
+//        }
+//        let requestData = try? JSONSerialization.data(withJSONObject: data, options: [])
+//        Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {
+//            response in
+//            let result = response.result
+//            if result.isSuccess {
+//                print(result.value)
+//                if let userCertDict = result.value as? Dictionary<String, AnyObject> {
+//                    completionHandler(userCertification, nil)
+//                }
+//            }
+//            else {
+//                print(result.error!)
+//                completionHandler(nil, result.error! as NSError)
+//            }
+//        }
+        
         
     }
     

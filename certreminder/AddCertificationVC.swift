@@ -19,7 +19,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     var certificationExpireDate: Date?
     var vendor: Vendor?
     var choosedCert: Certification?
-    var examsWithDate = [(Exam, String)]()
+    var examsWithDate = [(Exam, Date)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let examWithDate = examsWithDate[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ChoosedExamsWithDateTableViewCell") as? ChoosedExamsWithDateTableViewCell {
-            cell.configureCell(exam: examWithDate.0, dateStr: examWithDate.1)
+            cell.configureCell(exam: examWithDate.0, date: examWithDate.1)
             return cell
         }
         return ChoosedExamsWithDateTableViewCell()
@@ -108,9 +108,27 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "BackToCertificationList", sender: nil)
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
+        if let cert = choosedCert {
+            if let date = certificationExpireDate {
+                WebRequestService.webservice.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
+                    if error != nil {
+                        AlertService.showCancelAlert(header: "HTTP Error", message: "Can't create certification", viewController: self)
+                    } else {
+                        WebRequestService.webservice.createUserExams(certification: certification as! UserCertification, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in
+                            if error != nil {
+                                AlertService.showCancelAlert(header: "HTTP Error", message: "Can't add exams", viewController: self)
+                            } else {
+                                self.performSegue(withIdentifier: "BackToCertificationList", sender: nil)
+                            }
+                        })
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func addExamBtnPressed(_ sender: Any) {
