@@ -56,6 +56,9 @@ class ChooseExamDateVC: UIViewController {
                 destination.vendor = ChoosedDataService.instance.vendor
                 destination.choosedCert = ChoosedDataService.instance.choosedCert
                 destination.certificationExpireDate = ChoosedDataService.instance.certificationExpireDate
+                if let ewd = ChoosedDataService.instance.examsWithDate {
+                    destination.examsWithDate = ewd
+                }
                 if let date = examDate {
                     let examWithDate = (exam!, date)
                     destination.examsWithDate.append(examWithDate)

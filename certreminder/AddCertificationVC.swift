@@ -68,6 +68,17 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         return ChoosedExamsWithDateTableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            examsWithDate.remove(at: indexPath.row)
+            examsTableView.reloadData()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChooseDateVC" {
             if let destination = segue.destination as? ChooseDateVC {
@@ -134,6 +145,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func addExamBtnPressed(_ sender: Any) {
         if choosedCert != nil {
             ChoosedDataService.instance.saveData(vendor: vendor, certification: choosedCert, date: certificationExpireDate)
+            ChoosedDataService.instance.examsWithDate = examsWithDate
             performSegue(withIdentifier: "AddExamsVC", sender: self)
         } else {
             AlertService.showCancelAlert(header: "Certification not choosed", message: "You should select certification before", viewController: self)

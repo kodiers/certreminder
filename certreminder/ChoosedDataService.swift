@@ -17,7 +17,7 @@ class ChoosedDataService {
     private var _certificationExpireDate: Date?
     private var _vendor: Vendor?
     private var _choosedCert: Certification?
-    private var _examsWithDate: [(Exam, String)]?
+    private var _examsWithDate: [(Exam, Date)]?
     
     var certificationExpireDate: Date? {
         get {
@@ -46,7 +46,7 @@ class ChoosedDataService {
         }
     }
     
-    var examsWithDate: [(Exam, String)]? {
+    var examsWithDate: [(Exam, Date)]? {
         get {
             return _examsWithDate
         }
