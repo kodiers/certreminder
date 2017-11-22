@@ -10,10 +10,39 @@ import UIKit
 
 class CertificationDetailVC: UIViewController {
 
+    @IBOutlet weak var certificationTitleLabel: UILabel!
+    @IBOutlet weak var vendorLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var examTableView: UITableView!
+    
+    private var formatter = DateFormatter()
+    
+    var userCerification: UserCertification!
+    var vendor: Vendor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        certificationTitleLabel.text = userCerification.certification.title
+        if let vendors = VendorService.instance.vendors {
+            vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
+            if let ven = vendor {
+                vendorLabel.text = ven.title
+            } else {
+                vendorLabel.text = "N/A"
+                AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
+            }
+        } else {
+            vendorLabel.text = "N/A"
+            AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
+        }
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let dateStr = formatter.string(from: userCerification.expirationDate)
+        dateLabel.text = dateStr
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +60,18 @@ class CertificationDetailVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func addExamButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+    }
+    
 }

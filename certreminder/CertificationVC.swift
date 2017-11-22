@@ -14,6 +14,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     var userCertifications = [UserCertification]()
     var vendors = [Vendor]()
+    var choosedCert: UserCertification?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,13 +90,21 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: send data to detail segue
-        performSegue(withIdentifier: "CertificationDetailVC", sender: nil)
+        choosedCert = userCertifications[indexPath.row]
+        performSegue(withIdentifier: "CertificationDetailVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CalendarCertificationVC" {
             if let destination = segue.destination as? CalendarCertfifcationVC {
                 destination.userCertifications = userCertifications
+            }
+        }
+        if segue.identifier == "CertificationDetailVC" {
+            if let cert = choosedCert {
+                if let destination = segue.destination as? CertificationDetailVC {
+                    destination.userCerification = cert
+                }
             }
         }
     }
