@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -399,13 +399,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
-                                                    <rect key="frame" x="8" y="36" width="332" height="40.5"/>
+                                                    <rect key="frame" x="8" y="39" width="332" height="37.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
-                                                    <rect key="frame" x="8" y="8" width="42" height="15"/>
+                                                    <rect key="frame" x="8" y="11" width="42" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="tJI-WJ-ye1"/>
                                                     </constraints>
@@ -414,7 +414,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-02-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
-                                                    <rect key="frame" x="257" y="8" width="75" height="20"/>
+                                                    <rect key="frame" x="250" y="11" width="75" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="WeG-if-xhG"/>
                                                         <constraint firstAttribute="width" constant="75" id="h4Q-sH-5JZ"/>
@@ -544,11 +544,18 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="New certification" id="JEX-4y-wKY">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="UhI-RS-xFw">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UhI-RS-xFw">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="an7-cQ-EEe" id="ire-pJ-gk1"/>
+                                                <segue destination="A8S-3n-4uh" kind="show" identifier="BackToCertificationList" id="24r-tT-agJ"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="zvr-j4-qsd">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="saveBtnPressed:" destination="an7-cQ-EEe" id="jZz-D3-VqP"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -577,7 +584,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-lm-piz">
                                         <rect key="frame" x="16" y="8" width="120" height="29"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="L6l-66-DGg"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="L6l-66-DGg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                         <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -598,6 +605,7 @@
                                 <constraints>
                                     <constraint firstItem="zJA-px-cvH" firstAttribute="top" secondItem="dpK-X8-xDZ" secondAttribute="top" constant="8" id="1ID-9g-nh7"/>
                                     <constraint firstAttribute="bottom" secondItem="zJA-px-cvH" secondAttribute="bottom" constant="8" id="BtM-vm-Bs1"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FUw-lm-piz" secondAttribute="trailing" constant="20" symbolic="YES" id="FHJ-hu-F2m"/>
                                     <constraint firstAttribute="bottom" secondItem="FUw-lm-piz" secondAttribute="bottom" constant="8" id="Lau-AK-WUo"/>
                                     <constraint firstAttribute="trailing" secondItem="zJA-px-cvH" secondAttribute="trailing" constant="8" id="XOh-Mf-wur"/>
                                     <constraint firstItem="FUw-lm-piz" firstAttribute="leading" secondItem="dpK-X8-xDZ" secondAttribute="leading" constant="16" id="Zjg-WI-eQN"/>
@@ -653,7 +661,7 @@
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
                                         <connections>
-                                            <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="IxY-I8-BUW"/>
+                                            <action selector="chooseCertificationBtnPressed:" destination="an7-cQ-EEe" eventType="touchUpInside" id="GIG-7F-0wB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -681,7 +689,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhJ-TR-nm9" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="303" y="0.0" width="40" height="37"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="8iT-0V-4qc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="8iT-0V-4qc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <state key="normal" title="Add">
@@ -699,74 +707,91 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="qiF-rI-shc" kind="show" identifier="AddExamsVC" id="Kxc-rI-TI2"/>
+                                            <action selector="addExamBtnPressed:" destination="an7-cQ-EEe" eventType="touchUpInside" id="C5T-9L-QsB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-EH-bcT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-EH-bcT">
                                 <rect key="frame" x="0.0" y="454" width="375" height="213"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="D0I-5g-Ql5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCell" rowHeight="75" id="D0I-5g-Ql5" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0I-5g-Ql5" id="8d8-iD-tZw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                    <rect key="frame" x="8" y="25.5" width="273" height="39"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-zz-kQK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="19.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ids-e5-xkh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r70-Uy-snZ">
-                                                            <rect key="frame" x="267" y="0.0" width="100" height="19.5"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-zz-kQK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="25"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r70-Uy-snZ">
+                                                                    <rect key="frame" x="296.5" y="2" width="70.5" height="21"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                                    <color key="textColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="zzc-aE-qfW"/>
+                                                                <constraint firstAttribute="height" constant="25" id="Eey-vC-ItU"/>
+                                                                <constraint firstAttribute="bottom" secondItem="r70-Uy-snZ" secondAttribute="bottom" constant="2" id="W6o-Ql-Tt7"/>
+                                                                <constraint firstItem="r70-Uy-snZ" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="top" constant="2" id="WjR-Ii-9Yd"/>
+                                                                <constraint firstItem="r70-Uy-snZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JXZ-zz-kQK" secondAttribute="leading" constant="20" symbolic="YES" id="YFK-TO-2SR"/>
+                                                                <constraint firstAttribute="trailing" secondItem="r70-Uy-snZ" secondAttribute="trailing" constant="8" id="boa-Rh-kJg"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                            <color key="textColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-pV-h6H">
+                                                            <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
+                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
+                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
+                                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Sru-Af-yc2" firstAttribute="centerY" secondItem="JIc-pV-h6H" secondAttribute="centerY" id="Psx-4e-gF2"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZXN-Ji-cBi" secondAttribute="trailing" constant="8" id="jM6-iJ-otz"/>
+                                                                <constraint firstItem="ZXN-Ji-cBi" firstAttribute="centerY" secondItem="JIc-pV-h6H" secondAttribute="centerY" id="jWN-Ak-WCn"/>
+                                                            </constraints>
+                                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                        </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="r70-Uy-snZ" secondAttribute="trailing" constant="8" id="HAP-r4-33T"/>
-                                                        <constraint firstItem="r70-Uy-snZ" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="top" id="U69-jJ-LVW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="r70-Uy-snZ" secondAttribute="bottom" id="gp9-cD-sKd"/>
+                                                        <constraint firstItem="JIc-pV-h6H" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="bottom" id="1Zi-Tr-CD0"/>
+                                                        <constraint firstItem="JXZ-zz-kQK" firstAttribute="top" secondItem="ids-e5-xkh" secondAttribute="top" id="YhZ-rv-vBp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="JIc-pV-h6H" secondAttribute="bottom" id="bft-b7-y8Y"/>
                                                     </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                    <rect key="frame" x="297" y="29" width="70" height="39"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="cPA-dJ-1sA"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Sru-Af-yc2" firstAttribute="leading" secondItem="8d8-iD-tZw" secondAttribute="leadingMargin" id="DRH-Da-OEm"/>
-                                                <constraint firstItem="ZXN-Ji-cBi" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="bottom" constant="10" id="Dkr-Qy-o9Q"/>
-                                                <constraint firstItem="JXZ-zz-kQK" firstAttribute="leading" secondItem="8d8-iD-tZw" secondAttribute="leading" id="HMi-mg-PYm"/>
-                                                <constraint firstItem="Sru-Af-yc2" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="bottom" constant="6" id="eNZ-7d-kqb"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZXN-Ji-cBi" secondAttribute="trailing" constant="8" id="fcm-Tv-8z1"/>
-                                                <constraint firstItem="JXZ-zz-kQK" firstAttribute="top" secondItem="8d8-iD-tZw" secondAttribute="top" id="oJe-wG-mbY"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZXN-Ji-cBi" secondAttribute="bottom" constant="6" id="ubc-Lw-m4f"/>
-                                                <constraint firstItem="ZXN-Ji-cBi" firstAttribute="leading" secondItem="Sru-Af-yc2" secondAttribute="trailing" constant="16" id="vSN-vQ-4Oi"/>
-                                                <constraint firstAttribute="trailing" secondItem="JXZ-zz-kQK" secondAttribute="trailing" id="vw6-Th-Wya"/>
-                                                <constraint firstItem="Sru-Af-yc2" firstAttribute="top" secondItem="JXZ-zz-kQK" secondAttribute="bottom" constant="6" id="wmk-2D-eWU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Sru-Af-yc2" secondAttribute="bottom" constant="2" id="xB8-Oe-bYA"/>
+                                                <constraint firstAttribute="bottom" secondItem="ids-e5-xkh" secondAttribute="bottom" id="0Ig-qv-6TY"/>
+                                                <constraint firstItem="ids-e5-xkh" firstAttribute="leading" secondItem="8d8-iD-tZw" secondAttribute="leading" id="KjJ-r7-fA5"/>
+                                                <constraint firstAttribute="trailing" secondItem="ids-e5-xkh" secondAttribute="trailing" id="k2M-vc-WtD"/>
+                                                <constraint firstItem="ids-e5-xkh" firstAttribute="top" secondItem="8d8-iD-tZw" secondAttribute="top" id="zUW-g0-LhT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.2274509804" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="r70-Uy-snZ" id="6p5-zO-jgq"/>
+                                            <outlet property="examNumberLabel" destination="ZXN-Ji-cBi" id="7Vp-7q-7go"/>
+                                            <outlet property="examTitleLabel" destination="Sru-Af-yc2" id="iRB-NN-VDu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -804,6 +829,14 @@
                             <constraint firstItem="dpK-X8-xDZ" firstAttribute="leading" secondItem="V9b-Yo-gVD" secondAttribute="leading" id="zj0-5t-yr9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="certificationLabel" destination="qdf-ox-jUj" id="vng-2X-zg8"/>
+                        <outlet property="dateLabel" destination="FUw-lm-piz" id="xWg-49-gbE"/>
+                        <outlet property="examsTableView" destination="Q1z-EH-bcT" id="teM-Wt-v6l"/>
+                        <outlet property="vendorLabel" destination="04F-Jc-HNR" id="cIA-3P-Can"/>
+                        <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="YiQ-HF-OpU"/>
+                        <segue destination="qiF-rI-shc" kind="show" identifier="AddExamsVC" id="ni2-s2-HtD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,8 +863,8 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose date" id="1pi-TL-O6H">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="UPl-rk-XKn">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UPl-rk-XKn">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backBtnPressed:" destination="Vbj-VS-g8H" id="WDA-Lu-DaN"/>
                                             </connections>
@@ -863,16 +896,11 @@
                                     <action selector="saveBtnPressed:" destination="Vbj-VS-g8H" eventType="touchUpInside" id="2hX-Pf-7Ga"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-Ij-FqG">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-Ij-FqG" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="27.5" y="225" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="530748445.68969101">
                                     <!--2017-10-26 22:07:25 +0000-->
                                 </date>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
-                                        <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -887,6 +915,9 @@
                             <constraint firstItem="PKa-Mf-mu1" firstAttribute="trailing" secondItem="93O-ph-bRA" secondAttribute="trailingMargin" id="s4e-57-qiH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="5K2-Ij-FqG" id="Os9-vp-NjG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcZ-rH-Yiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -913,13 +944,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose vendor" id="vQ6-vp-AfW">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="xjP-LG-gSa">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="xjP-LG-gSa">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="NKo-qE-5NQ" id="1TJ-DI-Xms"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOK-Qk-5Sg" customClass="ColoredPickerView" customModule="certreminder" customModuleProvider="target">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOK-Qk-5Sg">
                                 <rect key="frame" x="0.0" y="94" width="375" height="375"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -947,6 +981,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="NKo-qE-5NQ" eventType="touchUpInside" id="IPR-PN-0qh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -962,6 +999,9 @@
                             <constraint firstItem="qXe-1a-utr" firstAttribute="top" secondItem="O7r-SV-4Ca" secondAttribute="bottom" constant="20" id="rkQ-wJ-byW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="vendorPicker" destination="oOK-Qk-5Sg" id="L4I-TY-f5a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNM-dV-zSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -988,16 +1028,22 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose certification" id="PXD-ix-d48">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="bvR-LG-8BH">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="bvR-LG-8BH">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="HiH-yh-gm2" id="nhw-PD-Q55"/>
+                                            </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="vg6-ew-2xF">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vg6-ew-2xF">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="newCertBtnPressed:" destination="HiH-yh-gm2" id="Tpq-Oi-QzQ"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dtx-0w-ano">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dtx-0w-ano">
                                 <rect key="frame" x="0.0" y="64" width="375" height="508"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -1012,7 +1058,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="359" height="59.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-7g-fej">
-                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="59.5"/>
+                                                            <rect key="frame" x="0.0" y="8" width="359" height="44"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1030,6 +1076,8 @@
                                             <constraints>
                                                 <constraint firstItem="szu-yK-vRS" firstAttribute="centerX" secondItem="NdQ-qH-get" secondAttribute="centerX" id="3HD-Qz-dBc"/>
                                                 <constraint firstItem="szu-yK-vRS" firstAttribute="leading" secondItem="NdQ-qH-get" secondAttribute="leading" constant="8" id="8OR-YH-CJo"/>
+                                                <constraint firstItem="szu-yK-vRS" firstAttribute="top" secondItem="NdQ-qH-get" secondAttribute="top" id="Pd2-H7-xpS"/>
+                                                <constraint firstAttribute="bottom" secondItem="szu-yK-vRS" secondAttribute="bottom" id="Ttj-6H-9sV"/>
                                                 <constraint firstAttribute="trailing" secondItem="szu-yK-vRS" secondAttribute="trailing" constant="8" id="hFj-zq-Z9P"/>
                                                 <constraint firstAttribute="bottom" secondItem="szu-yK-vRS" secondAttribute="bottom" id="kTr-0u-d8X"/>
                                                 <constraint firstItem="szu-yK-vRS" firstAttribute="top" secondItem="NdQ-qH-get" secondAttribute="top" id="liC-PC-Uk4"/>
@@ -1037,6 +1085,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="certLabel" destination="UGy-7g-fej" id="eQ3-R1-HIn"/>
+                                            <outlet property="checkmarkImageView" destination="AvH-NY-Yod" id="PHB-7L-vwZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1060,6 +1113,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="HiH-yh-gm2" eventType="touchUpInside" id="d5f-Fa-xc7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1073,10 +1129,12 @@
                             <constraint firstItem="rQi-Xw-o6x" firstAttribute="leading" secondItem="l8t-ae-GBX" secondAttribute="leadingMargin" id="kUa-5I-rZe"/>
                             <constraint firstItem="Dtx-0w-ano" firstAttribute="top" secondItem="QFw-aW-UXk" secondAttribute="bottom" id="kcn-T3-W74"/>
                             <constraint firstItem="VP9-gt-5IT" firstAttribute="top" secondItem="rQi-Xw-o6x" secondAttribute="bottom" constant="20" id="wP1-nw-Rh9"/>
-                            <constraint firstItem="Dtx-0w-ano" firstAttribute="top" secondItem="QFw-aW-UXk" secondAttribute="bottom" id="yPh-sD-hNW"/>
                             <constraint firstItem="rQi-Xw-o6x" firstAttribute="top" secondItem="Dtx-0w-ano" secondAttribute="bottom" constant="30" id="z7z-O0-TqJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Dtx-0w-ano" id="9S7-di-1XG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYI-GI-Pyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1103,20 +1161,26 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose exam" id="lno-Ej-zaK">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="GbA-Pt-hkt">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GbA-Pt-hkt">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="qiF-rI-shc" id="DnP-sn-143"/>
+                                            </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="SEY-Bh-FZh">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SEY-Bh-FZh">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="qiF-rI-shc" id="Lww-3D-VLb"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-3S-tH5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-3S-tH5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChooseExamTableCell" rowHeight="60" id="A0Q-qX-GWZ" customClass="ChooseExamTableCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseExamTableCell" rowHeight="60" id="A0Q-qX-GWZ" customClass="ChooseExamTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A0Q-qX-GWZ" id="O0u-md-pLZ">
@@ -1124,32 +1188,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shevron" translatesAutoresizingMaskIntoConstraints="NO" id="f8p-2A-ciZ">
-                                                    <rect key="frame" x="352" y="14" width="15" height="30"/>
+                                                    <rect key="frame" x="345" y="15" width="15" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="NQH-kE-HLq"/>
+                                                        <constraint firstAttribute="height" constant="30" id="GAd-2c-7Tz"/>
                                                         <constraint firstAttribute="width" constant="15" id="zlP-Li-8IT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLU-WU-xMb">
-                                                    <rect key="frame" x="8" y="6.5" width="329" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="2Ki-gh-H57"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="15" y="7" width="329" height="44"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="f8p-2A-ciZ" firstAttribute="leading" secondItem="jLU-WU-xMb" secondAttribute="trailing" constant="15" id="29f-dB-HfW"/>
-                                                <constraint firstItem="jLU-WU-xMb" firstAttribute="centerY" secondItem="O0u-md-pLZ" secondAttribute="centerY" id="7DV-Zn-i8O"/>
-                                                <constraint firstItem="f8p-2A-ciZ" firstAttribute="leading" secondItem="jLU-WU-xMb" secondAttribute="trailing" constant="15" id="Lyf-H2-xQX"/>
-                                                <constraint firstItem="jLU-WU-xMb" firstAttribute="leading" secondItem="O0u-md-pLZ" secondAttribute="leading" constant="8" id="eT7-k1-dVA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="f8p-2A-ciZ" secondAttribute="trailing" id="f5E-9i-Qos"/>
-                                                <constraint firstItem="f8p-2A-ciZ" firstAttribute="centerY" secondItem="O0u-md-pLZ" secondAttribute="centerY" id="rIb-Sg-1QX"/>
+                                                <constraint firstItem="jLU-WU-xMb" firstAttribute="centerY" secondItem="O0u-md-pLZ" secondAttribute="centerY" id="1oi-Uh-UrF"/>
+                                                <constraint firstItem="f8p-2A-ciZ" firstAttribute="leading" secondItem="jLU-WU-xMb" secondAttribute="trailing" constant="1" id="7mK-xD-vge"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="f8p-2A-ciZ" secondAttribute="trailing" id="IN7-pK-PIH"/>
+                                                <constraint firstItem="jLU-WU-xMb" firstAttribute="leading" secondItem="O0u-md-pLZ" secondAttribute="leading" constant="15" id="Uyt-Bm-axQ"/>
+                                                <constraint firstItem="f8p-2A-ciZ" firstAttribute="centerY" secondItem="O0u-md-pLZ" secondAttribute="centerY" id="ZDQ-Q2-FP8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="examLabel" destination="jLU-WU-xMb" id="Ds1-6l-ToI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1157,7 +1221,6 @@
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KEb-cX-eFB" firstAttribute="top" secondItem="E4w-3S-tH5" secondAttribute="bottom" id="0qm-jU-sXb"/>
-                            <constraint firstItem="E4w-3S-tH5" firstAttribute="top" secondItem="vgp-km-BnH" secondAttribute="bottom" id="8jG-y8-gCm"/>
                             <constraint firstItem="E4w-3S-tH5" firstAttribute="leading" secondItem="pTe-Ke-RHI" secondAttribute="leading" id="8yv-kL-qO7"/>
                             <constraint firstItem="E4w-3S-tH5" firstAttribute="top" secondItem="vgp-km-BnH" secondAttribute="bottom" id="aFf-Yq-HgS"/>
                             <constraint firstAttribute="trailing" secondItem="E4w-3S-tH5" secondAttribute="trailing" id="uQz-VX-mxJ"/>
@@ -1167,17 +1230,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="B7i-lR-ORU" kind="show" id="VdF-O4-xgd"/>
+                        <outlet property="tableView" destination="E4w-3S-tH5" id="hEx-To-uFz"/>
+                        <segue destination="B7i-lR-ORU" kind="show" identifier="ChooseExamDateVC" id="VdF-O4-xgd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zB-eF-rlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="2441.8290854572715"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose Exam DateVC-->
         <scene sceneID="huL-WZ-1sD">
             <objects>
-                <viewController id="B7i-lR-ORU" sceneMemberID="viewController">
+                <viewController id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4B-Gp-D3P"/>
                         <viewControllerLayoutGuide type="bottom" id="KDw-bf-f9Q"/>
@@ -1195,8 +1259,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Choose exam date" id="hK5-HH-jFw">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" style="done" id="eiD-6e-osX">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="eiD-6e-osX">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="B7i-lR-ORU" id="fMC-Dx-gVD"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1222,14 +1289,17 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="B7i-lR-ORU" eventType="touchUpInside" id="Def-ml-slO"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxg-Ye-tY2">
-                                <rect key="frame" x="16" y="79" width="343" height="22"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxg-Ye-tY2">
+                                <rect key="frame" x="162.5" y="79" width="50" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.79607843140000001" green="0.65098039220000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-cT-1h4">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-cT-1h4" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="357" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="530748344.31151098">
@@ -1241,9 +1311,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-nq-g41">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-nq-g41">
                                 <rect key="frame" x="16" y="116" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gig-hg-BRr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1251,22 +1323,32 @@
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="A7K-nq-g41" firstAttribute="centerX" secondItem="s63-mf-oqU" secondAttribute="centerX" id="Hlk-xL-VDV"/>
                             <constraint firstItem="pfH-nj-c95" firstAttribute="leading" secondItem="s63-mf-oqU" secondAttribute="leadingMargin" id="LDq-f3-OPL"/>
+                            <constraint firstItem="A7K-nq-g41" firstAttribute="top" secondItem="Vxg-Ye-tY2" secondAttribute="bottom" constant="15" id="LYZ-S3-Nmp"/>
                             <constraint firstItem="pfH-nj-c95" firstAttribute="trailing" secondItem="s63-mf-oqU" secondAttribute="trailingMargin" id="LgG-Oa-uog"/>
+                            <constraint firstItem="A7K-nq-g41" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s63-mf-oqU" secondAttribute="trailingMargin" id="W2M-Ap-tHY"/>
                             <constraint firstItem="Gdc-HC-Ixh" firstAttribute="leading" secondItem="s63-mf-oqU" secondAttribute="leading" id="YKe-K6-4uJ"/>
                             <constraint firstItem="KDw-bf-f9Q" firstAttribute="top" secondItem="pfH-nj-c95" secondAttribute="bottom" constant="20" id="ckH-Dp-ZhL"/>
                             <constraint firstItem="Vxg-Ye-tY2" firstAttribute="top" secondItem="Gdc-HC-Ixh" secondAttribute="bottom" constant="15" id="fii-H7-LgO"/>
                             <constraint firstItem="Vxg-Ye-tY2" firstAttribute="centerX" secondItem="s63-mf-oqU" secondAttribute="centerX" id="gQ9-Au-zsX"/>
-                            <constraint firstItem="Vxg-Ye-tY2" firstAttribute="leading" secondItem="s63-mf-oqU" secondAttribute="leadingMargin" id="gfh-cD-OSR"/>
+                            <constraint firstItem="Vxg-Ye-tY2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s63-mf-oqU" secondAttribute="leadingMargin" id="gfh-cD-OSR"/>
                             <constraint firstItem="Gdc-HC-Ixh" firstAttribute="top" secondItem="y4B-Gp-D3P" secondAttribute="bottom" id="hyF-cE-GEQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vxg-Ye-tY2" secondAttribute="trailing" id="nHZ-3C-tO1"/>
+                            <constraint firstItem="A7K-nq-g41" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s63-mf-oqU" secondAttribute="leadingMargin" id="kTC-OC-Y6Q"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Vxg-Ye-tY2" secondAttribute="trailing" id="nHZ-3C-tO1"/>
                             <constraint firstAttribute="trailing" secondItem="Gdc-HC-Ixh" secondAttribute="trailing" id="q2b-tN-HNt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="0nb-cT-1h4" id="4Jx-mU-YKE"/>
+                        <outlet property="examNumberLabel" destination="Vxg-Ye-tY2" id="nOP-oU-fqK"/>
+                        <outlet property="examTitleLabel" destination="A7K-nq-g41" id="ks2-fJ-n6z"/>
+                        <segue destination="an7-cQ-EEe" kind="show" identifier="AddCertificationExamChoosed" id="UA8-3F-Tfj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H5-xk-Jg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="2441.8290854572715"/>
+            <point key="canvasLocation" x="1764" y="2393"/>
         </scene>
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
@@ -1284,7 +1366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2Y-er-tKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="1623"/>
+            <point key="canvasLocation" x="1958" y="1601"/>
         </scene>
         <!--Calendar CertfifcationVC-->
         <scene sceneID="apo-qW-gFG">
@@ -1482,7 +1564,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016: Virtualization and Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BsQ-D8-jKw">
-                                                    <rect key="frame" x="16" y="18" width="359" height="41"/>
+                                                    <rect key="frame" x="16" y="21" width="352" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1554,8 +1636,9 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WNp-Uu-E5p"/>
-        <segue reference="UOi-Kr-oaH"/>
-        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="ni2-s2-HtD"/>
+        <segue reference="WSy-ai-zRe"/>
+        <segue reference="UA8-3F-Tfj"/>
+        <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,9 @@ import UIKit
 
 class ChooseExamTableCell: UITableViewCell {
 
+    @IBOutlet weak var examLabel: UILabel!
+    var exam: Exam!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,15 @@ class ChooseExamTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(exam: Exam) {
+        self.exam = exam
+        if let number = exam.number {
+            examLabel.text = "\(number) \(exam.title)"
+        } else {
+            examLabel.text = exam.title
+        }
     }
 
 }

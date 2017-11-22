@@ -8,12 +8,27 @@
 
 import UIKit
 
-class ChooseCertificationVC: UIViewController {
-
+class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var certifications = [Certification]()
+    var choosedCert: Certification?
+    var vendor: Vendor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
+            if error != nil {
+                self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
+            } else {
+                    self.setCertifications(certifications: certifications!)
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +46,91 @@ class ChooseCertificationVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return certifications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cert = certifications[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseCertificationTableCellCell") as? ChooseCertificationTableCellCell {
+            var choosed = false
+            if choosedCert != nil && choosedCert?.id == cert.id {
+                choosed = true
+            }
+            cell.configureCell(cert: cert, isChoosed: choosed)
+            return cell
+        }
+        return ChooseCertificationTableCellCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ChooseCertificationTableCellCell {
+            let cells = tableView.getAllCells()
+            for cl in cells {
+                if let c = cl as? ChooseCertificationTableCellCell {
+                    c.chooseCell(isChoosed: false)
+                }
+            }
+            choosedCert = certifications[indexPath.row]
+            cell.chooseCell(isChoosed: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ChooseCertificationTableCellCell {
+            choosedCert = nil
+            cell.chooseCell(isChoosed: false)
+        }
+    }
 
+    @IBAction func newCertBtnPressed(_ sender: Any) {
+    }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        if let cert = choosedCert {
+            if let destination = self.presentingViewController as? AddCertificationVC {
+                destination.choosedCert = cert
+                destination.certificationLabel.text = cert.title
+                if let choosedCertification = ChoosedDataService.instance.choosedCert {
+                    if choosedCertification.id != cert.id {
+                        destination.examsWithDate.removeAll()
+                    }
+                }
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setCertifications(certifications: [Certification]) {
+        self.certifications = certifications
+        self.tableView.reloadData()
+    }
+    
+    func showAlert(header: String, message: String) {
+        // This function need to avoid hierarchy view warning
+        AlertService.showCancelAlert(header: header, message: message, viewController: self)
+    }
+}
+
+extension UITableView {
+    // Simple extension to get all cells in table view
+    func getAllCells() -> [UITableViewCell] {
+        var cells = [UITableViewCell]()
+        for i in 0...self.numberOfSections - 1 {
+            for j in 0...self.numberOfRows(inSection: i) - 1 {
+                if let cell = self.cellForRow(at: IndexPath(row: j, section: i)) {
+                    cells.append(cell)
+                }
+            }
+        }
+        return cells
+    }
 }

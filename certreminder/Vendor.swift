@@ -12,6 +12,8 @@ class Vendor: CommonModel {
     /*
      Vendor model
      */
+    
+    // TODO: put this methods into VendorService
     class func createVendorFromDict(vendorDict: Dictionary<String, AnyObject>) -> Vendor? {
         // Parse dictionary and create vendor
         if let id = vendorDict["id"] as? Int {

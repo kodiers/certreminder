@@ -8,12 +8,20 @@
 
 import UIKit
 
-class ChooseVendorVC: UIViewController {
-
+class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var vendorPicker: UIPickerView!
+    
+    var vendors: [Vendor] = [Vendor]()
+    var choosedVendor: Vendor?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        vendorPicker.delegate = self
+        vendorPicker.dataSource = self
+        VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showCancelAlert)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +39,56 @@ class ChooseVendorVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return vendors.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        choosedVendor = vendors[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let vendorTitle = vendors[row].title
+        let attributedString = NSAttributedString(string: vendorTitle, attributes: [NSForegroundColorAttributeName: UIColor(red: 219.0 / 255.0, green: 223.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)])
+        return attributedString
+    }
 
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        if choosedVendor == nil {
+            self.vendorPicker.selectRow(0, inComponent: 0, animated: false)
+            choosedVendor = vendors[0]
+        }
+        if let vendor = choosedVendor {
+            if let destination = self.presentingViewController as? AddCertificationVC {
+                destination.vendor = vendor
+                destination.vendorLabel.text = vendor.title
+                if let savedVendor = ChoosedDataService.instance.vendor {
+                    if savedVendor.id != vendor.id {
+                        destination.choosedCert = nil
+                        destination.examsWithDate.removeAll()
+                    }
+                }
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setVendors(vendors: [Vendor]) {
+        self.vendors = vendors
+        self.vendorPicker.reloadAllComponents()
+        if let vendor = choosedVendor {
+            if let vendorIndex = self.vendors.index(where: { $0.id == vendor.id }) {
+                self.vendorPicker.selectRow(vendorIndex, inComponent: 0, animated: false)
+            }
+        }
+    }
 }
