@@ -19,6 +19,7 @@ class CertificationDetailVC: UIViewController {
     
     var userCerification: UserCertification!
     var vendor: Vendor?
+    var usersExams = [UserExam]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,14 @@ class CertificationDetailVC: UIViewController {
         formatter.locale = Calendar.current.locale
         let dateStr = formatter.string(from: userCerification.expirationDate)
         dateLabel.text = dateStr
+        WebRequestService.webservice.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
+            } else {
+                self.usersExams = exams as! [UserExam]
+                self.examTableView.reloadData()
+            }
+        })
         
     }
 

@@ -378,8 +378,32 @@ class WebRequestService {
                 completionHandler(nil, result.error! as NSError)
             }
         }
-        
-        
+    }
+    
+    func getUserExamsForCertification(certification: UserCertification, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Get user exams for certification
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/exam/"
+        let parameters: Parameters = ["user_certification": certification.id]
+        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                var examsArr = [UserExam]()
+                if let responseDict = result.value as? Dictionary<String, AnyObject> {
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for res in resultsArr {
+                            if let userExam = UserExam.createUserExamFromDict(dict: res as! Dictionary<String, AnyObject>) {
+                                examsArr.append(userExam)
+                            }
+                        }
+                    }
+                }
+                completionHandler(examsArr as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
     }
     
 }
