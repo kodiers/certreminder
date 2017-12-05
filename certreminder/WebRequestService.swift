@@ -392,7 +392,7 @@ class WebRequestService {
                 if let responseDict = result.value as? Dictionary<String, AnyObject> {
                     if let resultsArr = responseDict["results"] as? Array<AnyObject> {
                         for res in resultsArr {
-                            if let userExam = UserExam.createUserExamFromDict(dict: res as! Dictionary<String, AnyObject>) {
+                            if let userExam = UserExam.createUserExamFromDict(dict: res as! Dictionary<String, AnyObject>, userCertification: certification) {
                                 examsArr.append(userExam)
                             }
                         }

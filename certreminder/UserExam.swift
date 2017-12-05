@@ -70,19 +70,29 @@ class UserExam {
         self._dateOfPass = dateOfPass
     }
     
-    class func createUserExamFromDict(dict: Dictionary<String, AnyObject>) -> UserExam? {
+    class func createUserExamFromDict(dict: Dictionary<String, AnyObject>, userCertification: UserCertification) -> UserExam? {
         // Parse dict and create user exam
         if let id = dict["id"] as? Int {
             if let userCertificationId = dict["user_certification_id"] as? Int {
-                if let exam = Exam.createExamFromDict(examDict: dict["exam"] as! Dictionary<String, AnyObject>) {
-                    if let dateStr = dict["date_of_pass"] as? String {
-                        let formatter = DateFormatter()
-                        formatter.dateFormat = "yyyy-MM-dd"
-                        formatter.timeZone = Calendar.current.timeZone
-                        formatter.locale = Calendar.current.locale
-                        let dateOfPass = formatter.date(from: dateStr)
-                        let userExam = UserExam(id: id, userCertId: userCertificationId, exam: exam, dateOfPass: dateOfPass!)
-                        return userExam
+                if let examDict = dict["exam"] as? Dictionary<String, AnyObject> {
+                    if let examId = examDict["id"] as? Int {
+                        if let title = examDict["title"] as? String {
+                            if let deprecated = examDict["deprecated"] as? Bool {
+                                let exam = Exam(id: examId, title: title, certification: userCertification.certification, deprecated: deprecated)
+                                if let number = examDict["number"] as? String {
+                                    exam.number = number
+                                }
+                                if let dateStr = dict["date_of_pass"] as? String {
+                                    let formatter = DateFormatter()
+                                    formatter.dateFormat = "yyyy-MM-dd"
+                                    formatter.timeZone = Calendar.current.timeZone
+                                    formatter.locale = Calendar.current.locale
+                                    let dateOfPass = formatter.date(from: dateStr)
+                                    let userExam = UserExam(id: id, userCertId: userCertificationId, exam: exam, dateOfPass: dateOfPass!)
+                                    return userExam
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CertificationDetailVC: UIViewController {
+class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var certificationTitleLabel: UILabel!
     @IBOutlet weak var vendorLabel: UILabel!
@@ -25,6 +25,8 @@ class CertificationDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        examTableView.delegate = self
+        examTableView.dataSource = self
         certificationTitleLabel.text = userCerification.certification.title
         if let vendors = VendorService.instance.vendors {
             vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
@@ -69,6 +71,23 @@ class CertificationDetailVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return usersExams.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let userExam = usersExams[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChoosedExamsWithDateTableViewCellDetail") as? ChoosedExamsWithDateTableViewCell {
+            cell.configureCell(exam: userExam.exam, date: userExam.dateOfPass)
+            return cell
+        }
+        return ChoosedExamsWithDateTableViewCell()
+    }
     
     @IBAction func addExamButtonPressed(_ sender: Any) {
     }
