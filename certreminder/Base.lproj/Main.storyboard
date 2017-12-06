@@ -1455,6 +1455,9 @@
                                             <constraint firstAttribute="width" constant="30" id="dih-gi-b4D"/>
                                         </constraints>
                                         <state key="normal" image="Shevron"/>
+                                        <connections>
+                                            <segue destination="Vbj-VS-g8H" kind="show" identifier="ChooseCertDateDetail" id="OCh-lh-1j8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2274509804" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1531,13 +1534,13 @@
                                                             <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-eI-UvX">
-                                                                    <rect key="frame" x="8" y="8" width="0.0" height="33.5"/>
+                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xW-Ah-As2">
-                                                                    <rect key="frame" x="0.0" y="8" width="0.0" height="33.5"/>
+                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1885,6 +1888,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WSy-ai-zRe"/>
+        <segue reference="OCh-lh-1j8"/>
         <segue reference="UA8-3F-Tfj"/>
         <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>

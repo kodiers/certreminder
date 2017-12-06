@@ -89,6 +89,14 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         return ChoosedExamsWithDateTableViewCell()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChooseCertDateDetail" {
+            if let destination = segue.destination as? ChooseDateVC {
+                destination.choosedDate = userCerification.expirationDate
+            }
+        }
+    }
+    
     @IBAction func addExamButtonPressed(_ sender: Any) {
     }
     
