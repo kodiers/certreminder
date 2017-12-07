@@ -35,6 +35,12 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         })
         // Get vendors
         VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showCancelAlert)
+        // Get certifications
+        CertificationService.instance.downloadCertifications(vendor: nil, completionHandler: {(certifications, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not load certifications", viewController: self)
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

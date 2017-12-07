@@ -95,9 +95,15 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                 destination.choosedDate = userCerification.expirationDate
             }
         }
+        if segue.identifier == "AddExamDetailVC" {
+            if let destination = segue.destination as? AddExamsVC {
+                destination.certification = userCerification.certification
+            }
+        }
     }
     
     @IBAction func addExamButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "AddExamDetailVC", sender: self)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

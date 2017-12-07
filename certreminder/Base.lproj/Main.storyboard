@@ -1613,6 +1613,7 @@
                         <outlet property="dateLabel" destination="eo8-o4-hbZ" id="aVx-HJ-FPK"/>
                         <outlet property="examTableView" destination="59T-dK-DgN" id="ICo-va-4bb"/>
                         <outlet property="vendorLabel" destination="jHb-Ru-Kbn" id="swW-qj-ZAb"/>
+                        <segue destination="qiF-rI-shc" kind="show" identifier="AddExamDetailVC" id="TF2-wU-NEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2Y-er-tKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1888,6 +1889,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WSy-ai-zRe"/>
+        <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UA8-3F-Tfj"/>
         <segue reference="24r-tT-agJ"/>
