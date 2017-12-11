@@ -66,10 +66,30 @@ class ChooseExamDateVC: UIViewController {
                 
             }
         }
+        if segue.identifier == "BackToDetailVC" {
+            if let destination = segue.destination as? CertificationDetailVC {
+                if let userCert = ChoosedDataService.instance.userCertification {
+                    if let date = examDate {
+                        let userExam = UserExam(id: 0, userCertId: userCert.id, exam: exam, dateOfPass: date)
+                        destination.userCerification = userCert
+                        if let userExams = ChoosedDataService.instance.userExams {
+                            destination.usersExams = userExams
+                        }
+                        destination.usersExams.append(userExam)
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         examDate = datePicker.date
-        performSegue(withIdentifier: "AddCertificationExamChoosed", sender: nil)
+        if ChoosedDataService.instance.isEditExistingUserCertification {
+            ChoosedDataService.instance.isEditExistingUserCertification = false
+            performSegue(withIdentifier: "BackToDetailVC", sender: nil)
+        } else {
+            ChoosedDataService.instance.isEditExistingUserCertification = false
+            performSegue(withIdentifier: "AddCertificationExamChoosed", sender: nil)
+        }
     }
 }

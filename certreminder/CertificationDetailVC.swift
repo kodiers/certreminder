@@ -27,33 +27,13 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         examTableView.delegate = self
         examTableView.dataSource = self
-        certificationTitleLabel.text = userCerification.certification.title
-        if let vendors = VendorService.instance.vendors {
-            vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
-            if let ven = vendor {
-                vendorLabel.text = ven.title
-            } else {
-                vendorLabel.text = "N/A"
-                AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
-            }
-        } else {
-            vendorLabel.text = "N/A"
-            AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
-        }
-        formatter.dateFormat = "dd.MM.yyyy"
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
-        let dateStr = formatter.string(from: userCerification.expirationDate)
-        dateLabel.text = dateStr
-        WebRequestService.webservice.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
-            if error != nil {
-                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
-            } else {
-                self.usersExams = exams as! [UserExam]
-                self.examTableView.reloadData()
-            }
-        })
+        configureVC()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureVC()
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,6 +78,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "AddExamDetailVC" {
             if let destination = segue.destination as? AddExamsVC {
                 destination.certification = userCerification.certification
+                ChoosedDataService.instance.saveEditData(isEdit: true, userCert: userCerification, userExams: usersExams)
             }
         }
     }
@@ -114,6 +95,37 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+    }
+    
+    func configureVC() {
+        certificationTitleLabel.text = userCerification.certification.title
+        if let vendors = VendorService.instance.vendors {
+            vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
+            if let ven = vendor {
+                vendorLabel.text = ven.title
+            } else {
+                vendorLabel.text = "N/A"
+                AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
+            }
+        } else {
+            vendorLabel.text = "N/A"
+            AlertService.showCancelAlert(header: "Vendor not found", message: "Vendor not found in database", viewController: self)
+        }
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let dateStr = formatter.string(from: userCerification.expirationDate)
+        dateLabel.text = dateStr
+        if usersExams.count == 0 {
+            WebRequestService.webservice.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
+                if error != nil {
+                    AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
+                } else {
+                    self.usersExams = exams as! [UserExam]
+                }
+            })
+        }
+        examTableView.reloadData()
     }
     
 }
