@@ -70,7 +70,7 @@ class ChooseExamDateVC: UIViewController {
             if let destination = segue.destination as? CertificationDetailVC {
                 if let userCert = ChoosedDataService.instance.userCertification {
                     if let date = examDate {
-                        let userExam = UserExam(id: 0, userCertId: userCert.id, exam: exam, dateOfPass: date)
+                        let userExam = UserExam(id: NEW_OBJECT_ID, userCertId: userCert.id, exam: exam, dateOfPass: date)
                         destination.userCerification = userCert
                         if let userExams = ChoosedDataService.instance.userExams {
                             destination.usersExams = userExams

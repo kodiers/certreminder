@@ -9,3 +9,4 @@
 import Foundation
 
 let KEY_UID = "id"
+let NEW_OBJECT_ID = 0

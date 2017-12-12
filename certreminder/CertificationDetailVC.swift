@@ -69,6 +69,27 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         return ChoosedExamsWithDateTableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let userExam = usersExams[indexPath.row]
+            if userExam.id != NEW_OBJECT_ID {
+                WebRequestService.webservice.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
+                    if error != nil {
+                        AlertService.showCancelAlert(header: "HTTP Error", message: "Error then deleting exam", viewController: self)
+                    } else {
+                        self.deleteUserExam(index: indexPath.row)
+                    }
+                })
+            } else {
+                deleteUserExam(index: indexPath.row)
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChooseCertDateDetail" {
             if let destination = segue.destination as? ChooseDateVC {
@@ -88,7 +109,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
@@ -125,6 +146,12 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                 }
             })
         }
+        examTableView.reloadData()
+    }
+    
+    func deleteUserExam(index: Int) {
+        // Helper function for delete user exam from array
+        usersExams.remove(at: index)
         examTableView.reloadData()
     }
     

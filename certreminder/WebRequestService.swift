@@ -406,4 +406,20 @@ class WebRequestService {
         }
     }
     
+    func deleteUserExam(userExamId: Int, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Delete user exam
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/exam/\(userExamId)/"
+        Alamofire.request(url, method: .delete, headers: headers).responseJSON{response in
+            let result = response.result
+            if result.isSuccess {
+                // Return if deletion success, because no content
+                completionHandler(true as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
 }
