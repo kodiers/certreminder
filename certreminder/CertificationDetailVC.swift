@@ -20,6 +20,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     var userCerification: UserCertification!
     var vendor: Vendor?
     var usersExams = [UserExam]()
+    var examForEdit: UserExam?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +103,18 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                 ChoosedDataService.instance.saveEditData(isEdit: true, userCert: userCerification, userExams: usersExams)
             }
         }
+        if segue.identifier == "ChooseExamDateDetailVC" {
+            if let destination = segue.destination as? ChooseExamDateVC {
+                if let exam = examForEdit {
+                    destination.exam = exam.exam
+                }
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        examForEdit = usersExams[indexPath.row]
+        performSegue(withIdentifier: "ChooseExamDateDetailVC", sender: self)
     }
     
     @IBAction func addExamButtonPressed(_ sender: Any) {

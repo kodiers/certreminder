@@ -752,13 +752,13 @@
                                                             <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
+                                                                    <rect key="frame" x="8" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -837,6 +837,7 @@
                         <outlet property="vendorLabel" destination="04F-Jc-HNR" id="cIA-3P-Can"/>
                         <segue destination="HiH-yh-gm2" kind="show" identifier="ChooseCertificationVC" id="YiQ-HF-OpU"/>
                         <segue destination="qiF-rI-shc" kind="show" identifier="AddExamsVC" id="ni2-s2-HtD"/>
+                        <segue destination="B7i-lR-ORU" kind="show" identifier="ChooseExamDateDetailVC" id="ph4-HS-KCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvP-Jd-XRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1891,9 +1892,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5oY-to-PBg"/>
-        <segue reference="TF2-wU-NEM"/>
-        <segue reference="OCh-lh-1j8"/>
+        <segue reference="ph4-HS-KCz"/>
+        <segue reference="ni2-s2-HtD"/>
+        <segue reference="c5f-pG-RO1"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="H0c-jf-ZaI"/>
+        <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>
 </document>
