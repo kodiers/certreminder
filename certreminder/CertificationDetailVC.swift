@@ -107,6 +107,8 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
             if let destination = segue.destination as? ChooseExamDateVC {
                 if let exam = examForEdit {
                     destination.exam = exam.exam
+                    destination.userExam = examForEdit
+                    ChoosedDataService.instance.saveEditData(isEdit: true, userCert: userCerification, userExams: usersExams)
                 }
             }
         }

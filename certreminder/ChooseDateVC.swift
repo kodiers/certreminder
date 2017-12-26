@@ -57,6 +57,7 @@ class ChooseDateVC: UIViewController {
                 destination.certificationExpireDate = date
             }
             if let destination = self.presentingViewController as? CertificationDetailVC {
+                destination.userCerification.expirationDate = date
                 destination.dateLabel.text = dateStr
             }
         }

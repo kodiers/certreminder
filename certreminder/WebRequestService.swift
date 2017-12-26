@@ -422,4 +422,32 @@ class WebRequestService {
         }
     }
     
+    func changeUserCertification(userCert: UserCertification, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Change user certification
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/certification/\(userCert.id)/"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let expDate = formatter.string(from: userCert.expirationDate)
+        var parameters: Parameters = [ "certification_id": userCert.id, "expiration_date": expDate]
+        var remindDateStr: String?
+        if let remindDate = userCert.remindAtDate {
+            remindDateStr = formatter.string(from: remindDate)
+            parameters["remind_at_date"] = remindDateStr
+        } else {
+            parameters["remind_at_date"] = NSNull()
+        }
+        Alamofire.request(url, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                // TODO: Complete change Certification method
+                completionHandler(true as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
 }

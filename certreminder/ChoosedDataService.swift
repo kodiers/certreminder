@@ -96,4 +96,13 @@ class ChoosedDataService {
         _userCert = userCert
         _userExams = userExams
     }
+    
+    func changeUserExam(userExam: UserExam) {
+        // Change saved user exam
+        if let usrExams = userExams {
+            if let uExamIndex = usrExams.index(where: {$0.id == userExam.id && $0.exam.id == userExam.exam.id}) {
+                userExams![uExamIndex] = userExam
+            }
+        }
+    }
 }
