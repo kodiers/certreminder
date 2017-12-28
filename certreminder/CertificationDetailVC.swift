@@ -131,6 +131,14 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
+        WebRequestService.webservice.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
+            if error == nil {
+                AlertService.showCancelAlert(header: "Successfully saved", message: "Certification was succesfully saved!", viewController: self)
+                self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
+            } else {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not save certification", viewController: self)
+            }
+        })
     }
     
     func configureVC() {

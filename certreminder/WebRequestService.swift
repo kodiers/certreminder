@@ -430,7 +430,7 @@ class WebRequestService {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         let expDate = formatter.string(from: userCert.expirationDate)
-        var parameters: Parameters = [ "certification_id": userCert.id, "expiration_date": expDate]
+        var parameters: Parameters = [ "certification_id": userCert.certification.id, "expiration_date": expDate]
         var remindDateStr: String?
         if let remindDate = userCert.remindAtDate {
             remindDateStr = formatter.string(from: remindDate)
@@ -442,6 +442,7 @@ class WebRequestService {
             let result = response.result
             if result.isSuccess {
                 // TODO: Complete change Certification method
+                print(result.value as Any)
                 completionHandler(true as AnyObject, nil)
             } else {
                 print(result.error!)
