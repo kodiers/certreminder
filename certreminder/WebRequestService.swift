@@ -351,7 +351,7 @@ class WebRequestService {
     func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Add exams to user certification
         let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "remainder/exam/bulk/"
+        let url = WebRequestService.WEB_API_URL + "remainder/exam/bulk/create/"
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
@@ -441,8 +441,6 @@ class WebRequestService {
         Alamofire.request(url, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
             let result = response.result
             if result.isSuccess {
-                // TODO: Complete change Certification method
-                print(result.value as Any)
                 completionHandler(true as AnyObject, nil)
             } else {
                 print(result.error!)

@@ -134,6 +134,20 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         WebRequestService.webservice.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
             if error == nil {
                 AlertService.showCancelAlert(header: "Successfully saved", message: "Certification was succesfully saved!", viewController: self)
+                if !self.usersExams.isEmpty {
+                    let examsForCreation = self.getUsersExams(isNew: true)
+                    let examsForUpdate = self.getUsersExams(isNew: false)
+                    if examsForCreation.count > 0 {
+                        WebRequestService.webservice.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
+                            if error != nil {
+                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams", viewController: self)
+                            }
+                        })
+                    }
+                    if examsForUpdate.count > 0 {
+                        // TODO: Add update created exams
+                    }
+                }
                 self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
             } else {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not save certification", viewController: self)
@@ -176,6 +190,18 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         // Helper function for delete user exam from array
         usersExams.remove(at: index)
         examTableView.reloadData()
+    }
+    
+    func getUsersExams(isNew: Bool) -> [(Exam, Date)] {
+        var exams = [(Exam, Date)]()
+        for uexam in self.usersExams {
+            if isNew && uexam.id == NEW_OBJECT_ID {
+                exams.append((uexam.exam, uexam.dateOfPass))
+            } else if !isNew && uexam.id != NEW_OBJECT_ID {
+                exams.append((uexam.exam, uexam.dateOfPass))
+            }
+        }
+        return exams
     }
     
 }
