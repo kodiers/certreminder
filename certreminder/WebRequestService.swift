@@ -449,4 +449,36 @@ class WebRequestService {
         }
     }
     
+    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Bulk change users exams
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "remainder/exam/bulk/update/"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        var data = Array<Dictionary<String, AnyObject>>()
+        for uexam in userExams {
+            let examDateStr = formatter.string(from: uexam.dateOfPass)
+            let userExam = ["user_certification_id": certification.id, "id": uexam.id, "exam_id": uexam.exam.id, "date_of_pass": examDateStr, "remind_at_date": NSNull()] as [String : AnyObject]
+            data.append(userExam)
+        }
+        let params: Parameters = ["exams": data]
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let userExamsDict = result.value as? Dictionary<String, AnyObject> {
+                    if let userExamsArray = userExamsDict["exams"] as? Array<AnyObject> {
+                        if userExamsArray.count > 0 {
+                            completionHandler(userExamsArray as AnyObject, nil)
+                        }
+                    }
+                }
+            }
+            else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
 }

@@ -133,10 +133,9 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func saveButtonPressed(_ sender: Any) {
         WebRequestService.webservice.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
             if error == nil {
-                AlertService.showCancelAlert(header: "Successfully saved", message: "Certification was succesfully saved!", viewController: self)
                 if !self.usersExams.isEmpty {
-                    let examsForCreation = self.getUsersExams(isNew: true)
-                    let examsForUpdate = self.getUsersExams(isNew: false)
+                    let examsForCreation = self.getNewUsersExams()
+                    let examsForUpdate = self.getExamsForUpdate()
                     if examsForCreation.count > 0 {
                         WebRequestService.webservice.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
                             if error != nil {
@@ -146,9 +145,14 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     if examsForUpdate.count > 0 {
                         // TODO: Add update created exams
+                        WebRequestService.webservice.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
+                            if error != nil {
+                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
+                            }
+                        })
                     }
                 }
-                self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
+                self.showSuccessUpdateAlert()
             } else {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not save certification", viewController: self)
             }
@@ -192,16 +196,36 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         examTableView.reloadData()
     }
     
-    func getUsersExams(isNew: Bool) -> [(Exam, Date)] {
+    func getNewUsersExams() -> [(Exam, Date)] {
+        // Return new exams
         var exams = [(Exam, Date)]()
         for uexam in self.usersExams {
-            if isNew && uexam.id == NEW_OBJECT_ID {
-                exams.append((uexam.exam, uexam.dateOfPass))
-            } else if !isNew && uexam.id != NEW_OBJECT_ID {
+            if uexam.id == NEW_OBJECT_ID {
                 exams.append((uexam.exam, uexam.dateOfPass))
             }
         }
         return exams
+    }
+    
+    func getExamsForUpdate() -> [UserExam] {
+        // Return exams for update (old exams)
+        var exams = [UserExam]()
+        for uexam in self.usersExams {
+            if uexam.id == NEW_OBJECT_ID {
+                exams.append(uexam)
+            }
+        }
+        return exams
+    }
+    
+    func showSuccessUpdateAlert() {
+        // Show success alert and return to certification list after "OK" pressed
+        let alert = UIAlertController(title: "Successfully saved", message: "Certification was succesfully saved!", preferredStyle: UIAlertControllerStyle.alert)
+        let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
+            self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
+        })
+        alert.addAction(successAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
