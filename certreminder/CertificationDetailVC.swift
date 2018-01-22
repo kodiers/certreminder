@@ -76,18 +76,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-            let userExam = usersExams[indexPath.row]
-            if userExam.id != NEW_OBJECT_ID {
-                WebRequestService.webservice.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
-                    if error != nil {
-                        AlertService.showCancelAlert(header: "HTTP Error", message: "Error then deleting exam", viewController: self)
-                    } else {
-                        self.deleteUserExam(index: indexPath.row)
-                    }
-                })
-            } else {
-                deleteUserExam(index: indexPath.row)
-            }
+            showExamDeleteAlert(index: indexPath.row)
         }
     }
     
@@ -144,7 +133,6 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                         })
                     }
                     if examsForUpdate.count > 0 {
-                        // TODO: Add update created exams
                         WebRequestService.webservice.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
@@ -190,7 +178,22 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         examTableView.reloadData()
     }
     
-    func deleteUserExam(index: Int) {
+    func deleteUserExam(userExam: UserExam, index: Int) {
+        // Function to delete userExam
+        if userExam.id != NEW_OBJECT_ID {
+            WebRequestService.webservice.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
+                if error != nil {
+                    AlertService.showCancelAlert(header: "HTTP Error", message: "Error then deleting exam", viewController: self)
+                } else {
+                    self.deleteUserExamFromArray(index: index)
+                }
+            })
+        } else {
+            self.deleteUserExamFromArray(index: index)
+        }
+    }
+    
+    func deleteUserExamFromArray(index: Int) {
         // Helper function for delete user exam from array
         usersExams.remove(at: index)
         examTableView.reloadData()
@@ -226,6 +229,19 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         })
         alert.addAction(successAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showExamDeleteAlert(index: Int) {
+        // Show alert and delete userExam after confirmation
+        let userExam = usersExams[index]
+        let alertStr = "Are you sure want to delete \"\(userExam.exam.title)\"?"
+        AlertService.showDeleteAlert(header: alertStr, message: "This action can not be undone!", viewController: self, handler: {(UIAlertAction) in
+            self.deleteUserExam(userExam: userExam, index: index)
+        })
+    }
+    
+    func showCertificationDeleteAlert() {
+        // TODO: complete method
     }
     
 }
