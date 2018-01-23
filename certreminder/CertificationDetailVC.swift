@@ -117,6 +117,9 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
+        AlertService.showDeleteAlert(header: "Are you shure want to delete \"\(userCerification.certification.title)\"", message: "This action can not be undone!", viewController: self, handler: {(UIAlertAction) in
+            self.deleteUserCertification()
+        })
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -221,6 +224,17 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         return exams
     }
     
+    func deleteUserCertification() {
+        // Send and handle request for delete user certification
+        WebRequestService.webservice.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
+            } else {
+                self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
+            }
+        })
+    }
+    
     func showSuccessUpdateAlert() {
         // Show success alert and return to certification list after "OK" pressed
         let alert = UIAlertController(title: "Successfully saved", message: "Certification was succesfully saved!", preferredStyle: UIAlertControllerStyle.alert)
@@ -238,10 +252,6 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         AlertService.showDeleteAlert(header: alertStr, message: "This action can not be undone!", viewController: self, handler: {(UIAlertAction) in
             self.deleteUserExam(userExam: userExam, index: index)
         })
-    }
-    
-    func showCertificationDeleteAlert() {
-        // TODO: complete method
     }
     
 }
