@@ -13,6 +13,8 @@ class CalendarInfoTableCell: UITableViewCell {
     @IBOutlet weak var certificationMessage: UILabel!
     @IBOutlet weak var certificationLabel: UILabel!
     
+    var userCertification: UserCertification?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +27,7 @@ class CalendarInfoTableCell: UITableViewCell {
     }
     
     func configureCell(userCert: UserCertification) {
+        userCertification = userCert
         let certDate = userCert.expirationDateAsString()
         self.certificationMessage.text = "Your certification will expire at this date: \(certDate)"
         self.certificationLabel.text = userCert.certification.title

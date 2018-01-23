@@ -18,6 +18,7 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     
     var userCertifications: [UserCertification]?
     var selectedDate: Date?
+    var choosedUserCertification: UserCertification?
     
     let formatter = DateFormatter()
     
@@ -143,7 +144,22 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: send data to detail segue
+        if let cell = tableView.cellForRow(at: indexPath) as? CalendarInfoTableCell {
+            if let cert = cell.userCertification {
+                choosedUserCertification = cert
+            }
+        }
         performSegue(withIdentifier: "CalcCertificationDetailVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CalcCertificationDetailVC" {
+            if let destination = segue.destination as? CertificationDetailVC {
+                if let cert = choosedUserCertification {
+                    destination.userCerification = cert
+                }
+            }
+        }
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
