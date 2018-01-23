@@ -16,6 +16,7 @@ class ChooseExamDateVC: UIViewController {
     
     var exam: Exam!
     var examDate: Date?
+    var userExam: UserExam?  // Used whe change date for exam
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,9 @@ class ChooseExamDateVC: UIViewController {
         examTitleLabel.text = exam.title
         if let date = examDate {
             datePicker.setDate(date, animated: false)
+        }
+        if let userEx = userExam {
+            datePicker.setDate(userEx.dateOfPass, animated: false)
         }
     }
 
@@ -66,10 +70,44 @@ class ChooseExamDateVC: UIViewController {
                 
             }
         }
+        if segue.identifier == "BackToDetailVC" {
+            if let destination = segue.destination as? CertificationDetailVC {
+                if let uExame = userExam {
+                    if let date = examDate {
+                        uExame.dateOfPass = date
+                    }
+                    ChoosedDataService.instance.changeUserExam(userExam: uExame)
+                    prepareToDetailVC(destination: destination)
+                } else {
+                    if let date = examDate {
+                        if let userCert = ChoosedDataService.instance.userCertification {
+                            let userExam = UserExam(id: NEW_OBJECT_ID, userCertId: userCert.id, exam: exam, dateOfPass: date)
+                            prepareToDetailVC(destination: destination)
+                            destination.usersExams.append(userExam)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         examDate = datePicker.date
-        performSegue(withIdentifier: "AddCertificationExamChoosed", sender: nil)
+        if ChoosedDataService.instance.isEditExistingUserCertification {
+            ChoosedDataService.instance.isEditExistingUserCertification = false
+            performSegue(withIdentifier: "BackToDetailVC", sender: nil)
+        } else {
+            ChoosedDataService.instance.isEditExistingUserCertification = false
+            performSegue(withIdentifier: "AddCertificationExamChoosed", sender: nil)
+        }
+    }
+    
+    func prepareToDetailVC(destination: CertificationDetailVC) {
+        if let userExams = ChoosedDataService.instance.userExams {
+            destination.usersExams = userExams
+        }
+        if let userCert = ChoosedDataService.instance.userCertification {
+            destination.userCerification = userCert
+        }
     }
 }

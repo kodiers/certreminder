@@ -18,6 +18,9 @@ class ChoosedDataService {
     private var _vendor: Vendor?
     private var _choosedCert: Certification?
     private var _examsWithDate: [(Exam, Date)]?
+    private var _isEditExistingUserCertification = false
+    private var _userCert: UserCertification?
+    private var _userExams: [UserExam]?
     
     var certificationExpireDate: Date? {
         get {
@@ -55,9 +58,51 @@ class ChoosedDataService {
         }
     }
     
+    var isEditExistingUserCertification: Bool {
+        get {
+            return _isEditExistingUserCertification
+        }
+        set {
+            _isEditExistingUserCertification = newValue
+        }
+    }
+    
+    var userCertification: UserCertification? {
+        get {
+            return _userCert
+        }
+        set {
+            _userCert = newValue
+        }
+    }
+    
+    var userExams: [UserExam]? {
+        get {
+            return _userExams
+        }
+        set {
+            _userExams = newValue
+        }
+    }
+    
     func saveData(vendor: Vendor?, certification: Certification?, date: Date?) {
         _vendor = vendor
         _choosedCert = certification
         _certificationExpireDate = date
+    }
+    
+    func saveEditData(isEdit: Bool, userCert: UserCertification, userExams: [UserExam]) {
+        _isEditExistingUserCertification = isEdit
+        _userCert = userCert
+        _userExams = userExams
+    }
+    
+    func changeUserExam(userExam: UserExam) {
+        // Change saved user exam
+        if let usrExams = userExams {
+            if let uExamIndex = usrExams.index(where: {$0.id == userExam.id && $0.exam.id == userExam.exam.id}) {
+                userExams![uExamIndex] = userExam
+            }
+        }
     }
 }

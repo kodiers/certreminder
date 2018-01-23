@@ -16,4 +16,14 @@ class AlertService {
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    static func showDeleteAlert(header: String, message: String, viewController: UIViewController, handler: @escaping (UIAlertAction) -> ()) {
+        // Show delete alert message on view controller and do deletion
+        let alert = UIAlertController(title: header, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Yes", style: .default, handler: handler)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

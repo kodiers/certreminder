@@ -14,6 +14,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     var userCertifications = [UserCertification]()
     var vendors = [Vendor]()
+    var choosedCert: UserCertification?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,12 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         })
         // Get vendors
         VendorService.instance.setVendorsToVar(header: "HTTP Error", message: "Can't get vendors from server", viewController: self, setVendors, AlertService.showCancelAlert)
+        // Get certifications
+        CertificationService.instance.downloadCertifications(vendor: nil, completionHandler: {(certifications, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not load certifications", viewController: self)
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,13 +96,21 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: send data to detail segue
-        performSegue(withIdentifier: "CertificationDetailVC", sender: nil)
+        choosedCert = userCertifications[indexPath.row]
+        performSegue(withIdentifier: "CertificationDetailVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CalendarCertificationVC" {
             if let destination = segue.destination as? CalendarCertfifcationVC {
                 destination.userCertifications = userCertifications
+            }
+        }
+        if segue.identifier == "CertificationDetailVC" {
+            if let cert = choosedCert {
+                if let destination = segue.destination as? CertificationDetailVC {
+                    destination.userCerification = cert
+                }
             }
         }
     }
