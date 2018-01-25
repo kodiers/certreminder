@@ -26,7 +26,7 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
             if error != nil {
                 self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
             } else {
-                    self.setCertifications(certifications: certifications!)
+                self.setCertifications(certifications: certifications!)
             }
         })
     }
@@ -86,8 +86,14 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
             cell.chooseCell(isChoosed: false)
         }
     }
-
-    @IBAction func newCertBtnPressed(_ sender: Any) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewCertificationSegue" {
+            if let destination = segue.destination as? NewCertificationVC {
+                destination.vendor = vendor
+            }
+            
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

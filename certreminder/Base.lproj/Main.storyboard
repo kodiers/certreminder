@@ -544,7 +544,7 @@
                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="New certification" id="JEX-4y-wKY">
+                                    <navigationItem title="Add certification" id="JEX-4y-wKY">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="UhI-RS-xFw">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -1038,7 +1038,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vg6-ew-2xF">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="newCertBtnPressed:" destination="HiH-yh-gm2" id="Tpq-Oi-QzQ"/>
+                                                <segue destination="Ax8-kw-aLE" kind="show" identifier="NewCertificationSegue" id="eEA-b9-Ga6"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1140,6 +1140,130 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYI-GI-Pyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77.599999999999994" y="2441.8290854572715"/>
+        </scene>
+        <!--New CertificationVC-->
+        <scene sceneID="mLj-vr-SIe">
+            <objects>
+                <viewController id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="woO-Ge-ATT"/>
+                        <viewControllerLayoutGuide type="bottom" id="aL3-wX-kQ3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rRK-Tp-XK6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jre-rO-4Xe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="New certification" id="OT6-oR-aVI">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="K1K-E3-Xn4">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="Ax8-kw-aLE" id="FTr-9Y-6fi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15K-NR-ocY" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="a7a-Yc-7l5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtnPressed:" destination="Ax8-kw-aLE" eventType="touchUpInside" id="oXw-WA-U28"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-vD-92n">
+                                <rect key="frame" x="0.0" y="111.5" width="375" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNj-HY-e1R">
+                                        <rect key="frame" x="16" y="10" width="351" height="25"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.27058823529411763" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gNj-HY-e1R" secondAttribute="trailing" constant="8" id="Gg2-Hd-Vff"/>
+                                    <constraint firstItem="gNj-HY-e1R" firstAttribute="leading" secondItem="Utv-vD-92n" secondAttribute="leadingMargin" constant="8" id="Iha-0r-ekq"/>
+                                    <constraint firstItem="gNj-HY-e1R" firstAttribute="centerY" secondItem="Utv-vD-92n" secondAttribute="centerY" id="MBX-h3-cCH"/>
+                                    <constraint firstAttribute="height" constant="45" id="NGB-s0-bnw"/>
+                                    <constraint firstItem="gNj-HY-e1R" firstAttribute="top" secondItem="Utv-vD-92n" secondAttribute="top" constant="10" id="UK0-vy-Cbp"/>
+                                    <constraint firstAttribute="bottom" secondItem="gNj-HY-e1R" secondAttribute="bottom" constant="10" id="hNg-l1-fed"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-Q6-nNm">
+                                <rect key="frame" x="16" y="171.5" width="343" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-Z6-HSH">
+                                <rect key="frame" x="16" y="209" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-eM-Rzw">
+                                <rect key="frame" x="16" y="74" width="343" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jre-rO-4Xe" firstAttribute="top" secondItem="woO-Ge-ATT" secondAttribute="bottom" id="6q3-ST-2q4"/>
+                            <constraint firstItem="s8n-Q6-nNm" firstAttribute="top" secondItem="Utv-vD-92n" secondAttribute="bottom" constant="15" id="7rx-58-9oh"/>
+                            <constraint firstAttribute="trailing" secondItem="jre-rO-4Xe" secondAttribute="trailing" id="I6c-ix-FCG"/>
+                            <constraint firstItem="Utv-vD-92n" firstAttribute="top" secondItem="sLM-eM-Rzw" secondAttribute="bottom" constant="10" id="JpZ-pd-Q1j"/>
+                            <constraint firstAttribute="trailing" secondItem="Utv-vD-92n" secondAttribute="trailing" id="Kyx-QD-jgP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sLM-eM-Rzw" secondAttribute="trailing" id="PBe-6A-nUB"/>
+                            <constraint firstItem="aL3-wX-kQ3" firstAttribute="top" secondItem="15K-NR-ocY" secondAttribute="bottom" constant="20" id="QgA-4L-poZ"/>
+                            <constraint firstItem="Utv-vD-92n" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leading" id="Sp8-hu-NvJ"/>
+                            <constraint firstItem="15K-NR-ocY" firstAttribute="trailing" secondItem="rRK-Tp-XK6" secondAttribute="trailingMargin" id="Zfe-Dv-Wm9"/>
+                            <constraint firstItem="sLM-eM-Rzw" firstAttribute="top" secondItem="jre-rO-4Xe" secondAttribute="bottom" constant="10" id="aVv-yA-NKp"/>
+                            <constraint firstItem="jre-rO-4Xe" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leading" id="dXV-Ml-ZJ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s8n-Q6-nNm" secondAttribute="trailing" id="lcj-JM-huw"/>
+                            <constraint firstItem="wJN-Z6-HSH" firstAttribute="trailing" secondItem="rRK-Tp-XK6" secondAttribute="trailingMargin" id="lpl-EG-EbD"/>
+                            <constraint firstItem="sLM-eM-Rzw" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leadingMargin" id="mTy-0x-RzN"/>
+                            <constraint firstItem="wJN-Z6-HSH" firstAttribute="top" secondItem="s8n-Q6-nNm" secondAttribute="bottom" constant="10" id="sJk-fp-QfZ"/>
+                            <constraint firstItem="s8n-Q6-nNm" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leadingMargin" id="u3i-nd-kzy"/>
+                            <constraint firstItem="15K-NR-ocY" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leadingMargin" id="uML-iX-TSp"/>
+                            <constraint firstItem="wJN-Z6-HSH" firstAttribute="leading" secondItem="rRK-Tp-XK6" secondAttribute="leadingMargin" id="wKQ-vi-brj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="certificationNameTextFld" destination="wJN-Z6-HSH" id="tBR-i9-bEt"/>
+                        <outlet property="vendorLbl" destination="gNj-HY-e1R" id="eig-pn-i8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vMv-vB-Vjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="3184.8575712143929"/>
         </scene>
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
@@ -1892,10 +2016,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WSy-ai-zRe"/>
-        <segue reference="IfT-sl-7B9"/>
-        <segue reference="TF2-wU-NEM"/>
-        <segue reference="OCh-lh-1j8"/>
+        <segue reference="VdF-O4-xgd"/>
+        <segue reference="ni2-s2-HtD"/>
+        <segue reference="c5f-pG-RO1"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="H0c-jf-ZaI"/>
+        <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>
