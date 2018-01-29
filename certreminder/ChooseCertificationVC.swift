@@ -22,13 +22,12 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
-            if error != nil {
-                self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
-            } else {
-                    self.setCertifications(certifications: certifications!)
-            }
-        })
+        self.getCertifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getCertifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,8 +85,14 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
             cell.chooseCell(isChoosed: false)
         }
     }
-
-    @IBAction func newCertBtnPressed(_ sender: Any) {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewCertificationSegue" {
+            if let destination = segue.destination as? NewCertificationVC {
+                destination.vendor = vendor
+            }
+            
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -117,6 +122,17 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
     func showAlert(header: String, message: String) {
         // This function need to avoid hierarchy view warning
         AlertService.showCancelAlert(header: header, message: message, viewController: self)
+    }
+    
+    func getCertifications() {
+        // Download certifications from server
+        CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
+            if error != nil {
+                self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
+            } else {
+                self.setCertifications(certifications: certifications!)
+            }
+        })
     }
 }
 

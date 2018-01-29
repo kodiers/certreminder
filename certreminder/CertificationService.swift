@@ -46,4 +46,23 @@ class CertificationService {
         return certification
     }
     
+    func createCertification(title: String, vendor: Vendor, completionHandler: @escaping (Certification?, NSError?) -> ()) {
+        /*
+         Create certification and append it to memory stored certifications
+        */
+        WebRequestService.webservice.createCertification(title: title, vendor: vendor, completionHandler: {(response, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                if let cert = response as? Certification {
+                    if self._certifications == nil {
+                        self._certifications = [Certification]()
+                    }
+                    self._certifications?.append(cert)
+                    completionHandler(cert, nil)
+                }
+            }
+        })
+    }
+    
 }

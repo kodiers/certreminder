@@ -117,7 +117,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         WebRequestService.webservice.logoutUser()
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "GoToLoginVC", sender: nil)
     }
     
     @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {

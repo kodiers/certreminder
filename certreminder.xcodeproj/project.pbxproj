@@ -31,6 +31,7 @@
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
 		ACC469221FD605210070C738 /* UserExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC469211FD605210070C738 /* UserExam.swift */; };
+		ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */; };
 		ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */; };
 		ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */; };
 		ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */; };
@@ -74,6 +75,7 @@
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
 		ACC469211FD605210070C738 /* UserExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExam.swift; sourceTree = "<group>"; };
+		ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCertificationVC.swift; sourceTree = "<group>"; };
 		ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedExamsWithDateTableViewCell.swift; sourceTree = "<group>"; };
 		ACD22E891F46461B0056E0D2 /* certreminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = certreminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */,
 				AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */,
 				AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */,
+				ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
 				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
+				ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
