@@ -23,6 +23,7 @@
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
 		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
+		AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
 		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
@@ -67,6 +68,7 @@
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
 		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
+		AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExamVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
 		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */,
 				AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */,
 				ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */,
+				AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
+				AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */,
 				ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
