@@ -518,6 +518,7 @@
                     <connections>
                         <outlet property="certTableView" destination="qj9-SK-iIY" id="0bM-Uj-D68"/>
                         <segue destination="8FM-FH-goS" kind="show" identifier="CertificationDetailVC" id="WNp-Uu-E5p"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="GoToLoginVC" id="V3E-4k-ULS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2015,11 +2016,11 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WSy-ai-zRe"/>
+        <segue reference="WNp-Uu-E5p"/>
         <segue reference="VdF-O4-xgd"/>
         <segue reference="ni2-s2-HtD"/>
         <segue reference="c5f-pG-RO1"/>
-        <segue reference="UA8-3F-Tfj"/>
+        <segue reference="UOi-Kr-oaH"/>
         <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>

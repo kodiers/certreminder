@@ -130,10 +130,15 @@ class WebRequestService {
                 let result = response.result
                 if result.isSuccess {
                     if let tokenDict = result.value as? Dictionary<String, AnyObject> {
-                        let token = tokenDict["token"] as! String
-                        let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
-                        WebRequestService.webservice.token = token
-                        completionHandler(result.value as AnyObject, nil)
+                        if let token = tokenDict["token"] as? String {
+                            let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                            WebRequestService.webservice.token = token
+                            completionHandler(result.value as AnyObject, nil)
+                        } else {
+                            print("Could not refresh token \(tokenDict)")
+                            let err = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Could not refresh token"])
+                            completionHandler(nil, err)
+                        }
                     }
                 } else {
                     print(result.error!)
@@ -156,10 +161,22 @@ class WebRequestService {
                 let result = response.result
                 if result.isSuccess {
                     if let tokenDict = result.value as? Dictionary<String, AnyObject> {
-                        let token = tokenDict["token"] as! String
-                        let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
-                        WebRequestService.webservice.token = token
-                        completionHandler(result.value as AnyObject, nil)
+                        if let token = tokenDict["token"] as? String {
+                            let _ = KeychainWrapper.standard.set(token, forKey: KEY_UID)
+                            WebRequestService.webservice.token = token
+                            completionHandler(result.value as AnyObject, nil)
+                        } else {
+                            self.refreshToken(completionHandler: {(value, error) in
+                                if error != nil {
+                                    // if error logut user
+                                    self.logoutUser()
+                                    print(result.error!)
+                                    completionHandler(nil, result.error! as NSError)
+                                } else {
+                                    completionHandler(value, nil)
+                                }
+                            })
+                        }
                     }
                 } else {
                     // if error try refresh token
@@ -473,8 +490,27 @@ class WebRequestService {
                         }
                     }
                 }
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
             }
-            else {
+        }
+    }
+    
+    func createCertification(title: String, vendor: Vendor, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Send post request for create certification
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "certifications/certification/"
+        let parameters: Parameters = ["title": title, "number": NSNull(), "image": NSNull(), "description": NSNull(), "deprecated": false, "vendor": vendor.id]
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    if let certification = Certification.createCertificationFromDict(certDict: dict) {
+                        completionHandler(certification, nil)
+                    }
+                }
+            } else {
                 print(result.error!)
                 completionHandler(nil, result.error! as NSError)
             }

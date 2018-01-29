@@ -49,7 +49,13 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
             AlertService.showCancelAlert(header: "You should enter certification name", message: "Certification name cannot be blank", viewController: self)
             return
         }
-        // TODO: Add save certification method
+        CertificationService.instance.createCertification(title: certName, vendor: vendor, completionHandler: ({(newCert, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create certification", viewController: self)
+            } else {
+                self.showSuccessCreateAlert()
+            }
+        }))
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -59,6 +65,16 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    func showSuccessCreateAlert() {
+        // Show success alert
+        let alert = UIAlertController(title: "Successfully created", message: "Certification was succesfully created!", preferredStyle: UIAlertControllerStyle.alert)
+        let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(successAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
