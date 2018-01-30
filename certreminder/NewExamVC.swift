@@ -10,8 +10,19 @@ import UIKit
 
 class NewExamVC: UIViewController {
 
+    @IBOutlet weak var vendorLbl: UILabel!
+    @IBOutlet weak var certificationLbl: UILabel!
+    @IBOutlet weak var examNumberTextFld: UITextField!
+    @IBOutlet weak var examTitleTextFld: UITextField!
+    
+    var certification: Certification!
+    var vendor: Vendor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vendorLbl.text = vendor.title
+        certificationLbl.text = certification.title
 
         // Do any additional setup after loading the view.
     }
@@ -31,5 +42,11 @@ class NewExamVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        // TODO: Add save exam methods
+    }
 }

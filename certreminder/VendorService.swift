@@ -50,4 +50,17 @@ class VendorService {
         }
     }
     
+    func getVendorByID(id: Int) -> Vendor? {
+        /*
+         Get vendor by it's id
+        */
+        var vendor: Vendor? = nil
+        if let vndrs = vendors {
+            if let index = vndrs.index(where: { $0.id == id }) {
+                vendor = vndrs[index]
+            }
+        }
+        return vendor
+    }
+    
 }
