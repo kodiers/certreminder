@@ -53,7 +53,7 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create certification", viewController: self)
             } else {
-                self.showSuccessCreateAlert()
+                AlertService.showSuccessCreateAlert(message: "Certification was succesfully created!", viewController: self)
             }
         }))
     }
@@ -65,16 +65,6 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-    }
-    
-    func showSuccessCreateAlert() {
-        // Show success alert
-        let alert = UIAlertController(title: "Successfully created", message: "Certification was succesfully created!", preferredStyle: UIAlertControllerStyle.alert)
-        let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
-            self.dismiss(animated: true, completion: nil)
-        })
-        alert.addAction(successAction)
-        self.present(alert, animated: true, completion: nil)
     }
     
 }

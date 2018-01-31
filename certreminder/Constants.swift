@@ -10,3 +10,8 @@ import Foundation
 
 let KEY_UID = "id"
 let NEW_OBJECT_ID = 0
+
+let CUSTOM_ERROR_DOMAIN = "certapp.techforline.com"
+let ERROR_CODE_EXAM_EXISTS = 200
+let ERROR_CODE_HTTP_ERROR = 10
+let ERROR_UNKNOWN = 0

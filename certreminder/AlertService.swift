@@ -26,4 +26,14 @@ class AlertService {
         alert.addAction(cancelAction)
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    static func showSuccessCreateAlert(message: String, viewController: UIViewController) {
+        // Show success alert
+        let alert = UIAlertController(title: "Successfully created", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
+            viewController.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(successAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

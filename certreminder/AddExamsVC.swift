@@ -22,14 +22,12 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        WebRequestService.webservice.getExams(certification: certification, completionHandler: {(response, error) in
-            if error != nil {
-                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
-            } else {
-                self.exams = response as! [Exam]
-                self.tableView.reloadData()
-            }
-        })
+        self.downloadExams()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.downloadExams()
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,14 +76,34 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+        if segue.identifier == "NewExamSegue" {
+            if let destination = segue.destination as? NewExamVC {
+                destination.certification = certification
+                if let vendor = VendorService.instance.getVendorByID(id: certification.vendor) {
+                    destination.vendor = vendor
+                }
+            }
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        // TODO: Implement add new exam
+        performSegue(withIdentifier: "NewExamSegue", sender: self)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func downloadExams() {
+        // Download exams when view will shown
+        WebRequestService.webservice.getExams(certification: certification, completionHandler: {(response, error) in
+            if error != nil {
+                AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
+            } else {
+                self.exams = response as! [Exam]
+                self.tableView.reloadData()
+            }
+        })
     }
 
 }

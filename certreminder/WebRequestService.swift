@@ -136,7 +136,7 @@ class WebRequestService {
                             completionHandler(result.value as AnyObject, nil)
                         } else {
                             print("Could not refresh token \(tokenDict)")
-                            let err = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Could not refresh token"])
+                            let err = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_HTTP_ERROR, userInfo: [NSLocalizedDescriptionKey: "Could not refresh token"])
                             completionHandler(nil, err)
                         }
                     }
@@ -146,7 +146,7 @@ class WebRequestService {
                 }
             }
         } else {
-            let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Token does not exist in keychain"])
+            let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_HTTP_ERROR, userInfo: [NSLocalizedDescriptionKey: "Token does not exist in keychain"])
             completionHandler(nil, error)
         }
     }
@@ -508,6 +508,34 @@ class WebRequestService {
                 if let dict = result.value as? Dictionary<String, AnyObject> {
                     if let certification = Certification.createCertificationFromDict(certDict: dict) {
                         completionHandler(certification, nil)
+                    }
+                }
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
+            }
+        }
+    }
+    
+    func createExam(title: String, certification: Certification, number: String?, completionHandler: @escaping (AnyObject?, Error?) -> ()) {
+        // Send post request for create exam
+        let headers = createHeaders()
+        let url = WebRequestService.WEB_API_URL + "certifications/exam/"
+        var parameters: Parameters = ["title": title, "description": NSNull(), "deprecated": false, "certification": certification.id]
+        if let exNum = number {
+            parameters["number"] = exNum
+        } else {
+            parameters["number"] = NSNull()
+        }
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    if let exam = Exam.createExamFromDict(examDict: dict) {
+                        completionHandler(exam, nil)
+                    } else {
+                        let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_EXAM_EXISTS, userInfo: [NSLocalizedDescriptionKey: "Could not create exam"])
+                        completionHandler(nil, error)
                     }
                 }
             } else {
