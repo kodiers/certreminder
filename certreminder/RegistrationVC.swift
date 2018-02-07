@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftKeychainWrapper
 
-class RegistrationVC: UIViewController {
+class RegistrationVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -21,6 +21,9 @@ class RegistrationVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loginField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,5 +83,14 @@ class RegistrationVC: UIViewController {
                 })
             }
         })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
