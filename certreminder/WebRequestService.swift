@@ -52,16 +52,34 @@ class WebRequestService {
     func createHeaders() -> Dictionary<String, String> {
         // Create headers
         var headers = ["Accept": "application/json", "Content-Type": "application/json"]
-        if self._user == nil {
-            if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
-                headers["Authorization"] = "Token \(token)"
-            }
-        } else {
-            if let token = self._user?.token {
-                headers["Authorization"] = "Token \(token)"
+        if let token = UserService.instance.token {
+            headers["Authorization"] = "Token \(token)"
+        }
+//        if self._user == nil {
+//            if let token = KeychainWrapper.standard.string(forKey: KEY_UID) {
+//                headers["Authorization"] = "Token \(token)"
+//            }
+//        } else {
+//            if let token = self._user?.token {
+//                headers["Authorization"] = "Token \(token)"
+//            }
+//        }
+        return headers
+    }
+    
+    func post(url: String, params: Parameters, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Send post request
+        let headers = self.createHeaders()
+        let fullUrl = WebRequestService.WEB_API_URL + url
+        Alamofire.request(fullUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+            let result = response.result
+            if result.isSuccess {
+                completionHandler(result.value as AnyObject, nil)
+            } else {
+                print(result.error!)
+                completionHandler(nil, result.error! as NSError)
             }
         }
-        return headers
     }
     
     func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {

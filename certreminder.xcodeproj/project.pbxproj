@@ -30,6 +30,7 @@
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
 		AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
+		ACB248F5202D075900693F48 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB248F4202D075900693F48 /* UserService.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
 		ACC469221FD605210070C738 /* UserExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC469211FD605210070C738 /* UserExam.swift */; };
 		ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */; };
@@ -75,6 +76,7 @@
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoTableCell.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
+		ACB248F4202D075900693F48 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
 		ACC469211FD605210070C738 /* UserExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExam.swift; sourceTree = "<group>"; };
 		ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCertificationVC.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				ACFD08641FAA685F009FE996 /* VendorService.swift */,
 				ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */,
 				ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */,
+				ACB248F4202D075900693F48 /* UserService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
 				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
+				ACB248F5202D075900693F48 /* UserService.swift in Sources */,
 				ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
