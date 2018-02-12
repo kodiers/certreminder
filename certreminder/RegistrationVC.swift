@@ -68,13 +68,12 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
             return
         }
         // Register and login new user
-        WebRequestService.webservice.logoutUser()
-        WebRequestService.webservice.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
+        UserService.instance.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
             if error != nil {
                 self.errorLbl.text = "Error then register new user"
             } else {
                 // Login registered user
-                WebRequestService.webservice.loginUser(username: login, password: password, completionHandler: {(value, error) in
+                UserService.instance.loginUser(username: login, password: password, completionHandler: {(value, error) in
                     if error != nil {
                         self.errorLbl.text = "Error then try login new user"
                     } else {

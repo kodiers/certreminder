@@ -226,7 +226,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func deleteUserCertification() {
         // Send and handle request for delete user certification
-        WebRequestService.webservice.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
+        UserCertificationService.instance.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
             } else {

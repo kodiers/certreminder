@@ -24,9 +24,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let token = KeychainWrapper.standard.string(forKey: KEY_UID)
         if token != nil {
-            WebRequestService.webservice.verifyToken(completionHandler: {(response, error) in
+            UserService.instance.verifyToken(completionHandler: {(response, error) in
                 if error != nil {
-                    WebRequestService.webservice.refreshToken(completionHandler: {(response, error) in
+                    UserService.instance.refreshToken(completionHandler: {(response, error) in
                         if error != nil {
                             self.errorLbl.isHidden = false
                             self.errorLbl.text = "Some error then access server"
@@ -59,7 +59,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             return
         }
         
-        WebRequestService.webservice.loginUser(username: login, password: password, completionHandler: {(response, error) in
+        UserService.instance.loginUser(username: login, password: password, completionHandler: {(response, error) in
             if error != nil {
                 self.errorLbl.isHidden = false
                 self.errorLbl.text = "Incorrect login or password"

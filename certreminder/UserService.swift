@@ -52,6 +52,7 @@ class UserService {
     
     func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // handle register user requests
+        self.logoutUser()
         let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password]
         let url = "people/register/"
         WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
@@ -78,9 +79,13 @@ class UserService {
                 completionHandler(nil, error)
             } else {
                 if let tokenDict = result as? Dictionary<String, AnyObject> {
-                    let token = tokenDict["token"] as! String
-                    self.token = token
-                    completionHandler(result as AnyObject, nil)
+                    if let token = tokenDict["token"] as? String {
+                        self.token = token
+                        completionHandler(result as AnyObject, nil)
+                    } else {
+                        let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_LOGIN, userInfo: [NSLocalizedDescriptionKey: "Could not login"])
+                        completionHandler(nil, error)
+                    }
                 }
             }
         })

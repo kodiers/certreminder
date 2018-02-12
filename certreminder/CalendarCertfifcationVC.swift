@@ -126,7 +126,7 @@ class CalendarCertfifcationVC: UIViewController, JTAppleCalendarViewDelegate, JT
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             if let userCerts = userCertifications {
                 let userCert = userCerts[indexPath.row]
-                WebRequestService.webservice.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+                UserCertificationService.instance.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
                     if error != nil {
                         AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
                     } else {
