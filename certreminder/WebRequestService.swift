@@ -78,66 +78,6 @@ class WebRequestService {
         }
     }
     
-    func getCertifications(vendor: Vendor?, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
-        // Get certifications from API
-        let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "certifications/certification/"
-        var parameters: Parameters? = nil
-        if let ven = vendor {
-            parameters = ["vendor": ven.id]
-        }
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON {response in
-            let result = response.result
-            if result.isSuccess {
-                var certificationsArr = [Certification]()
-                if let responseDict = result.value as? Dictionary<String, AnyObject> {
-                    // Parse certification
-                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
-                        for arr in resultsArr {
-                            if let certification = Certification.createCertificationFromDict(certDict: arr as! Dictionary<String, AnyObject>) {
-                                certificationsArr.append(certification)
-                            }
-                        }
-                    }
-                }
-                completionHandler(certificationsArr as AnyObject, nil)
-            } else {
-                print(result.error!)
-                completionHandler(nil, result.error! as NSError)
-            }
-        }
-    }
-    
-    func getExams(certification: Certification?, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
-        // Get exams from API
-        let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "certifications/exam/"
-        var parameters: Parameters? = nil
-        if let cert = certification {
-            parameters = ["certification": cert.id]
-        }
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON {response in
-            let result = response.result
-            if result.isSuccess {
-                var examsArr = [Exam]()
-                if let responseDict = result.value as? Dictionary<String, AnyObject> {
-                    // Parse exams
-                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
-                        for ex_response in resultsArr {
-                            if let exam = Exam.createExamFromDict(examDict: ex_response as! Dictionary<String, AnyObject>) {
-                                examsArr.append(exam)
-                            }
-                        }
-                    }
-                }
-                completionHandler(examsArr as AnyObject, nil)
-            } else {
-                print(result.error!)
-                completionHandler(nil, result.error! as NSError)
-            }
-        }
-    }
-    
     func createUserCertification(cert: Certification, expireDate: Date, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Create user certifcation
         let headers = createHeaders()

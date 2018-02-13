@@ -96,12 +96,14 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func downloadExams() {
         // Download exams when view will shown
-        WebRequestService.webservice.getExams(certification: certification, completionHandler: {(response, error) in
+        ExamService.instance.getExams(certification: certification, completionHandler: {(exams, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
             } else {
-                self.exams = response as! [Exam]
-                self.tableView.reloadData()
+                if let exms = exams {
+                    self.exams = exms
+                    self.tableView.reloadData()
+                }
             }
         })
     }

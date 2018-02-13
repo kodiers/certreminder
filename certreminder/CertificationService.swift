@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CertificationService {
     static let instance = CertificationService()
@@ -23,11 +24,26 @@ class CertificationService {
         /*
          Download certifications and store its in memory
          */
-        WebRequestService.webservice.getCertifications(vendor: vendor, completionHandler: {(response, error) in
+        var data: Parameters? = nil
+        if let ven = vendor {
+            data = ["vendor": ven.id]
+        }
+        WebRequestService.webservice.get(url: "certifications/certification/", data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
-                self._certifications = response as? [Certification]
+                var certificationsArr = [Certification]()
+                if let responseDict = result as? Dictionary<String, AnyObject> {
+                    // Parse certification
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for arr in resultsArr {
+                            if let certification = Certification.createCertificationFromDict(certDict: arr as! Dictionary<String, AnyObject>) {
+                                certificationsArr.append(certification)
+                            }
+                        }
+                    }
+                }
+                self._certifications = certificationsArr
                 completionHandler(self._certifications, nil)
             }
         })
