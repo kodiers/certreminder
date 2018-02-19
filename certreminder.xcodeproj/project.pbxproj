@@ -23,6 +23,7 @@
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
 		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
+		AC66D0AD203B8A5D00480FA3 /* UserExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */; };
 		AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
@@ -71,6 +72,7 @@
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
 		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
+		AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExamService.swift; sourceTree = "<group>"; };
 		AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExamVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				ACB248F4202D075900693F48 /* UserService.swift */,
 				ACB8600120323E7F00D60C9E /* UserCertificationService.swift */,
 				AC9105932033ADEC00C1128B /* ExamService.swift */,
+				AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
 				AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */,
 				ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */,
+				AC66D0AD203B8A5D00480FA3 /* UserExamService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

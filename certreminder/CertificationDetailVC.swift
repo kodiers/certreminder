@@ -129,7 +129,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                     let examsForCreation = self.getNewUsersExams()
                     let examsForUpdate = self.getExamsForUpdate()
                     if examsForCreation.count > 0 {
-                        WebRequestService.webservice.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
+                        UserExamService.instance.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams", viewController: self)
                             }
