@@ -78,68 +78,14 @@ class WebRequestService {
         }
     }
     
-    func getUserExamsForCertification(certification: UserCertification, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
-        // Get user exams for certification
-        let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "remainder/exam/"
-        let parameters: Parameters = ["user_certification": certification.id]
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.queryString, headers: headers).responseJSON {response in
+    func patch(url: String, objectID: Int, data: Parameters, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Send patch request
+        let headers = self.createHeaders()
+        let fullUrl = WebRequestService.WEB_API_URL + url + "\(objectID)/"
+        Alamofire.request(fullUrl, method: .patch, parameters: data, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
             let result = response.result
             if result.isSuccess {
-                var examsArr = [UserExam]()
-                if let responseDict = result.value as? Dictionary<String, AnyObject> {
-                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
-                        for res in resultsArr {
-                            if let userExam = UserExam.createUserExamFromDict(dict: res as! Dictionary<String, AnyObject>, userCertification: certification) {
-                                examsArr.append(userExam)
-                            }
-                        }
-                    }
-                }
-                completionHandler(examsArr as AnyObject, nil)
-            } else {
-                print(result.error!)
-                completionHandler(nil, result.error! as NSError)
-            }
-        }
-    }
-    
-    func deleteUserExam(userExamId: Int, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
-        // Delete user exam
-        let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "remainder/exam/\(userExamId)/"
-        Alamofire.request(url, method: .delete, headers: headers).responseJSON{response in
-            let result = response.result
-            if result.isSuccess {
-                // Return if deletion success, because no content
-                completionHandler(true as AnyObject, nil)
-            } else {
-                print(result.error!)
-                completionHandler(nil, result.error! as NSError)
-            }
-        }
-    }
-    
-    func changeUserCertification(userCert: UserCertification, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
-        // Change user certification
-        let headers = createHeaders()
-        let url = WebRequestService.WEB_API_URL + "remainder/certification/\(userCert.id)/"
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
-        let expDate = formatter.string(from: userCert.expirationDate)
-        var parameters: Parameters = [ "certification_id": userCert.certification.id, "expiration_date": expDate]
-        var remindDateStr: String?
-        if let remindDate = userCert.remindAtDate {
-            remindDateStr = formatter.string(from: remindDate)
-            parameters["remind_at_date"] = remindDateStr
-        } else {
-            parameters["remind_at_date"] = NSNull()
-        }
-        Alamofire.request(url, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
-            let result = response.result
-            if result.isSuccess {
-                completionHandler(true as AnyObject, nil)
+                completionHandler(result.value as AnyObject, nil)
             } else {
                 print(result.error!)
                 completionHandler(nil, result.error! as NSError)
@@ -161,7 +107,7 @@ class WebRequestService {
             data.append(userExam)
         }
         let params: Parameters = ["exams": data]
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
+        Alamofire.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON {response in
             let result = response.result
             if result.isSuccess {
                 if let userExamsDict = result.value as? Dictionary<String, AnyObject> {

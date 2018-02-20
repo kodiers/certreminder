@@ -87,4 +87,27 @@ class UserCertificationService {
             }
         })
     }
+    
+    func changeUserCertification(userCert: UserCertification, completionHandler: @escaping (Bool?, NSError?) -> ()) {
+        // Change user certification
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let expDate = formatter.string(from: userCert.expirationDate)
+        var data: Parameters = [ "certification_id": userCert.certification.id, "expiration_date": expDate]
+        var remindDateStr: String?
+        if let remindDate = userCert.remindAtDate {
+            remindDateStr = formatter.string(from: remindDate)
+            data["remind_at_date"] = remindDateStr
+        } else {
+            data["remind_at_date"] = NSNull()
+        }
+        WebRequestService.webservice.patch(url: url, objectID: userCert.id, data: data, completionHandler: {(result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                completionHandler(true, nil)
+            }
+        })
+    }
 }

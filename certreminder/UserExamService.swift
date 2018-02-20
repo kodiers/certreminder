@@ -16,6 +16,7 @@ class UserExamService {
     
     static let instance = UserExamService()
     private let formatter = DateFormatter()
+    private let url = "remainder/exam/"
     
     func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Add exams to user certification
@@ -29,7 +30,8 @@ class UserExamService {
             data.append(userExam)
         }
         let params: Parameters = ["exams": data]
-        WebRequestService.webservice.post(url: "remainder/exam/bulk/create/", params: params, completionHandler: {(result, error) in
+        let bulkUrl = url + "bulk/create/"
+        WebRequestService.webservice.post(url: bulkUrl, params: params, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -40,6 +42,39 @@ class UserExamService {
                         }
                     }
                 }
+            }
+        })
+    }
+    
+    func getUserExamsForCertification(certification: UserCertification, completionHandler: @escaping ([UserExam]?, NSError?) -> ()) {
+        // Get user exams for certification
+        let data: Parameters = ["user_certification": certification.id]
+        WebRequestService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                var examsArr = [UserExam]()
+                if let responseDict = result as? Dictionary<String, AnyObject> {
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for res in resultsArr {
+                            if let userExam = UserExam.createUserExamFromDict(dict: res as! Dictionary<String, AnyObject>, userCertification: certification) {
+                                examsArr.append(userExam)
+                            }
+                        }
+                    }
+                }
+                completionHandler(examsArr, nil)
+            }
+        })
+    }
+    
+    func deleteUserExam(userExamId: Int, completionHandler: @escaping (Bool?, NSError?) -> ()) {
+        // Delete user exam
+        WebRequestService.webservice.delete(url: url, objectID: userExamId, completionHandler: {(result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                completionHandler(true, nil)
             }
         })
     }
