@@ -78,4 +78,32 @@ class UserExamService {
             }
         })
     }
+    
+    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+        // Bulk change users exams
+        let changeUrl = url + "bulk/update/"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        var examData = Array<Dictionary<String, AnyObject>>()
+        for uexam in userExams {
+            let examDateStr = formatter.string(from: uexam.dateOfPass)
+            let userExam = ["user_certification_id": certification.id, "id": uexam.id, "exam_id": uexam.exam.id, "date_of_pass": examDateStr, "remind_at_date": NSNull()] as [String : AnyObject]
+            examData.append(userExam)
+        }
+        let data: Parameters = ["exams": examData]
+        WebRequestService.webservice.patch(url: changeUrl, data: data, completionHandler: {(result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                if let userExamsDict = result as? Dictionary<String, AnyObject> {
+                    if let userExamsArray = userExamsDict["exams"] as? Array<AnyObject> {
+                        if userExamsArray.count > 0 {
+                            completionHandler(userExamsArray as AnyObject, nil)
+                        }
+                    }
+                }
+            }
+        })
+    }
 }

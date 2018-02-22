@@ -102,7 +102,8 @@ class UserCertificationService {
         } else {
             data["remind_at_date"] = NSNull()
         }
-        WebRequestService.webservice.patch(url: url, objectID: userCert.id, data: data, completionHandler: {(result, error) in
+        let fullUrl = url + "\(userCert.id)/"
+        WebRequestService.webservice.patch(url: fullUrl, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {

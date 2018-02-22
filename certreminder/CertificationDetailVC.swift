@@ -136,7 +136,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                         })
                     }
                     if examsForUpdate.count > 0 {
-                        WebRequestService.webservice.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
+                        UserExamService.instance.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
                             }

@@ -12,6 +12,7 @@ import Alamofire
 class CertificationService {
     static let instance = CertificationService()
     
+    private let url = "certifications/certification/"
     private var _certifications: [Certification]?
     
     var certifications: [Certification]? {
@@ -28,7 +29,7 @@ class CertificationService {
         if let ven = vendor {
             data = ["vendor": ven.id]
         }
-        WebRequestService.webservice.get(url: "certifications/certification/", data: data, completionHandler: {(result, error) in
+        WebRequestService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -66,16 +67,19 @@ class CertificationService {
         /*
          Create certification and append it to memory stored certifications
         */
-        WebRequestService.webservice.createCertification(title: title, vendor: vendor, completionHandler: {(response, error) in
+        let data: Parameters = ["title": title, "number": NSNull(), "image": NSNull(), "description": NSNull(), "deprecated": false, "vendor": vendor.id]
+        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
-                if let cert = response as? Certification {
-                    if self._certifications == nil {
-                        self._certifications = [Certification]()
+                if let dict = result as? Dictionary<String, AnyObject> {
+                    if let certification = Certification.createCertificationFromDict(certDict: dict) {
+                        if self._certifications == nil {
+                            self._certifications = [Certification]()
+                        }
+                        self._certifications?.append(certification)
+                        completionHandler(certification, nil)
                     }
-                    self._certifications?.append(cert)
-                    completionHandler(cert, nil)
                 }
             }
         })
