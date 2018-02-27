@@ -47,7 +47,6 @@ class NewExamVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        // TODO: Add save exam methods
         guard let examTitle = examTitleTextFld.text, examTitle != "" else {
             AlertService.showCancelAlert(header: "You should enter exam name", message: "Exam name cannot be blank", viewController: self)
             return

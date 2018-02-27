@@ -126,14 +126,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password incorrect" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8Q-hC-CfW">
-                                <rect key="frame" x="16" y="276" width="343" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-Cj-kT8" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="24" y="323" width="327" height="30"/>
+                                <rect key="frame" x="24" y="276" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cvc-Cc-Ucq"/>
@@ -156,27 +150,23 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="oLf-Cj-kT8" secondAttribute="trailing" constant="8" id="8ni-9J-p8f"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Li-Ds-9OL" secondAttribute="bottom" id="Ate-Zf-NpC"/>
+                            <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="B2e-zA-LQH"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BtR-zj-XXJ"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8h-Qg-5b3"/>
-                            <constraint firstItem="O8Q-hC-CfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CM7-d6-Csl"/>
-                            <constraint firstItem="O8Q-hC-CfW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EMo-z4-h7r"/>
                             <constraint firstAttribute="trailing" secondItem="2Li-Ds-9OL" secondAttribute="trailing" id="Egh-NC-b2U"/>
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="GR5-eW-Jbn"/>
-                            <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="O8Q-hC-CfW" secondAttribute="bottom" constant="25" id="Kk0-Yr-f9P"/>
                             <constraint firstItem="oLi-As-2Rw" firstAttribute="top" secondItem="7Vc-Ue-boo" secondAttribute="bottom" constant="8" id="RA2-ih-gzQ"/>
                             <constraint firstItem="2Li-Ds-9OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8B-DQ-PwK"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UIY-us-3Pw"/>
                             <constraint firstItem="lWW-Z0-DsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8w-hB-fGJ"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="hEi-lx-EJt"/>
-                            <constraint firstItem="O8Q-hC-CfW" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="iwM-fw-W4h"/>
-                            <constraint firstAttribute="bottom" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="top" secondItem="oLi-As-2Rw" secondAttribute="bottom" constant="30" id="u25-Sd-brG"/>
                             <constraint firstItem="oLi-As-2Rw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vkJ-BJ-dgP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="myU-xm-pbm" secondAttribute="trailing" constant="8" id="wDd-vr-Odt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="errorLbl" destination="O8Q-hC-CfW" id="wdj-wn-15H"/>
                         <outlet property="loginField" destination="qf6-KF-DmI" id="yUS-t6-xRJ"/>
                         <outlet property="passwordField" destination="40p-vb-qdu" id="263-qY-E5e"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="LoginShowMainVC" id="7Ro-qa-nWV"/>
@@ -288,7 +278,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rw-cv-puX" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="24" y="328" width="327" height="30"/>
+                                <rect key="frame" x="24" y="311" width="327" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vzH-gl-vLS"/>
@@ -306,12 +296,6 @@
                                     <action selector="registerBtnTapped:" destination="cxt-Sq-YcF" eventType="touchUpInside" id="sbq-Hh-nVa"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password and confirmation are not same" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-Xb-EDW">
-                                <rect key="frame" x="16" y="296" width="343" height="22"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Aub-TI-isR">
                                 <rect key="frame" x="66.5" y="622" width="242" height="37"/>
                                 <subviews>
@@ -336,7 +320,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ggd-Xb-EDW" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="10" id="01u-ii-qPv"/>
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="top" secondItem="rAR-Ud-g00" secondAttribute="bottom" constant="20" id="0xd-Yv-kaW"/>
                             <constraint firstItem="Aub-TI-isR" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="9km-kl-5l7"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="UBh-gz-ZVm" secondAttribute="trailing" id="ART-dV-CPz"/>
@@ -345,7 +328,6 @@
                             <constraint firstItem="4fF-Il-0jZ" firstAttribute="top" secondItem="SBf-tJ-eJb" secondAttribute="bottom" id="GmY-S4-HyS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C0d-N7-mzp" secondAttribute="trailing" constant="8" id="I3h-9l-5JN"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" id="Me5-4U-iGx"/>
-                            <constraint firstItem="ggd-Xb-EDW" firstAttribute="trailing" secondItem="VSp-PA-vUe" secondAttribute="trailingMargin" id="OqM-es-KYW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6rw-cv-puX" secondAttribute="trailing" constant="8" id="WVv-wg-kSf"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="top" secondItem="UBh-gz-ZVm" secondAttribute="bottom" constant="20" id="Wzc-cv-mgY"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="bwE-TC-g2d"/>
@@ -354,14 +336,12 @@
                             <constraint firstItem="6rw-cv-puX" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="8" id="mqd-Wp-5dh"/>
                             <constraint firstAttribute="trailing" secondItem="SBf-tJ-eJb" secondAttribute="trailing" id="sTP-Ug-MhK"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="top" secondItem="pGN-Qn-5WS" secondAttribute="bottom" constant="10" id="u6w-iZ-Qss"/>
-                            <constraint firstItem="6rw-cv-puX" firstAttribute="top" secondItem="ggd-Xb-EDW" secondAttribute="bottom" constant="10" id="v0a-bb-b4u"/>
-                            <constraint firstItem="ggd-Xb-EDW" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" id="wEz-Go-f5l"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="xCt-8x-t3Q"/>
+                            <constraint firstItem="6rw-cv-puX" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="25" id="y8E-Fa-r5M"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="confirmPasswordField" destination="ZjV-eZ-LPz" id="PTL-xK-yrK"/>
-                        <outlet property="errorLbl" destination="ggd-Xb-EDW" id="dV1-rc-LFI"/>
                         <outlet property="loginField" destination="EDy-6i-Fgn" id="A8w-oe-xTd"/>
                         <outlet property="passwordField" destination="Kn7-0v-DeD" id="gc0-Nw-4VY"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="RegShowMainVC" id="W1w-jA-vkM"/>
@@ -398,7 +378,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
-                                                    <rect key="frame" x="8" y="39" width="371" height="37.5"/>
+                                                    <rect key="frame" x="8" y="39" width="332" height="37.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -413,7 +393,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-02-2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
-                                                    <rect key="frame" x="289" y="11" width="75" height="20"/>
+                                                    <rect key="frame" x="250" y="11" width="75" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="WeG-if-xhG"/>
                                                         <constraint firstAttribute="width" constant="75" id="h4Q-sH-5JZ"/>
@@ -718,7 +698,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCell" rowHeight="75" id="D0I-5g-Ql5" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCell" rowHeight="75" id="D0I-5g-Ql5" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0I-5g-Ql5" id="8d8-iD-tZw">
@@ -751,13 +731,13 @@
                                                             <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
+                                                                    <rect key="frame" x="8" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -1047,7 +1027,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="508"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseCertificationTableCellCell" rowHeight="60" id="i9g-QB-zPw" customClass="ChooseCertificationTableCellCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseCertificationTableCellCell" rowHeight="60" id="i9g-QB-zPw" customClass="ChooseCertificationTableCellCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i9g-QB-zPw" id="NdQ-qH-get">
@@ -1474,7 +1454,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseExamTableCell" rowHeight="60" id="A0Q-qX-GWZ" customClass="ChooseExamTableCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseExamTableCell" rowHeight="60" id="A0Q-qX-GWZ" customClass="ChooseExamTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A0Q-qX-GWZ" id="O0u-md-pLZ">
@@ -1796,7 +1776,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCellDetail" rowHeight="75" id="jj7-hc-E8O" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChoosedExamsWithDateTableViewCellDetail" rowHeight="75" id="jj7-hc-E8O" customClass="ChoosedExamsWithDateTableViewCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jj7-hc-E8O" id="hnz-QY-7F7">
@@ -1829,13 +1809,13 @@
                                                             <rect key="frame" x="0.0" y="25" width="375" height="49.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-eI-UvX">
-                                                                    <rect key="frame" x="8" y="8" width="174.5" height="33.5"/>
+                                                                    <rect key="frame" x="8" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xW-Ah-As2">
-                                                                    <rect key="frame" x="323" y="8" width="44" height="33.5"/>
+                                                                    <rect key="frame" x="0.0" y="8" width="0.0" height="33.5"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -2105,7 +2085,7 @@
                                 <rect key="frame" x="0.0" y="430.5" width="375" height="236.5"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarInfoTableCell" rowHeight="75" id="Zdg-h1-Qwn" customClass="CalendarInfoTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zdg-h1-Qwn" id="yc1-wg-vvF">
@@ -2185,11 +2165,11 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5oY-to-PBg"/>
+        <segue reference="WNp-Uu-E5p"/>
         <segue reference="IfT-sl-7B9"/>
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
-        <segue reference="UA8-3F-Tfj"/>
+        <segue reference="UOi-Kr-oaH"/>
         <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>
