@@ -7,16 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */; };
 		AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */; };
-		AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0372531F844E77008102BD /* CertificationCalendarCell.swift */; };
 		AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */; };
 		AC0824FA1F8C3A27008B9C4C /* UserCertification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0824F91F8C3A27008B9C4C /* UserCertification.swift */; };
 		AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEF91F9EACCA0021AF14 /* ChooseVendorVC.swift */; };
 		AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFB1F9EAD590021AF14 /* ChooseDateVC.swift */; };
 		AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */; };
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
-		AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */; };
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */; };
@@ -24,7 +21,6 @@
 		AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60B0191F8AE5A0004DFB77 /* Certification.swift */; };
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
-		AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */; };
 		AC66D0AD203B8A5D00480FA3 /* UserExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */; };
 		AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
@@ -32,7 +28,6 @@
 		AC9105942033ADEC00C1128B /* ExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9105932033ADEC00C1128B /* ExamService.swift */; };
 		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
-		AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
 		ACB248F5202D075900693F48 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB248F4202D075900693F48 /* UserService.swift */; };
 		ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8600120323E7F00D60C9E /* UserCertificationService.swift */; };
@@ -55,19 +50,20 @@
 		ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08641FAA685F009FE996 /* VendorService.swift */; };
 		ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */; };
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
+		FDA4A8B828753DBDBA8B2299 /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A685E6D724AD634ED19AFF /* Pods_certreminder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
+		9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
+		A1A685E6D724AD634ED19AFF /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72D5FF1F71F2EA9476466D4 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
 		AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
-		AC0372531F844E77008102BD /* CertificationCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCalendarCell.swift; sourceTree = "<group>"; };
 		AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamDateVC.swift; sourceTree = "<group>"; };
 		AC0824F91F8C3A27008B9C4C /* UserCertification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertification.swift; sourceTree = "<group>"; };
 		AC08AEF91F9EACCA0021AF14 /* ChooseVendorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseVendorVC.swift; sourceTree = "<group>"; };
 		AC08AEFB1F9EAD590021AF14 /* ChooseDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateVC.swift; sourceTree = "<group>"; };
 		AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationVC.swift; sourceTree = "<group>"; };
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
-		AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateCell.swift; sourceTree = "<group>"; };
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 		AC60B0191F8AE5A0004DFB77 /* Certification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certification.swift; sourceTree = "<group>"; };
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
-		AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCertfifcationVC.swift; sourceTree = "<group>"; };
 		AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExamService.swift; sourceTree = "<group>"; };
 		AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExamVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -83,7 +78,6 @@
 		AC9105932033ADEC00C1128B /* ExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamService.swift; sourceTree = "<group>"; };
 		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoTableCell.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
 		ACB248F4202D075900693F48 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		ACB8600120323E7F00D60C9E /* UserCertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationService.swift; sourceTree = "<group>"; };
@@ -108,8 +102,6 @@
 		ACFD08641FAA685F009FE996 /* VendorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorService.swift; sourceTree = "<group>"; };
 		ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVendorsProtocol.swift; sourceTree = "<group>"; };
 		ACFEBC781F4E4498007E8594 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.release.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.release.xcconfig"; sourceTree = "<group>"; };
-		D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_certreminder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,28 +109,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93B301102B0FE7DEB47C7F4B /* Pods_certreminder.framework in Frameworks */,
+				FDA4A8B828753DBDBA8B2299 /* Pods_certreminder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9347A166E3B5223BF8935C73 /* Frameworks */ = {
+		6B2D8DA274BF20AD51C93B83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6886D5AA495F9C95EA1FF16 /* Pods_certreminder.framework */,
+				A1A685E6D724AD634ED19AFF /* Pods_certreminder.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A9D81C32051EB2512205D77B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */,
-				B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		AC5FD9C6204610B9000B35C4 /* extensions */ = {
@@ -171,8 +154,8 @@
 			children = (
 				ACD22E8B1F46461B0056E0D2 /* certreminder */,
 				ACD22E8A1F46461B0056E0D2 /* Products */,
-				A9D81C32051EB2512205D77B /* Pods */,
-				9347A166E3B5223BF8935C73 /* Frameworks */,
+				C7327A283B301569BF1DB0B4 /* Pods */,
+				6B2D8DA274BF20AD51C93B83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,10 +205,7 @@
 			children = (
 				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
 				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
-				AC0372531F844E77008102BD /* CertificationCalendarCell.swift */,
 				AC9F52341F86E7690024E94E /* RoundedView.swift */,
-				AC9F52361F86F7930024E94E /* CalendarInfoTableCell.swift */,
-				AC24A6B11F9FFF72009DB6B0 /* ChooseDateCell.swift */,
 				AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */,
 				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
@@ -240,7 +220,6 @@
 				ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */,
 				AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */,
 				ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */,
-				AC6147EF1F82EFCD00326C27 /* CalendarCertfifcationVC.swift */,
 				ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */,
 				ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */,
 				AC08AEF91F9EACCA0021AF14 /* ChooseVendorVC.swift */,
@@ -270,6 +249,15 @@
 			name = util;
 			sourceTree = "<group>";
 		};
+		C7327A283B301569BF1DB0B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */,
+				A72D5FF1F71F2EA9476466D4 /* Pods-certreminder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,12 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACD22E9B1F46461B0056E0D2 /* Build configuration list for PBXNativeTarget "certreminder" */;
 			buildPhases = (
-				0A09B2C13FCCF6615B82FED8 /* [CP] Check Pods Manifest.lock */,
+				D7C223939D6B40166F04E4A4 /* [CP] Check Pods Manifest.lock */,
 				ACD22E851F46461B0056E0D2 /* Sources */,
 				ACD22E861F46461B0056E0D2 /* Frameworks */,
 				ACD22E871F46461B0056E0D2 /* Resources */,
-				C368A8FE921F8DB0822D5CF3 /* [CP] Embed Pods Frameworks */,
-				4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */,
+				22F516DA1EDEA7FFC7625983 /* [CP] Embed Pods Frameworks */,
+				44F420B621EE0CC4C488BECB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,7 +288,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Viktor Yamchinov";
 				TargetAttributes = {
 					ACD22E881F46461B0056E0D2 = {
@@ -341,7 +329,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A09B2C13FCCF6615B82FED8 /* [CP] Check Pods Manifest.lock */ = {
+		22F516DA1EDEA7FFC7625983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44F420B621EE0CC4C488BECB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C223939D6B40166F04E4A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,43 +382,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4B38C9F4AB26CD5FEE33ED27 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C368A8FE921F8DB0822D5CF3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -405,10 +391,8 @@
 			files = (
 				ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */,
 				ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */,
-				AC6147F01F82EFCD00326C27 /* CalendarCertfifcationVC.swift in Sources */,
 				AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */,
 				AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */,
-				AC0372541F844E77008102BD /* CertificationCalendarCell.swift in Sources */,
 				AC9105942033ADEC00C1128B /* ExamService.swift in Sources */,
 				AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */,
 				AC0824FA1F8C3A27008B9C4C /* UserCertification.swift in Sources */,
@@ -421,14 +405,12 @@
 				AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */,
-				AC9F52371F86F7930024E94E /* CalendarInfoTableCell.swift in Sources */,
 				ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */,
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
 				ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */,
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
-				AC24A6B21F9FFF72009DB6B0 /* ChooseDateCell.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
@@ -482,7 +464,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -490,7 +474,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -532,7 +520,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -540,7 +530,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -567,7 +561,7 @@
 		};
 		ACD22E9C1F46461B0056E0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 893D0185139F5450CBA02852 /* Pods-certreminder.debug.xcconfig */;
+			baseConfigurationReference = 9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = certreminder/Info.plist;
@@ -580,7 +574,7 @@
 		};
 		ACD22E9D1F46461B0056E0D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5607D36272E9C99420FDDF7 /* Pods-certreminder.release.xcconfig */;
+			baseConfigurationReference = A72D5FF1F71F2EA9476466D4 /* Pods-certreminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = certreminder/Info.plist;

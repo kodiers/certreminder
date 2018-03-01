@@ -100,11 +100,6 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CalendarCertificationVC" {
-            if let destination = segue.destination as? CalendarCertfifcationVC {
-                destination.userCertifications = userCertifications
-            }
-        }
         if segue.identifier == "CertificationDetailVC" {
             if let cert = choosedCert {
                 if let destination = segue.destination as? CertificationDetailVC {
@@ -117,10 +112,6 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         UserService.instance.logoutUser()
         performSegue(withIdentifier: "GoToLoginVC", sender: nil)
-    }
-    
-    @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "CalendarCertificationVC", sender: userCertifications)
     }
     
     @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
