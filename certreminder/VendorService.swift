@@ -23,12 +23,23 @@ class VendorService {
         /*
          Download vendors and store its in memory
          */
-        WebRequestService.webservice.getVendors(completionHandler: {(response, error) in
+        WebRequestService.webservice.get(url: "certifications/vendor/", data: nil, completionHandler: {(response, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
-                self._vendors = response as? [Vendor]
-                completionHandler(self._vendors, nil)
+                var vendorsArr = [Vendor]()
+                if let responseDict = response as? Dictionary<String, AnyObject> {
+                    // Parse user certification
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for arr in resultsArr {
+                            if let vendor = Vendor.createVendorFromDict(vendorDict: arr as! Dictionary<String, AnyObject>) {
+                                vendorsArr.append(vendor)
+                            }
+                        }
+                    }
+                }
+                self._vendors = vendorsArr
+                completionHandler(self.vendors, nil)
             }
         })
     }

@@ -125,17 +125,21 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func saveBtnPressed(_ sender: Any) {
         if let cert = choosedCert {
             if let date = certificationExpireDate {
-                WebRequestService.webservice.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
+                UserCertificationService.instance.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
                     if error != nil {
                         AlertService.showCancelAlert(header: "HTTP Error", message: "Can't create certification", viewController: self)
                     } else {
-                        WebRequestService.webservice.createUserExams(certification: certification as! UserCertification, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in
-                            if error != nil {
-                                AlertService.showCancelAlert(header: "HTTP Error", message: "Can't add exams", viewController: self)
-                            } else {
-                                self.performSegue(withIdentifier: "BackToCertificationList", sender: nil)
-                            }
-                        })
+                        if let userCert = certification {
+                            UserExamService.instance.createUserExams(certification: userCert, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in
+                                if error != nil {
+                                    AlertService.showCancelAlert(header: "HTTP Error", message: "Can't add exams", viewController: self)
+                                } else {
+                                    self.performSegue(withIdentifier: "BackToCertificationList", sender: nil)
+                                }
+                            })
+                        } else {
+                            AlertService.showCancelAlert(header: "Unknown error", message: "No certification data", viewController: self)
+                        }
                     }
                 })
             }

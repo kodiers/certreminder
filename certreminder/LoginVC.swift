@@ -9,24 +9,25 @@
 import UIKit
 import SwiftKeychainWrapper
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var errorLbl: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        loginField.delegate = self
+        passwordField.delegate = self
+        
         let token = KeychainWrapper.standard.string(forKey: KEY_UID)
         if token != nil {
-            WebRequestService.webservice.verifyToken(completionHandler: {(response, error) in
+            UserService.instance.verifyToken(completionHandler: {(response, error) in
                 if error != nil {
-                    WebRequestService.webservice.refreshToken(completionHandler: {(response, error) in
+                    UserService.instance.refreshToken(completionHandler: {(response, error) in
                         if error != nil {
-                            self.errorLbl.isHidden = false
-                            self.errorLbl.text = "Some error then access server"
+                            AlertService.showCancelAlert(header: "HTTP Error", message: "Error while refresh token", viewController: self)
                         } else {
                             self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
                         }
@@ -43,31 +44,30 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func registerBtnTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "RegistrationVC", sender: self)
-    }
-
     @IBAction func loginBtnTapped(_ sender: UIButton) {
-        guard let login = loginField.text, login != "" else {
-            errorLbl.isHidden = false
-            errorLbl.text = "You should enter login"
+        let loginTxt = checkField(field: loginField, header: "Login is empty", message: "Login cannot be blank")
+        let passwordTxt = checkField(field: passwordField, header: "Password is empty", message: "Password cannot be blank")
+        
+        guard let login = loginTxt, let password = passwordTxt else {
             return
         }
         
-        guard let password = passwordField.text, password != "" else {
-            errorLbl.isHidden = false
-            errorLbl.text = "You should enter password"
-            return
-        }
-        
-        WebRequestService.webservice.loginUser(username: login, password: password, completionHandler: {(response, error) in
+        UserService.instance.loginUser(username: login, password: password, completionHandler: {(response, error) in
             if error != nil {
-                self.errorLbl.isHidden = false
-                self.errorLbl.text = "Incorrect login or password"
+                AlertService.showCancelAlert(header: "Incorrect credentials", message: "Login or password incorrect", viewController: self)
             } else {
                 self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
             }
         })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 

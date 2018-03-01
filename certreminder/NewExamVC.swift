@@ -47,12 +47,11 @@ class NewExamVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        // TODO: Add save exam methods
         guard let examTitle = examTitleTextFld.text, examTitle != "" else {
             AlertService.showCancelAlert(header: "You should enter exam name", message: "Exam name cannot be blank", viewController: self)
             return
         }
-        WebRequestService.webservice.createExam(title: examTitle, certification: certification, number: examNumberTextFld.text, completionHandler: {(exam, error) in
+        ExamService.instance.createExam(title: examTitle, certification: certification, number: examNumberTextFld.text, completionHandler: {(exam, error) in
             if error != nil {
                 if (error! as NSError).code == ERROR_CODE_EXAM_EXISTS {
                     AlertService.showCancelAlert(header: "Exam exists", message: "Exam with this title already exists!", viewController: self)

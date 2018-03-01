@@ -8,5 +8,4 @@ target 'certreminder' do
   # Pods for certreminder
   pod 'Alamofire'
   pod 'SwiftKeychainWrapper'
-  pod 'JTAppleCalendar', '~> 7.0'
 end

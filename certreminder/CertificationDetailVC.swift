@@ -123,20 +123,20 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        WebRequestService.webservice.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
+        UserCertificationService.instance.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
             if error == nil {
                 if !self.usersExams.isEmpty {
                     let examsForCreation = self.getNewUsersExams()
                     let examsForUpdate = self.getExamsForUpdate()
                     if examsForCreation.count > 0 {
-                        WebRequestService.webservice.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
+                        UserExamService.instance.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams", viewController: self)
                             }
                         })
                     }
                     if examsForUpdate.count > 0 {
-                        WebRequestService.webservice.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
+                        UserExamService.instance.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
                             }
@@ -170,11 +170,13 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         let dateStr = formatter.string(from: userCerification.expirationDate)
         dateLabel.text = dateStr
         if usersExams.count == 0 {
-            WebRequestService.webservice.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
+            UserExamService.instance.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
                 } else {
-                    self.usersExams = exams as! [UserExam]
+                    if let exms = exams {
+                        self.usersExams = exms
+                    }
                 }
             })
         }
@@ -184,7 +186,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     func deleteUserExam(userExam: UserExam, index: Int) {
         // Function to delete userExam
         if userExam.id != NEW_OBJECT_ID {
-            WebRequestService.webservice.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
+            UserExamService.instance.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Error then deleting exam", viewController: self)
                 } else {
@@ -217,7 +219,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         // Return exams for update (old exams)
         var exams = [UserExam]()
         for uexam in self.usersExams {
-            if uexam.id == NEW_OBJECT_ID {
+            if uexam.id != NEW_OBJECT_ID {
                 exams.append(uexam)
             }
         }
@@ -226,7 +228,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func deleteUserCertification() {
         // Send and handle request for delete user certification
-        WebRequestService.webservice.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
+        UserCertificationService.instance.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
             } else {

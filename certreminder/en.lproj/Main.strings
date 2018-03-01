@@ -1,0 +1,258 @@
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "04F-Jc-HNR"; */
+"04F-Jc-HNR.text" = "Microsoft";
+
+/* Class = "UILabel"; text = "Exams:"; ObjectID = "0dz-Cf-n6v"; */
+"0dz-Cf-n6v.text" = "Exams:";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "15K-NR-ocY"; */
+"15K-NR-ocY.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "1Jy-zu-sYC"; */
+"1Jy-zu-sYC.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UINavigationItem"; title = "Choose date"; ObjectID = "1pi-TL-O6H"; */
+"1pi-TL-O6H.title" = "Choose date";
+
+/* Class = "UIBarButtonItem"; title = "Sign out"; ObjectID = "3kU-Ti-9zo"; */
+"3kU-Ti-9zo.title" = "Sign out";
+
+/* Class = "UILabel"; text = "Have account?"; ObjectID = "3lY-3P-Nym"; */
+"3lY-3P-Nym.text" = "Have account?";
+
+/* Class = "UITextField"; placeholder = "your password"; ObjectID = "40p-vb-qdu"; */
+"40p-vb-qdu.placeholder" = "your password";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "6rw-cv-puX"; */
+"6rw-cv-puX.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "70-443"; ObjectID = "6xW-Ah-As2"; */
+"6xW-Ah-As2.text" = "70-443";
+
+/* Class = "UILabel"; text = "Welcome to"; ObjectID = "7Vc-Ue-boo"; */
+"7Vc-Ue-boo.text" = "Welcome to";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "87Y-L2-Wjd"; */
+"87Y-L2-Wjd.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "A7K-nq-g41"; */
+"A7K-nq-g41.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "AHy-er-sn0"; */
+"AHy-er-sn0.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Confirm password"; ObjectID = "BLV-Cr-Rqq"; */
+"BLV-Cr-Rqq.text" = "Confirm password";
+
+/* Class = "UITextField"; placeholder = "your login"; ObjectID = "EDy-6i-Fgn"; */
+"EDy-6i-Fgn.placeholder" = "your login";
+
+/* Class = "UILabel"; text = "20.08.2018"; ObjectID = "FUw-lm-piz"; */
+"FUw-lm-piz.text" = "20.08.2018";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "GbA-Pt-hkt"; */
+"GbA-Pt-hkt.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "Add certification"; ObjectID = "JEX-4y-wKY"; */
+"JEX-4y-wKY.title" = "Add certification";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "JIB-Ly-hfe"; */
+"JIB-Ly-hfe.normalTitle" = "Add";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "K1K-E3-Xn4"; */
+"K1K-E3-Xn4.title" = "Back";
+
+/* Class = "UITextField"; placeholder = "your password"; ObjectID = "Kn7-0v-DeD"; */
+"Kn7-0v-DeD.placeholder" = "your password";
+
+/* Class = "UILabel"; text = "Re:"; ObjectID = "Lzs-cw-HCJ"; */
+"Lzs-cw-HCJ.text" = "Re:";
+
+/* Class = "UINavigationItem"; title = "New exam"; ObjectID = "MPu-ea-GMZ"; */
+"MPu-ea-GMZ.title" = "New exam";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "Mr4-WI-cnT"; */
+"Mr4-WI-cnT.text" = "Password";
+
+/* Class = "UILabel"; text = "Certification"; ObjectID = "N4O-nX-y8t"; */
+"N4O-nX-y8t.text" = "Certification";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "NSc-bf-6ch"; */
+"NSc-bf-6ch.text" = "Login";
+
+/* Class = "UILabel"; text = "Certification name:"; ObjectID = "Nx7-p1-sqw"; */
+"Nx7-p1-sqw.text" = "Certification name:";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "O7r-SV-4Ca"; */
+"O7r-SV-4Ca.normalTitle" = "SAVE";
+
+/* Class = "UILabel"; text = "Exam number:"; ObjectID = "O9b-mL-0DJ"; */
+"O9b-mL-0DJ.text" = "Exam number:";
+
+/* Class = "UINavigationItem"; title = "New certification"; ObjectID = "OT6-oR-aVI"; */
+"OT6-oR-aVI.title" = "New certification";
+
+/* Class = "UILabel"; text = "Minder"; ObjectID = "Okq-is-K3o"; */
+"Okq-is-K3o.text" = "Minder";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "PKa-Mf-mu1"; */
+"PKa-Mf-mu1.normalTitle" = "SAVE";
+
+/* Class = "UINavigationItem"; title = "Choose certification"; ObjectID = "PXD-ix-d48"; */
+"PXD-ix-d48.title" = "Choose certification";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "Sru-Af-yc2"; */
+"Sru-Af-yc2.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "Stf-kg-YJd"; */
+"Stf-kg-YJd.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UILabel"; text = "Enter information for registration"; ObjectID = "UBh-gz-ZVm"; */
+"UBh-gz-ZVm.text" = "Enter information for registration";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "UGy-7g-fej"; */
+"UGy-7g-fej.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "UPl-rk-XKn"; */
+"UPl-rk-XKn.title" = "Back";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "UhI-RS-xFw"; */
+"UhI-RS-xFw.title" = "Back";
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "VsS-Br-dOR"; */
+"VsS-Br-dOR.text" = "Microsoft";
+
+/* Class = "UILabel"; text = "70-443"; ObjectID = "Vxg-Ye-tY2"; */
+"Vxg-Ye-tY2.text" = "70-443";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "X2m-76-Vcz"; */
+"X2m-76-Vcz.text" = "Password";
+
+/* Class = "UILabel"; text = "70-443"; ObjectID = "ZXN-Ji-cBi"; */
+"ZXN-Ji-cBi.text" = "70-443";
+
+/* Class = "UITextField"; placeholder = "confirm password"; ObjectID = "ZjV-eZ-LPz"; */
+"ZjV-eZ-LPz.placeholder" = "confirm password";
+
+/* Class = "UILabel"; text = "Expire at:"; ObjectID = "bM1-t4-tqS"; */
+"bM1-t4-tqS.text" = "Expire at:";
+
+/* Class = "UILabel"; text = "Minder"; ObjectID = "bON-Lc-qyA"; */
+"bON-Lc-qyA.text" = "Minder";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "bvR-LG-8BH"; */
+"bvR-LG-8BH.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "My certifications"; ObjectID = "ca1-KA-Gm9"; */
+"ca1-KA-Gm9.title" = "My certifications";
+
+/* Class = "UILabel"; text = "Expire at:"; ObjectID = "edr-it-qPh"; */
+"edr-it-qPh.text" = "Expire at:";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "eiD-6e-osX"; */
+"eiD-6e-osX.title" = "Back";
+
+/* Class = "UILabel"; text = "20.08.2018"; ObjectID = "eo8-o4-hbZ"; */
+"eo8-o4-hbZ.text" = "20.08.2018";
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "ezP-sj-PNV"; */
+"ezP-sj-PNV.text" = "Microsoft";
+
+/* Class = "UILabel"; text = "Re:"; ObjectID = "fh7-fF-KWU"; */
+"fh7-fF-KWU.text" = "Re:";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "fhJ-TR-nm9"; */
+"fhJ-TR-nm9.normalTitle" = "Add";
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "gNj-HY-e1R"; */
+"gNj-HY-e1R.text" = "Microsoft";
+
+/* Class = "UINavigationItem"; title = "Choose exam date"; ObjectID = "hK5-HH-jFw"; */
+"hK5-HH-jFw.title" = "Choose exam date";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "hc7-eI-UvX"; */
+"hc7-eI-UvX.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "iMa-L2-AcC"; */
+"iMa-L2-AcC.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016 Cloud Platform"; ObjectID = "j13-FJ-yKc"; */
+"j13-FJ-yKc.text" = "MCSA Windows Server 2016 Cloud Platform";
+
+/* Class = "UILabel"; text = "Microsoft"; ObjectID = "jHb-Ru-Kbn"; */
+"jHb-Ru-Kbn.text" = "Microsoft";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "jLU-WU-xMb"; */
+"jLU-WU-xMb.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "jwT-oq-nbV"; */
+"jwT-oq-nbV.title" = "Save";
+
+/* Class = "UINavigationItem"; title = "Choose exam"; ObjectID = "lno-Ej-zaK"; */
+"lno-Ej-zaK.title" = "Choose exam";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "oLf-Cj-kT8"; */
+"oLf-Cj-kT8.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Vendor"; ObjectID = "pcn-kN-Pgo"; */
+"pcn-kN-Pgo.text" = "Vendor";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "pfH-nj-c95"; */
+"pfH-nj-c95.normalTitle" = "SAVE";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "pnp-QA-gMj"; */
+"pnp-QA-gMj.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "Certification info"; ObjectID = "pwH-nE-NGz"; */
+"pwH-nE-NGz.title" = "Certification info";
+
+/* Class = "UILabel"; text = "MCSA Windows Server 2016:  Virtualization and Cloud Platform"; ObjectID = "qdf-ox-jUj"; */
+"qdf-ox-jUj.text" = "MCSA Windows Server 2016:  Virtualization and Cloud Platform";
+
+/* Class = "UITextField"; placeholder = "your login"; ObjectID = "qf6-KF-DmI"; */
+"qf6-KF-DmI.placeholder" = "your login";
+
+/* Class = "UILabel"; text = "20.08.2018"; ObjectID = "r70-Uy-snZ"; */
+"r70-Uy-snZ.text" = "20.08.2018";
+
+/* Class = "UILabel"; text = "20.08.2018"; ObjectID = "rHG-Wt-Ocv"; */
+"rHG-Wt-Ocv.text" = "20.08.2018";
+
+/* Class = "UILabel"; text = "23-02-2016"; ObjectID = "rOM-fa-2Sc"; */
+"rOM-fa-2Sc.text" = "23-02-2016";
+
+/* Class = "UILabel"; text = "Vendor:"; ObjectID = "rP7-t8-Eae"; */
+"rP7-t8-Eae.text" = "Vendor:";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "rQi-Xw-o6x"; */
+"rQi-Xw-o6x.normalTitle" = "SAVE";
+
+/* Class = "UILabel"; text = "Certification name:"; ObjectID = "s8n-Q6-nNm"; */
+"s8n-Q6-nNm.text" = "Certification name:";
+
+/* Class = "UILabel"; text = "Vendor"; ObjectID = "sLM-eM-Rzw"; */
+"sLM-eM-Rzw.text" = "Vendor";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "sQ9-ql-94S"; */
+"sQ9-ql-94S.title" = "Back";
+
+/* Class = "UILabel"; text = "Exam title:"; ObjectID = "tSv-a6-x6T"; */
+"tSv-a6-x6T.text" = "Exam title:";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "tyt-K9-n3b"; */
+"tyt-K9-n3b.text" = "Login";
+
+/* Class = "UINavigationItem"; title = "Choose vendor"; ObjectID = "vQ6-vp-AfW"; */
+"vQ6-vp-AfW.title" = "Choose vendor";
+
+/* Class = "UIButton"; normalTitle = "New certification"; ObjectID = "xZS-3g-Jr1"; */
+"xZS-3g-Jr1.normalTitle" = "New certification";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "xjP-LG-gSa"; */
+"xjP-LG-gSa.title" = "Back";
+
+/* Class = "UILabel"; text = "No account?"; ObjectID = "xno-SY-xcn"; */
+"xno-SY-xcn.text" = "No account?";
+
+/* Class = "UILabel"; text = "Exams:"; ObjectID = "zzt-yV-D8F"; */
+"zzt-yV-D8F.text" = "Exams:";

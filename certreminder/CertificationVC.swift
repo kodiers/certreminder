@@ -24,7 +24,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         certTableView.dataSource = self
         
         // Get user certification
-        WebRequestService.webservice.getUserCertification(completionHandler: {(response, error) in
+        UserCertificationService.instance.getUserCertification(completionHandler: {(response, error) in
             if error != nil {
                 // Show alert
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't get certifications from server", viewController: self)
@@ -83,7 +83,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             let userCert = userCertifications[indexPath.row]
-            WebRequestService.webservice.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+            UserCertificationService.instance.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
                 } else {
@@ -95,17 +95,11 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: send data to detail segue
         choosedCert = userCertifications[indexPath.row]
         performSegue(withIdentifier: "CertificationDetailVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CalendarCertificationVC" {
-            if let destination = segue.destination as? CalendarCertfifcationVC {
-                destination.userCertifications = userCertifications
-            }
-        }
         if segue.identifier == "CertificationDetailVC" {
             if let cert = choosedCert {
                 if let destination = segue.destination as? CertificationDetailVC {
@@ -116,12 +110,8 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
 
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
-        WebRequestService.webservice.logoutUser()
+        UserService.instance.logoutUser()
         performSegue(withIdentifier: "GoToLoginVC", sender: nil)
-    }
-    
-    @IBAction func calendarBarItemTapped(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "CalendarCertificationVC", sender: userCertifications)
     }
     
     @IBAction func newSertificationButtonPressed(_ sender: UIButton) {

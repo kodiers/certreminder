@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0920"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09461F1CB3AFA213E7FDCDC5569BD011"
+               BlueprintIdentifier = "70E6FA7BD7E66100055D127F7FE0A23C"
                BuildableName = "Pods_certreminder.framework"
                BlueprintName = "Pods-certreminder"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "09461F1CB3AFA213E7FDCDC5569BD011"
+            BlueprintIdentifier = "70E6FA7BD7E66100055D127F7FE0A23C"
             BuildableName = "Pods_certreminder.framework"
             BlueprintName = "Pods-certreminder"
             ReferencedContainer = "container:Pods.xcodeproj">
