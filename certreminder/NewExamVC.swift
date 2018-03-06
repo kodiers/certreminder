@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewExamVC: UIViewController {
+class NewExamVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var vendorLbl: UILabel!
     @IBOutlet weak var certificationLbl: UILabel!
@@ -23,6 +23,8 @@ class NewExamVC: UIViewController {
         
         vendorLbl.text = vendor.title
         certificationLbl.text = certification.title
+        examNumberTextFld.delegate = self
+        examTitleTextFld.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -62,5 +64,14 @@ class NewExamVC: UIViewController {
                 AlertService.showSuccessCreateAlert(message: "Exam successfully created!", viewController: self)
             }
         })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class UserExamService {
+class UserExamService: RaiseErrorMixin {
     /*
      Service for manipulate user exams
     */
@@ -39,8 +39,14 @@ class UserExamService {
                     if let userExamsArray = userExamsDict["exams"] as? Array<AnyObject> {
                         if userExamsArray.count > 0 {
                             completionHandler(userExamsArray as AnyObject, nil)
+                        } else {
+                            completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create exams"))
                         }
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create exams"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create exams"))
                 }
             }
         })
@@ -100,8 +106,14 @@ class UserExamService {
                     if let userExamsArray = userExamsDict["exams"] as? Array<AnyObject> {
                         if userExamsArray.count > 0 {
                             completionHandler(userExamsArray as AnyObject, nil)
+                        } else {
+                            completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not change exams"))
                         }
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not change exams"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not change exams"))
                 }
             }
         })

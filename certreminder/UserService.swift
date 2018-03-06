@@ -10,7 +10,7 @@ import Foundation
 import SwiftKeychainWrapper
 import Alamofire
 
-class UserService {
+class UserService: RaiseErrorMixin {
     /*
      User service
     */
@@ -64,7 +64,11 @@ class UserService {
                         let user = User(id: userDict["id"] as! Int, username: userDict["username"] as! String)
                         self.user = user
                         completionHandler(result as AnyObject, nil)
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create user"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create user"))
                 }
             }
         })
@@ -83,9 +87,10 @@ class UserService {
                         self.token = token
                         completionHandler(result as AnyObject, nil)
                     } else {
-                        let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_LOGIN, userInfo: [NSLocalizedDescriptionKey: "Could not login"])
-                        completionHandler(nil, error)
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_LOGIN, message: "Could not login"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_LOGIN, message: "Could not login"))
                 }
             }
         })
@@ -118,15 +123,15 @@ class UserService {
                             completionHandler(result as AnyObject, nil)
                         } else {
                             print("Could not refresh token \(tokenDict)")
-                            let err = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_HTTP_ERROR, userInfo: [NSLocalizedDescriptionKey: "Could not refresh token"])
-                            completionHandler(nil, err)
+                            completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_HTTP_ERROR, message: "Could not refresh token"))
                         }
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_HTTP_ERROR, message: "Could not refresh token"))
                     }
                 }
             })
         } else {
-            let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_HTTP_ERROR, userInfo: [NSLocalizedDescriptionKey: "Token does not exist in keychain"])
-            completionHandler(nil, error)
+            completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_HTTP_ERROR, message: "Token does not exist in keychain"))
         }
     }
     

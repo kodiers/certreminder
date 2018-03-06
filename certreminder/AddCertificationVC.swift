@@ -142,7 +142,11 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
                         }
                     }
                 })
+            } else {
+                AlertService.showCancelAlert(header: "Choose date please", message: "You cannot choose date", viewController: self)
             }
+        } else {
+            AlertService.showCancelAlert(header: "Choose certification please", message: "You cannot choose certification", viewController: self)
         }
     }
     

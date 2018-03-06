@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ExamService {
+class ExamService: RaiseErrorMixin {
     /*
      Service for manipulate exams
     */
@@ -59,9 +59,10 @@ class ExamService {
                     if let exam = Exam.createExamFromDict(examDict: dict) {
                         completionHandler(exam, nil)
                     } else {
-                        let error = NSError(domain: CUSTOM_ERROR_DOMAIN, code: ERROR_CODE_EXAM_EXISTS, userInfo: [NSLocalizedDescriptionKey: "Could not create exam"])
-                        completionHandler(nil, error)
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_EXAM_EXISTS, message: "Could not create exam"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create exam"))
                 }
             }
         })

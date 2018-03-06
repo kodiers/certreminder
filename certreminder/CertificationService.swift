@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CertificationService {
+class CertificationService: RaiseErrorMixin {
     static let instance = CertificationService()
     
     private let url = "certifications/certification/"
@@ -79,7 +79,11 @@ class CertificationService {
                         }
                         self._certifications?.append(certification)
                         completionHandler(certification, nil)
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create certification"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create certification"))
                 }
             }
         })

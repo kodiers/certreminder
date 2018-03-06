@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class UserCertificationService {
+class UserCertificationService: RaiseErrorMixin {
     /*
      Service for manipulate user certifications
     */
@@ -81,8 +81,14 @@ class UserCertificationService {
                         if let certification = CertificationService.instance.getCertificationById(id: certificationDict["id"] as! Int) {
                             let userCertification = UserCertification.createUserCertificationFromDict(userCertDict: userCertDict, certification: certification)
                             completionHandler(userCertification, nil)
+                        } else {
+                            completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create certification"))
                         }
+                    } else {
+                        completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create certification"))
                     }
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not create certification"))
                 }
             }
         })
