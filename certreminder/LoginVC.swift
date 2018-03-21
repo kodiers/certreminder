@@ -69,5 +69,24 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let result = UIScreen.main.bounds.size;
+        if (result.height < 667)
+        {
+            // less size then iPhone 6
+            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 50, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        }
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        let result = UIScreen.main.bounds.size;
+        if (result.height < 667)
+        {
+            // less size then iPhone 6
+            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 50, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        }
+        return true
+    }
 }
 
