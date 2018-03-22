@@ -44,6 +44,8 @@
 		ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288881F9021CF0017A5DE /* CommonModel.swift */; };
 		ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC4BE1F995E9200B08234 /* AlertService.swift */; };
 		ACDCC8EE204F4EB400E4CB6F /* RaiseErrorMixin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */; };
+		ACDCFB63206463C100E7F659 /* certreminderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCFB62206463C100E7F659 /* certreminderTests.swift */; };
+		ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCFB6A2064648600E7F659 /* modelsTests.swift */; };
 		ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */; };
 		ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */; };
 		ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */; };
@@ -53,6 +55,16 @@
 		ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFEBC781F4E4498007E8594 /* Constants.swift */; };
 		FDA4A8B828753DBDBA8B2299 /* Pods_certreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A685E6D724AD634ED19AFF /* Pods_certreminder.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACDCFB65206463C100E7F659 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACD22E811F46461B0056E0D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACD22E881F46461B0056E0D2;
+			remoteInfo = certreminder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-certreminder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-certreminder/Pods-certreminder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +109,10 @@
 		ACD288881F9021CF0017A5DE /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		ACDCC4BE1F995E9200B08234 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaiseErrorMixin.swift; sourceTree = "<group>"; };
+		ACDCFB60206463C100E7F659 /* certreminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = certreminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACDCFB62206463C100E7F659 /* certreminderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certreminderTests.swift; sourceTree = "<group>"; };
+		ACDCFB64206463C100E7F659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACDCFB6A2064648600E7F659 /* modelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelsTests.swift; sourceTree = "<group>"; };
 		ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationDetailVC.swift; sourceTree = "<group>"; };
 		ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificationVC.swift; sourceTree = "<group>"; };
 		ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataService.swift; sourceTree = "<group>"; };
@@ -112,6 +128,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA4A8B828753DBDBA8B2299 /* Pods_certreminder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACDCFB5D206463C100E7F659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				ACD22E8B1F46461B0056E0D2 /* certreminder */,
+				ACDCFB61206463C100E7F659 /* certreminderTests */,
 				ACD22E8A1F46461B0056E0D2 /* Products */,
 				C7327A283B301569BF1DB0B4 /* Pods */,
 				6B2D8DA274BF20AD51C93B83 /* Frameworks */,
@@ -165,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				ACD22E891F46461B0056E0D2 /* certreminder.app */,
+				ACDCFB60206463C100E7F659 /* certreminderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,6 +260,16 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		ACDCFB61206463C100E7F659 /* certreminderTests */ = {
+			isa = PBXGroup;
+			children = (
+				ACDCFB62206463C100E7F659 /* certreminderTests.swift */,
+				ACDCFB64206463C100E7F659 /* Info.plist */,
+				ACDCFB6A2064648600E7F659 /* modelsTests.swift */,
+			);
+			path = certreminderTests;
+			sourceTree = "<group>";
+		};
 		ACFD08661FAA6DEB009FE996 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,19 +319,43 @@
 			productReference = ACD22E891F46461B0056E0D2 /* certreminder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ACDCFB5F206463C100E7F659 /* certreminderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACDCFB69206463C100E7F659 /* Build configuration list for PBXNativeTarget "certreminderTests" */;
+			buildPhases = (
+				ACDCFB5C206463C100E7F659 /* Sources */,
+				ACDCFB5D206463C100E7F659 /* Frameworks */,
+				ACDCFB5E206463C100E7F659 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACDCFB66206463C100E7F659 /* PBXTargetDependency */,
+			);
+			name = certreminderTests;
+			productName = certreminderTests;
+			productReference = ACDCFB60206463C100E7F659 /* certreminderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		ACD22E811F46461B0056E0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Viktor Yamchinov";
 				TargetAttributes = {
 					ACD22E881F46461B0056E0D2 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
+					};
+					ACDCFB5F206463C100E7F659 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 493PFTF9Q4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ACD22E881F46461B0056E0D2;
 					};
 				};
 			};
@@ -314,6 +373,7 @@
 			projectRoot = "";
 			targets = (
 				ACD22E881F46461B0056E0D2 /* certreminder */,
+				ACDCFB5F206463C100E7F659 /* certreminderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +386,13 @@
 				ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */,
 				ACD22E941F46461B0056E0D2 /* Assets.xcassets in Resources */,
 				ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACDCFB5E206463C100E7F659 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +503,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ACDCFB5C206463C100E7F659 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACDCFB63206463C100E7F659 /* certreminderTests.swift in Sources */,
+				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACDCFB66206463C100E7F659 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACD22E881F46461B0056E0D2 /* certreminder */;
+			targetProxy = ACDCFB65206463C100E7F659 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ACD22E901F46461B0056E0D2 /* Main.storyboard */ = {
@@ -568,6 +652,7 @@
 			baseConfigurationReference = 9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = certreminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminder;
@@ -581,11 +666,55 @@
 			baseConfigurationReference = A72D5FF1F71F2EA9476466D4 /* Pods-certreminder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = certreminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ACDCFB67206463C100E7F659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A7D30C9CF73B097C118EE84 /* Pods-certreminder.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = certreminderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/certreminder.app/certreminder";
+			};
+			name = Debug;
+		};
+		ACDCFB68206463C100E7F659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = certreminderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/certreminder.app/certreminder";
 			};
 			name = Release;
 		};
@@ -606,6 +735,15 @@
 			buildConfigurations = (
 				ACD22E9C1F46461B0056E0D2 /* Debug */,
 				ACD22E9D1F46461B0056E0D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACDCFB69206463C100E7F659 /* Build configuration list for PBXNativeTarget "certreminderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACDCFB67206463C100E7F659 /* Debug */,
+				ACDCFB68206463C100E7F659 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
