@@ -9,18 +9,14 @@
 import XCTest
 @testable import certreminder
 
-class MockCertification: Certification {
-    override init(id: Int, title: String, vendor: Int, deprectated: Bool) {
-        super.init(id: id, title: title, vendor: vendor)
-    }
-}
-
 class modelsTests: XCTestCase {
+    
+    var certification: Certification!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let certification = MockCertification(id: 1, title: "test", vendor: 1, deprectated: false)
+        certification = Certification(id: 1, title: "test", vendor: 1, deprectated: false)
     }
     
     override func tearDown() {
@@ -85,6 +81,55 @@ class modelsTests: XCTestCase {
         XCTAssertTrue(cert2?.description == certDict["description"] as? String)
     }
     
+    func testUserCertificationModel() {
+        let date = Date()
+        let id = 1
+        let userCert = UserCertification(id: id, certification: certification, expirationDate: date)
+        XCTAssertNotNil(userCert)
+        XCTAssertTrue(userCert.expirationDate == date)
+        XCTAssertTrue(userCert.id == id)
+        XCTAssertTrue(userCert.certification === certification)
+        XCTAssertNil(userCert.remindAtDate)
+        userCert.remindAtDate = date
+        XCTAssertTrue(userCert.remindAtDate == date)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let dateStr = formatter.string(from: date)
+        XCTAssertTrue(userCert.expirationDateAsString() == dateStr)
+        XCTAssertTrue(userCert.remindAtDateAsString() == dateStr)
+        let expDateStr = "2020-12-20"
+        let remindDateStr = "2020-11-19"
+        let userCertDict = ["id": 1, "expiration_date": expDateStr, "remind_at_date": remindDateStr] as [String : AnyObject]
+        let userCert2 = UserCertification.createUserCertificationFromDict(userCertDict: userCertDict, certification: certification)
+        XCTAssertNotNil(userCert2)
+        XCTAssertTrue(userCert2?.expirationDateAsString() == "20-12-2020")
+        XCTAssertTrue(userCert2?.remindAtDateAsString() == "19-11-2020")
+        XCTAssertTrue(userCert2?.id == userCertDict["id"] as? Int)
+        XCTAssertTrue(userCert2?.certification.id == certification.id)
+        let userCerts: [UserCertification] = [userCert, userCert2!]
+        XCTAssertNotNil(UserCertification.getCertificationByRemindDate(userCerts: userCerts, date: date))
+        XCTAssertTrue(UserCertification.getCertificationByRemindDate(userCerts: userCerts, date: date)?.count == 1)
+        XCTAssertNotNil(UserCertification.getCertificationByExpirationDate(userCerts: userCerts, date: date))
+        XCTAssertTrue(UserCertification.getCertificationByExpirationDate(userCerts: userCerts, date: date)?.count == 1)
+    }
+    
+    func testVendorModel() {
+        let test = "Test"
+        let id = 1
+        let ven = Vendor(id: id, title: test)
+        ven.description = test
+        ven.image = test
+        XCTAssertTrue(ven.id == id)
+        XCTAssertTrue(ven.title == test)
+        XCTAssertTrue(ven.description == test)
+        XCTAssertTrue(ven.image == test)
+        let vendorDict = ["id": 1, "title": test, "number": "test-1", "image": "testimg", "description": "test description"] as [String : AnyObject]
+        let vendor2 = Vendor.createVendorFromDict(vendorDict: vendorDict)
+        XCTAssertNotNil(vendor2)
+        // TODO: Complete vendor tests
+    }
     
     
     
