@@ -16,6 +16,7 @@
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
+		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
 		AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */; };
 		AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C920461686000B35C4 /* UITableViewExtension.swift */; };
 		AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60B0191F8AE5A0004DFB77 /* Certification.swift */; };
@@ -79,6 +80,7 @@
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
+		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
 		AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AC5FD9C920461686000B35C4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		AC60B0191F8AE5A0004DFB77 /* Certification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certification.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */,
 				ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */,
+				AC34BCED206AF537005C3489 /* CertificationProtocol.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */,
+				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,

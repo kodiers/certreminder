@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CertificationService: RaiseErrorMixin {
+class CertificationService: RaiseErrorMixin, CertificationProtocol {
     static let instance = CertificationService()
     
     private let url = "certifications/certification/"
