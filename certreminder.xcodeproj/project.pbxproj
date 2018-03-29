@@ -17,6 +17,8 @@
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
+		AC5A1741206C668700746C4F /* servicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1740206C668700746C4F /* servicesTests.swift */; };
+		AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1742206C692800746C4F /* WebRequestProtocol.swift */; };
 		AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */; };
 		AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C920461686000B35C4 /* UITableViewExtension.swift */; };
 		AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC60B0191F8AE5A0004DFB77 /* Certification.swift */; };
@@ -81,6 +83,8 @@
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
+		AC5A1740206C668700746C4F /* servicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicesTests.swift; sourceTree = "<group>"; };
+		AC5A1742206C692800746C4F /* WebRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestProtocol.swift; sourceTree = "<group>"; };
 		AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AC5FD9C920461686000B35C4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		AC60B0191F8AE5A0004DFB77 /* Certification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certification.swift; sourceTree = "<group>"; };
@@ -268,6 +272,7 @@
 				ACDCFB62206463C100E7F659 /* certreminderTests.swift */,
 				ACDCFB64206463C100E7F659 /* Info.plist */,
 				ACDCFB6A2064648600E7F659 /* modelsTests.swift */,
+				AC5A1740206C668700746C4F /* servicesTests.swift */,
 			);
 			path = certreminderTests;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */,
 				ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */,
 				AC34BCED206AF537005C3489 /* CertificationProtocol.swift */,
+				AC5A1742206C692800746C4F /* WebRequestProtocol.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */,
 				ACC469221FD605210070C738 /* UserExam.swift in Sources */,
 				ACF73E821FB50AE200F21D8D /* Exam.swift in Sources */,
+				AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */,
 				ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */,
 				AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
@@ -511,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5A1741206C668700746C4F /* servicesTests.swift in Sources */,
 				ACDCFB63206463C100E7F659 /* certreminderTests.swift in Sources */,
 				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,
 			);

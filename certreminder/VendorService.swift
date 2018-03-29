@@ -10,6 +10,7 @@ import UIKit
 
 class VendorService {
     static let instance = VendorService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
     
     private var _vendors: [Vendor]?
     
@@ -23,7 +24,7 @@ class VendorService {
         /*
          Download vendors and store its in memory
          */
-        WebRequestService.webservice.get(url: "certifications/vendor/", data: nil, completionHandler: {(response, error) in
+        VendorService.webservice.get(url: "certifications/vendor/", data: nil, completionHandler: {(response, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
