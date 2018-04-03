@@ -22,6 +22,7 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
         self.getCertifications()
     }
     

@@ -22,6 +22,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
         self.downloadExams()
     }
     

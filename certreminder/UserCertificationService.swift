@@ -14,7 +14,9 @@ class UserCertificationService: RaiseErrorMixin {
      Service for manipulate user certifications
     */
     static let instance = UserCertificationService()
+    
     static var webservice: WebRequestProtocol = WebRequestService.webservice
+    static var certificationService: CertificationProtocol = CertificationService.instance
     
     private let url = "remainder/certification/"
     private let formatter = DateFormatter()
@@ -80,7 +82,7 @@ class UserCertificationService: RaiseErrorMixin {
             } else {
                 if let userCertDict = result as? Dictionary<String, AnyObject> {
                     if let certificationDict = userCertDict["certification"] as? Dictionary<String, AnyObject> {
-                        if let certification = CertificationService.instance.getCertificationById(id: certificationDict["id"] as! Int) {
+                        if let certification = UserCertificationService.certificationService.getCertificationById(id: certificationDict["id"] as! Int) {
                             let userCertification = UserCertification.createUserCertificationFromDict(userCertDict: userCertDict, certification: certification)
                             completionHandler(userCertification, nil)
                         } else {

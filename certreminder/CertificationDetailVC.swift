@@ -28,6 +28,9 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
         examTableView.delegate = self
         examTableView.dataSource = self
+        examTableView.estimatedRowHeight = 75
+        examTableView.rowHeight = UITableViewAutomaticDimension
+        
         configureVC()
         
     }

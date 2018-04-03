@@ -22,6 +22,8 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         // Do any additional setup after loading the view.
         certTableView.delegate = self
         certTableView.dataSource = self
+        certTableView.estimatedRowHeight = 100
+        certTableView.rowHeight = UITableViewAutomaticDimension
         
         // Get user certification
         UserCertificationService.instance.getUserCertification(completionHandler: {(response, error) in

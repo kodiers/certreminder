@@ -15,6 +15,9 @@ let USER = "user"
 let TOKEN = "test"
 
 class MockCommonWebrequest: WebRequestProtocol {
+    /*
+     Base class for mocking services requests
+    */
     func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
         completionHandler(nil, nil)
     }
@@ -33,6 +36,9 @@ class MockCommonWebrequest: WebRequestProtocol {
 }
 
 class MockWebServiceVendors: MockCommonWebrequest {
+    /*
+     Mock web requests for VendorService
+    */
     
     override func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
         let response = ["count": 3, "results": [
@@ -45,6 +51,9 @@ class MockWebServiceVendors: MockCommonWebrequest {
 }
 
 class MockWebServiceCertifications: MockCommonWebrequest {
+    /*
+     Mock web requests for CertificationService
+     */
     override func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
         let response = ["count": 19, "next": nil, "previous": nil, "results": [
             ["id": 1, "created": "2017-10-08T23:03:52.524493Z", "updated": "2017-10-08T23:03:52.524563Z", "title": "MCSA Windows Server 2016 Virtualization and Cloud Platform", "number": "70-443", "image": nil, "description": "", "deprecated": false, "vendor": 1] as [String : AnyObject], ["id": 2, "created": "2017-11-07T22:42:10.036924Z", "updated": "2017-11-07T22:42:10.036971Z", "title": "MCSA Windows Server 2016 Security", "number": nil, "image": nil, "description": "", "deprecated": false, "vendor": 1] as [String : AnyObject]
@@ -59,6 +68,9 @@ class MockWebServiceCertifications: MockCommonWebrequest {
 }
 
 class MockWebServiceUser: MockCommonWebrequest {
+    /*
+     Mock web requests for UserService
+     */
     override func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
         let response = ["user": ["id": 1, "username": USER] as [String: AnyObject], "token": TOKEN] as [String: AnyObject]
         completionHandler(response as AnyObject, nil)
@@ -66,6 +78,9 @@ class MockWebServiceUser: MockCommonWebrequest {
 }
 
 class MockWebServiceUserCertification: MockCommonWebrequest {
+    /*
+     Mock web requests for UserCertificationService
+     */
     override func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
         let response = ["count": 1, "next": nil, "previous": nil,"results": [
             ["id": 1,
@@ -80,9 +95,56 @@ class MockWebServiceUserCertification: MockCommonWebrequest {
         ] as [String: AnyObject]
         completionHandler(response as AnyObject, nil)
     }
+    
+    override func delete(url: String, objectID: Int, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+    
+    override func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
+        let expDateStr = "2020-12-20"
+        let remindDateStr = "2020-11-19"
+        let userCertDict = ["id": 1, "expiration_date": expDateStr, "remind_at_date": remindDateStr, "certification": ["id": 1] as [String: AnyObject]] as [String : AnyObject]
+        completionHandler(userCertDict as AnyObject, nil)
+    }
+    
+    override func patch(url: String, data: Parameters, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+}
+
+class MockExamWebRequestService: MockCommonWebrequest {
+    /*
+     Mock web requests for ExamService
+    */
+    override func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
+        let response = ["count": 4, "next": nil, "previous": nil, "results": [
+            ["id": 1, "created": "2017-10-08T23:04:12.085799Z", "updated": "2017-10-08T23:04:12.085845Z", "title": "MCSA Windows Server 2016 Virtualization", "number": "70-744", "description": "", "deprecated": false, "certification": 1] as [String: AnyObject],
+            ["id": 2, "created": "2017-11-21T22:38:33.352833Z", "updated": "2017-11-21T22:38:33.352874Z", "title": "MCSA Windows Server 2016 Networking", "number": "70-333", "description": "", "deprecated": false, "certification": 1] as [String: AnyObject]
+        ]] as [String: AnyObject]
+        completionHandler(response as AnyObject, nil)
+    }
+    
+    override func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
+        let response = ["id": 1, "created": "2017-10-08T23:04:12.085799Z", "updated": "2017-10-08T23:04:12.085845Z", "title": "MCSA Windows Server 2016 Virtualization", "number": "70-744", "description": "", "deprecated": false, "certification": 1] as [String: AnyObject]
+        completionHandler(response as AnyObject, nil)
+    }
+}
+
+class MockCertSrv: CertificationProtocol {
+    /*
+     Mock CertificationService for UserCertificationService
+    */
+    
+    func getCertificationById(id: Int) -> Certification? {
+        let cert = Certification(id: 1, title: "test", vendor: 1)
+        return cert
+    }
 }
 
 class VendorViewController: UIViewController, SetVendorsProtocol {
+    /*
+     Mock for UIViewController
+    */
     
     var vendors: [Vendor]?
     
@@ -102,6 +164,8 @@ class servicesTests: XCTestCase {
     var MockCerticationRequestService: WebRequestProtocol!
     var MockUserRequestService: WebRequestProtocol!
     var MockUserCertificationRequestService: WebRequestProtocol!
+    var mockCertService: CertificationProtocol!
+    var MockExamRequests: WebRequestProtocol!
     
     override func setUp() {
         super.setUp()
@@ -115,6 +179,8 @@ class servicesTests: XCTestCase {
         MockCerticationRequestService = MockWebServiceCertifications()
         MockUserRequestService = MockWebServiceUser()
         MockUserCertificationRequestService = MockWebServiceUserCertification()
+        mockCertService = MockCertSrv()
+        MockExamRequests = MockExamWebRequestService()
     }
     
     override func tearDown() {
@@ -281,7 +347,81 @@ class servicesTests: XCTestCase {
         XCTAssertTrue(success)
         XCTAssertNotEqual(userCetifications.count, 0)
         XCTAssertEqual(userCetifications[0].id, id1)
-        // TODO: Complete user certifications service test
+        success = false
+        UserCertificationService.instance.deleteUserCertification(userCertId: id1) { (result, err) in
+            if err != nil {
+                error = err!
+            } else {
+                success = (result as? Bool)!
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        UserCertificationService.certificationService = mockCertService
+        success = false
+        var userCertification: UserCertification?
+        let cert = Certification(id: 1, title: "test", vendor: 1)
+        UserCertificationService.instance.createUserCertification(cert: cert, expireDate: Date()) { (userCert, err) in
+            if err != nil {
+                error = err!
+            } else {
+                userCertification = userCert
+                success = true
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        XCTAssertNotNil(userCertification)
+        XCTAssertEqual(userCertification?.id, 1)
+        success = false
+        UserCertificationService.instance.changeUserCertification(userCert: userCertification!) { (resp, err) in
+            if err != nil {
+                error = err
+            } else {
+                success = resp!
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+    }
+    
+    func testExamService() {
+        ExamService.webservice = MockExamRequests
+        var success: Bool = false
+        var error: NSError?
+        var exams = [Exam]()
+        Exam.certificationService = mockCertService
+        ExamService.instance.getExams(certification: nil) { (exms, err) in
+            if err != nil {
+                error = err
+            } else {
+                success = true
+                exams = exms!
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        XCTAssertNotEqual(exams.count, 0)
+        XCTAssertEqual(exams[0].id, 1)
+        success = false
+        var exam: Exam?
+        let cert = Certification(id: 1, title: "test", vendor: 1)
+        ExamService.instance.createExam(title: "test", certification: cert, number: nil) { (resp, err) in
+            if err != nil {
+                error = (err! as NSError)
+            } else {
+                success = true
+                exam = resp!
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        XCTAssertNotNil(exam)
+        XCTAssertEqual(exam?.id, 1)
+    }
+    
+    func testUserExamService () {
+        // TODO: Added tests for UserExamService
     }
     
 }
