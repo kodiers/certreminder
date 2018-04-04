@@ -28,6 +28,7 @@
 		AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
+		AC82515220758DF700476BBD /* viewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82515120758DF700476BBD /* viewsTests.swift */; };
 		AC9105942033ADEC00C1128B /* ExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9105932033ADEC00C1128B /* ExamService.swift */; };
 		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
@@ -94,6 +95,7 @@
 		AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExamVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
+		AC82515120758DF700476BBD /* viewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewsTests.swift; sourceTree = "<group>"; };
 		AC9105932033ADEC00C1128B /* ExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamService.swift; sourceTree = "<group>"; };
 		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				ACDCFB64206463C100E7F659 /* Info.plist */,
 				ACDCFB6A2064648600E7F659 /* modelsTests.swift */,
 				AC5A1740206C668700746C4F /* servicesTests.swift */,
+				AC82515120758DF700476BBD /* viewsTests.swift */,
 			);
 			path = certreminderTests;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC82515220758DF700476BBD /* viewsTests.swift in Sources */,
 				AC5A1741206C668700746C4F /* servicesTests.swift in Sources */,
 				ACDCFB63206463C100E7F659 /* certreminderTests.swift in Sources */,
 				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,

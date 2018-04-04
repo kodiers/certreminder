@@ -141,6 +141,74 @@ class MockCertSrv: CertificationProtocol {
     }
 }
 
+class MockUserExamRequestService: MockCommonWebrequest {
+    /*
+     Mock web requests for UserExamService
+    */
+    override func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
+        let response = ["exams": [
+            ["id": 1, "certification_id": 1, "user_certification_id": 23, "exam_id": 1, "created": "2018-02-13T23:19:19.577904Z", "updated": "2018-02-13T23:19:19.577958Z", "date_of_pass": "2018-04-14", "remind_at_date": nil] as [String: AnyObject],
+            ["id": 2, "certification_id": 1, "user_certification_id": 23, "exam_id": 2, "created": "2018-02-13T23:19:19.590649Z", "updated": "2018-02-13T23:19:19.590691Z", "date_of_pass": "2019-02-14", "remind_at_date": nil] as [String: AnyObject],
+        ]] as [String: AnyObject]
+        completionHandler(response as AnyObject, nil)
+    }
+    
+    override func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
+        let response = ["count": 2, "next": nil, "previous": nil, "results": [
+            ["id": 1,
+             "user": ["id": 1, "username": "admin", "email": "kodiers@gmail.com", "first_name": "", "last_name": ""] as [String: AnyObject],
+             "user_certification": ["id": 1,
+                                   "user": ["id": 1, "username": "admin", "email": "kodiers@gmail.com", "first_name": "", "last_name": ""] as [String: AnyObject],
+                                   "certification": ["id": 1, "created": "2017-10-08T23:03:52.524493Z", "updated": "2017-10-08T23:03:52.524563Z",
+                                                     "title": "MCSA Windows Server 2016 Virtualization and Cloud Platform", "number": "70-443",
+                                    "image": nil, "description": "", "deprecated": false, "vendor": 1] as [String: AnyObject],
+                                   "certification_id": 1,
+                                   "created": "2018-02-13T23:19:19.427010Z",
+                                   "updated": "2018-02-13T23:19:19.427064Z",
+                                   "expiration_date": "2020-02-14",
+                "remind_at_date": nil] as [String: AnyObject],
+             "user_certification_id": 1,
+             "exam": ["id": 1, "created": "2017-10-08T23:04:12.085799Z", "updated": "2017-10-08T23:04:12.085845Z", "title": "MCSA Windows Server 2016 Virtualization", "number": "70-744", "description": "", "deprecated": false, "certification": 1] as [String: AnyObject],
+             "exam_id": 1,
+             "created": "2018-02-13T23:19:19.577904Z",
+             "updated": "2018-02-13T23:19:19.577958Z",
+             "date_of_pass": "2018-04-14",
+             "remind_at_date": nil
+            ] as [String: AnyObject],
+            ["id": 25,
+             "user": ["id": 1, "username": "admin", "email": "kodiers@gmail.com", "first_name": "", "last_name": ""] as [String: AnyObject],
+             "user_certification": ["id": 1,
+                                    "user": ["id": 1, "username": "admin", "email": "kodiers@gmail.com", "first_name": "", "last_name": ""] as [String: AnyObject],
+                                    "certification": ["id": 1, "created": "2017-10-08T23:03:52.524493Z", "updated": "2017-10-08T23:03:52.524563Z", "title": "MCSA Windows Server 2016 Virtualization and Cloud Platform", "number": "70-443", "image": nil,
+                                        "description": "", "deprecated": false, "vendor": 1] as [String: AnyObject],
+                                    "certification_id": 1,
+                                    "created": "2018-02-13T23:19:19.427010Z",
+                                    "updated": "2018-02-13T23:19:19.427064Z",
+                                    "expiration_date": "2020-02-14", "remind_at_date": nil] as [String: AnyObject],
+             "user_certification_id": 23,
+             "exam": ["id": 2, "created": "2017-11-21T22:38:33.352833Z", "updated": "2017-11-21T22:38:33.352874Z", "title": "MCSA Windows Server 2016 Networking", "number": "70-333", "description": "", "deprecated": false, "certification": 1] as [String: AnyObject],
+             "exam_id": 2,
+             "created": "2018-02-13T23:19:19.590649Z",
+             "updated": "2018-02-13T23:19:19.590691Z",
+             "date_of_pass": "2019-02-14",
+             "remind_at_date": nil
+        ] as [String: AnyObject]]] as [String: AnyObject]
+        completionHandler(response as AnyObject, nil)
+    }
+    
+    override func delete(url: String, objectID: Int, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+    
+    override func patch(url: String, data: Parameters, completionHandler: @escaping RequestComplete) {
+        let response = ["exams": [
+            ["id": 1, "certification_id": 1, "user_certification_id": 23, "exam_id": 1, "created": "2018-02-13T23:19:19.577904Z", "updated": "2018-02-13T23:19:19.577958Z", "date_of_pass": "2018-04-14", "remind_at_date": nil] as [String: AnyObject],
+            ["id": 2, "certification_id": 1, "user_certification_id": 23, "exam_id": 2, "created": "2018-02-13T23:19:19.590649Z", "updated": "2018-02-13T23:19:19.590691Z", "date_of_pass": "2019-02-14", "remind_at_date": nil] as [String: AnyObject],
+            ]] as [String: AnyObject]
+        completionHandler(response as AnyObject, nil)
+    }
+}
+
 class VendorViewController: UIViewController, SetVendorsProtocol {
     /*
      Mock for UIViewController
@@ -166,6 +234,7 @@ class servicesTests: XCTestCase {
     var MockUserCertificationRequestService: WebRequestProtocol!
     var mockCertService: CertificationProtocol!
     var MockExamRequests: WebRequestProtocol!
+    var MockUserExamRequest: WebRequestProtocol!
     
     override func setUp() {
         super.setUp()
@@ -181,6 +250,7 @@ class servicesTests: XCTestCase {
         MockUserCertificationRequestService = MockWebServiceUserCertification()
         mockCertService = MockCertSrv()
         MockExamRequests = MockExamWebRequestService()
+        MockUserExamRequest = MockUserExamRequestService()
     }
     
     override func tearDown() {
@@ -421,7 +491,62 @@ class servicesTests: XCTestCase {
     }
     
     func testUserExamService () {
-        // TODO: Added tests for UserExamService
+        let date: Date = Date()
+        let vendor: Vendor = Vendor(id: id1, title: title1)
+        let choosedCert: Certification = Certification(id: id1, title: title1, vendor: vendor.id)
+        let exam = Exam(id: id1, title: title1, certification: choosedCert)
+        let userCert: UserCertification = UserCertification(id: id1, certification: choosedCert, expirationDate: date)
+        let examsWithDate = [(exam, date)]
+        UserExamService.webservice = MockUserExamRequest
+        var success: Bool = false
+        var error: NSError?
+        UserExamService.instance.createUserExams(certification: userCert, examsWithDate: examsWithDate) { (resp, err) in
+            if err != nil {
+                error = err!
+            } else {
+                if let _ = resp as? Array<AnyObject> {
+                    success = true
+                }
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        success = false
+        var usersExams = [UserExam]()
+        UserExamService.instance.getUserExamsForCertification(certification: userCert) { (exams, err) in
+            if err != nil {
+                error = err!
+            } else {
+                usersExams = exams!
+                success = true
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        XCTAssertNotEqual(usersExams.count, 0)
+        XCTAssertEqual(usersExams[0].id, id1)
+        success = false
+        UserExamService.instance.deleteUserExam(userExamId: 1) { (resp, err) in
+            if err != nil {
+                error = err
+            } else {
+                success = resp!
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
+        success = false
+        UserExamService.instance.changeUserExams(certification: userCert, userExams: usersExams) { (resp, err) in
+            if err != nil {
+                error = err!
+            } else {
+                if let _ = resp as? Array<AnyObject> {
+                    success = true
+                }
+            }
+        }
+        XCTAssertNil(error)
+        XCTAssertTrue(success)
     }
     
 }
