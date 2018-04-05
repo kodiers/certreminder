@@ -10,8 +10,6 @@ import Foundation
 import Alamofire
 import SwiftKeychainWrapper
 
-typealias RequestComplete = (AnyObject?, NSError?) -> ()
-
 class WebRequestService: WebRequestProtocol {
     /*
      Web request service

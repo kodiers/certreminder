@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CertificationService: RaiseErrorMixin, CertificationProtocol {
+class CertificationService: RaiseErrorMixin, CertificationProtocol, CertificationServiceProtocol {
     static let instance = CertificationService()
     static var webservice: WebRequestProtocol = WebRequestService.webservice
     

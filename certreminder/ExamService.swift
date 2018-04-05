@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ExamService: RaiseErrorMixin {
+class ExamService: RaiseErrorMixin, ExamServiceProtocol {
     /*
      Service for manipulate exams
     */

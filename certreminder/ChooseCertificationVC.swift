@@ -15,6 +15,7 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
     var certifications = [Certification]()
     var choosedCert: Certification?
     var vendor: Vendor!
+    var certificationService: CertificationServiceProtocol = CertificationService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,7 +128,7 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
     
     func getCertifications() {
         // Download certifications from server
-        CertificationService.instance.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
+        certificationService.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
             if error != nil {
                 self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
             } else {

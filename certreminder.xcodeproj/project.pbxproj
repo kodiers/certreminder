@@ -25,6 +25,9 @@
 		AC6147EC1F82E17600326C27 /* RoundedBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */; };
 		AC6147EE1F82E50C00326C27 /* CertificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147ED1F82E50C00326C27 /* CertificationCell.swift */; };
 		AC66D0AD203B8A5D00480FA3 /* UserExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */; };
+		AC7196742076D34800CFF449 /* UserCertificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7196732076D34800CFF449 /* UserCertificationServiceProtocol.swift */; };
+		AC7196762076DC3200CFF449 /* CertificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7196752076DC3200CFF449 /* CertificationServiceProtocol.swift */; };
+		AC7196782076E58700CFF449 /* ExamServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7196772076E58700CFF449 /* ExamServiceProtocol.swift */; };
 		AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */; };
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
@@ -92,6 +95,9 @@
 		AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderButton.swift; sourceTree = "<group>"; };
 		AC6147ED1F82E50C00326C27 /* CertificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationCell.swift; sourceTree = "<group>"; };
 		AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExamService.swift; sourceTree = "<group>"; };
+		AC7196732076D34800CFF449 /* UserCertificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationServiceProtocol.swift; sourceTree = "<group>"; };
+		AC7196752076DC3200CFF449 /* CertificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationServiceProtocol.swift; sourceTree = "<group>"; };
+		AC7196772076E58700CFF449 /* ExamServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamServiceProtocol.swift; sourceTree = "<group>"; };
 		AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExamVC.swift; sourceTree = "<group>"; };
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
@@ -287,6 +293,9 @@
 				ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */,
 				AC34BCED206AF537005C3489 /* CertificationProtocol.swift */,
 				AC5A1742206C692800746C4F /* WebRequestProtocol.swift */,
+				AC7196732076D34800CFF449 /* UserCertificationServiceProtocol.swift */,
+				AC7196752076DC3200CFF449 /* CertificationServiceProtocol.swift */,
+				AC7196772076E58700CFF449 /* ExamServiceProtocol.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -480,8 +489,10 @@
 				AC0824FA1F8C3A27008B9C4C /* UserCertification.swift in Sources */,
 				ACD288831F901EB30017A5DE /* Vendor.swift in Sources */,
 				ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */,
+				AC7196742076D34800CFF449 /* UserCertificationServiceProtocol.swift in Sources */,
 				ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */,
 				ACC469221FD605210070C738 /* UserExam.swift in Sources */,
+				AC7196762076DC3200CFF449 /* CertificationServiceProtocol.swift in Sources */,
 				ACF73E821FB50AE200F21D8D /* Exam.swift in Sources */,
 				AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */,
 				ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */,
@@ -507,6 +518,7 @@
 				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
 				ACB248F5202D075900693F48 /* UserService.swift in Sources */,
 				ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */,
+				AC7196782076E58700CFF449 /* ExamServiceProtocol.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				ACDCC8EE204F4EB400E4CB6F /* RaiseErrorMixin.swift in Sources */,

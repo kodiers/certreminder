@@ -347,7 +347,7 @@
         <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
             <objects>
-                <viewController id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjl-nm-S7s"/>
                         <viewControllerLayoutGuide type="bottom" id="IiD-Cu-vMx"/>
@@ -976,7 +976,7 @@
         <!--Choose CertificationVC-->
         <scene sceneID="4V5-cs-dXG">
             <objects>
-                <viewController id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luY-iv-SZu"/>
                         <viewControllerLayoutGuide type="bottom" id="VP9-gt-5IT"/>
@@ -1403,7 +1403,7 @@
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
             <objects>
-                <viewController id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExamsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6F-lN-t3e"/>
                         <viewControllerLayoutGuide type="bottom" id="KEb-cX-eFB"/>
@@ -1891,7 +1891,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WNp-Uu-E5p"/>
-        <segue reference="IfT-sl-7B9"/>
+        <segue reference="VdF-O4-xgd"/>
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UOi-Kr-oaH"/>

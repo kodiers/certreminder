@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class UserCertificationService: RaiseErrorMixin {
+class UserCertificationService: RaiseErrorMixin, UserCertificationServiceProtocol {
     /*
      Service for manipulate user certifications
     */
