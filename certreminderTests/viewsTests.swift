@@ -10,41 +10,6 @@ import XCTest
 
 @testable import certreminder
 
-var TEST = "test"
-var id1 = 1
-
-class MockUserCertificationService: UserCertificationServiceProtocol {
-    /*
-     Mock UserCertificationService
-    */
-    func getUserCertification(completionHandler: @escaping RequestComplete) {
-        let certification = Certification(id: id1, title: TEST, vendor: id1)
-        completionHandler([UserCertification(id: id1, certification: certification, expirationDate: Date())] as AnyObject, nil)
-    }
-    
-    func deleteUserCertification(userCertId: Int, completionHandler: @escaping RequestComplete) {
-        completionHandler(true as AnyObject, nil)
-    }
-}
-
-class MockCertService: CertificationServiceProtocol {
-    /*
-     Mock CertificationService
-    */
-    func downloadCertifications(vendor: Vendor?, completionHandler: @escaping ([Certification]?, NSError?) -> ()) {
-        completionHandler([Certification(id: id1, title: TEST, vendor: id1)], nil)
-    }
-}
-
-class MockExamSrv: ExamServiceProtocol {
-    /*
-     Mock ExamService
-    */
-    func getExams(certification: Certification?, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
-        let certification = Certification(id: id1, title: TEST, vendor: id1)
-        completionHandler([Exam(id: id1, title: TEST, certification: certification)], nil)
-    }
-}
 
 class viewsTests: XCTestCase {
     var userCert: UserCertification!
@@ -55,6 +20,7 @@ class viewsTests: XCTestCase {
     var mockUserCertSrv: UserCertificationServiceProtocol!
     var mockCertSrv: CertificationServiceProtocol!
     var mockExamSrv: ExamServiceProtocol!
+    var storyboard: UIStoryboard!
     
     override func setUp() {
         super.setUp()
@@ -67,6 +33,7 @@ class viewsTests: XCTestCase {
         mockUserCertSrv = MockUserCertificationService()
         mockCertSrv = MockCertService()
         mockExamSrv = MockExamSrv()
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
     }
     
     override func tearDown() {
@@ -75,7 +42,6 @@ class viewsTests: XCTestCase {
     }
     
     func testCertificationCell() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let CertVC = storyboard.instantiateViewController(withIdentifier: "CertificationVC") as! CertificationVC
         CertVC.userCertificationService = mockUserCertSrv
         _ = CertVC.view
@@ -90,7 +56,6 @@ class viewsTests: XCTestCase {
     }
     
     func testChooseCertificationTableCellCell() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let ChooseCertVC = storyboard.instantiateViewController(withIdentifier: "ChooseCertificationVC") as! ChooseCertificationVC
         ChooseCertVC.certificationService = mockCertSrv
         _ = ChooseCertVC.view
@@ -107,7 +72,6 @@ class viewsTests: XCTestCase {
     }
     
     func testChooseExamTableCell() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let ExamsVC = storyboard.instantiateViewController(withIdentifier: "AddExamsVC") as! AddExamsVC
         ExamsVC.examService = mockExamSrv
         _ = ExamsVC.view
@@ -116,5 +80,26 @@ class viewsTests: XCTestCase {
         cell?.configureCell(exam: exam)
         XCTAssertEqual(cell?.examLabel.text, " \(TEST)")
         XCTAssertEqual(cell?.exam.id, exam.id)
+    }
+    
+    func testChoosedExamsWithDateTableViewCell() {
+        let AddCertVC = storyboard.instantiateViewController(withIdentifier: "AddCertificationVC") as! AddCertificationVC
+        AddCertVC.vendor = vendor
+        AddCertVC.choosedCert = certification
+        AddCertVC.examsWithDate = [(exam, date)]
+        _ = AddCertVC.view
+        let cell = AddCertVC.tableView(AddCertVC.examsTableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ChoosedExamsWithDateTableViewCell
+        XCTAssertNotNil(cell)
+        cell?.configureCell(exam: exam, date: date)
+        XCTAssertEqual(cell?.exam?.id, exam.id)
+        XCTAssertEqual(cell?.date, date)
+        XCTAssertEqual(cell?.examNumberLabel.text, "")
+        XCTAssertEqual(cell?.examTitleLabel.text, TEST)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        formatter.timeZone = Calendar.current.timeZone
+        formatter.locale = Calendar.current.locale
+        let dateStr = formatter.string(from: date)
+        XCTAssertEqual(cell?.dateLabel.text, dateStr)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import SwiftKeychainWrapper
 import Alamofire
 
-class UserService: RaiseErrorMixin {
+class UserService: RaiseErrorMixin, UserServiceProtocol {
     /*
      User service
     */
@@ -51,7 +51,7 @@ class UserService: RaiseErrorMixin {
         }
     }
     
-    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
         // handle register user requests
         self.logoutUser()
         let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password]
@@ -75,7 +75,7 @@ class UserService: RaiseErrorMixin {
         })
     }
     
-    func loginUser(username: String, password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func loginUser(username: String, password: String, completionHandler: @escaping RequestComplete) {
         // Login user function
         let data: Parameters = ["username": username, "password": password]
         let url = "people/api-token-auth/"
@@ -109,7 +109,7 @@ class UserService: RaiseErrorMixin {
         let _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
     }
     
-    func refreshToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func refreshToken(completionHandler: @escaping RequestComplete) {
         // Refresh token function
         let url = "people/api-token-refresh/"
         if let tkn = self.token {
@@ -136,7 +136,7 @@ class UserService: RaiseErrorMixin {
         }
     }
     
-    func verifyToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func verifyToken(completionHandler: @escaping RequestComplete) {
         // Verify token function
         let url = "people/api-token-verify/"
         if let tkn = self.token {

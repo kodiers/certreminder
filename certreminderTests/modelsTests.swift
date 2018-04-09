@@ -9,20 +9,6 @@
 import XCTest
 @testable import certreminder
 
-class MockCertificationService: CertificationProtocol {
-    /*
-     Mock Certification Service
-    */
-    var certification: Certification
-    
-    func getCertificationById(id: Int) -> Certification? {
-        return certification
-    }
-    
-    init(certification: Certification) {
-        self.certification = certification
-    }
-}
 
 class modelsTests: XCTestCase {
     /*

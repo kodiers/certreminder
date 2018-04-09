@@ -38,6 +38,16 @@
                ReferencedContainer = "container:certreminder.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AC507DC5207C232200D3B2F9"
+               BuildableName = "certreminderUITests.xctest"
+               BlueprintName = "certreminderUITests"
+               ReferencedContainer = "container:certreminder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

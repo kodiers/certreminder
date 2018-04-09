@@ -1,18 +1,20 @@
 //
-//  certreminderTests.swift
+//  testLoginVC.swift
 //  certreminderTests
 //
-//  Created by Viktor Yamchinov on 23/03/2018.
+//  Created by Viktor Yamchinov on 10/04/2018.
 //  Copyright © 2018 Viktor Yamchinov. All rights reserved.
 //
 
 import XCTest
 
-class certreminderTests: XCTestCase {
+class testLoginVC: XCTestCase {
+    var storyboard: UIStoryboard!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
     }
     
     override func tearDown() {
@@ -31,4 +33,5 @@ class certreminderTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
 }
