@@ -7,14 +7,19 @@
 //
 
 import XCTest
+@testable import certreminder
+
 
 class testLoginVC: XCTestCase {
     var storyboard: UIStoryboard!
+    var loginVC: LoginVC!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         storyboard = UIStoryboard(name: "Main", bundle: nil)
+        UserService.instance.logoutUser()
+        loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
     }
     
     override func tearDown() {
@@ -22,16 +27,17 @@ class testLoginVC: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLoginVC() {
+        _ = loginVC.view
+        XCTAssertEqual(loginVC.loginField.text, "")
+        XCTAssertEqual(loginVC.passwordField.text, "")
+        XCTAssertNotNil(loginVC.loginBtn)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testLoginBtnTapped() {
+        _ = loginVC.view
+        loginVC.userService = MockUserService()
+        let actions = loginVC.loginBtn.actions(forTarget: loginVC, forControlEvent: .touchUpInside)
+        XCTAssertTrue((actions?.contains("loginBtnTapped:"))!)
     }
-    
 }

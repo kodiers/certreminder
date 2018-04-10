@@ -13,6 +13,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginBtn: RoundedBorderButton!
+    
+    var userService: UserServiceProtocol = UserService.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let token = KeychainWrapper.standard.string(forKey: KEY_UID)
         if token != nil {
-            UserService.instance.verifyToken(completionHandler: {(response, error) in
+            userService.verifyToken(completionHandler: {(response, error) in
                 if error != nil {
-                    UserService.instance.refreshToken(completionHandler: {(response, error) in
+                    self.userService.refreshToken(completionHandler: {(response, error) in
                         if error != nil {
                             AlertService.showCancelAlert(header: "HTTP Error", message: "Error while refresh token", viewController: self)
                         } else {
@@ -52,7 +55,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             return
         }
         
-        UserService.instance.loginUser(username: login, password: password, completionHandler: {(response, error) in
+        userService.loginUser(username: login, password: password, completionHandler: {(response, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "Incorrect credentials", message: "Login or password incorrect", viewController: self)
             } else {

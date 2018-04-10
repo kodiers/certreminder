@@ -257,3 +257,21 @@ class MockExamSrv: ExamServiceProtocol {
         completionHandler([Exam(id: id1, title: TEST, certification: certification)], nil)
     }
 }
+
+class MockUserService: UserServiceProtocol {
+    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+    
+    func loginUser(username: String, password: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+    
+    func refreshToken(completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+    
+    func verifyToken(completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+}
