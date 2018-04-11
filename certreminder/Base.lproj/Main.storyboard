@@ -173,7 +173,7 @@
         <!--RegistrationVC-->
         <scene sceneID="r1f-iz-DFM">
             <objects>
-                <viewController id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGN-Qn-5WS"/>
                         <viewControllerLayoutGuide type="bottom" id="4fF-Il-0jZ"/>
@@ -338,6 +338,7 @@
                         <outlet property="confirmPasswordField" destination="ZjV-eZ-LPz" id="PTL-xK-yrK"/>
                         <outlet property="loginField" destination="EDy-6i-Fgn" id="A8w-oe-xTd"/>
                         <outlet property="passwordField" destination="Kn7-0v-DeD" id="gc0-Nw-4VY"/>
+                        <outlet property="registerBtn" destination="6rw-cv-puX" id="FdN-NP-L60"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="RegShowMainVC" id="W1w-jA-vkM"/>
                     </connections>
                 </viewController>
@@ -443,7 +444,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newSertificationButtonPressed:" destination="A8S-3n-4uh" eventType="touchUpInside" id="dpc-uW-GbI"/>
                                     <segue destination="an7-cQ-EEe" kind="show" identifier="AddCertificationVC" id="UOi-Kr-oaH"/>
                                 </connections>
                             </button>
@@ -482,6 +482,7 @@
                     </view>
                     <connections>
                         <outlet property="certTableView" destination="qj9-SK-iIY" id="0bM-Uj-D68"/>
+                        <outlet property="newCertBtn" destination="xZS-3g-Jr1" id="0V4-Od-PIZ"/>
                         <segue destination="8FM-FH-goS" kind="show" identifier="CertificationDetailVC" id="WNp-Uu-E5p"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="GoToLoginVC" id="V3E-4k-ULS"/>
                     </connections>
@@ -1616,7 +1617,7 @@
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
             <objects>
-                <viewController id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zZA-5d-W9V"/>
                         <viewControllerLayoutGuide type="bottom" id="0Hx-Sq-8ie"/>
@@ -1892,10 +1893,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WNp-Uu-E5p"/>
-        <segue reference="VdF-O4-xgd"/>
-        <segue reference="ni2-s2-HtD"/>
-        <segue reference="c5f-pG-RO1"/>
+        <segue reference="IfT-sl-7B9"/>
+        <segue reference="TF2-wU-NEM"/>
+        <segue reference="OCh-lh-1j8"/>
         <segue reference="UOi-Kr-oaH"/>
-        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="H0c-jf-ZaI"/>
     </inferredMetricsTieBreakers>
 </document>

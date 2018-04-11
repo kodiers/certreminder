@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class UserExamService: RaiseErrorMixin {
+class UserExamService: RaiseErrorMixin, UserExamServiceProtocol {
     /*
      Service for manipulate user exams
     */
@@ -20,7 +20,7 @@ class UserExamService: RaiseErrorMixin {
     private let formatter = DateFormatter()
     private let url = "remainder/exam/"
     
-    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping RequestComplete) {
         // Add exams to user certification
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = Calendar.current.timeZone
@@ -87,7 +87,7 @@ class UserExamService: RaiseErrorMixin {
         })
     }
     
-    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping RequestComplete) {
         // Bulk change users exams
         let changeUrl = url + "bulk/update/"
         formatter.dateFormat = "yyyy-MM-dd"

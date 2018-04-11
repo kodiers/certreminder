@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VendorService {
+class VendorService: VendorServiceProtocol {
     static let instance = VendorService()
     static var webservice: WebRequestProtocol = WebRequestService.webservice
     

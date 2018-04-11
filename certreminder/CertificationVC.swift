@@ -11,6 +11,7 @@ import UIKit
 class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SetVendorsProtocol {
 
     @IBOutlet weak var certTableView: UITableView!
+    @IBOutlet weak var newCertBtn: RoundedBorderButton!
     
     var userCertifications = [UserCertification]()
     var vendors = [Vendor]()
@@ -115,9 +116,6 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         UserService.instance.logoutUser()
         performSegue(withIdentifier: "GoToLoginVC", sender: nil)
-    }
-    
-    @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
     }
     
     func setVendors(vendors: [Vendor]) {

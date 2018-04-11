@@ -259,6 +259,9 @@ class MockExamSrv: ExamServiceProtocol {
 }
 
 class MockUserService: UserServiceProtocol {
+    /*
+     Mock UserService
+    */
     func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
@@ -274,4 +277,24 @@ class MockUserService: UserServiceProtocol {
     func verifyToken(completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
+}
+
+class MockVendorService: VendorServiceProtocol {
+    /*
+     Mock VendorService
+    */
+    
+    var _vendors: [Vendor]?
+    
+    var vendors: [Vendor]? {
+        get {
+            return _vendors
+        }
+    }
+    
+    func downloadVendors(completionHandler: @escaping ([Vendor]?, NSError?) -> ()) {
+        completionHandler([Vendor(id: id1, title: TEST)], nil)
+    }
+    
+    
 }

@@ -22,6 +22,8 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     var usersExams = [UserExam]()
     var examForEdit: UserExam?
     
+    var vendorService: VendorServiceProtocol = VendorService.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -155,7 +157,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func configureVC() {
         certificationTitleLabel.text = userCerification.certification.title
-        if let vendors = VendorService.instance.vendors {
+        if let vendors = vendorService.vendors {
             vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
             if let ven = vendor {
                 vendorLabel.text = ven.title

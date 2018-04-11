@@ -59,6 +59,11 @@
 		ACEB9AFE1F955A5600F1F247 /* CertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */; };
 		ACEB9B001F9565C000F1F247 /* AddCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */; };
 		ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */; };
+		ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */; };
+		ACF6CFC8207ECA8B007A87A4 /* testCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */; };
+		ACF6CFCA207ED219007A87A4 /* testCertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */; };
+		ACF6CFCC207ED416007A87A4 /* VendorServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFCB207ED416007A87A4 /* VendorServiceProtocol.swift */; };
+		ACF6CFCE207ED70F007A87A4 /* UserExamServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFCD207ED70F007A87A4 /* UserExamServiceProtocol.swift */; };
 		ACF73E821FB50AE200F21D8D /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF73E811FB50AE200F21D8D /* Exam.swift */; };
 		ACFD08651FAA685F009FE996 /* VendorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08641FAA685F009FE996 /* VendorService.swift */; };
 		ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */; };
@@ -145,6 +150,11 @@
 		ACEB9AFD1F955A5600F1F247 /* CertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationDetailVC.swift; sourceTree = "<group>"; };
 		ACEB9AFF1F9565C000F1F247 /* AddCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCertificationVC.swift; sourceTree = "<group>"; };
 		ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataService.swift; sourceTree = "<group>"; };
+		ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRegistrationVC.swift; sourceTree = "<group>"; };
+		ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationVC.swift; sourceTree = "<group>"; };
+		ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationDetailVC.swift; sourceTree = "<group>"; };
+		ACF6CFCB207ED416007A87A4 /* VendorServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorServiceProtocol.swift; sourceTree = "<group>"; };
+		ACF6CFCD207ED70F007A87A4 /* UserExamServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExamServiceProtocol.swift; sourceTree = "<group>"; };
 		ACF73E811FB50AE200F21D8D /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
 		ACFD08641FAA685F009FE996 /* VendorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorService.swift; sourceTree = "<group>"; };
 		ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetVendorsProtocol.swift; sourceTree = "<group>"; };
@@ -318,6 +328,9 @@
 				AC82515120758DF700476BBD /* viewsTests.swift */,
 				AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */,
 				AC507DD2207C2B9700D3B2F9 /* mocks.swift */,
+				ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */,
+				ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */,
+				ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */,
 			);
 			path = certreminderTests;
 			sourceTree = "<group>";
@@ -333,6 +346,8 @@
 				AC7196752076DC3200CFF449 /* CertificationServiceProtocol.swift */,
 				AC7196772076E58700CFF449 /* ExamServiceProtocol.swift */,
 				AC507DD4207C2D2A00D3B2F9 /* UserServiceProtocol.swift */,
+				ACF6CFCB207ED416007A87A4 /* VendorServiceProtocol.swift */,
+				ACF6CFCD207ED70F007A87A4 /* UserExamServiceProtocol.swift */,
 			);
 			name = protocols;
 			sourceTree = "<group>";
@@ -564,8 +579,10 @@
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				ACF6CFCC207ED416007A87A4 /* VendorServiceProtocol.swift in Sources */,
 				ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */,
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
+				ACF6CFCE207ED70F007A87A4 /* UserExamServiceProtocol.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */,
 				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
@@ -595,9 +612,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF6CFC8207ECA8B007A87A4 /* testCertificationVC.swift in Sources */,
 				AC82515220758DF700476BBD /* viewsTests.swift in Sources */,
+				ACF6CFCA207ED219007A87A4 /* testCertificationDetailVC.swift in Sources */,
 				AC5A1741206C668700746C4F /* servicesTests.swift in Sources */,
 				AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */,
+				ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */,
 				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,
 				AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */,
 			);
