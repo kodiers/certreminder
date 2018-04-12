@@ -237,6 +237,10 @@ class MockUserCertificationService: UserCertificationServiceProtocol {
     func deleteUserCertification(userCertId: Int, completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
+    
+    func changeUserCertification(userCert: UserCertification, completionHandler: @escaping (Bool?, NSError?) -> ()) {
+        completionHandler(true, nil)
+    }
 }
 
 class MockCertService: CertificationServiceProtocol {
@@ -295,6 +299,35 @@ class MockVendorService: VendorServiceProtocol {
     func downloadVendors(completionHandler: @escaping ([Vendor]?, NSError?) -> ()) {
         completionHandler([Vendor(id: id1, title: TEST)], nil)
     }
+}
+
+class MockUserExamService: UserExamServiceProtocol {
+    /*
+     Mock UserExamService
+     */
+    let certification: Certification
+    let exam: Exam
+    let userExam: UserExam
     
+    init() {
+        self.certification = Certification(id: 1, title: "test", vendor: 1)
+        self.exam = Exam(id: 1, title: "test", certification: certification)
+        self.userExam = UserExam(id: 1, userCertId: 1, exam: exam, dateOfPass: Date())
+    }
     
+    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping RequestComplete) {
+        completionHandler([userExam] as AnyObject, nil)
+    }
+    
+    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping RequestComplete) {
+        completionHandler([userExam] as AnyObject, nil)
+    }
+    
+    func getUserExamsForCertification(certification: UserCertification, completionHandler: @escaping ([UserExam]?, NSError?) -> ()) {
+        completionHandler([userExam], nil)
+    }
+    
+    func deleteUserExam(userExamId: Int, completionHandler: @escaping (Bool?, NSError?) -> ()) {
+        completionHandler(true, nil)
+    }
 }

@@ -15,4 +15,6 @@ protocol UserCertificationServiceProtocol {
     func getUserCertification(completionHandler: @escaping RequestComplete)
     
     func deleteUserCertification(userCertId: Int, completionHandler: @escaping RequestComplete)
+    
+    func changeUserCertification(userCert: UserCertification, completionHandler: @escaping (Bool?, NSError?) -> ())
 }

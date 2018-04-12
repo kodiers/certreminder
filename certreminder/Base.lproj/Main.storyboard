@@ -1872,6 +1872,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addExamBtn" destination="JIB-Ly-hfe" id="TkE-LC-F8c"/>
                         <outlet property="certificationTitleLabel" destination="Stf-kg-YJd" id="uEH-VZ-wWG"/>
                         <outlet property="dateLabel" destination="eo8-o4-hbZ" id="aVx-HJ-FPK"/>
                         <outlet property="examTableView" destination="59T-dK-DgN" id="ICo-va-4bb"/>
