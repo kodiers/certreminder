@@ -49,10 +49,10 @@ class VendorService: VendorServiceProtocol {
         /*
          Get vendors from vendor service (if nul - downloading it). Else call AlertService.showHttpAlert method
          */
-        if let vendors = VendorService.instance.vendors {
+        if let vendors = vendors {
             setVendors(vendors)
         } else {
-            VendorService.instance.downloadVendors(completionHandler: {(vendors, error) in
+            downloadVendors(completionHandler: {(vendors, error) in
                 if error != nil {
                     showAlert(header, message, viewController)
                 } else {
