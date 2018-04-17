@@ -26,7 +26,32 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ACD22E881F46461B0056E0D2"
+            BuildableName = "certreminder.app"
+            BlueprintName = "certreminder"
+            ReferencedContainer = "container:certreminder.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "ACDCFB5F206463C100E7F659"
+            BuildableName = "certreminderTests.xctest"
+            BlueprintName = "certreminderTests"
+            ReferencedContainer = "container:certreminder.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AC507DC5207C232200D3B2F9"
+            BuildableName = "certreminderUITests.xctest"
+            BlueprintName = "certreminderUITests"
+            ReferencedContainer = "container:certreminder.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">

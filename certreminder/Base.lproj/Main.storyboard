@@ -1111,7 +1111,7 @@
         <!--New CertificationVC-->
         <scene sceneID="mLj-vr-SIe">
             <objects>
-                <viewController id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="woO-Ge-ATT"/>
                         <viewControllerLayoutGuide type="bottom" id="aL3-wX-kQ3"/>
@@ -1225,6 +1225,7 @@
                     </view>
                     <connections>
                         <outlet property="certificationNameTextFld" destination="wJN-Z6-HSH" id="tBR-i9-bEt"/>
+                        <outlet property="saveBtn" destination="15K-NR-ocY" id="CFf-yN-5Ld"/>
                         <outlet property="vendorLbl" destination="gNj-HY-e1R" id="eig-pn-i8I"/>
                     </connections>
                 </viewController>
@@ -1504,7 +1505,7 @@
         <!--Choose Exam DateVC-->
         <scene sceneID="huL-WZ-1sD">
             <objects>
-                <viewController id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseExamDateVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4B-Gp-D3P"/>
                         <viewControllerLayoutGuide type="bottom" id="KDw-bf-f9Q"/>
@@ -1893,11 +1894,11 @@
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WNp-Uu-E5p"/>
+        <segue reference="5oY-to-PBg"/>
         <segue reference="VdF-O4-xgd"/>
         <segue reference="ni2-s2-HtD"/>
         <segue reference="c5f-pG-RO1"/>
-        <segue reference="UOi-Kr-oaH"/>
+        <segue reference="UA8-3F-Tfj"/>
         <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>
 </document>

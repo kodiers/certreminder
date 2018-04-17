@@ -250,6 +250,10 @@ class MockCertService: CertificationServiceProtocol {
     func downloadCertifications(vendor: Vendor?, completionHandler: @escaping ([Certification]?, NSError?) -> ()) {
         completionHandler([Certification(id: id1, title: TEST, vendor: id1)], nil)
     }
+    
+    func createCertification(title: String, vendor: Vendor, completionHandler: @escaping (Certification?, NSError?) -> ()) {
+        completionHandler(Certification(id: id1, title: TEST, vendor: id1), nil)
+    }
 }
 
 class MockExamSrv: ExamServiceProtocol {
@@ -330,4 +334,60 @@ class MockUserExamService: UserExamServiceProtocol {
     func deleteUserExam(userExamId: Int, completionHandler: @escaping (Bool?, NSError?) -> ()) {
         completionHandler(true, nil)
     }
+}
+
+class MockChoosedDataService: ChoosedDataServiceProtocol {
+    /*
+     Mock choosed data service
+    */
+    var _userCertification: UserCertification?
+    var _userExams: [UserExam]?
+    var _examsWithDate: [(Exam, Date)]?
+    var _isEditExistingUserCertification: Bool = false
+    
+    var userCertification: UserCertification? {
+        get {
+            return _userCertification
+        }
+        set {
+           _userCertification = newValue
+        }
+    }
+    
+    var userExams: [UserExam]? {
+        get {
+            return _userExams
+        }
+        set {
+            _userExams = newValue
+        }
+    }
+    
+    var examsWithDate: [(Exam, Date)]? {
+        get {
+            return _examsWithDate
+        }
+        set {
+            _examsWithDate = newValue
+        }
+    }
+    
+    var isEditExistingUserCertification: Bool {
+        get {
+            return _isEditExistingUserCertification
+        }
+        set {
+            _isEditExistingUserCertification = newValue
+        }
+    }
+    
+    func changeUserExam(userExam: UserExam) {
+        // needed to conform protocol
+    }
+}
+
+class MockViewController: CertificationDetailVC {
+    /*
+     Mock UIViewCOntroller class for test ChooseExamDateVC
+    */
 }

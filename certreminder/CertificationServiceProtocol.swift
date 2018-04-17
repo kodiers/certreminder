@@ -13,4 +13,6 @@ protocol CertificationServiceProtocol {
      Protocol for CertificationService
     */
     func downloadCertifications(vendor: Vendor?, completionHandler: @escaping ([Certification]?, NSError?) -> ())
+    
+    func createCertification(title: String, vendor: Vendor, completionHandler: @escaping (Certification?, NSError?) -> ())
 }
