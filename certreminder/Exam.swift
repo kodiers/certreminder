@@ -19,6 +19,8 @@ class Exam {
     private var _number: String?
     private var _description: String?
     
+    static var certificationService: CertificationProtocol = CertificationService.instance
+    
     var id: Int {
         get {
             return _id
@@ -100,7 +102,7 @@ class Exam {
             if let title = examDict["title"] as? String {
                 if let cert_id = examDict["certification"] as? Int  {
                     if let deprecated = examDict["deprecated"] as? Bool {
-                        if let certification = CertificationService.instance.getCertificationById(id: cert_id) {
+                        if let certification = certificationService.getCertificationById(id: cert_id) {
                             let exam = Exam(id: id, title: title, certification: certification, deprecated: deprecated)
                             if let number = examDict["number"] as? String {
                                 exam.number = number

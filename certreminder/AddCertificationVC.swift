@@ -27,6 +27,8 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         examsTableView.delegate = self
         examsTableView.dataSource = self
+        examsTableView.estimatedRowHeight = 75
+        examsTableView.rowHeight = UITableViewAutomaticDimension
         
         configureVC()
     }
@@ -143,10 +145,10 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 })
             } else {
-                AlertService.showCancelAlert(header: "Choose date please", message: "You cannot choose date", viewController: self)
+                AlertService.showCancelAlert(header: "Choose date please", message: "You not choose date", viewController: self)
             }
         } else {
-            AlertService.showCancelAlert(header: "Choose certification please", message: "You cannot choose certification", viewController: self)
+            AlertService.showCancelAlert(header: "Choose certification please", message: "You not choose certification", viewController: self)
         }
     }
     

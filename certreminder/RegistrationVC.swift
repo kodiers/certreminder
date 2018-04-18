@@ -15,6 +15,9 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var registerBtn: RoundedBorderButton!
+    
+    var userService: UserServiceProtocol = UserService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +62,12 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
             return
         }
         // Register and login new user
-        UserService.instance.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
+        userService.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Error then register new user", viewController: self)
             } else {
                 // Login registered user
-                UserService.instance.loginUser(username: login, password: password, completionHandler: {(value, error) in
+                self.userService.loginUser(username: login, password: password, completionHandler: {(value, error) in
                     if error != nil {
                         AlertService.showCancelAlert(header: "HTTP Error", message: "Error then try login new user", viewController: self)
                     } else {

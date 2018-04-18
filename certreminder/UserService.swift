@@ -10,12 +10,13 @@ import Foundation
 import SwiftKeychainWrapper
 import Alamofire
 
-class UserService: RaiseErrorMixin {
+class UserService: RaiseErrorMixin, UserServiceProtocol {
     /*
      User service
     */
     
     static let instance = UserService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
     
     private var _user: User?
     private var _token: String?
@@ -50,12 +51,12 @@ class UserService: RaiseErrorMixin {
         }
     }
     
-    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
         // handle register user requests
         self.logoutUser()
         let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password]
         let url = "people/register/"
-        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+        UserService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -74,11 +75,11 @@ class UserService: RaiseErrorMixin {
         })
     }
     
-    func loginUser(username: String, password: String, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func loginUser(username: String, password: String, completionHandler: @escaping RequestComplete) {
         // Login user function
         let data: Parameters = ["username": username, "password": password]
         let url = "people/api-token-auth/"
-        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+        UserService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -108,12 +109,12 @@ class UserService: RaiseErrorMixin {
         let _ = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
     }
     
-    func refreshToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func refreshToken(completionHandler: @escaping RequestComplete) {
         // Refresh token function
         let url = "people/api-token-refresh/"
         if let tkn = self.token {
             let data: Parameters = ["token": tkn]
-            WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+            UserService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
                 if error != nil {
                     completionHandler(nil, error)
                 } else {
@@ -135,12 +136,12 @@ class UserService: RaiseErrorMixin {
         }
     }
     
-    func verifyToken(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func verifyToken(completionHandler: @escaping RequestComplete) {
         // Verify token function
         let url = "people/api-token-verify/"
         if let tkn = self.token {
             let data: Parameters = ["token": tkn]
-            WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+            UserService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
                 if let tokenDict = result as? Dictionary<String, AnyObject> {
                     if let token = tokenDict["token"] as? String {
                         self.token = token

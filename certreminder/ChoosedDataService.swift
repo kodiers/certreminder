@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ChoosedDataService {
+class ChoosedDataService: ChoosedDataServiceProtocol {
     /*
      Service for temporary store choosed data
      */

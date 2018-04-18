@@ -9,12 +9,14 @@
 import Foundation
 import Alamofire
 
-class ExamService: RaiseErrorMixin {
+class ExamService: RaiseErrorMixin, ExamServiceProtocol {
     /*
      Service for manipulate exams
     */
     
     static let instance = ExamService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
+    
     private let url = "certifications/exam/"
     
     func getExams(certification: Certification?, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
@@ -23,7 +25,7 @@ class ExamService: RaiseErrorMixin {
         if let cert = certification {
             data = ["certification": cert.id]
         }
-        WebRequestService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
+        ExamService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -51,7 +53,7 @@ class ExamService: RaiseErrorMixin {
         } else {
             data["number"] = NSNull()
         }
-        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+        ExamService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {

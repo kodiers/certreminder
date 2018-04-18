@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 
-class CertificationService: RaiseErrorMixin {
+class CertificationService: RaiseErrorMixin, CertificationProtocol, CertificationServiceProtocol {
     static let instance = CertificationService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
     
     private let url = "certifications/certification/"
     private var _certifications: [Certification]?
@@ -29,7 +30,7 @@ class CertificationService: RaiseErrorMixin {
         if let ven = vendor {
             data = ["vendor": ven.id]
         }
-        WebRequestService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
+        CertificationService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -68,7 +69,7 @@ class CertificationService: RaiseErrorMixin {
          Create certification and append it to memory stored certifications
         */
         let data: Parameters = ["title": title, "number": NSNull(), "image": NSNull(), "description": NSNull(), "deprecated": false, "vendor": vendor.id]
-        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+        CertificationService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {

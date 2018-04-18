@@ -9,17 +9,21 @@
 import Foundation
 import Alamofire
 
-class UserCertificationService: RaiseErrorMixin {
+class UserCertificationService: RaiseErrorMixin, UserCertificationServiceProtocol {
     /*
      Service for manipulate user certifications
     */
     static let instance = UserCertificationService()
+    
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
+    static var certificationService: CertificationProtocol = CertificationService.instance
+    
     private let url = "remainder/certification/"
     private let formatter = DateFormatter()
     
     func getUserCertification(completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Get user certification from API
-        WebRequestService.webservice.get(url: url, data: nil, completionHandler: {(response, error) in
+        UserCertificationService.webservice.get(url: url, data: nil, completionHandler: {(response, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -56,7 +60,7 @@ class UserCertificationService: RaiseErrorMixin {
     
     func deleteUserCertification(userCertId: Int, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
         // Delete user certification
-        WebRequestService.webservice.delete(url: url, objectID: userCertId, completionHandler: {(result, error) in
+        UserCertificationService.webservice.delete(url: url, objectID: userCertId, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -72,13 +76,13 @@ class UserCertificationService: RaiseErrorMixin {
         formatter.locale = Calendar.current.locale
         let certExpireDateStr = formatter.string(from: expireDate)
         let data: Parameters = ["certification_id": cert.id, "expiration_date": certExpireDateStr, "remind_at_date": NSNull()]
-        WebRequestService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
+        UserCertificationService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
                 if let userCertDict = result as? Dictionary<String, AnyObject> {
                     if let certificationDict = userCertDict["certification"] as? Dictionary<String, AnyObject> {
-                        if let certification = CertificationService.instance.getCertificationById(id: certificationDict["id"] as! Int) {
+                        if let certification = UserCertificationService.certificationService.getCertificationById(id: certificationDict["id"] as! Int) {
                             let userCertification = UserCertification.createUserCertificationFromDict(userCertDict: userCertDict, certification: certification)
                             completionHandler(userCertification, nil)
                         } else {
@@ -109,7 +113,7 @@ class UserCertificationService: RaiseErrorMixin {
             data["remind_at_date"] = NSNull()
         }
         let fullUrl = url + "\(userCert.id)/"
-        WebRequestService.webservice.patch(url: fullUrl, data: data, completionHandler: {(result, error) in
+        UserCertificationService.webservice.patch(url: fullUrl, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {

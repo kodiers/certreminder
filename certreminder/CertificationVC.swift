@@ -11,10 +11,12 @@ import UIKit
 class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SetVendorsProtocol {
 
     @IBOutlet weak var certTableView: UITableView!
+    @IBOutlet weak var newCertBtn: RoundedBorderButton!
     
     var userCertifications = [UserCertification]()
     var vendors = [Vendor]()
     var choosedCert: UserCertification?
+    var userCertificationService: UserCertificationServiceProtocol = UserCertificationService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,11 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         // Do any additional setup after loading the view.
         certTableView.delegate = self
         certTableView.dataSource = self
+        certTableView.estimatedRowHeight = 100
+        certTableView.rowHeight = UITableViewAutomaticDimension
         
         // Get user certification
-        UserCertificationService.instance.getUserCertification(completionHandler: {(response, error) in
+        userCertificationService.getUserCertification(completionHandler: {(response, error) in
             if error != nil {
                 // Show alert
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't get certifications from server", viewController: self)
@@ -83,7 +87,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             let userCert = userCertifications[indexPath.row]
-            UserCertificationService.instance.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+            userCertificationService.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
                 } else {
@@ -112,9 +116,6 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBAction func signOutBarItemTapped(_ sender: UIBarButtonItem) {
         UserService.instance.logoutUser()
         performSegue(withIdentifier: "GoToLoginVC", sender: nil)
-    }
-    
-    @IBAction func newSertificationButtonPressed(_ sender: UIButton) {
     }
     
     func setVendors(vendors: [Vendor]) {

@@ -10,9 +10,7 @@ import Foundation
 import Alamofire
 import SwiftKeychainWrapper
 
-typealias RequestComplete = () -> ()
-
-class WebRequestService {
+class WebRequestService: WebRequestProtocol {
     /*
      Web request service
     */
@@ -32,7 +30,7 @@ class WebRequestService {
         return headers
     }
     
-    func post(url: String, params: Parameters, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
         // Send post request
         let headers = self.createHeaders()
         let fullUrl = WebRequestService.WEB_API_URL + url
@@ -47,7 +45,7 @@ class WebRequestService {
         }
     }
     
-    func get(url: String, data: Parameters?, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func get(url: String, data: Parameters?, completionHandler: @escaping RequestComplete) {
         // Send get request
         let headers = self.createHeaders()
         let fullUrl = WebRequestService.WEB_API_URL + url
@@ -62,7 +60,7 @@ class WebRequestService {
         }
     }
     
-    func delete(url: String, objectID: Int, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func delete(url: String, objectID: Int, completionHandler: @escaping RequestComplete) {
         // Send delete request
         let headers = self.createHeaders()
         let fullUrl = WebRequestService.WEB_API_URL + url + "\(objectID)/"
@@ -78,7 +76,7 @@ class WebRequestService {
         }
     }
     
-    func patch(url: String, data: Parameters, completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func patch(url: String, data: Parameters, completionHandler: @escaping RequestComplete) {
         // Send patch request
         let headers = self.createHeaders()
         let fullUrl = WebRequestService.WEB_API_URL + url

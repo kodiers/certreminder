@@ -8,8 +8,9 @@
 
 import UIKit
 
-class VendorService {
+class VendorService: VendorServiceProtocol {
     static let instance = VendorService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
     
     private var _vendors: [Vendor]?
     
@@ -23,7 +24,7 @@ class VendorService {
         /*
          Download vendors and store its in memory
          */
-        WebRequestService.webservice.get(url: "certifications/vendor/", data: nil, completionHandler: {(response, error) in
+        VendorService.webservice.get(url: "certifications/vendor/", data: nil, completionHandler: {(response, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -48,10 +49,10 @@ class VendorService {
         /*
          Get vendors from vendor service (if nul - downloading it). Else call AlertService.showHttpAlert method
          */
-        if let vendors = VendorService.instance.vendors {
+        if let vendors = vendors {
             setVendors(vendors)
         } else {
-            VendorService.instance.downloadVendors(completionHandler: {(vendors, error) in
+            downloadVendors(completionHandler: {(vendors, error) in
                 if error != nil {
                     showAlert(header, message, viewController)
                 } else {

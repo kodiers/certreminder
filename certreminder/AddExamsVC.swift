@@ -15,6 +15,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var certification: Certification!
     var exams = [Exam]()
     var selectedExam: Exam?
+    var examService: ExamServiceProtocol = ExamService.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
         self.downloadExams()
     }
     
@@ -96,7 +98,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func downloadExams() {
         // Download exams when view will shown
-        ExamService.instance.getExams(certification: certification, completionHandler: {(exams, error) in
+        examService.getExams(certification: certification, completionHandler: {(exams, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
             } else {

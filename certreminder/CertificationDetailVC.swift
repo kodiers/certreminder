@@ -14,6 +14,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var examTableView: UITableView!
+    @IBOutlet weak var addExamBtn: RoundedBorderButton!
     
     private var formatter = DateFormatter()
     
@@ -22,12 +23,19 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     var usersExams = [UserExam]()
     var examForEdit: UserExam?
     
+    var vendorService: VendorServiceProtocol = VendorService.instance
+    var userExamService: UserExamServiceProtocol = UserExamService.instance
+    var userCertificationService: UserCertificationServiceProtocol = UserCertificationService.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         examTableView.delegate = self
         examTableView.dataSource = self
+        examTableView.estimatedRowHeight = 75
+        examTableView.rowHeight = UITableViewAutomaticDimension
+        
         configureVC()
         
     }
@@ -123,20 +131,20 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        UserCertificationService.instance.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
+        userCertificationService.changeUserCertification(userCert: self.userCerification, completionHandler: {(response, error) in
             if error == nil {
                 if !self.usersExams.isEmpty {
                     let examsForCreation = self.getNewUsersExams()
                     let examsForUpdate = self.getExamsForUpdate()
                     if examsForCreation.count > 0 {
-                        UserExamService.instance.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
+                        self.userExamService.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams", viewController: self)
                             }
                         })
                     }
                     if examsForUpdate.count > 0 {
-                        UserExamService.instance.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
+                        self.userExamService.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
                             if error != nil {
                                 AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
                             }
@@ -152,7 +160,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func configureVC() {
         certificationTitleLabel.text = userCerification.certification.title
-        if let vendors = VendorService.instance.vendors {
+        if let vendors = vendorService.vendors {
             vendor = Vendor.getVendorById(id: userCerification.certification.vendor, vendors: vendors)
             if let ven = vendor {
                 vendorLabel.text = ven.title
@@ -170,7 +178,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         let dateStr = formatter.string(from: userCerification.expirationDate)
         dateLabel.text = dateStr
         if usersExams.count == 0 {
-            UserExamService.instance.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
+            self.userExamService.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
                 } else {
@@ -186,7 +194,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     func deleteUserExam(userExam: UserExam, index: Int) {
         // Function to delete userExam
         if userExam.id != NEW_OBJECT_ID {
-            UserExamService.instance.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
+            userExamService.deleteUserExam(userExamId: userExam.id, completionHandler: {(result, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Error then deleting exam", viewController: self)
                 } else {
@@ -228,7 +236,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func deleteUserCertification() {
         // Send and handle request for delete user certification
-        UserCertificationService.instance.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
+        userCertificationService.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
             } else {

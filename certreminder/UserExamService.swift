@@ -9,16 +9,18 @@
 import Foundation
 import Alamofire
 
-class UserExamService: RaiseErrorMixin {
+class UserExamService: RaiseErrorMixin, UserExamServiceProtocol {
     /*
      Service for manipulate user exams
     */
     
     static let instance = UserExamService()
+    static var webservice: WebRequestProtocol = WebRequestService.webservice
+    
     private let formatter = DateFormatter()
     private let url = "remainder/exam/"
     
-    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func createUserExams(certification: UserCertification, examsWithDate: [(Exam, Date)], completionHandler: @escaping RequestComplete) {
         // Add exams to user certification
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = Calendar.current.timeZone
@@ -31,7 +33,7 @@ class UserExamService: RaiseErrorMixin {
         }
         let params: Parameters = ["exams": data]
         let bulkUrl = url + "bulk/create/"
-        WebRequestService.webservice.post(url: bulkUrl, params: params, completionHandler: {(result, error) in
+        UserExamService.webservice.post(url: bulkUrl, params: params, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -55,7 +57,7 @@ class UserExamService: RaiseErrorMixin {
     func getUserExamsForCertification(certification: UserCertification, completionHandler: @escaping ([UserExam]?, NSError?) -> ()) {
         // Get user exams for certification
         let data: Parameters = ["user_certification": certification.id]
-        WebRequestService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
+        UserExamService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -76,7 +78,7 @@ class UserExamService: RaiseErrorMixin {
     
     func deleteUserExam(userExamId: Int, completionHandler: @escaping (Bool?, NSError?) -> ()) {
         // Delete user exam
-        WebRequestService.webservice.delete(url: url, objectID: userExamId, completionHandler: {(result, error) in
+        UserExamService.webservice.delete(url: url, objectID: userExamId, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {
@@ -85,7 +87,7 @@ class UserExamService: RaiseErrorMixin {
         })
     }
     
-    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping (AnyObject?, NSError?) -> ()) {
+    func changeUserExams(certification: UserCertification, userExams: [UserExam], completionHandler: @escaping RequestComplete) {
         // Bulk change users exams
         let changeUrl = url + "bulk/update/"
         formatter.dateFormat = "yyyy-MM-dd"
@@ -98,7 +100,7 @@ class UserExamService: RaiseErrorMixin {
             examData.append(userExam)
         }
         let data: Parameters = ["exams": examData]
-        WebRequestService.webservice.patch(url: changeUrl, data: data, completionHandler: {(result, error) in
+        UserExamService.webservice.patch(url: changeUrl, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
             } else {

@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Avenir.ttc">
-            <string>Avenir-Book</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Medium</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -167,6 +160,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginBtn" destination="oLf-Cj-kT8" id="iyX-rO-PQL"/>
                         <outlet property="loginField" destination="qf6-KF-DmI" id="yUS-t6-xRJ"/>
                         <outlet property="passwordField" destination="40p-vb-qdu" id="263-qY-E5e"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="LoginShowMainVC" id="7Ro-qa-nWV"/>
@@ -179,7 +173,7 @@
         <!--RegistrationVC-->
         <scene sceneID="r1f-iz-DFM">
             <objects>
-                <viewController id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGN-Qn-5WS"/>
                         <viewControllerLayoutGuide type="bottom" id="4fF-Il-0jZ"/>
@@ -344,6 +338,7 @@
                         <outlet property="confirmPasswordField" destination="ZjV-eZ-LPz" id="PTL-xK-yrK"/>
                         <outlet property="loginField" destination="EDy-6i-Fgn" id="A8w-oe-xTd"/>
                         <outlet property="passwordField" destination="Kn7-0v-DeD" id="gc0-Nw-4VY"/>
+                        <outlet property="registerBtn" destination="6rw-cv-puX" id="FdN-NP-L60"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="RegShowMainVC" id="W1w-jA-vkM"/>
                     </connections>
                 </viewController>
@@ -354,7 +349,7 @@
         <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
             <objects>
-                <viewController id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjl-nm-S7s"/>
                         <viewControllerLayoutGuide type="bottom" id="IiD-Cu-vMx"/>
@@ -449,7 +444,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="newSertificationButtonPressed:" destination="A8S-3n-4uh" eventType="touchUpInside" id="dpc-uW-GbI"/>
                                     <segue destination="an7-cQ-EEe" kind="show" identifier="AddCertificationVC" id="UOi-Kr-oaH"/>
                                 </connections>
                             </button>
@@ -488,6 +482,7 @@
                     </view>
                     <connections>
                         <outlet property="certTableView" destination="qj9-SK-iIY" id="0bM-Uj-D68"/>
+                        <outlet property="newCertBtn" destination="xZS-3g-Jr1" id="0V4-Od-PIZ"/>
                         <segue destination="8FM-FH-goS" kind="show" identifier="CertificationDetailVC" id="WNp-Uu-E5p"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="GoToLoginVC" id="V3E-4k-ULS"/>
                     </connections>
@@ -499,7 +494,7 @@
         <!--Add CertificationVC-->
         <scene sceneID="lvb-7E-eZX">
             <objects>
-                <viewController id="an7-cQ-EEe" customClass="AddCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="an7-cQ-EEe" customClass="AddCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DZA-f0-1RG"/>
                         <viewControllerLayoutGuide type="bottom" id="6wc-Li-SsQ"/>
@@ -899,7 +894,7 @@
         <!--Choose VendorVC-->
         <scene sceneID="ndM-qz-B9L">
             <objects>
-                <viewController id="NKo-qE-5NQ" customClass="ChooseVendorVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseVendorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NKo-qE-5NQ" customClass="ChooseVendorVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLt-2H-heH"/>
                         <viewControllerLayoutGuide type="bottom" id="qXe-1a-utr"/>
@@ -983,7 +978,7 @@
         <!--Choose CertificationVC-->
         <scene sceneID="4V5-cs-dXG">
             <objects>
-                <viewController id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luY-iv-SZu"/>
                         <viewControllerLayoutGuide type="bottom" id="VP9-gt-5IT"/>
@@ -1116,7 +1111,7 @@
         <!--New CertificationVC-->
         <scene sceneID="mLj-vr-SIe">
             <objects>
-                <viewController id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="woO-Ge-ATT"/>
                         <viewControllerLayoutGuide type="bottom" id="aL3-wX-kQ3"/>
@@ -1230,17 +1225,18 @@
                     </view>
                     <connections>
                         <outlet property="certificationNameTextFld" destination="wJN-Z6-HSH" id="tBR-i9-bEt"/>
+                        <outlet property="saveBtn" destination="15K-NR-ocY" id="CFf-yN-5Ld"/>
                         <outlet property="vendorLbl" destination="gNj-HY-e1R" id="eig-pn-i8I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMv-vB-Vjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.799999999999997" y="3184.8575712143929"/>
+            <point key="canvasLocation" x="77" y="3223"/>
         </scene>
         <!--New ExamVC-->
         <scene sceneID="B3a-hV-qPc">
             <objects>
-                <viewController id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s4J-4Y-tsk"/>
                         <viewControllerLayoutGuide type="bottom" id="c5t-79-RjL"/>
@@ -1400,17 +1396,18 @@
                         <outlet property="certificationLbl" destination="j13-FJ-yKc" id="veN-BC-pvs"/>
                         <outlet property="examNumberTextFld" destination="Wil-DF-eOL" id="P36-IE-sdP"/>
                         <outlet property="examTitleTextFld" destination="dXI-LR-7bi" id="hq4-vR-iI7"/>
+                        <outlet property="saveBtn" destination="iMa-L2-AcC" id="QbJ-yD-SCf"/>
                         <outlet property="vendorLbl" destination="VsS-Br-dOR" id="B6X-3H-xWp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fr6-CO-GST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866.39999999999998" y="3174.96251874063"/>
+            <point key="canvasLocation" x="759" y="3223"/>
         </scene>
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
             <objects>
-                <viewController id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExamsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6F-lN-t3e"/>
                         <viewControllerLayoutGuide type="bottom" id="KEb-cX-eFB"/>
@@ -1509,7 +1506,7 @@
         <!--Choose Exam DateVC-->
         <scene sceneID="huL-WZ-1sD">
             <objects>
-                <viewController id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseExamDateVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4B-Gp-D3P"/>
                         <viewControllerLayoutGuide type="bottom" id="KDw-bf-f9Q"/>
@@ -1622,7 +1619,7 @@
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
             <objects>
-                <viewController id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zZA-5d-W9V"/>
                         <viewControllerLayoutGuide type="bottom" id="0Hx-Sq-8ie"/>
@@ -1877,6 +1874,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addExamBtn" destination="JIB-Ly-hfe" id="TkE-LC-F8c"/>
                         <outlet property="certificationTitleLabel" destination="Stf-kg-YJd" id="uEH-VZ-wWG"/>
                         <outlet property="dateLabel" destination="eo8-o4-hbZ" id="aVx-HJ-FPK"/>
                         <outlet property="examTableView" destination="59T-dK-DgN" id="ICo-va-4bb"/>
@@ -1898,10 +1896,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5oY-to-PBg"/>
-        <segue reference="IfT-sl-7B9"/>
-        <segue reference="TF2-wU-NEM"/>
-        <segue reference="OCh-lh-1j8"/>
+        <segue reference="VdF-O4-xgd"/>
+        <segue reference="ni2-s2-HtD"/>
+        <segue reference="c5f-pG-RO1"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="H0c-jf-ZaI"/>
+        <segue reference="24r-tT-agJ"/>
     </inferredMetricsTieBreakers>
 </document>

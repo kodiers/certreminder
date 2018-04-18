@@ -14,9 +14,12 @@ class NewExamVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var certificationLbl: UILabel!
     @IBOutlet weak var examNumberTextFld: UITextField!
     @IBOutlet weak var examTitleTextFld: UITextField!
+    @IBOutlet weak var saveBtn: RoundedBorderButton!
     
     var certification: Certification!
     var vendor: Vendor!
+    
+    var examService: ExamServiceProtocol = ExamService.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +56,7 @@ class NewExamVC: UIViewController, UITextFieldDelegate {
             AlertService.showCancelAlert(header: "You should enter exam name", message: "Exam name cannot be blank", viewController: self)
             return
         }
-        ExamService.instance.createExam(title: examTitle, certification: certification, number: examNumberTextFld.text, completionHandler: {(exam, error) in
+        examService.createExam(title: examTitle, certification: certification, number: examNumberTextFld.text, completionHandler: {(exam, error) in
             if error != nil {
                 if (error! as NSError).code == ERROR_CODE_EXAM_EXISTS {
                     AlertService.showCancelAlert(header: "Exam exists", message: "Exam with this title already exists!", viewController: self)
