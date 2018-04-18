@@ -37,20 +37,6 @@
             BlueprintName = "certreminder"
             ReferencedContainer = "container:certreminder.xcodeproj">
          </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACDCFB5F206463C100E7F659"
-            BuildableName = "certreminderTests.xctest"
-            BlueprintName = "certreminderTests"
-            ReferencedContainer = "container:certreminder.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AC507DC5207C232200D3B2F9"
-            BuildableName = "certreminderUITests.xctest"
-            BlueprintName = "certreminderUITests"
-            ReferencedContainer = "container:certreminder.xcodeproj">
-         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

@@ -1236,7 +1236,7 @@
         <!--New ExamVC-->
         <scene sceneID="B3a-hV-qPc">
             <objects>
-                <viewController id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s4J-4Y-tsk"/>
                         <viewControllerLayoutGuide type="bottom" id="c5t-79-RjL"/>
@@ -1396,6 +1396,7 @@
                         <outlet property="certificationLbl" destination="j13-FJ-yKc" id="veN-BC-pvs"/>
                         <outlet property="examNumberTextFld" destination="Wil-DF-eOL" id="P36-IE-sdP"/>
                         <outlet property="examTitleTextFld" destination="dXI-LR-7bi" id="hq4-vR-iI7"/>
+                        <outlet property="saveBtn" destination="iMa-L2-AcC" id="QbJ-yD-SCf"/>
                         <outlet property="vendorLbl" destination="VsS-Br-dOR" id="B6X-3H-xWp"/>
                     </connections>
                 </viewController>

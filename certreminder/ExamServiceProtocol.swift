@@ -13,4 +13,6 @@ protocol ExamServiceProtocol {
      Protocol for ExamService
     */
     func getExams(certification: Certification?, completionHandler: @escaping ([Exam]?, NSError?) -> ())
+    
+    func createExam(title: String, certification: Certification, number: String?, completionHandler: @escaping (Exam?, Error?) -> ())
 }
