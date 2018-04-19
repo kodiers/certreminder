@@ -138,6 +138,9 @@
                                     <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c3D-TX-vkw"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-oy-nES">
+                                <rect key="frame" x="142" y="265.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -146,12 +149,14 @@
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="B2e-zA-LQH"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BtR-zj-XXJ"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8h-Qg-5b3"/>
+                            <constraint firstItem="C3z-oy-nES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMs-rc-7AB"/>
                             <constraint firstAttribute="trailing" secondItem="2Li-Ds-9OL" secondAttribute="trailing" id="Egh-NC-b2U"/>
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="GR5-eW-Jbn"/>
                             <constraint firstItem="oLi-As-2Rw" firstAttribute="top" secondItem="7Vc-Ue-boo" secondAttribute="bottom" constant="8" id="RA2-ih-gzQ"/>
                             <constraint firstItem="2Li-Ds-9OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8B-DQ-PwK"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UIY-us-3Pw"/>
                             <constraint firstItem="lWW-Z0-DsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8w-hB-fGJ"/>
+                            <constraint firstItem="C3z-oy-nES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ci3-ty-4Hd"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="hEi-lx-EJt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="top" secondItem="oLi-As-2Rw" secondAttribute="bottom" constant="20" id="u25-Sd-brG"/>
@@ -163,6 +168,7 @@
                         <outlet property="loginBtn" destination="oLf-Cj-kT8" id="iyX-rO-PQL"/>
                         <outlet property="loginField" destination="qf6-KF-DmI" id="yUS-t6-xRJ"/>
                         <outlet property="passwordField" destination="40p-vb-qdu" id="263-qY-E5e"/>
+                        <outlet property="spinner" destination="C3z-oy-nES" id="ImP-7c-kTD"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="LoginShowMainVC" id="7Ro-qa-nWV"/>
                     </connections>
                 </viewController>
@@ -1900,6 +1906,6 @@
         <segue reference="ni2-s2-HtD"/>
         <segue reference="c5f-pG-RO1"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="24r-tT-agJ"/>
+        <segue reference="7Ro-qa-nWV"/>
     </inferredMetricsTieBreakers>
 </document>
