@@ -12,6 +12,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     @IBOutlet weak var certTableView: UITableView!
     @IBOutlet weak var newCertBtn: RoundedBorderButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var userCertifications = [UserCertification]()
     var vendors = [Vendor]()
@@ -27,8 +28,11 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         certTableView.estimatedRowHeight = 100
         certTableView.rowHeight = UITableViewAutomaticDimension
         
+        showSpinner(spinner: spinner)
+        
         // Get user certification
         userCertificationService.getUserCertification(completionHandler: {(response, error) in
+            self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 // Show alert
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't get certifications from server", viewController: self)
@@ -87,7 +91,9 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             let userCert = userCertifications[indexPath.row]
+            showSpinner(spinner: spinner)
             userCertificationService.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
+                self.hideSpinner(spinner: self.spinner)
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
                 } else {

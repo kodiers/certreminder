@@ -16,6 +16,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
     @IBOutlet weak var registerBtn: RoundedBorderButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var userService: UserServiceProtocol = UserService.instance
     
@@ -61,13 +62,16 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
             AlertService.showCancelAlert(header: "Password and confirmation should be same", message: "Password and password confirmation should be same", viewController: self)
             return
         }
+        showSpinner(spinner: spinner)
         // Register and login new user
         userService.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
             if error != nil {
+                self.hideSpinner(spinner: self.spinner)
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Error then register new user", viewController: self)
             } else {
                 // Login registered user
                 self.userService.loginUser(username: login, password: password, completionHandler: {(value, error) in
+                    self.hideSpinner(spinner: self.spinner)
                     if error != nil {
                         AlertService.showCancelAlert(header: "HTTP Error", message: "Error then try login new user", viewController: self)
                     } else {

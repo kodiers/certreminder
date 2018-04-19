@@ -14,6 +14,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var certificationLabel: UILabel!
     @IBOutlet weak var examsTableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let formatter = DateFormatter()
     var certificationExpireDate: Date?
@@ -127,12 +128,15 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func saveBtnPressed(_ sender: Any) {
         if let cert = choosedCert {
             if let date = certificationExpireDate {
+                showSpinner(spinner: spinner)
                 UserCertificationService.instance.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
                     if error != nil {
+                        self.hideSpinner(spinner: self.spinner)
                         AlertService.showCancelAlert(header: "HTTP Error", message: "Can't create certification", viewController: self)
                     } else {
                         if let userCert = certification {
                             UserExamService.instance.createUserExams(certification: userCert, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in
+                                self.hideSpinner(spinner: self.spinner)
                                 if error != nil {
                                     AlertService.showCancelAlert(header: "HTTP Error", message: "Can't add exams", viewController: self)
                                 } else {
@@ -140,6 +144,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
                                 }
                             })
                         } else {
+                            self.hideSpinner(spinner: self.spinner)
                             AlertService.showCancelAlert(header: "Unknown error", message: "No certification data", viewController: self)
                         }
                     }
@@ -182,9 +187,13 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         }
         if vendor == nil {
             vendorLabel.text = "Choose vendor"
+        } else {
+            vendorLabel.text = vendor?.title
         }
         if choosedCert == nil {
             certificationLabel.text = "Choose certification"
+        } else {
+            certificationLabel.text = choosedCert?.title
         }
         examsTableView.reloadData()
     }

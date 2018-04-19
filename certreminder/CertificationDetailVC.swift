@@ -15,6 +15,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var examTableView: UITableView!
     @IBOutlet weak var addExamBtn: RoundedBorderButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private var formatter = DateFormatter()
     
@@ -236,7 +237,9 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func deleteUserCertification() {
         // Send and handle request for delete user certification
+        showSpinner(spinner: spinner)
         userCertificationService.deleteUserCertification(userCertId: userCerification.id, completionHandler: {(response, error) in
+            self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Can't delete certification from server", viewController: self)
             } else {
