@@ -17,4 +17,14 @@ extension UIViewController {
         }
         return txt
     }
+    
+    func showSpinner(spinner: UIActivityIndicatorView) {
+        spinner.isHidden = false
+        spinner.startAnimating()
+    }
+    
+    func hideSpinner(spinner: UIActivityIndicatorView) {
+        spinner.stopAnimating()
+        spinner.isHidden = true
+    }
 }

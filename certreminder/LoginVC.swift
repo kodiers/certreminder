@@ -14,6 +14,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginBtn: RoundedBorderButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var userService: UserServiceProtocol = UserService.instance
 
@@ -26,9 +27,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
         let token = KeychainWrapper.standard.string(forKey: KEY_UID)
         if token != nil {
+            showSpinner(spinner: spinner)
             userService.verifyToken(completionHandler: {(response, error) in
                 if error != nil {
                     self.userService.refreshToken(completionHandler: {(response, error) in
+                        self.hideSpinner(spinner: self.spinner)
                         if error != nil {
                             AlertService.showCancelAlert(header: "HTTP Error", message: "Error while refresh token", viewController: self)
                         } else {
@@ -36,6 +39,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         }
                     })
                 } else {
+                    self.hideSpinner(spinner: self.spinner)
                     self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
                 }
             })
@@ -54,8 +58,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         guard let login = loginTxt, let password = passwordTxt else {
             return
         }
-        
+        showSpinner(spinner: spinner)
         userService.loginUser(username: login, password: password, completionHandler: {(response, error) in
+            self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 AlertService.showCancelAlert(header: "Incorrect credentials", message: "Login or password incorrect", viewController: self)
             } else {

@@ -13,6 +13,7 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var vendorLbl: UILabel!
     @IBOutlet weak var certificationNameTextFld: UITextField!
     @IBOutlet weak var saveBtn: RoundedBorderButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var vendor: Vendor!
     var certService: CertificationServiceProtocol = CertificationService.instance
@@ -51,7 +52,9 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
             AlertService.showCancelAlert(header: "You should enter certification name", message: "Certification name cannot be blank", viewController: self)
             return
         }
+        showSpinner(spinner: spinner)
         certService.createCertification(title: certName, vendor: vendor, completionHandler: ({(newCert, error) in
+            self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create certification", viewController: self)
             } else {

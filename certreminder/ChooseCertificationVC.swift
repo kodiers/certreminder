@@ -11,6 +11,7 @@ import UIKit
 class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var certifications = [Certification]()
     var choosedCert: Certification?
@@ -127,8 +128,10 @@ class ChooseCertificationVC: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func getCertifications() {
+        showSpinner(spinner: spinner)
         // Download certifications from server
         certificationService.downloadCertifications(vendor: vendor, completionHandler: {(certifications, error) in
+            self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 self.showAlert(header: "HTTP Error", message: "Cannot get certifications from server")
             } else {
