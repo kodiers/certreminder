@@ -179,17 +179,19 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         let dateStr = formatter.string(from: userCerification.expirationDate)
         dateLabel.text = dateStr
         if usersExams.count == 0 {
+            self.showSpinner(spinner: spinner)
             self.userExamService.getUserExamsForCertification(certification: userCerification, completionHandler: {(exams, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download user's exams", viewController: self)
                 } else {
                     if let exms = exams {
                         self.usersExams = exms
+                        self.examTableView.reloadData()
                     }
                 }
+                self.hideSpinner(spinner: self.spinner)
             })
         }
-        examTableView.reloadData()
     }
     
     func deleteUserExam(userExam: UserExam, index: Int) {
