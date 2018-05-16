@@ -83,25 +83,35 @@ class NewExamVC: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let result = UIScreen.main.bounds.size;
-        if (result.height < 667)
-        {
-            // less size then iPhone 6
-            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 150, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        } else if (result.height == 667) {
-            // iPhone 6
-            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 75, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        switch result.height {
+            case ..<667:
+                // less size then iPhone 6
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 150, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            case 667:
+                // iPhone 6
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 75, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            case 736...812:
+                // iPhone 6+/iPhone X
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y - 25, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            default:
+                break
         }
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         let result = UIScreen.main.bounds.size;
-        if (result.height < 667)
-        {
-            // less size then iPhone 6
-            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 150, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        } else if (result.height == 667) {
-            // iPhone 6
-            self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 75, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        switch result.height {
+            case ..<667:
+                // less size then iPhone 6
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 150, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            case 667:
+                // iPhone 6
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 75, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            case 736...812:
+                // iPhone 6+/iPhone X
+                self.view.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y + 25, width: self.view.frame.size.width, height: self.view.frame.size.height)
+            default:
+                break
         }
         return true
     }
