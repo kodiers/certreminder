@@ -57,6 +57,11 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         guard let login = loginTxt, let password = passwordTxt, let passwordConfirmation = passwordConfirmationTxt else {
             return
         }
+        
+        if !validatePassword(username: login, password: password) {
+            AlertService.showCancelAlert(header: "Password doesn't meet the requirements", message: "Password should be 8+ charcters, don't be same as username and cannot contains only digits", viewController: self)
+            return
+        }
 
         if password != passwordConfirmation {
             AlertService.showCancelAlert(header: "Password and confirmation should be same", message: "Password and password confirmation should be same", viewController: self)
