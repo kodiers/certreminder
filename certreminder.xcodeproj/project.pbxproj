@@ -20,6 +20,8 @@
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
+		AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DAE20AE4694006FEDEA /* Functions.swift */; };
+		AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DB020AE4A6B006FEDEA /* functionsTests.swift */; };
 		AC507DC9207C232200D3B2F9 /* certreminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */; };
 		AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */; };
 		AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD2207C2B9700D3B2F9 /* mocks.swift */; };
@@ -114,6 +116,8 @@
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
+		AC484DAE20AE4694006FEDEA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		AC484DB020AE4A6B006FEDEA /* functionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionsTests.swift; sourceTree = "<group>"; };
 		AC507DC6207C232200D3B2F9 /* certreminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = certreminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certreminderUITests.swift; sourceTree = "<group>"; };
 		AC507DCA207C232200D3B2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */,
 				ACD3FF642088037C007F6589 /* testNewExamVC.swift */,
 				ACCE5A55208959A800654F6C /* testExtensions.swift */,
+				AC484DB020AE4A6B006FEDEA /* functionsTests.swift */,
 			);
 			path = certreminderTests;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				ACFEBC781F4E4498007E8594 /* Constants.swift */,
+				AC484DAE20AE4694006FEDEA /* Functions.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				AC7196782076E58700CFF449 /* ExamServiceProtocol.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
+				AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */,
 				ACDCC8EE204F4EB400E4CB6F /* RaiseErrorMixin.swift in Sources */,
 				ACFEBC791F4E4498007E8594 /* Constants.swift in Sources */,
 				AC75A9E6201FD87B00F5CB46 /* NewExamVC.swift in Sources */,
@@ -650,6 +657,7 @@
 				ACEDA9E320855A63003A8365 /* testChooseCertificationVC.swift in Sources */,
 				AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */,
 				ACD3FF652088037C007F6589 /* testNewExamVC.swift in Sources */,
+				AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */,
 				ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */,
 				ACEDA9E520855CBA003A8365 /* testAddExamsVC.swift in Sources */,
 				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,
