@@ -100,7 +100,7 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func downloadExams() {
         // Download exams when view will shown
         showSpinner(spinner: spinner)
-        examService.getExams(certification: certification, completionHandler: {(exams, error) in
+        examService.getExamsFor(certification: certification, completionHandler: {(exams, error) in
             self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)

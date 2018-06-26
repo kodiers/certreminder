@@ -74,6 +74,7 @@ class viewsTests: XCTestCase {
     func testChooseExamTableCell() {
         let ExamsVC = storyboard.instantiateViewController(withIdentifier: "AddExamsVC") as! AddExamsVC
         ExamsVC.examService = mockExamSrv
+        ExamsVC.certification = certification
         _ = ExamsVC.view
         let cell = ExamsVC.tableView(ExamsVC.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ChooseExamTableCell
         XCTAssertNotNil(cell)

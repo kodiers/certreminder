@@ -19,12 +19,9 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
     
     private let url = "certifications/exam/"
     
-    func getExams(certification: Certification?, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
-        // Get exams from API
-        var data: Parameters? = nil
-        if let cert = certification {
-            data = ["certification": cert.id]
-        }
+    func getExamsFor(certification: Certification, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
+        // Get exams from API filtered by certification
+        let data: Parameters = ["certification": certification.id]
         ExamService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)
@@ -34,7 +31,7 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
                     // Parse exams
                     if let resultsArr = responseDict["results"] as? Array<AnyObject> {
                         for ex_response in resultsArr {
-                            if let exam = Exam.createExamFromDict(examDict: ex_response as! Dictionary<String, AnyObject>) {
+                            if let exam = Exam.createExamFromDict(examDict: ex_response as! Dictionary<String, AnyObject>, forCertification: certification) {
                                 examsArr.append(exam)
                             }
                         }
@@ -47,7 +44,7 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
     
     func createExam(title: String, certification: Certification, number: String?, completionHandler: @escaping (Exam?, Error?) -> ()) {
         // Send post request for create exam
-        var data: Parameters = ["title": title, "description": NSNull(), "deprecated": false, "certification": certification.id]
+        var data: Parameters = ["title": title, "description": NSNull(), "deprecated": false, "certification": [certification.id]]
         if let exNum = number {
             data["number"] = exNum
         } else {
@@ -58,7 +55,7 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
                 completionHandler(nil, error)
             } else {
                 if let dict = result as? Dictionary<String, AnyObject> {
-                    if let exam = Exam.createExamFromDict(examDict: dict) {
+                    if let exam = Exam.createExamFromDict(examDict: dict, forCertification: certification) {
                         completionHandler(exam, nil)
                     } else {
                         completionHandler(nil, self.raiseError(errorCode: ERROR_CODE_EXAM_EXISTS, message: "Could not create exam"))

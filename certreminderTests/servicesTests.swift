@@ -266,8 +266,9 @@ class servicesTests: XCTestCase {
         var success: Bool = false
         var error: NSError?
         var exams = [Exam]()
+        let cert = Certification(id: 1, title: TEST, vendor: 1)
         Exam.certificationService = mockCertService
-        ExamService.instance.getExams(certification: nil) { (exms, err) in
+        ExamService.instance.getExamsFor(certification: cert) { (exms, err) in
             if err != nil {
                 error = err
             } else {
@@ -281,7 +282,6 @@ class servicesTests: XCTestCase {
         XCTAssertEqual(exams[0].id, 1)
         success = false
         var exam: Exam?
-        let cert = Certification(id: 1, title: "test", vendor: 1)
         ExamService.instance.createExam(title: "test", certification: cert, number: nil) { (resp, err) in
             if err != nil {
                 error = (err! as NSError)
