@@ -17,6 +17,7 @@
 		AC1CEEB72086AD8000829506 /* testChooseExamDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */; };
 		AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */; };
 		AC1CEEBB2086BB1900829506 /* testNewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */; };
+		AC2B3B0920E462DF00939297 /* AddExistingExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */; };
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
@@ -113,6 +114,7 @@
 		AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChooseExamDateVC.swift; sourceTree = "<group>"; };
 		AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataServiceProtocol.swift; sourceTree = "<group>"; };
 		AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNewCertificationVC.swift; sourceTree = "<group>"; };
+		AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExistingExamVC.swift; sourceTree = "<group>"; };
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				AC065B531FA297C70098B0B3 /* ChooseExamDateVC.swift */,
 				ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */,
 				AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */,
+				AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */,
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
+				AC2B3B0920E462DF00939297 /* AddExistingExamVC.swift in Sources */,
 				AC507DD5207C2D2A00D3B2F9 /* UserServiceProtocol.swift in Sources */,
 				AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */,
 				ACB248F5202D075900693F48 /* UserService.swift in Sources */,
