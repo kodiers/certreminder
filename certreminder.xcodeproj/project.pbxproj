@@ -20,6 +20,7 @@
 		AC2B3B0920E462DF00939297 /* AddExistingExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */; };
 		AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */; };
 		AC2C49F81FA1466C009A4C7F /* ChooseExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */; };
+		AC31580120E5B3F500FA45A5 /* ExistingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31580020E5B3F500FA45A5 /* ExistingTableCell.swift */; };
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
 		AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DAE20AE4694006FEDEA /* Functions.swift */; };
 		AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DB020AE4A6B006FEDEA /* functionsTests.swift */; };
@@ -117,6 +118,7 @@
 		AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExistingExamVC.swift; sourceTree = "<group>"; };
 		AC2C49F51FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationTableCellCell.swift; sourceTree = "<group>"; };
 		AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseExamTableCell.swift; sourceTree = "<group>"; };
+		AC31580020E5B3F500FA45A5 /* ExistingTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingTableCell.swift; sourceTree = "<group>"; };
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
 		AC484DAE20AE4694006FEDEA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AC484DB020AE4A6B006FEDEA /* functionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionsTests.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				AC2C49F71FA1466C009A4C7F /* ChooseExamTableCell.swift */,
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
 				ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */,
+				AC31580020E5B3F500FA45A5 /* ExistingTableCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */,
 				AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */,
 				ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */,
+				AC31580120E5B3F500FA45A5 /* ExistingTableCell.swift in Sources */,
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
