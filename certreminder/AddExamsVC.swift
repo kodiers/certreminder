@@ -79,14 +79,11 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
-//        if segue.identifier == "NewExamSegue" {
-//            if let destination = segue.destination as? NewExamVC {
-//                destination.certification = certification
-//                if let vendor = VendorService.instance.getVendorByID(id: certification.vendor) {
-//                    destination.vendor = vendor
-//                }
-//            }
-//        }
+        if segue.identifier == "AddExistingExam" {
+            if let destination = segue.destination as? AddExistingExamVC {
+                destination.certification = certification
+            }
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {

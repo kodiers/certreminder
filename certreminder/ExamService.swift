@@ -66,4 +66,27 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
             }
         })
     }
+    
+    func getExamsForCertificationVendor(certification: Certification, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
+        // Get exams from API filtered by vendor
+        let data: Parameters = ["certification__vendor": certification.vendor]
+        ExamService.webservice.get(url: url, data: data, completionHandler: {(result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                var examsArr = [Exam]()
+                if let responseDict = result as? Dictionary<String, AnyObject> {
+                    // Parse exams
+                    if let resultsArr = responseDict["results"] as? Array<AnyObject> {
+                        for ex_response in resultsArr {
+                            if let exam = Exam.createExamFromDict(examDict: ex_response as! Dictionary<String, AnyObject>, forCertification: certification) {
+                                examsArr.append(exam)
+                            }
+                        }
+                    }
+                }
+                completionHandler(examsArr, nil)
+            }
+        })
+    }
 }

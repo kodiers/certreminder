@@ -269,6 +269,10 @@ class MockExamSrv: ExamServiceProtocol {
         let certification = Certification(id: id1, title: TEST, vendor: id1)
         completionHandler(Exam(id: id1, title: TEST, certification: certification), nil)
     }
+    
+    func getExamsForCertificationVendor(certification: Certification, completionHandler: @escaping ([Exam]?, NSError?) -> ()) {
+        
+    }
 }
 
 class MockUserService: UserServiceProtocol {

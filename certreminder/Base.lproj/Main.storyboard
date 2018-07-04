@@ -1458,6 +1458,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yRp-wN-kXP">
+                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                            </activityIndicatorView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWp-0e-fHQ">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1469,9 +1472,15 @@
                                     <navigationItem title="Add existing exam" id="bgf-xs-D4P">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="mL5-4X-Ubn">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="WDR-Rt-3ia" id="N9y-3n-hgr"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQS-vN-hlq">
                                             <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="newExamBtnPressed:" destination="WDR-Rt-3ia" id="A5P-vM-Jkz"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -1508,7 +1517,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7Vf-Xw-5Gx"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Add">
                                     <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1522,13 +1532,16 @@
                                         <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addExistingBtnPressed:" destination="WDR-Rt-3ia" eventType="touchUpInside" id="h9g-wu-Eia"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEn-RH-HOI">
                                 <rect key="frame" x="0.0" y="182" width="414" height="474"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingExamCell" rowHeight="60" id="t85-wF-aBl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingExamCell" rowHeight="60" id="t85-wF-aBl" customClass="ExistingTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t85-wF-aBl" id="eBS-aU-JGL">
@@ -1574,6 +1587,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="checkmarkImage" destination="sIP-Rl-vQh" id="Wvm-aN-b3Z"/>
+                                            <outlet property="examNumberLbl" destination="d2N-pE-peK" id="BbJ-jF-p3v"/>
+                                            <outlet property="examTitleLbl" destination="Zby-u1-9Pn" id="aax-0L-jLh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1581,8 +1599,10 @@
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fsn-wl-zXC" secondAttribute="trailing" id="4Uh-eG-Slf"/>
+                            <constraint firstItem="yRp-wN-kXP" firstAttribute="centerY" secondItem="xSJ-2h-qcK" secondAttribute="centerY" id="DfK-CM-84f"/>
                             <constraint firstItem="vWp-0e-fHQ" firstAttribute="top" secondItem="c6r-cp-G97" secondAttribute="bottom" id="DwB-ZX-88a"/>
                             <constraint firstItem="fsn-wl-zXC" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leading" id="G59-Sv-bOx"/>
+                            <constraint firstItem="yRp-wN-kXP" firstAttribute="centerX" secondItem="xSJ-2h-qcK" secondAttribute="centerX" id="I6G-0q-bPg"/>
                             <constraint firstItem="HEn-RH-HOI" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leading" id="KC9-Wr-pIt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ism-PZ-bUH" secondAttribute="trailing" id="Kvc-KJ-0NM"/>
                             <constraint firstItem="HEn-RH-HOI" firstAttribute="top" secondItem="fsn-wl-zXC" secondAttribute="bottom" constant="10" id="Rqw-tn-vr4"/>
@@ -1601,12 +1621,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="certificationLbl" destination="MFl-KD-HDF" id="NeH-y2-lr6"/>
+                        <outlet property="spinner" destination="yRp-wN-kXP" id="ne2-u7-RxP"/>
+                        <outlet property="tableView" destination="HEn-RH-HOI" id="vvK-Ti-g9t"/>
                         <segue destination="cfq-wX-rdl" kind="show" identifier="NewExamSegue" id="shY-yj-f8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIA-q5-gvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.92753623188412" y="3235.597826086957"/>
+            <point key="canvasLocation" x="746" y="3223"/>
         </scene>
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
