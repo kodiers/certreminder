@@ -15,7 +15,7 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var exams = [Exam]()
-//    var selectedExam: Exam?
+    var selectedExam: Exam?
     var examService: ExamServiceProtocol = ExamService.instance
     
     var certification: Certification!
@@ -61,7 +61,28 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let exam = exams[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ExistingExamCell") as? ExistingTableCell {
+            cell.configureCell(exam: exam)
+            return cell
+        }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let cell = tableView.cellForRow(at: indexPath) as? ExistingTableCell {
+//            selectedExam = nil
+//            cell.setSelected(true, animated: true)
+//        }
+        selectedExam = exams[indexPath.row]
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        if let cell = tableView.cellForRow(at: indexPath) as? ExistingTableCell {
+//            selectedExam = nil
+//            cell.setSelected(false, animated: true)
+//        }
+        selectedExam = nil
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {

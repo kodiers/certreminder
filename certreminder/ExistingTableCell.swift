@@ -25,9 +25,11 @@ class ExistingTableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        checkmarkImage.isHidden = !selected
     }
     
     func configureCell(exam: Exam) {
+        checkmarkImage.isHidden = true
         self.exam = exam
         if let number = exam.number {
             examNumberLbl.isHidden = false
