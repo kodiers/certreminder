@@ -89,4 +89,21 @@ class ExamService: RaiseErrorMixin, ExamServiceProtocol {
             }
         })
     }
+    
+    func addCertificationToExam(exam: Exam, certification: Certification, completionHandler: @escaping (Exam?, NSError?) -> ()) {
+        // Add existing exam to certification
+        let data: Parameters = ["certification": [certification.id]]
+        let url = self.url + "add/\(exam.id)/"
+        ExamService.webservice.patch(url: url, data: data) { (result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                if let exam = Exam.createExamFromDict(examDict: result as! Dictionary<String, AnyObject>, forCertification: certification) {
+                    completionHandler(exam, nil)
+                } else {
+                    completionHandler(nil, self.raiseError(errorCode: ERROR_UNKNOWN, message: "Could not add exam to certification"))
+                }
+            }
+        }
+    }
 }

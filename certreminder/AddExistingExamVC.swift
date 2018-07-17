@@ -70,18 +70,10 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let cell = tableView.cellForRow(at: indexPath) as? ExistingTableCell {
-//            selectedExam = nil
-//            cell.setSelected(true, animated: true)
-//        }
         selectedExam = exams[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        if let cell = tableView.cellForRow(at: indexPath) as? ExistingTableCell {
-//            selectedExam = nil
-//            cell.setSelected(false, animated: true)
-//        }
         selectedExam = nil
     }
 
@@ -93,6 +85,15 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     @IBAction func addExistingBtnPressed(_ sender: Any) {
+        if let exam = selectedExam {
+            ExamService.instance.addCertificationToExam(exam: exam, certification: certification) { (exam, error) in
+                if error != nil {
+                    AlertService.showCancelAlert(header: "HTTP Error", message: "Could not add exam to certification", viewController: self)
+                } else {
+                    AlertService.showSuccessAlert(title: "Successfully added", message: "Exam was successfully added to certification", viewController: self)
+                }
+            }
+        }
     }
     
     func downloadExams() {
