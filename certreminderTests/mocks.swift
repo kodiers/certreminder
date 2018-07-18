@@ -316,6 +316,10 @@ class MockVendorService: VendorServiceProtocol {
     func downloadVendors(completionHandler: @escaping ([Vendor]?, NSError?) -> ()) {
         completionHandler([Vendor(id: id1, title: TEST)], nil)
     }
+    
+    func getVendorByID(id: Int) -> Vendor? {
+        return Vendor(id: id1, title: TEST)
+    }
 }
 
 class MockUserExamService: UserExamServiceProtocol {

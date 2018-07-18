@@ -17,6 +17,7 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     var exams = [Exam]()
     var selectedExam: Exam?
     var examService: ExamServiceProtocol = ExamService.instance
+    var vendorService: VendorServiceProtocol = VendorService.instance
     
     var certification: Certification!
     
@@ -76,17 +77,27 @@ class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         selectedExam = nil
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NewExamSegue" {
+            if let vendor = vendorService.getVendorByID(id: certification.vendor), let destination = segue.destination as? NewExamVC {
+                destination.vendor = vendor
+                destination.certification = certification
+            }
+        }
+    }
 
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func newExamBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "NewExamSegue", sender: self)
     }
     
     @IBAction func addExistingBtnPressed(_ sender: Any) {
         if let exam = selectedExam {
-            ExamService.instance.addCertificationToExam(exam: exam, certification: certification) { (exam, error) in
+            examService.addCertificationToExam(exam: exam, certification: certification) { (exam, error) in
                 if error != nil {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not add exam to certification", viewController: self)
                 } else {

@@ -15,4 +15,6 @@ protocol VendorServiceProtocol {
     var vendors: [Vendor]? { get }
     
     func downloadVendors(completionHandler: @escaping ([Vendor]?, NSError?) -> ())
+    
+    func getVendorByID(id: Int) -> Vendor?
 }
