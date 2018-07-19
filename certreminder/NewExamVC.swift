@@ -67,6 +67,7 @@ class NewExamVC: UIViewController, UITextFieldDelegate {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create exam", viewController: self)
                 }
             } else {
+                // TODO: change segue to mobe to certification's exam list
                 AlertService.showSuccessAlert(title: "Successfully created", message: "Exam successfully created!", viewController: self)
             }
         })

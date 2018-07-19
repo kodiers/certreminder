@@ -103,4 +103,20 @@ class viewsTests: XCTestCase {
         let dateStr = formatter.string(from: date)
         XCTAssertEqual(cell?.dateLabel.text, dateStr)
     }
+    
+    func testExistingTableCell() {
+        let addExistingExamVC = storyboard.instantiateViewController(withIdentifier: "AddExistingExamVC") as! AddExistingExamVC
+        addExistingExamVC.exams = [exam]
+        addExistingExamVC.certification = certification
+        _ = addExistingExamVC.view
+        let cell = addExistingExamVC.tableView(addExistingExamVC.tableView, cellForRowAt: IndexPath(row: 0, section: 0)) as? ExistingTableCell
+        XCTAssertNotNil(cell)
+        cell?.configureCell(exam: exam)
+        XCTAssertEqual(cell?.exam.id, exam.id)
+        XCTAssertEqual(cell?.examNumberLbl.text, "")
+        XCTAssertEqual(cell?.examTitleLbl.text, TEST)
+        XCTAssertTrue((cell?.checkmarkImage.isHidden)!)
+        cell?.setSelected(true, animated: true)
+        XCTAssertFalse((cell?.checkmarkImage.isHidden)!)
+    }
 }

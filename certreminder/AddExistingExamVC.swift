@@ -10,6 +10,7 @@ import UIKit
 
 class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var addExamBtn: RoundedBorderButton!
     @IBOutlet weak var certificationLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!

@@ -1449,7 +1449,7 @@
         <!--Add Existing ExamVC-->
         <scene sceneID="W8W-hs-sAS">
             <objects>
-                <viewController id="WDR-Rt-3ia" customClass="AddExistingExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExistingExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WDR-Rt-3ia" customClass="AddExistingExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c6r-cp-G97"/>
                         <viewControllerLayoutGuide type="bottom" id="QF5-da-dum"/>
@@ -1621,6 +1621,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addExamBtn" destination="zqA-SX-f5q" id="UD9-Rt-SL5"/>
                         <outlet property="certificationLbl" destination="MFl-KD-HDF" id="NeH-y2-lr6"/>
                         <outlet property="spinner" destination="yRp-wN-kXP" id="ne2-u7-RxP"/>
                         <outlet property="tableView" destination="HEn-RH-HOI" id="vvK-Ti-g9t"/>
