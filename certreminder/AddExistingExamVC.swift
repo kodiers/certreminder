@@ -1,31 +1,36 @@
 //
-//  AddExamsVC.swift
+//  AddExistingExamVC.swift
 //  certreminder
 //
-//  Created by Viktor Yamchinov on 24/10/2017.
-//  Copyright © 2017 Viktor Yamchinov. All rights reserved.
+//  Created by Viktor Yamchinov on 28/06/2018.
+//  Copyright © 2018 Viktor Yamchinov. All rights reserved.
 //
 
 import UIKit
 
-class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class AddExistingExamVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var addExamBtn: RoundedBorderButton!
+    @IBOutlet weak var certificationLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var certification: Certification!
     var exams = [Exam]()
     var selectedExam: Exam?
     var examService: ExamServiceProtocol = ExamService.instance
-
+    var vendorService: VendorServiceProtocol = VendorService.instance
+    
+    var certification: Certification!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tableView.delegate = self
-        tableView.dataSource = self
         
-        self.downloadExams()
+        tableView.dataSource = self
+        tableView.delegate = self
+        certificationLbl.text = certification.title
+        downloadExams()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,45 +64,54 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let exam = exams[indexPath.row]
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChooseExamTableCell") as? ChooseExamTableCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ExistingExamCell") as? ExistingTableCell {
             cell.configureCell(exam: exam)
             return cell
         }
-        return ChooseExamTableCell()
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedExam = exams[indexPath.row]
-        performSegue(withIdentifier: "ChooseExamDateVC", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        selectedExam = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ChooseExamDateVC" {
-            if let destination = segue.destination as? ChooseExamDateVC {
-                if let exam = selectedExam {
-                    destination.exam = exam
-                }
-            }
-        }
-        if segue.identifier == "AddExistingExam" {
-            if let destination = segue.destination as? AddExistingExamVC {
+        if segue.identifier == "NewExamSegue" {
+            if let vendor = vendorService.getVendorByID(id: certification.vendor), let destination = segue.destination as? NewExamVC {
+                destination.vendor = vendor
                 destination.certification = certification
             }
         }
     }
-    
-    @IBAction func addButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "AddExistingExam", sender: self)
+
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func newExamBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "NewExamSegue", sender: self)
+    }
+    
+    @IBAction func addExistingBtnPressed(_ sender: Any) {
+        if let exam = selectedExam {
+            examService.addCertificationToExam(exam: exam, certification: certification) { (exam, error) in
+                if error != nil {
+                    AlertService.showCancelAlert(header: "HTTP Error", message: "Could not add exam to certification", viewController: self)
+                } else {
+                    AlertService.showSuccessAlert(title: "Successfully added", message: "Exam was successfully added to certification", viewController: self)
+                }
+            }
+        }
     }
     
     func downloadExams() {
         // Download exams when view will shown
         showSpinner(spinner: spinner)
-        examService.getExamsFor(certification: certification, completionHandler: {(exams, error) in
+        examService.getExamsForCertificationVendor(certification: certification, completionHandler: {(exams, error) in
             self.hideSpinner(spinner: self.spinner)
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not download exams", viewController: self)
@@ -109,5 +123,4 @@ class AddExamsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         })
     }
-
 }

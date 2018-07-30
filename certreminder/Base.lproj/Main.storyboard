@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1444,7 +1444,193 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fr6-CO-GST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="3223"/>
+            <point key="canvasLocation" x="1570" y="3236"/>
+        </scene>
+        <!--Add Existing ExamVC-->
+        <scene sceneID="W8W-hs-sAS">
+            <objects>
+                <viewController storyboardIdentifier="AddExistingExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WDR-Rt-3ia" customClass="AddExistingExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c6r-cp-G97"/>
+                        <viewControllerLayoutGuide type="bottom" id="QF5-da-dum"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xSJ-2h-qcK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yRp-wN-kXP">
+                                <rect key="frame" x="189" y="350" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWp-0e-fHQ">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                    <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Add existing exam" id="bgf-xs-D4P">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="mL5-4X-Ubn">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backBtnPressed:" destination="WDR-Rt-3ia" id="N9y-3n-hgr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQS-vN-hlq">
+                                            <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="newExamBtnPressed:" destination="WDR-Rt-3ia" id="A5P-vM-Jkz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ism-PZ-bUH">
+                                <rect key="frame" x="20" y="79" width="374" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsn-wl-zXC">
+                                <rect key="frame" x="0.0" y="117" width="414" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016 Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-KD-HDF">
+                                        <rect key="frame" x="8" y="5" width="398" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="EC6-Dy-Hbd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.27058823529411763" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="MFl-KD-HDF" firstAttribute="centerY" secondItem="fsn-wl-zXC" secondAttribute="centerY" id="Ndw-na-64C"/>
+                                    <constraint firstAttribute="height" constant="55" id="RXw-Kv-UfA"/>
+                                    <constraint firstAttribute="trailing" secondItem="MFl-KD-HDF" secondAttribute="trailing" constant="8" id="Y8h-HJ-9Q1"/>
+                                    <constraint firstItem="MFl-KD-HDF" firstAttribute="leading" secondItem="fsn-wl-zXC" secondAttribute="leading" constant="8" id="e09-V0-qjF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-SX-f5q" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="20" y="671" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7Vf-Xw-5Gx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addExistingBtnPressed:" destination="WDR-Rt-3ia" eventType="touchUpInside" id="h9g-wu-Eia"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEn-RH-HOI">
+                                <rect key="frame" x="0.0" y="182" width="414" height="474"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExistingExamCell" rowHeight="60" id="t85-wF-aBl" customClass="ExistingTableCell" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t85-wF-aBl" id="eBS-aU-JGL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJh-Kk-X9w">
+                                                    <rect key="frame" x="20" y="10.333333333333336" width="374" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-413" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2N-pE-peK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="VaP-KE-ulY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                            <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016 Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zby-u1-9Pn">
+                                                            <rect key="frame" x="60" y="0.0" width="284" height="40"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                                            <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="sIP-Rl-vQh">
+                                                            <rect key="frame" x="354" y="0.0" width="20" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="XiR-rH-Veq"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="sIP-Rl-vQh" firstAttribute="centerY" secondItem="Zby-u1-9Pn" secondAttribute="centerY" id="N1a-D1-HHM"/>
+                                                        <constraint firstAttribute="height" constant="40" id="n88-yH-E81"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YJh-Kk-X9w" secondAttribute="trailing" id="7cs-on-Zer"/>
+                                                <constraint firstItem="YJh-Kk-X9w" firstAttribute="centerY" secondItem="eBS-aU-JGL" secondAttribute="centerY" id="RZ3-WZ-ijF"/>
+                                                <constraint firstItem="YJh-Kk-X9w" firstAttribute="leading" secondItem="eBS-aU-JGL" secondAttribute="leadingMargin" id="nWO-nk-JQn"/>
+                                                <constraint firstItem="YJh-Kk-X9w" firstAttribute="centerY" secondItem="eBS-aU-JGL" secondAttribute="centerY" id="xvR-Hg-HaX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="checkmarkImage" destination="sIP-Rl-vQh" id="Wvm-aN-b3Z"/>
+                                            <outlet property="examNumberLbl" destination="d2N-pE-peK" id="BbJ-jF-p3v"/>
+                                            <outlet property="examTitleLbl" destination="Zby-u1-9Pn" id="aax-0L-jLh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fsn-wl-zXC" secondAttribute="trailing" id="4Uh-eG-Slf"/>
+                            <constraint firstItem="yRp-wN-kXP" firstAttribute="centerY" secondItem="xSJ-2h-qcK" secondAttribute="centerY" id="DfK-CM-84f"/>
+                            <constraint firstItem="vWp-0e-fHQ" firstAttribute="top" secondItem="c6r-cp-G97" secondAttribute="bottom" id="DwB-ZX-88a"/>
+                            <constraint firstItem="fsn-wl-zXC" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leading" id="G59-Sv-bOx"/>
+                            <constraint firstItem="yRp-wN-kXP" firstAttribute="centerX" secondItem="xSJ-2h-qcK" secondAttribute="centerX" id="I6G-0q-bPg"/>
+                            <constraint firstItem="HEn-RH-HOI" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leading" id="KC9-Wr-pIt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ism-PZ-bUH" secondAttribute="trailing" id="Kvc-KJ-0NM"/>
+                            <constraint firstItem="HEn-RH-HOI" firstAttribute="top" secondItem="fsn-wl-zXC" secondAttribute="bottom" constant="10" id="Rqw-tn-vr4"/>
+                            <constraint firstItem="zqA-SX-f5q" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leadingMargin" id="Ych-49-dF2"/>
+                            <constraint firstItem="fsn-wl-zXC" firstAttribute="top" secondItem="Ism-PZ-bUH" secondAttribute="bottom" constant="10" id="Ymi-Sb-AmT"/>
+                            <constraint firstItem="Ism-PZ-bUH" firstAttribute="top" secondItem="vWp-0e-fHQ" secondAttribute="bottom" constant="15" id="ZAj-M7-cUy"/>
+                            <constraint firstItem="zqA-SX-f5q" firstAttribute="top" secondItem="HEn-RH-HOI" secondAttribute="bottom" constant="15" id="b4e-HC-22x"/>
+                            <constraint firstItem="Ism-PZ-bUH" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leadingMargin" id="iua-30-slF"/>
+                            <constraint firstItem="HEn-RH-HOI" firstAttribute="top" secondItem="fsn-wl-zXC" secondAttribute="bottom" constant="10" id="iwL-dk-CYJ"/>
+                            <constraint firstItem="zqA-SX-f5q" firstAttribute="trailing" secondItem="xSJ-2h-qcK" secondAttribute="trailingMargin" id="n5B-bR-TEv"/>
+                            <constraint firstItem="QF5-da-dum" firstAttribute="top" secondItem="zqA-SX-f5q" secondAttribute="bottom" constant="20" id="qHp-uc-duL"/>
+                            <constraint firstItem="vWp-0e-fHQ" firstAttribute="leading" secondItem="xSJ-2h-qcK" secondAttribute="leading" id="vd4-7J-WZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="HEn-RH-HOI" secondAttribute="trailing" id="wsZ-b6-q49"/>
+                            <constraint firstItem="fsn-wl-zXC" firstAttribute="top" secondItem="Ism-PZ-bUH" secondAttribute="bottom" constant="10" id="yYm-sD-DkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="vWp-0e-fHQ" secondAttribute="trailing" id="zvn-NH-fw5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addExamBtn" destination="zqA-SX-f5q" id="UD9-Rt-SL5"/>
+                        <outlet property="certificationLbl" destination="MFl-KD-HDF" id="NeH-y2-lr6"/>
+                        <outlet property="spinner" destination="yRp-wN-kXP" id="ne2-u7-RxP"/>
+                        <outlet property="tableView" destination="HEn-RH-HOI" id="vvK-Ti-g9t"/>
+                        <segue destination="cfq-wX-rdl" kind="show" identifier="NewExamSegue" id="shY-yj-f8e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIA-q5-gvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="3223"/>
         </scene>
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
@@ -1544,7 +1730,7 @@
                         <outlet property="spinner" destination="XRM-q8-Sbg" id="RuP-s3-1js"/>
                         <outlet property="tableView" destination="E4w-3S-tH5" id="hEx-To-uFz"/>
                         <segue destination="B7i-lR-ORU" kind="show" identifier="ChooseExamDateVC" id="VdF-O4-xgd"/>
-                        <segue destination="cfq-wX-rdl" kind="show" identifier="NewExamSegue" id="sw5-8d-Opa"/>
+                        <segue destination="WDR-Rt-3ia" kind="show" identifier="AddExistingExam" id="Afo-n8-8Ge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zB-eF-rlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1950,7 +2136,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5oY-to-PBg"/>
-        <segue reference="IfT-sl-7B9"/>
+        <segue reference="VdF-O4-xgd"/>
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UA8-3F-Tfj"/>

@@ -96,20 +96,16 @@ class Exam {
         _deprecated = deprecated
     }
     
-    class func createExamFromDict(examDict: Dictionary<String, AnyObject>) -> Exam? {
+    class func createExamFromDict(examDict: Dictionary<String, AnyObject>, forCertification certification: Certification) -> Exam? {
         // Parse dictionary and create exam
         if let id = examDict["id"] as? Int {
             if let title = examDict["title"] as? String {
-                if let cert_id = examDict["certification"] as? Int  {
-                    if let deprecated = examDict["deprecated"] as? Bool {
-                        if let certification = certificationService.getCertificationById(id: cert_id) {
-                            let exam = Exam(id: id, title: title, certification: certification, deprecated: deprecated)
-                            if let number = examDict["number"] as? String {
-                                exam.number = number
-                            }
-                            return exam
-                        } 
+                if let deprecated = examDict["deprecated"] as? Bool {
+                    let exam = Exam(id: id, title: title, certification: certification, deprecated: deprecated)
+                    if let number = examDict["number"] as? String {
+                        exam.number = number
                     }
+                    return exam
                 }
             }
         }

@@ -137,7 +137,7 @@ class modelsTests: XCTestCase {
         XCTAssertFalse(exam.deprecated)
         Exam.certificationService = mockCertService
         let examDict = ["id": id, "title": test, "deprecated": false, "number": "test-1", "certification": certification.id] as [String : AnyObject]
-        let exam2 = Exam.createExamFromDict(examDict: examDict)
+        let exam2 = Exam.createExamFromDict(examDict: examDict, forCertification: certification)
         XCTAssertNotNil(exam2)
         XCTAssertEqual(exam2!.id, id)
         XCTAssertEqual(exam2!.title, test)

@@ -58,7 +58,7 @@ class NewCertificationVC: UIViewController, UITextFieldDelegate {
             if error != nil {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create certification", viewController: self)
             } else {
-                AlertService.showSuccessCreateAlert(message: "Certification was succesfully created!", viewController: self)
+                AlertService.showSuccessAlert(title: "Successfully created", message: "Certification was succesfully created!", viewController: self)
             }
         }))
     }
