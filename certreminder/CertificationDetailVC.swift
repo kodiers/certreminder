@@ -140,19 +140,22 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
                     if examsForCreation.count > 0 {
                         self.userExamService.createUserExams(certification: self.userCerification, examsWithDate: examsForCreation, completionHandler: {(response, error) in
                             if error != nil {
-                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams", viewController: self)
+                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Can't add exams. Maybe one exam is not part of choosed certification.", viewController: self)
+                            } else {
+                                 self.showSuccessUpdateAlert()
                             }
                         })
                     }
                     if examsForUpdate.count > 0 {
                         self.userExamService.changeUserExams(certification: self.userCerification, userExams: examsForUpdate, completionHandler: {(response, error) in
                             if error != nil {
-                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams", viewController: self)
+                                AlertService.showCancelAlert(header:  "HTTP Error", message: "Cannot change exams. Maybe one exam is not part of choosed certification.", viewController: self)
+                            } else {
+                                 self.showSuccessUpdateAlert()
                             }
                         })
                     }
                 }
-                self.showSuccessUpdateAlert()
             } else {
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Could not save certification", viewController: self)
             }
