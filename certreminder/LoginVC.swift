@@ -33,7 +33,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self.userService.refreshToken(completionHandler: {(response, error) in
                         self.hideSpinner(spinner: self.spinner)
                         if error != nil {
-                            AlertService.showCancelAlert(header: "HTTP Error", message: "Error while refresh token", viewController: self)
+                            AlertService.showCancelAlert(header: "You should log in", message: "You should login again.", viewController: self)
                         } else {
                             self.performSegue(withIdentifier: "LoginShowMainVC", sender: nil)
                         }
