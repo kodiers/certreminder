@@ -132,7 +132,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
                 UserCertificationService.instance.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
                     if error != nil {
                         self.hideSpinner(spinner: self.spinner)
-                        AlertService.showCancelAlert(header: "HTTP Error", message: "Can't create certification", viewController: self)
+                        AlertService.showCancelAlert(header: "Error", message: "Can't create certification. Maybe you have the same certification.", viewController: self)
                     } else {
                         if let userCert = certification {
                             UserExamService.instance.createUserExams(certification: userCert, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in
