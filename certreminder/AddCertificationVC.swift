@@ -29,7 +29,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         examsTableView.delegate = self
         examsTableView.dataSource = self
         examsTableView.estimatedRowHeight = 75
-        examsTableView.rowHeight = UITableViewAutomaticDimension
+        examsTableView.rowHeight = UITableView.automaticDimension
         
         configureVC()
     }
@@ -75,8 +75,8 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             examsWithDate.remove(at: indexPath.row)
             examsTableView.reloadData()
         }

@@ -26,7 +26,7 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         certTableView.delegate = self
         certTableView.dataSource = self
         certTableView.estimatedRowHeight = 100
-        certTableView.rowHeight = UITableViewAutomaticDimension
+        certTableView.rowHeight = UITableView.automaticDimension
         
         showSpinner(spinner: spinner)
         
@@ -88,8 +88,8 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             let userCert = userCertifications[indexPath.row]
             showSpinner(spinner: spinner)
             userCertificationService.deleteUserCertification(userCertId: userCert.id, completionHandler: {(response, error) in
