@@ -67,7 +67,7 @@ class NewExamVC: UIViewController, UITextFieldDelegate {
                     AlertService.showCancelAlert(header: "HTTP Error", message: "Could not create exam", viewController: self)
                 }
             } else {
-                let alert = UIAlertController(title: "Successfully created", message: "Exam successfully created!", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Successfully created", message: "Exam successfully created!", preferredStyle: UIAlertController.Style.alert)
                 let presentingVC = self.presentingViewController
                 let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
                     self.dismiss(animated: true, completion: {

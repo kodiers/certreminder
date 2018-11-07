@@ -54,7 +54,7 @@ class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let vendorTitle = vendors[row].title
-        let attributedString = NSAttributedString(string: vendorTitle, attributes: [NSForegroundColorAttributeName: UIColor(red: 219.0 / 255.0, green: 223.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)])
+        let attributedString = NSAttributedString(string: vendorTitle, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor): UIColor(red: 219.0 / 255.0, green: 223.0 / 255.0, blue: 114.0 / 255.0, alpha: 1.0)]))
         return attributedString
     }
 
@@ -91,4 +91,15 @@ class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate
             }
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }

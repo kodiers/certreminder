@@ -35,7 +35,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         examTableView.delegate = self
         examTableView.dataSource = self
         examTableView.estimatedRowHeight = 75
-        examTableView.rowHeight = UITableViewAutomaticDimension
+        examTableView.rowHeight = UITableView.automaticDimension
         
         configureVC()
         
@@ -83,8 +83,8 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             showExamDeleteAlert(index: indexPath.row)
         }
     }
@@ -255,7 +255,7 @@ class CertificationDetailVC: UIViewController, UITableViewDelegate, UITableViewD
     
     func showSuccessUpdateAlert() {
         // Show success alert and return to certification list after "OK" pressed
-        let alert = UIAlertController(title: "Successfully saved", message: "Certification was succesfully saved!", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Successfully saved", message: "Certification was succesfully saved!", preferredStyle: UIAlertController.Style.alert)
         let successAction = UIAlertAction(title: "OK!", style: .default, handler: {(UIAlertAction) in
             self.performSegue(withIdentifier: "BackToCertListFromDetail", sender: nil)
         })
