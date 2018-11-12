@@ -29,6 +29,8 @@
 		AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */; };
 		AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD2207C2B9700D3B2F9 /* mocks.swift */; };
 		AC507DD5207C2D2A00D3B2F9 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD4207C2D2A00D3B2F9 /* UserServiceProtocol.swift */; };
+		AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57D017219A376300DB5E80 /* TermsVC.swift */; };
+		AC57D01A219A3BA100DB5E80 /* RoundedBorderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */; };
 		AC5A1741206C668700746C4F /* servicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1740206C668700746C4F /* servicesTests.swift */; };
 		AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1742206C692800746C4F /* WebRequestProtocol.swift */; };
 		AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */; };
@@ -130,6 +132,8 @@
 		AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testLoginVC.swift; sourceTree = "<group>"; };
 		AC507DD2207C2B9700D3B2F9 /* mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mocks.swift; sourceTree = "<group>"; };
 		AC507DD4207C2D2A00D3B2F9 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		AC57D017219A376300DB5E80 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderTextView.swift; sourceTree = "<group>"; };
 		AC5A1740206C668700746C4F /* servicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicesTests.swift; sourceTree = "<group>"; };
 		AC5A1742206C692800746C4F /* WebRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestProtocol.swift; sourceTree = "<group>"; };
 		AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
 				ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */,
 				AC31580020E5B3F500FA45A5 /* ExistingTableCell.swift */,
+				AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */,
 				AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */,
 				AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */,
+				AC57D017219A376300DB5E80 /* TermsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				AC57D01A219A3BA100DB5E80 /* RoundedBorderTextView.swift in Sources */,
 				ACF6CFCC207ED416007A87A4 /* VendorServiceProtocol.swift in Sources */,
 				ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */,
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
@@ -633,6 +640,7 @@
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */,
 				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
+				AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
