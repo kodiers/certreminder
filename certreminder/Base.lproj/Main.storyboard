@@ -139,6 +139,30 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-oy-nES">
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2J-FJ-fpI" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="159.66666666666666" y="352.33333333333331" width="95" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="h5H-L4-GCe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Terms of Use">
+                                    <color key="titleColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="temsOfUseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiN-GS-PCi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -147,6 +171,7 @@
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="B2e-zA-LQH"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BtR-zj-XXJ"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8h-Qg-5b3"/>
+                            <constraint firstItem="W2J-FJ-fpI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CpV-j8-ASM"/>
                             <constraint firstItem="C3z-oy-nES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMs-rc-7AB"/>
                             <constraint firstAttribute="trailing" secondItem="2Li-Ds-9OL" secondAttribute="trailing" id="Egh-NC-b2U"/>
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="GR5-eW-Jbn"/>
@@ -154,6 +179,7 @@
                             <constraint firstItem="2Li-Ds-9OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8B-DQ-PwK"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UIY-us-3Pw"/>
                             <constraint firstItem="lWW-Z0-DsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8w-hB-fGJ"/>
+                            <constraint firstItem="W2J-FJ-fpI" firstAttribute="top" secondItem="oLf-Cj-kT8" secondAttribute="bottom" constant="35" id="cbv-kr-SrB"/>
                             <constraint firstItem="C3z-oy-nES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ci3-ty-4Hd"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="hEi-lx-EJt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
@@ -168,6 +194,7 @@
                         <outlet property="passwordField" destination="40p-vb-qdu" id="263-qY-E5e"/>
                         <outlet property="spinner" destination="C3z-oy-nES" id="ImP-7c-kTD"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="LoginShowMainVC" id="7Ro-qa-nWV"/>
+                        <segue destination="XJL-ug-fG4" kind="show" identifier="LoginTermsOfUseVC" id="xnJ-mB-2Xg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -318,6 +345,36 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-my-NZV">
                                 <rect key="frame" x="188.66666666666666" y="224.66666666666666" width="37" height="36.999999999999972"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressing the 'Register' button you accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-lV-loc">
+                                <rect key="frame" x="79" y="433.66666666666669" width="256" height="19.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hX-ll-oxk" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="159.66666666666666" y="463" width="95" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="ICk-5y-OKI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="14"/>
+                                <state key="normal" title="Terms of Use">
+                                    <color key="titleColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="termsOfUseBtnPressed:" destination="cxt-Sq-YcF" eventType="touchUpInside" id="eKj-1P-cih"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -329,16 +386,22 @@
                             <constraint firstItem="4fF-Il-0jZ" firstAttribute="top" secondItem="SBf-tJ-eJb" secondAttribute="bottom" id="GmY-S4-HyS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="C0d-N7-mzp" secondAttribute="trailing" constant="8" id="I3h-9l-5JN"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" id="Me5-4U-iGx"/>
+                            <constraint firstItem="6hX-ll-oxk" firstAttribute="top" secondItem="AHx-lV-loc" secondAttribute="bottom" constant="10" id="UFf-13-EFs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6rw-cv-puX" secondAttribute="trailing" constant="8" id="WVv-wg-kSf"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="top" secondItem="UBh-gz-ZVm" secondAttribute="bottom" constant="8" id="Wzc-cv-mgY"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="bwE-TC-g2d"/>
+                            <constraint firstItem="AHx-lV-loc" firstAttribute="top" secondItem="6rw-cv-puX" secondAttribute="bottom" constant="20" id="cpj-9n-AmW"/>
+                            <constraint firstItem="AHx-lV-loc" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="f6w-wL-GIT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AHx-lV-loc" secondAttribute="trailing" constant="59" id="gsh-ac-aSP"/>
                             <constraint firstItem="SBf-tJ-eJb" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leading" id="hQt-7v-Tsu"/>
                             <constraint firstItem="C0d-N7-mzp" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="8" id="hcq-od-e2h"/>
                             <constraint firstItem="N3q-my-NZV" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="hei-GS-1N5"/>
                             <constraint firstItem="6rw-cv-puX" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="8" id="mqd-Wp-5dh"/>
                             <constraint firstAttribute="trailing" secondItem="SBf-tJ-eJb" secondAttribute="trailing" id="sTP-Ug-MhK"/>
+                            <constraint firstItem="AHx-lV-loc" firstAttribute="leading" secondItem="VSp-PA-vUe" secondAttribute="leadingMargin" constant="59" id="tND-Et-VSV"/>
                             <constraint firstItem="UBh-gz-ZVm" firstAttribute="top" secondItem="pGN-Qn-5WS" secondAttribute="bottom" constant="10" id="u6w-iZ-Qss"/>
                             <constraint firstItem="N3q-my-NZV" firstAttribute="centerY" secondItem="VSp-PA-vUe" secondAttribute="centerY" constant="-125" id="vxG-nT-Urd"/>
+                            <constraint firstItem="6hX-ll-oxk" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="weW-o1-blR"/>
                             <constraint firstItem="rAR-Ud-g00" firstAttribute="centerX" secondItem="VSp-PA-vUe" secondAttribute="centerX" id="xCt-8x-t3Q"/>
                             <constraint firstItem="6rw-cv-puX" firstAttribute="top" secondItem="C0d-N7-mzp" secondAttribute="bottom" constant="25" id="y8E-Fa-r5M"/>
                         </constraints>
@@ -350,11 +413,12 @@
                         <outlet property="registerBtn" destination="6rw-cv-puX" id="FdN-NP-L60"/>
                         <outlet property="spinner" destination="N3q-my-NZV" id="qQk-4H-hoZ"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="RegShowMainVC" id="W1w-jA-vkM"/>
+                        <segue destination="XJL-ug-fG4" kind="show" identifier="RegShowTermsVC" id="I99-sZ-nDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGI-NB-dSM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746.39999999999998" y="33.733133433283363"/>
+            <point key="canvasLocation" x="746.37681159420299" y="33.423913043478265"/>
         </scene>
         <!--TermsVC-->
         <scene sceneID="IsC-qj-JPU">
@@ -400,7 +464,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-B8-NCD" customClass="RoundedBorderTextView" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="20" y="127" width="374" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Re:Minder Terms of Use
+                                <string key="text">Re:Minder Terms of Use
 
 This Terms of Conditions is between you and Re:Minder and governs use of this app made available through the Apple App Store. By installing the Re:Minder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Re:Minder App.
 
@@ -422,8 +486,9 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
 
 8. Product Claims Re:Minder, not Apple, is responsible for addressing any claims by you relating to the Re:Minder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Re:Minder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 
-9. Third Party Intellectual Property Claims Re:Minder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Re:Minder App. To the extent Re:Minder is required to provide indemnification by applicable law, Re:Minder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Re:Minder App or your use of it infringes any third party intellectual property right.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+9. Third Party Intellectual Property Claims Re:Minder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Re:Minder App. To the extent Re:Minder is required to provide indemnification by applicable law, Re:Minder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Re:Minder App or your use of it infringes any third party intellectual property right.</string>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -446,6 +511,9 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="XJL-ug-fG4" eventType="touchUpInside" id="G0l-Oy-VpT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -470,7 +538,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofs-d8-SNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1482.608695652174" y="32.608695652173914"/>
+            <point key="canvasLocation" x="371" y="-687"/>
         </scene>
         <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
@@ -2254,6 +2322,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UA8-3F-Tfj"/>
-        <segue reference="W1w-jA-vkM"/>
+        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="xnJ-mB-2Xg"/>
     </inferredMetricsTieBreakers>
 </document>

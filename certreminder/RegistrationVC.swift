@@ -87,6 +87,10 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         })
     }
     
+    @IBAction func termsOfUseBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "RegShowTermsVC", sender: self)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
