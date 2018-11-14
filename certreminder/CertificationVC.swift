@@ -124,6 +124,10 @@ class CertificationVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         performSegue(withIdentifier: "GoToLoginVC", sender: nil)
     }
     
+    @IBAction func aboutBtnTapped(_ sender: Any) {
+        performSegue(withIdentifier: "MyCertAboutVC", sender: nil)
+    }
+    
     func setVendors(vendors: [Vendor]) {
         self.vendors = vendors
         self.certTableView.reloadData()
