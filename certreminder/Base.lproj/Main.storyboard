@@ -136,33 +136,63 @@
                                     <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c3D-TX-vkw"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-DR-4Qb">
+                                <rect key="frame" x="107" y="342.33333333333331" width="200" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2J-FJ-fpI" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="h5H-L4-GCe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="Terms of Use">
+                                            <color key="titleColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="temsOfUseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiN-GS-PCi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVl-SJ-LDF" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="95" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="gyY-HU-pz1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="14"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="aboutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDq-EC-dKe"/>
+                                            <action selector="temsOfUseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HGS-ZZ-7C0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-oy-nES">
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2J-FJ-fpI" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="159.66666666666666" y="352.33333333333331" width="95" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="h5H-L4-GCe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="14"/>
-                                <state key="normal" title="Terms of Use">
-                                    <color key="titleColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="temsOfUseBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wiN-GS-PCi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -171,21 +201,21 @@
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="B2e-zA-LQH"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BtR-zj-XXJ"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8h-Qg-5b3"/>
-                            <constraint firstItem="W2J-FJ-fpI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CpV-j8-ASM"/>
                             <constraint firstItem="C3z-oy-nES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DMs-rc-7AB"/>
                             <constraint firstAttribute="trailing" secondItem="2Li-Ds-9OL" secondAttribute="trailing" id="Egh-NC-b2U"/>
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="GR5-eW-Jbn"/>
+                            <constraint firstItem="Ec2-DR-4Qb" firstAttribute="top" secondItem="oLf-Cj-kT8" secondAttribute="bottom" constant="25" id="JJh-Li-N0X"/>
                             <constraint firstItem="oLi-As-2Rw" firstAttribute="top" secondItem="7Vc-Ue-boo" secondAttribute="bottom" constant="8" id="RA2-ih-gzQ"/>
                             <constraint firstItem="2Li-Ds-9OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8B-DQ-PwK"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UIY-us-3Pw"/>
                             <constraint firstItem="lWW-Z0-DsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8w-hB-fGJ"/>
-                            <constraint firstItem="W2J-FJ-fpI" firstAttribute="top" secondItem="oLf-Cj-kT8" secondAttribute="bottom" constant="35" id="cbv-kr-SrB"/>
                             <constraint firstItem="C3z-oy-nES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ci3-ty-4Hd"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="hEi-lx-EJt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="top" secondItem="oLi-As-2Rw" secondAttribute="bottom" constant="20" id="u25-Sd-brG"/>
                             <constraint firstItem="oLi-As-2Rw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vkJ-BJ-dgP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="myU-xm-pbm" secondAttribute="trailing" constant="8" id="wDd-vr-Odt"/>
+                            <constraint firstItem="Ec2-DR-4Qb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x8O-Lh-sNd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -195,6 +225,7 @@
                         <outlet property="spinner" destination="C3z-oy-nES" id="ImP-7c-kTD"/>
                         <segue destination="A8S-3n-4uh" kind="show" identifier="LoginShowMainVC" id="7Ro-qa-nWV"/>
                         <segue destination="XJL-ug-fG4" kind="show" identifier="LoginTermsOfUseVC" id="xnJ-mB-2Xg"/>
+                        <segue destination="ZOF-UG-mfe" kind="show" identifier="LoginAboutVC" id="PhL-AQ-snU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -540,6 +571,164 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
             </objects>
             <point key="canvasLocation" x="371" y="-687"/>
         </scene>
+        <!--AboutVC-->
+        <scene sceneID="pYT-rk-u2t">
+            <objects>
+                <viewController id="ZOF-UG-mfe" customClass="AboutVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hSc-AW-t2A"/>
+                        <viewControllerLayoutGuide type="bottom" id="2wU-6e-UmX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V4R-vD-4lz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="A6V-5E-o5L">
+                                <rect key="frame" x="20" y="142" width="374" height="74"/>
+                                <string key="text">This is a simple application where you can create a list of certifications and add exams from the list to track their renewal dates.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bg" translatesAutoresizingMaskIntoConstraints="NO" id="aZP-qy-XGb">
+                                <rect key="frame" x="0.0" y="536" width="414" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="PVa-tl-lqN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euu-41-uFI" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                <rect key="frame" x="20" y="671" width="374" height="45"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="htu-0y-yna"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="ZOF-UG-mfe" eventType="touchUpInside" id="JjM-af-kwr"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="616-CM-epS">
+                                <rect key="frame" x="128.66666666666669" y="88" width="156.66666666666669" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKh-Ic-grc">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                        <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUF-Xe-4Nn">
+                                        <rect key="frame" x="49.333333333333336" y="0.0" width="107.33333333333331" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                        <color key="textColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-t4-Ndp">
+                                <rect key="frame" x="20" y="30" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can contact us:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-lI-y2M">
+                                <rect key="frame" x="20" y="246" width="374" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-hb-S4D">
+                                <rect key="frame" x="20" y="294" width="374" height="117"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkX-iq-cWm" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                                        <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="wYL-JB-r4c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="By email: support@techforline.com">
+                                            <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="emailBtnPressed:" destination="ZOF-UG-mfe" eventType="touchUpInside" id="OCO-MX-2Vo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-57-VYs" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="374" height="45"/>
+                                        <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="PZc-qE-Eta"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="On site: http://reminder.techforline.com">
+                                            <color key="titleColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="siteBtnPressed:" destination="ZOF-UG-mfe" eventType="touchUpInside" id="Rc6-On-Wvx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Q8-hb-S4D" secondAttribute="trailing" id="1Uu-Th-gVR"/>
+                            <constraint firstItem="2Q8-hb-S4D" firstAttribute="top" secondItem="z8O-lI-y2M" secondAttribute="bottom" constant="15" id="2Dv-dB-Dxe"/>
+                            <constraint firstItem="z8O-lI-y2M" firstAttribute="top" secondItem="A6V-5E-o5L" secondAttribute="bottom" constant="30" id="30A-9e-OUy"/>
+                            <constraint firstItem="616-CM-epS" firstAttribute="top" secondItem="3fX-t4-Ndp" secondAttribute="bottom" constant="25" id="3fn-DV-aoS"/>
+                            <constraint firstItem="A6V-5E-o5L" firstAttribute="top" secondItem="616-CM-epS" secondAttribute="bottom" constant="10" id="9GB-ti-TcW"/>
+                            <constraint firstItem="z8O-lI-y2M" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leadingMargin" id="Cyu-Lc-WDg"/>
+                            <constraint firstItem="2Q8-hb-S4D" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leadingMargin" id="GGv-bt-I88"/>
+                            <constraint firstItem="z8O-lI-y2M" firstAttribute="trailing" secondItem="V4R-vD-4lz" secondAttribute="trailingMargin" id="JuQ-n9-1zH"/>
+                            <constraint firstItem="2wU-6e-UmX" firstAttribute="top" secondItem="aZP-qy-XGb" secondAttribute="bottom" id="LHE-aV-pIG"/>
+                            <constraint firstItem="2wU-6e-UmX" firstAttribute="top" secondItem="euu-41-uFI" secondAttribute="bottom" constant="20" id="LPr-WN-VbP"/>
+                            <constraint firstItem="616-CM-epS" firstAttribute="centerX" secondItem="V4R-vD-4lz" secondAttribute="centerX" id="NeK-Cq-jLK"/>
+                            <constraint firstItem="3fX-t4-Ndp" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leadingMargin" id="Nwm-q7-o1X"/>
+                            <constraint firstAttribute="trailing" secondItem="aZP-qy-XGb" secondAttribute="trailing" id="WfP-0n-vz8"/>
+                            <constraint firstItem="A6V-5E-o5L" firstAttribute="trailing" secondItem="V4R-vD-4lz" secondAttribute="trailingMargin" id="X84-QK-RH4"/>
+                            <constraint firstItem="3fX-t4-Ndp" firstAttribute="trailing" secondItem="V4R-vD-4lz" secondAttribute="trailingMargin" id="a3f-p7-ag5"/>
+                            <constraint firstItem="euu-41-uFI" firstAttribute="trailing" secondItem="V4R-vD-4lz" secondAttribute="trailingMargin" id="aRk-pO-33f"/>
+                            <constraint firstItem="euu-41-uFI" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leadingMargin" id="aVZ-bI-kvU"/>
+                            <constraint firstItem="aZP-qy-XGb" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leading" id="dPy-JW-aWd"/>
+                            <constraint firstItem="3fX-t4-Ndp" firstAttribute="top" secondItem="hSc-AW-t2A" secondAttribute="bottom" constant="10" id="iwO-e1-Z7t"/>
+                            <constraint firstItem="A6V-5E-o5L" firstAttribute="leading" secondItem="V4R-vD-4lz" secondAttribute="leadingMargin" id="rvD-up-6aF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z60-Yj-ViS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-397.10144927536237" y="782.60869565217399"/>
+        </scene>
         <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
             <objects>
@@ -656,6 +845,12 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                 <action selector="signOutBarItemTapped:" destination="A8S-3n-4uh" id="R9t-l9-NPM"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="About" style="done" id="QSy-nB-PrC">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="aboutBtnTapped:" destination="A8S-3n-4uh" id="2zI-h0-beF"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -685,6 +880,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <outlet property="spinner" destination="4mp-9I-pfx" id="Vhe-Al-FIf"/>
                         <segue destination="8FM-FH-goS" kind="show" identifier="CertificationDetailVC" id="WNp-Uu-E5p"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="GoToLoginVC" id="V3E-4k-ULS"/>
+                        <segue destination="ZOF-UG-mfe" kind="show" identifier="MyCertAboutVC" id="76v-pL-jsb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXU-Te-UYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2317,12 +2513,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5oY-to-PBg"/>
+        <segue reference="WNp-Uu-E5p"/>
         <segue reference="VdF-O4-xgd"/>
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
-        <segue reference="UA8-3F-Tfj"/>
+        <segue reference="UOi-Kr-oaH"/>
         <segue reference="7Ro-qa-nWV"/>
+        <segue reference="PhL-AQ-snU"/>
         <segue reference="xnJ-mB-2Xg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -70,7 +70,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func temsOfUseBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "LoginTermsOfUseVC", sender: self)
+        performSegue(withIdentifier: "LoginTermsOfUseVC", sender: nil)
+    }
+    
+    @IBAction func aboutBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "LoginAboutVC", sender: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

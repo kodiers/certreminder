@@ -13,6 +13,9 @@ let NEW_OBJECT_ID = 0
 
 let MIN_PASSWORD_LENGTH = 8
 
+let APP_EMAIL = "support@techforline.com"
+let APP_SITE = "http://reminder.techforline.com"
+
 let CUSTOM_ERROR_DOMAIN = "certapp.techforline.com"
 let ERROR_CODE_EXAM_EXISTS = 200
 let ERROR_CODE_LOGIN = 100
