@@ -62,4 +62,11 @@ class certreminderUITests: XCTestCase {
         XCTAssertTrue(haveTermsLbl.exists)
     }
     
+    func testAboutVCPresented() {
+        let app = XCUIApplication()
+        app.buttons["About"].tap()
+        let haveContactLbl = XCUIApplication().staticTexts["You can contact us:"]
+        XCTAssertTrue(haveContactLbl.exists)
+    }
+    
 }
