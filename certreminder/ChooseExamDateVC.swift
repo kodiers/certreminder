@@ -65,9 +65,13 @@ class ChooseExamDateVC: UIViewController {
                 if let ewd = choosedDataService.examsWithDate {
                     destination.examsWithDate = ewd
                 }
-                if let date = examDate {
-                    let examWithDate = (exam!, date)
-                    destination.examsWithDate.append(examWithDate)
+                if let date = examDate, let exm = exam {
+                    let examWithDate = (exm, date)
+                    if let examIndex = choosedDataService.getIndexInExamsWithDateFor(exam: exm) {
+                        destination.examsWithDate[examIndex].1 = date
+                    } else {
+                        destination.examsWithDate.append(examWithDate)
+                    }
                 }
                 
             }
@@ -85,7 +89,11 @@ class ChooseExamDateVC: UIViewController {
                         if let userCert = choosedDataService.userCertification {
                             let userExam = UserExam(id: NEW_OBJECT_ID, userCertId: userCert.id, exam: exam, dateOfPass: date)
                             prepareToDetailVC(destination: destination)
-                            destination.usersExams.append(userExam)
+                            if let exmIndex = choosedDataService.getIndexInUsersExam(exam: exam) {
+                                destination.usersExams[exmIndex].dateOfPass = date
+                            } else {
+                                destination.usersExams.append(userExam)
+                            }
                         }
                     }
                 }

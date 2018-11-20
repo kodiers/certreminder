@@ -152,6 +152,8 @@ class servicesTests: XCTestCase {
         userExam.id = id2
         ChoosedDataService.instance.changeUserExam(userExam: userExam)
         XCTAssertEqual(ChoosedDataService.instance.userExams?[0].id, id2)
+        let examIndex = ChoosedDataService.instance.getIndexInUsersExam(exam: exam)
+        XCTAssertNotNil(examIndex)
     }
     
     func testUserService() {
