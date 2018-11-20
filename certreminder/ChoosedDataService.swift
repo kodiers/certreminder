@@ -105,4 +105,25 @@ class ChoosedDataService: ChoosedDataServiceProtocol {
             }
         }
     }
+    
+    func getIndexInExamsWithDateFor(exam: Exam) -> Int? {
+        // Check if exam in examsWithDate
+        if let examsTuple = examsWithDate, let examIndex = examsTuple.firstIndex(where: { ( arg0) -> Bool in
+            let (examItem, _) = arg0
+            return examItem.id == exam.id
+        }) {
+            return examIndex
+        }
+        return nil
+    }
+    
+    func getIndexInUsersExam(exam: Exam) -> Int? {
+        // Check if exam in userExams
+        if let usrExams = userExams, let examIndex = usrExams.firstIndex(where: { (userExam) -> Bool in
+            return userExam.exam.id == exam.id
+        }) {
+            return examIndex
+        }
+        return nil
+    }
 }
