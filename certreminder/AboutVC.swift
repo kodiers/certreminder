@@ -10,11 +10,16 @@ import UIKit
 import MessageUI
 
 class AboutVC: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
+    @IBOutlet weak var emailBtn: RoundedBorderButton!
+    @IBOutlet weak var siteBtn: RoundedBorderButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailBtn.titleLabel?.adjustsFontSizeToFitWidth = true
+        siteBtn.titleLabel?.adjustsFontSizeToFitWidth = true
     }
     
 
