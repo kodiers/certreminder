@@ -59,7 +59,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         }
         
         if !validatePassword(username: login, password: password) {
-            AlertService.showCancelAlert(header: "Password doesn't meet the requirements", message: "Password should be 8+ charcters, don't be same as username and cannot contains only digits", viewController: self)
+            AlertService.showCancelAlert(header: "Password doesn't meet the requirements", message: "Password should be 9+ charcters, don't be same as username and cannot contains only digits", viewController: self)
             return
         }
 
