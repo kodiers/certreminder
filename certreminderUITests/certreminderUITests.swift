@@ -46,4 +46,27 @@ class certreminderUITests: XCTestCase {
         XCTAssertTrue(haveLoginLbl.exists)
     }
     
+    
+    func testRegisterTermsOfUseVCPresented() {
+        let app = XCUIApplication()
+        app.buttons["Register"].tap()
+        app.buttons["Terms of Use"].tap()
+        let haveTermsLbl = XCUIApplication().staticTexts["Terms and Conditions"]
+        XCTAssertTrue(haveTermsLbl.exists)
+    }
+    
+    func testLoginTermsOfUseVCPresented() {
+        let app = XCUIApplication()
+        app.buttons["Terms of Use"].tap()
+        let haveTermsLbl = XCUIApplication().staticTexts["Terms and Conditions"]
+        XCTAssertTrue(haveTermsLbl.exists)
+    }
+    
+    func testAboutVCPresented() {
+        let app = XCUIApplication()
+        app.buttons["About"].tap()
+        let haveContactLbl = XCUIApplication().staticTexts["You can contact us:"]
+        XCTAssertTrue(haveContactLbl.exists)
+    }
+    
 }

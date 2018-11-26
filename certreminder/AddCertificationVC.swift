@@ -29,7 +29,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         examsTableView.delegate = self
         examsTableView.dataSource = self
         examsTableView.estimatedRowHeight = 75
-        examsTableView.rowHeight = UITableViewAutomaticDimension
+        examsTableView.rowHeight = UITableView.automaticDimension
         
         configureVC()
     }
@@ -75,8 +75,8 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
             examsWithDate.remove(at: indexPath.row)
             examsTableView.reloadData()
         }
@@ -132,7 +132,7 @@ class AddCertificationVC: UIViewController, UITableViewDelegate, UITableViewData
                 UserCertificationService.instance.createUserCertification(cert: cert, expireDate: date, completionHandler: {(certification, error) in
                     if error != nil {
                         self.hideSpinner(spinner: self.spinner)
-                        AlertService.showCancelAlert(header: "HTTP Error", message: "Can't create certification", viewController: self)
+                        AlertService.showCancelAlert(header: "Error", message: "Can't create certification. Maybe you have the same certification.", viewController: self)
                     } else {
                         if let userCert = certification {
                             UserExamService.instance.createUserExams(certification: userCert, examsWithDate: self.examsWithDate, completionHandler: {(response, error) in

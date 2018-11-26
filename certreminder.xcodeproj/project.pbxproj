@@ -29,6 +29,8 @@
 		AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */; };
 		AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD2207C2B9700D3B2F9 /* mocks.swift */; };
 		AC507DD5207C2D2A00D3B2F9 /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD4207C2D2A00D3B2F9 /* UserServiceProtocol.swift */; };
+		AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57D017219A376300DB5E80 /* TermsVC.swift */; };
+		AC57D01A219A3BA100DB5E80 /* RoundedBorderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */; };
 		AC5A1741206C668700746C4F /* servicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1740206C668700746C4F /* servicesTests.swift */; };
 		AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5A1742206C692800746C4F /* WebRequestProtocol.swift */; };
 		AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */; };
@@ -44,6 +46,7 @@
 		AC7922B91F4CE57F000C1D46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922B81F4CE57F000C1D46 /* User.swift */; };
 		AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */; };
 		AC82515220758DF700476BBD /* viewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82515120758DF700476BBD /* viewsTests.swift */; };
+		AC843238219CD93600FC6F56 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC843237219CD93600FC6F56 /* AboutVC.swift */; };
 		AC9105942033ADEC00C1128B /* ExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9105932033ADEC00C1128B /* ExamService.swift */; };
 		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
@@ -130,6 +133,8 @@
 		AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testLoginVC.swift; sourceTree = "<group>"; };
 		AC507DD2207C2B9700D3B2F9 /* mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mocks.swift; sourceTree = "<group>"; };
 		AC507DD4207C2D2A00D3B2F9 /* UserServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		AC57D017219A376300DB5E80 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderTextView.swift; sourceTree = "<group>"; };
 		AC5A1740206C668700746C4F /* servicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = servicesTests.swift; sourceTree = "<group>"; };
 		AC5A1742206C692800746C4F /* WebRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestProtocol.swift; sourceTree = "<group>"; };
 		AC5FD9C7204610D9000B35C4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 		AC7922B81F4CE57F000C1D46 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC7922BD1F4CEA65000C1D46 /* WebRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRequestService.swift; sourceTree = "<group>"; };
 		AC82515120758DF700476BBD /* viewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewsTests.swift; sourceTree = "<group>"; };
+		AC843237219CD93600FC6F56 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		AC9105932033ADEC00C1128B /* ExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamService.swift; sourceTree = "<group>"; };
 		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 				AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */,
 				ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */,
 				AC31580020E5B3F500FA45A5 /* ExistingTableCell.swift */,
+				AC57D019219A3BA100DB5E80 /* RoundedBorderTextView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -345,6 +352,8 @@
 				ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */,
 				AC75A9E5201FD87B00F5CB46 /* NewExamVC.swift */,
 				AC2B3B0820E462DF00939297 /* AddExistingExamVC.swift */,
+				AC57D017219A376300DB5E80 /* TermsVC.swift */,
+				AC843237219CD93600FC6F56 /* AboutVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -482,17 +491,20 @@
 					AC507DC5207C232200D3B2F9 = {
 						CreatedOnToolsVersion = 9.3;
 						DevelopmentTeam = 493PFTF9Q4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ACD22E881F46461B0056E0D2;
 					};
 					ACD22E881F46461B0056E0D2 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 493PFTF9Q4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					ACDCFB5F206463C100E7F659 = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 493PFTF9Q4;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ACD22E881F46461B0056E0D2;
 					};
@@ -624,13 +636,16 @@
 				AC2C49F61FA13E8E009A4C7F /* ChooseCertificationTableCellCell.swift in Sources */,
 				AC7922BE1F4CEA65000C1D46 /* WebRequestService.swift in Sources */,
 				ACD22E8D1F46461B0056E0D2 /* AppDelegate.swift in Sources */,
+				AC57D01A219A3BA100DB5E80 /* RoundedBorderTextView.swift in Sources */,
 				ACF6CFCC207ED416007A87A4 /* VendorServiceProtocol.swift in Sources */,
 				ACFD08681FAA6E03009FE996 /* SetVendorsProtocol.swift in Sources */,
+				AC843238219CD93600FC6F56 /* AboutVC.swift in Sources */,
 				AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */,
 				ACF6CFCE207ED70F007A87A4 /* UserExamServiceProtocol.swift in Sources */,
 				AC7922B91F4CE57F000C1D46 /* User.swift in Sources */,
 				AC5FD9CA20461686000B35C4 /* UITableViewExtension.swift in Sources */,
 				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
+				AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
@@ -730,7 +745,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = certreminder;
 			};
@@ -751,7 +767,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = certreminder;
 			};
@@ -806,7 +823,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -858,7 +875,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -877,7 +894,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -893,7 +911,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -914,7 +933,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/certreminder.app/certreminder";
 			};
@@ -936,7 +956,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/certreminder.app/certreminder";
 			};

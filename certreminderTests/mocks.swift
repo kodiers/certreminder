@@ -403,6 +403,14 @@ class MockChoosedDataService: ChoosedDataServiceProtocol {
     func changeUserExam(userExam: UserExam) {
         // needed to conform protocol
     }
+    
+    func getIndexInExamsWithDateFor(exam: Exam) -> Int? {
+        return nil
+    }
+    
+    func getIndexInUsersExam(exam: Exam) -> Int? {
+        return nil
+    }
 }
 
 class MockViewController: CertificationDetailVC {

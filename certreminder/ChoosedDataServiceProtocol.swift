@@ -22,4 +22,8 @@ protocol ChoosedDataServiceProtocol {
     var isEditExistingUserCertification: Bool { get set }
     
     func changeUserExam(userExam: UserExam)
+    
+    func getIndexInExamsWithDateFor(exam: Exam) -> Int?
+    
+    func getIndexInUsersExam(exam: Exam) -> Int?
 }
