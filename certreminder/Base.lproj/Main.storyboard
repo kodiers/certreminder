@@ -495,11 +495,11 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-B8-NCD" customClass="RoundedBorderTextView" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="20" y="127" width="374" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Re:Minder Terms of Use
+                                <mutableString key="text">Re:Minder Terms of Use
 
 This Terms of Conditions is between you and Re:Minder and governs use of this app made available through the Apple App Store. By installing the Re:Minder App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Re:Minder App.
 
-In order to ensure Re:Minder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the contact us by email: "reminder@techforline.com".
+In order to ensure Re:Minder provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the contact us by email: "support@techforline.com".
 
 1. Parties This Agreement is between you and Re:Minder only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Re:Minder, not Apple, is solely responsible for the Re:Minder App and its content.
 
@@ -517,7 +517,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
 
 8. Product Claims Re:Minder, not Apple, is responsible for addressing any claims by you relating to the Re:Minder App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Re:Minder App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 
-9. Third Party Intellectual Property Claims Re:Minder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Re:Minder App. To the extent Re:Minder is required to provide indemnification by applicable law, Re:Minder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Re:Minder App or your use of it infringes any third party intellectual property right.</string>
+9. Third Party Intellectual Property Claims Re:Minder shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Re:Minder App. To the extent Re:Minder is required to provide indemnification by applicable law, Re:Minder, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Re:Minder App or your use of it infringes any third party intellectual property right.</mutableString>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -760,7 +760,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
-                                                    <rect key="frame" x="16" y="11" width="140" height="20"/>
+                                                    <rect key="frame" x="20" y="11" width="140" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="gVr-I7-y6j"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="qHg-iM-yLe"/>
@@ -770,7 +770,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23-02-2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOM-fa-2Sc">
-                                                    <rect key="frame" x="232" y="11" width="72" height="20"/>
+                                                    <rect key="frame" x="322" y="11" width="72" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="4MD-2I-dCm"/>
                                                         <constraint firstAttribute="height" constant="20" id="aAG-SE-G2n"/>
@@ -780,7 +780,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jy-zu-sYC">
-                                                    <rect key="frame" x="16" y="51" width="288" height="39"/>
+                                                    <rect key="frame" x="20" y="51" width="374" height="39"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1094,13 +1094,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ids-e5-xkh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-zz-kQK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r70-Uy-snZ">
-                                                                    <rect key="frame" x="241.66666666666666" y="2" width="70.333333333333343" height="21"/>
+                                                                    <rect key="frame" x="335.66666666666669" y="2" width="70.333333333333314" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1116,16 +1116,16 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-pV-h6H">
-                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="320" height="49.666666666666657"/>
+                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="414" height="49.666666666666657"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                                    <rect key="frame" x="8" y="8" width="222" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="8" y="8" width="316" height="33.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                                    <rect key="frame" x="240" y="8" width="72" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="334" y="8" width="72" height="33.666666666666664"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="72" id="R5j-BD-P9z"/>
                                                                     </constraints>
@@ -1429,10 +1429,10 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="szu-yK-vRS">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="59.666666666666664"/>
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="59.666666666666664"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-7g-fej">
-                                                            <rect key="frame" x="0.0" y="8" width="288" height="44"/>
+                                                            <rect key="frame" x="0.0" y="8" width="382" height="44"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1931,7 +1931,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJh-Kk-X9w">
-                                                    <rect key="frame" x="16" y="10" width="288" height="40"/>
+                                                    <rect key="frame" x="20" y="10" width="374" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-413" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="d2N-pE-peK">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
@@ -1943,13 +1943,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016 Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zby-u1-9Pn">
-                                                            <rect key="frame" x="60" y="0.0" width="198" height="40"/>
+                                                            <rect key="frame" x="60" y="0.0" width="284" height="40"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                             <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="sIP-Rl-vQh">
-                                                            <rect key="frame" x="268" y="0.0" width="20" height="40"/>
+                                                            <rect key="frame" x="354" y="0.0" width="20" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="XiR-rH-Veq"/>
                                                             </constraints>
@@ -2062,14 +2062,14 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shevron" translatesAutoresizingMaskIntoConstraints="NO" id="f8p-2A-ciZ">
-                                                    <rect key="frame" x="289" y="15" width="15" height="30"/>
+                                                    <rect key="frame" x="379" y="15" width="15" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="GAd-2c-7Tz"/>
                                                         <constraint firstAttribute="width" constant="15" id="zlP-Li-8IT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLU-WU-xMb">
-                                                    <rect key="frame" x="16" y="8" width="272" height="44"/>
+                                                    <rect key="frame" x="16" y="8" width="362" height="44"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                     <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2390,13 +2390,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-iS-bfk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNo-6D-CMN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHG-Wt-Ocv">
-                                                                    <rect key="frame" x="241.66666666666666" y="2" width="70.333333333333343" height="21"/>
+                                                                    <rect key="frame" x="335.66666666666669" y="2" width="70.333333333333314" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" red="0.10980392160000001" green="0.19215686269999999" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2412,16 +2412,16 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-Lu-dxJ">
-                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="320" height="49.666666666666657"/>
+                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="414" height="49.666666666666657"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-eI-UvX">
-                                                                    <rect key="frame" x="8" y="8" width="147" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="8" y="8" width="194" height="33.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xW-Ah-As2">
-                                                                    <rect key="frame" x="268.33333333333331" y="8" width="43.666666666666686" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="362.33333333333331" y="8" width="43.666666666666686" height="33.666666666666664"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
