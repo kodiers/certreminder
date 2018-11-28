@@ -16,7 +16,7 @@ class WebRequestService: WebRequestProtocol {
     */
 
     
-    static let WEB_API_URL = "http://certapp.techforline.com/api/"
+    static let WEB_API_URL = "\(APP_API_URL)/api/"
     static let webservice = WebRequestService()
     
     private let formatter = DateFormatter()
