@@ -10,7 +10,7 @@ import Foundation
 
 protocol UserServiceProtocol {
     
-    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete)
+    func registerUser(username: String, email: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete)
     
     func loginUser(username: String, password: String, completionHandler: @escaping RequestComplete)
     

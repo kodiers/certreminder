@@ -285,7 +285,7 @@ class MockUserService: UserServiceProtocol {
     /*
      Mock UserService
     */
-    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
+    func registerUser(username: String, email: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
     

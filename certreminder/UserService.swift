@@ -51,11 +51,11 @@ class UserService: RaiseErrorMixin, UserServiceProtocol {
         }
     }
     
-    func registerUser(username: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
+    func registerUser(username: String, email: String, password: String, confirm_password: String, completionHandler: @escaping RequestComplete) {
         // handle register user requests
         self.logoutUser()
-        let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password]
-        let url = "people/register/"
+        let data: Parameters = ["username": username, "password": password, "confirm_password": confirm_password, "email": email]
+        let url = "v2/people/register/"
         UserService.webservice.post(url: url, params: data, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil, error)

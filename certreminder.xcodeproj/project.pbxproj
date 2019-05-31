@@ -290,10 +290,10 @@
 		ACD22E8B1F46461B0056E0D2 /* certreminder */ = {
 			isa = PBXGroup;
 			children = (
+				AC7922BC1F4CEA4C000C1D46 /* services */,
 				AC5FD9C6204610B9000B35C4 /* extensions */,
 				ACFD08661FAA6DEB009FE996 /* protocols */,
 				ACFEBC771F4E4483007E8594 /* util */,
-				AC7922BC1F4CEA4C000C1D46 /* services */,
 				ACD22E9E1F4646270056E0D2 /* Model */,
 				ACD22E9F1F4646320056E0D2 /* View */,
 				ACD22EA01F46463B0056E0D2 /* Controller */,
@@ -485,7 +485,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Viktor Yamchinov";
 				TargetAttributes = {
 					AC507DC5207C232200D3B2F9 = {
@@ -512,10 +512,9 @@
 			};
 			buildConfigurationList = ACD22E841F46461B0056E0D2 /* Build configuration list for PBXProject "certreminder" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -779,6 +778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -830,6 +830,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -837,6 +838,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -880,6 +882,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

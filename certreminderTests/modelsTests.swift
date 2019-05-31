@@ -67,7 +67,7 @@ class modelsTests: XCTestCase {
         XCTAssertEqual(cert.id, id)
         XCTAssertEqual(cert.title, test)
         XCTAssertEqual(cert.vendor, vendor)
-        let certDict = ["id": 1, "title": test, "vendor": vendor, "deprecated": false, "number": "test-1", "image": "testimg", "description": "test description"] as [String : AnyObject]
+        let certDict = ["id": 1, "title": test!, "vendor": vendor, "deprecated": false, "number": "test-1", "image": "testimg", "description": "test description"] as [String : AnyObject]
         let cert2 = Certification.createCertificationFromDict(certDict: certDict)
         XCTAssertNotNil(cert2)
         XCTAssertEqual(cert2?.id, id)

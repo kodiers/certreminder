@@ -57,7 +57,7 @@ class CertificationService: RaiseErrorMixin, CertificationProtocol, Certificatio
          */
         var certification: Certification? = nil
         if let certs = certifications {
-            if let certIndex = certs.index(where: { $0.id == id }) {
+            if let certIndex = certs.firstIndex(where: { $0.id == id }) {
                 certification = certs[certIndex]
             }
         }

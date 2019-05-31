@@ -68,7 +68,7 @@ class VendorService: VendorServiceProtocol {
         */
         var vendor: Vendor? = nil
         if let vndrs = vendors {
-            if let index = vndrs.index(where: { $0.id == id }) {
+            if let index = vndrs.firstIndex(where: { $0.id == id }) {
                 vendor = vndrs[index]
             }
         }
