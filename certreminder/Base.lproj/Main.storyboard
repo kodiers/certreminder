@@ -455,6 +455,7 @@
                     </view>
                     <connections>
                         <outlet property="confirmPasswordField" destination="ZjV-eZ-LPz" id="PTL-xK-yrK"/>
+                        <outlet property="emailField" destination="gbp-9x-WWf" id="N2n-8H-Vca"/>
                         <outlet property="loginField" destination="EDy-6i-Fgn" id="A8w-oe-xTd"/>
                         <outlet property="passwordField" destination="Kn7-0v-DeD" id="gc0-Nw-4VY"/>
                         <outlet property="registerBtn" destination="6rw-cv-puX" id="FdN-NP-L60"/>

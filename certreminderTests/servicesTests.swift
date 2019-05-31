@@ -33,6 +33,7 @@ class servicesTests: XCTestCase {
     var id2: Int!
     var title1: String!
     var title2: String!
+    var email: String!
     var MockVendorsRequestService: WebRequestProtocol!
     var vendorVC: VendorViewController!
     var MockCerticationRequestService: WebRequestProtocol!
@@ -49,6 +50,7 @@ class servicesTests: XCTestCase {
         id2 = 2
         title1 = "title_1"
         title2 = "title_2"
+        email = "email@test.com"
         MockVendorsRequestService = MockWebServiceVendors()
         vendorVC = VendorViewController()
         MockCerticationRequestService = MockWebServiceCertifications()
@@ -160,7 +162,7 @@ class servicesTests: XCTestCase {
         UserService.webservice = MockUserRequestService
         var success: Bool = false
         var error: NSError?
-        UserService.instance.registerUser(username: USER, password: title1, confirm_password: title1) { (resp, err) in
+        UserService.instance.registerUser(username: USER, email: email, password: title1, confirm_password: title1) { (resp, err) in
             if err != nil {
                 error = err
             } else {

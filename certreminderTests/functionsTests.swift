@@ -35,4 +35,10 @@ class functionsTests: XCTestCase {
         XCTAssertTrue(validatePassword(username: "test", password: "abc123456"))
     }
     
+    func test_validateEmail() {
+        XCTAssertFalse(validateEmail(str: TEST))
+        XCTAssertFalse(validateEmail(str: "test@test"))
+        XCTAssertFalse(validateEmail(str: "test.test"))
+        XCTAssertTrue(validateEmail(str: "test@email.com"))
+    }
 }

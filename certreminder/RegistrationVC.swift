@@ -15,6 +15,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var registerBtn: RoundedBorderButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -27,6 +28,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         loginField.delegate = self
         passwordField.delegate = self
         confirmPasswordField.delegate = self
+        emailField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,16 +52,22 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func registerBtnTapped(_ sender: Any) {
-        let loginTxt = checkField(field: loginField, header: "Login is empty", message: "Login cannot be blank")
-        let passwordTxt = checkField(field: passwordField, header: "Password is empty", message: "Password cannot be blank")
-        let passwordConfirmationTxt = checkField(field: confirmPasswordField, header: "Password confirmation is empty", message: "Password confirmation cannot be blank")
+        let loginTxt = checkField(field: loginField, header: "Login is empty", message: "Login cannot be blank.")
+        let emailTxt = checkField(field: emailField, header: "Email is empty", message: "Email cannot be blank.")
+        let passwordTxt = checkField(field: passwordField, header: "Password is empty", message: "Password cannot be blank.")
+        let passwordConfirmationTxt = checkField(field: confirmPasswordField, header: "Password confirmation is empty", message: "Password confirmation cannot be blank.")
         
-        guard let login = loginTxt, let password = passwordTxt, let passwordConfirmation = passwordConfirmationTxt else {
+        guard let login = loginTxt, let password = passwordTxt, let passwordConfirmation = passwordConfirmationTxt, let email = emailTxt else {
             return
         }
         
         if !validatePassword(username: login, password: password) {
             AlertService.showCancelAlert(header: "Password doesn't meet the requirements", message: "Password should be 9+ charcters, don't be same as username and cannot contains only digits", viewController: self)
+            return
+        }
+        
+        if !validateEmail(str: email) {
+            AlertService.showCancelAlert(header: "Email is invalid", message: "Email is not correct email.", viewController: self)
             return
         }
 
@@ -69,7 +77,7 @@ class RegistrationVC: UIViewController, UITextFieldDelegate {
         }
         showSpinner(spinner: spinner)
         // Register and login new user
-        userService.registerUser(username: login, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
+        userService.registerUser(username: login, email: email, password: password, confirm_password: passwordConfirmation, completionHandler: {(value, error) in
             if error != nil {
                 self.hideSpinner(spinner: self.spinner)
                 AlertService.showCancelAlert(header: "HTTP Error", message: "Error then register new user", viewController: self)
