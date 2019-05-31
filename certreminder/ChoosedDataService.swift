@@ -100,7 +100,7 @@ class ChoosedDataService: ChoosedDataServiceProtocol {
     func changeUserExam(userExam: UserExam) {
         // Change saved user exam
         if let usrExams = userExams {
-            if let uExamIndex = usrExams.index(where: {$0.id == userExam.id && $0.exam.id == userExam.exam.id}) {
+            if let uExamIndex = usrExams.firstIndex(where: {$0.id == userExam.id && $0.exam.id == userExam.exam.id}) {
                 userExams![uExamIndex] = userExam
             }
         }

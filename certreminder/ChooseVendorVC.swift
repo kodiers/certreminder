@@ -86,7 +86,7 @@ class ChooseVendorVC: UIViewController, SetVendorsProtocol, UIPickerViewDelegate
         self.vendors = vendors
         self.vendorPicker.reloadAllComponents()
         if let vendor = choosedVendor {
-            if let vendorIndex = self.vendors.index(where: { $0.id == vendor.id }) {
+            if let vendorIndex = self.vendors.firstIndex(where: { $0.id == vendor.id }) {
                 self.vendorPicker.selectRow(vendorIndex, inComponent: 0, animated: false)
             }
         }
