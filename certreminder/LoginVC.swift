@@ -77,6 +77,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "LoginAboutVC", sender: nil)
     }
     
+    @IBAction func restorePasswordBtnPressed(_ sender: Any) {
+        let restorePasswordVC = RestorePasswordVC()
+        present(restorePasswordVC, animated: true, completion: nil)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

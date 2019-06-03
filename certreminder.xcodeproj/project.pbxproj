@@ -55,6 +55,8 @@
 		ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8600120323E7F00D60C9E /* UserCertificationService.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
 		ACC469221FD605210070C738 /* UserExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC469211FD605210070C738 /* UserExam.swift */; };
+		ACCCE0AD22A5D9B10081A2D3 /* RestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */; };
+		ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */; };
 		ACCE5A56208959A800654F6C /* testExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE5A55208959A800654F6C /* testExtensions.swift */; };
 		ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */; };
 		ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */; };
@@ -159,6 +161,8 @@
 		ACB8600120323E7F00D60C9E /* UserCertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationService.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
 		ACC469211FD605210070C738 /* UserExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExam.swift; sourceTree = "<group>"; };
+		ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordVC.swift; sourceTree = "<group>"; };
+		ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageView.swift; sourceTree = "<group>"; };
 		ACCE5A55208959A800654F6C /* testExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testExtensions.swift; sourceTree = "<group>"; };
 		ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCertificationVC.swift; sourceTree = "<group>"; };
 		ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedExamsWithDateTableViewCell.swift; sourceTree = "<group>"; };
@@ -265,6 +269,22 @@
 			name = services;
 			sourceTree = "<group>";
 		};
+		ACCCE0AB22A5D98E0081A2D3 /* RestorePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */,
+			);
+			name = RestorePasswordVC;
+			sourceTree = "<group>";
+		};
+		ACCCE0AE22A5DB140081A2D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		ACD22E801F46461B0056E0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +343,7 @@
 		ACD22E9F1F4646320056E0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACCCE0AE22A5DB140081A2D3 /* Common */,
 				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
 				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
 				AC9F52341F86E7690024E94E /* RoundedView.swift */,
@@ -339,6 +360,7 @@
 		ACD22EA01F46463B0056E0D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				ACCCE0AB22A5D98E0081A2D3 /* RestorePasswordVC */,
 				ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */,
 				AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */,
 				ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */,
@@ -630,6 +652,7 @@
 				AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */,
+				ACCCE0AD22A5D9B10081A2D3 /* RestorePasswordVC.swift in Sources */,
 				AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */,
 				ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */,
 				AC31580120E5B3F500FA45A5 /* ExistingTableCell.swift in Sources */,
@@ -651,6 +674,7 @@
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */,
 				ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */,
+				ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */,
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
 				AC2B3B0920E462DF00939297 /* AddExistingExamVC.swift in Sources */,
