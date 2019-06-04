@@ -19,6 +19,17 @@ class RestorePasswordVC: UIViewController {
         let frame = CGRect(x: 0, y: yCoordinate, width: self.view.frame.width, height: CityImageView.viewHeight)
         return CityImageView(frame: frame)
     }()
+    
+    private(set) lazy var titleLabel: UILabel = {
+        let frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: 30)
+        let label = UILabel(frame: .zero)
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 24)!, NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        label.attributedText = NSAttributedString(string: "Restore password", attributes: attributes)
+        label.preservesSuperviewLayoutMargins = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +57,7 @@ class RestorePasswordVC: UIViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(self.titleLabel)
         view.addSubview(self.cityImageView)
     }
     
@@ -54,7 +66,11 @@ class RestorePasswordVC: UIViewController {
             self.cityImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.cityImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.cityImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.cityImageView.heightAnchor.constraint(equalToConstant: CityImageView.viewHeight)
+            self.cityImageView.heightAnchor.constraint(equalToConstant: CityImageView.viewHeight),
+            
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
         ])
     }
 
