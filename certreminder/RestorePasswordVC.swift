@@ -21,8 +21,7 @@ class RestorePasswordVC: UIViewController {
     }()
     
     private(set) lazy var titleLabel: UILabel = {
-        let frame = CGRect(x: 0, y: 20, width: self.view.frame.width, height: 30)
-        let label = UILabel(frame: .zero)
+        let label = UILabel()
         let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 24)!, NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         label.attributedText = NSAttributedString(string: "Restore password", attributes: attributes)
         label.preservesSuperviewLayoutMargins = true
