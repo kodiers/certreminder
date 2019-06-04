@@ -15,6 +15,7 @@
 		AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */; };
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
 		AC17917D21000AA900397C19 /* testAddExistingExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */; };
+		AC18D16422A724DE00D76C96 /* ReminderLblStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */; };
 		AC1CEEB72086AD8000829506 /* testChooseExamDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */; };
 		AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */; };
 		AC1CEEBB2086BB1900829506 /* testNewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */; };
@@ -119,6 +120,7 @@
 		AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationVC.swift; sourceTree = "<group>"; };
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
 		AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAddExistingExamVC.swift; sourceTree = "<group>"; };
+		AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderLblStackView.swift; sourceTree = "<group>"; };
 		AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChooseExamDateVC.swift; sourceTree = "<group>"; };
 		AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataServiceProtocol.swift; sourceTree = "<group>"; };
 		AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNewCertificationVC.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */,
+				AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				ACB248F5202D075900693F48 /* UserService.swift in Sources */,
 				ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */,
 				AC7196782076E58700CFF449 /* ExamServiceProtocol.swift in Sources */,
+				AC18D16422A724DE00D76C96 /* ReminderLblStackView.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */,

@@ -14,11 +14,7 @@ class RestorePasswordVC: UIViewController {
      Restore password ViewController
     */
     
-    private(set) lazy var cityImageView: CityImageView = {
-        let yCoordinate = self.view.frame.height - CityImageView.viewHeight
-        let frame = CGRect(x: 0, y: yCoordinate, width: self.view.frame.width, height: CityImageView.viewHeight)
-        return CityImageView(frame: frame)
-    }()
+    private(set) lazy var cityImageView: CityImageView = CityImageView(frame: .zero)
     
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -29,6 +25,8 @@ class RestorePasswordVC: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
+    private(set) lazy var logoView: ReminderLblStackView = ReminderLblStackView(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,19 +55,24 @@ class RestorePasswordVC: UIViewController {
     
     private func addSubviews() {
         view.addSubview(self.titleLabel)
+        view.addSubview(self.logoView)
         view.addSubview(self.cityImageView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            self.cityImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.cityImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.cityImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.cityImageView.heightAnchor.constraint(equalToConstant: CityImageView.viewHeight),
-            
             self.titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
+            self.titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            
+            self.logoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.logoView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
+            
+            self.cityImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.cityImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.cityImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.cityImageView.heightAnchor.constraint(equalToConstant: CityImageView.viewHeight)
         ])
     }
 

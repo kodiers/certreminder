@@ -33,6 +33,7 @@ class CityImageView: UIImageView {
         self.isOpaque = true
         self.clearsContextBeforeDrawing = true
         self.autoresizesSubviews = true
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
 
 }
