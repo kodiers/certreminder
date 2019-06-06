@@ -37,5 +37,13 @@ class RoundedBorderButton: UIButton {
             layer.borderColor = borderColor?.cgColor
         }
     }
+    
+    func setupTitleLabel(with text: String) {
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont(name: "Avenir-Book", size: 18)!, NSAttributedString.Key.foregroundColor: MAIN_COLOR
+        ]
+        let attributedTitle = NSAttributedString(string: text, attributes: attributes)
+        setAttributedTitle(attributedTitle, for: .normal)
+        setAttributedTitle(attributedTitle, for: .selected)
+    }
 
 }

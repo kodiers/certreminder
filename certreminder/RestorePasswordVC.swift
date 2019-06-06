@@ -13,28 +13,16 @@ class RestorePasswordVC: UIViewController {
     /*
      Restore password ViewController
     */
-    
-    private(set) lazy var cityImageView: CityImageView = CityImageView(frame: .zero)
-    
-    private(set) lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 24)!, NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-        label.attributedText = NSAttributedString(string: "Restore password", attributes: attributes)
-        label.preservesSuperviewLayoutMargins = true
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private(set) lazy var logoView: ReminderLblStackView = ReminderLblStackView(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.configureView()
-        self.addSubviews()
-        self.setupConstraints()
+    }
+    
+    override func loadView() {
+        let view = RestorePasswordView(with: "Restore password")
+        self.view = view
     }
     
 
@@ -48,32 +36,6 @@ class RestorePasswordVC: UIViewController {
     }
     */
     
-    private func configureView() {
-        // Appearance customization
-        self.view.backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1921568627, blue: 0.2156862745, alpha: 1)
-    }
     
-    private func addSubviews() {
-        view.addSubview(self.titleLabel)
-        view.addSubview(self.logoView)
-        view.addSubview(self.cityImageView)
-    }
-    
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            self.titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.titleLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20),
-            self.titleLabel.heightAnchor.constraint(equalToConstant: 30),
-            
-            self.logoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.logoView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10),
-            
-            self.cityImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.cityImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.cityImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.cityImageView.heightAnchor.constraint(equalToConstant: CityImageView.viewHeight)
-        ])
-    }
 
 }

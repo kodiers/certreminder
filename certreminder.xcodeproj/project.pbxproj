@@ -56,6 +56,8 @@
 		ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8600120323E7F00D60C9E /* UserCertificationService.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
 		ACC469221FD605210070C738 /* UserExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC469211FD605210070C738 /* UserExam.swift */; };
+		ACCAB4FE22A9C0690059AF31 /* CommonScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */; };
+		ACCAB50222A9C46F0059AF31 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */; };
 		ACCCE0AD22A5D9B10081A2D3 /* RestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */; };
 		ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */; };
 		ACCE5A56208959A800654F6C /* testExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE5A55208959A800654F6C /* testExtensions.swift */; };
@@ -163,6 +165,8 @@
 		ACB8600120323E7F00D60C9E /* UserCertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationService.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
 		ACC469211FD605210070C738 /* UserExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExam.swift; sourceTree = "<group>"; };
+		ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonScreenView.swift; sourceTree = "<group>"; };
+		ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
 		ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordVC.swift; sourceTree = "<group>"; };
 		ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageView.swift; sourceTree = "<group>"; };
 		ACCE5A55208959A800654F6C /* testExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testExtensions.swift; sourceTree = "<group>"; };
@@ -271,12 +275,29 @@
 			name = services;
 			sourceTree = "<group>";
 		};
-		ACCCE0AB22A5D98E0081A2D3 /* RestorePasswordVC */ = {
+		ACCAB4FF22A9C4300059AF31 /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */,
 			);
-			name = RestorePasswordVC;
+			name = controller;
+			sourceTree = "<group>";
+		};
+		ACCAB50022A9C4400059AF31 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		ACCCE0AB22A5D98E0081A2D3 /* RestorePassword */ = {
+			isa = PBXGroup;
+			children = (
+				ACCAB50022A9C4400059AF31 /* views */,
+				ACCAB4FF22A9C4300059AF31 /* controller */,
+			);
+			name = RestorePassword;
 			sourceTree = "<group>";
 		};
 		ACCCE0AE22A5DB140081A2D3 /* Common */ = {
@@ -284,6 +305,7 @@
 			children = (
 				ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */,
 				AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */,
+				ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -319,6 +341,7 @@
 				ACFEBC771F4E4483007E8594 /* util */,
 				ACD22E9E1F4646270056E0D2 /* Model */,
 				ACD22E9F1F4646320056E0D2 /* View */,
+				ACCCE0AB22A5D98E0081A2D3 /* RestorePassword */,
 				ACD22EA01F46463B0056E0D2 /* Controller */,
 				ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */,
 				ACD22E901F46461B0056E0D2 /* Main.storyboard */,
@@ -363,7 +386,6 @@
 		ACD22EA01F46463B0056E0D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				ACCCE0AB22A5D98E0081A2D3 /* RestorePasswordVC */,
 				ACD22E8E1F46461B0056E0D2 /* LoginVC.swift */,
 				AC021DB41F4B9D3400D3529D /* RegistrationVC.swift */,
 				ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */,
@@ -648,6 +670,7 @@
 				AC7196742076D34800CFF449 /* UserCertificationServiceProtocol.swift in Sources */,
 				ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */,
 				ACC469221FD605210070C738 /* UserExam.swift in Sources */,
+				ACCAB50222A9C46F0059AF31 /* RestorePasswordView.swift in Sources */,
 				AC7196762076DC3200CFF449 /* CertificationServiceProtocol.swift in Sources */,
 				ACF73E821FB50AE200F21D8D /* Exam.swift in Sources */,
 				AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */,
@@ -677,6 +700,7 @@
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */,
 				ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */,
+				ACCAB4FE22A9C0690059AF31 /* CommonScreenView.swift in Sources */,
 				ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */,
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
