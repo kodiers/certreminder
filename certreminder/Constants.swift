@@ -26,4 +26,10 @@ let ERROR_UNKNOWN = 0
 let MAIN_COLOR = #colorLiteral(red: 0.1098039216, green: 0.1921568627, blue: 0.2156862745, alpha: 1)
 let YELLOW_COLOR = #colorLiteral(red: 0.8588235294, green: 0.8745098039, blue: 0.4470588235, alpha: 1)
 
+let BORDER_WIDTH: CGFloat = 2
+let CORNER_RADIUS: CGFloat = 5
+let TRAILING_MARGIN: CGFloat = -16
+let LEADING_MARGIN: CGFloat = 16
+let DEFAULT_ELEMENT_SPACING: CGFloat = 20
+
 typealias RequestComplete = (AnyObject?, NSError?) -> ()
