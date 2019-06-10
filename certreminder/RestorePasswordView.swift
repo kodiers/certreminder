@@ -78,6 +78,8 @@ class RestorePasswordView: CommonScreenView {
         return backButton
     }()
     
+    var delegate: RestorePasswordDelegate?
+    
     override init(with title: String) {
         super.init(with: title)
         self.configureView()
@@ -120,6 +122,15 @@ class RestorePasswordView: CommonScreenView {
             self.backButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: LEADING_MARGIN),
             self.backButton.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: DEFAULT_ELEMENT_SPACING)
         ])
+    }
+    
+    func addActions() {
+        // Add actions to buttons
+        guard let delegate = self.delegate else {
+            return
+        }
+        self.restoreButton.addTarget(delegate, action: #selector(RestorePasswordVC.restorPasswordBtnPressed), for: .touchUpInside)
+        self.backButton.addTarget(delegate, action: #selector(RestorePasswordVC.backBtnPressed), for: .touchUpInside)
     }
 
 }

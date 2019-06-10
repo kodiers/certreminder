@@ -81,6 +81,7 @@
 		ACEDA9E320855A63003A8365 /* testChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDA9E220855A63003A8365 /* testChooseCertificationVC.swift */; };
 		ACEDA9E520855CBA003A8365 /* testAddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDA9E420855CBA003A8365 /* testAddExamsVC.swift */; };
 		ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */; };
+		ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */; };
 		ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */; };
 		ACF6CFC8207ECA8B007A87A4 /* testCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */; };
 		ACF6CFCA207ED219007A87A4 /* testCertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */; };
@@ -194,6 +195,7 @@
 		ACEDA9E220855A63003A8365 /* testChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChooseCertificationVC.swift; sourceTree = "<group>"; };
 		ACEDA9E420855CBA003A8365 /* testAddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAddExamsVC.swift; sourceTree = "<group>"; };
 		ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataService.swift; sourceTree = "<group>"; };
+		ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordDelegate.swift; sourceTree = "<group>"; };
 		ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRegistrationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationDetailVC.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		ACCCE0AB22A5D98E0081A2D3 /* RestorePassword */ = {
 			isa = PBXGroup;
 			children = (
+				ACF03FBF22AF12B300A5EF78 /* protocols */,
 				ACCAB50022A9C4400059AF31 /* views */,
 				ACCAB4FF22A9C4300059AF31 /* controller */,
 			);
@@ -429,6 +432,14 @@
 				AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */,
 			);
 			path = certreminderTests;
+			sourceTree = "<group>";
+		};
+		ACF03FBF22AF12B300A5EF78 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */,
+			);
+			name = protocols;
 			sourceTree = "<group>";
 		};
 		ACFD08661FAA6DEB009FE996 /* protocols */ = {
@@ -696,6 +707,7 @@
 				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
 				AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
+				ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */,
