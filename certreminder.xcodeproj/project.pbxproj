@@ -83,6 +83,7 @@
 		ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */; };
 		ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */; };
 		ACF2BF5322B30B3F00ACA350 /* TestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BF5222B30B3F00ACA350 /* TestUserService.swift */; };
+		ACF2BF5522B3107900ACA350 /* testRestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */; };
 		ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */; };
 		ACF6CFC8207ECA8B007A87A4 /* testCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */; };
 		ACF6CFCA207ED219007A87A4 /* testCertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */; };
@@ -198,6 +199,7 @@
 		ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataService.swift; sourceTree = "<group>"; };
 		ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordDelegate.swift; sourceTree = "<group>"; };
 		ACF2BF5222B30B3F00ACA350 /* TestUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserService.swift; sourceTree = "<group>"; };
+		ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRestorePasswordVC.swift; sourceTree = "<group>"; };
 		ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRegistrationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationDetailVC.swift; sourceTree = "<group>"; };
@@ -422,7 +424,6 @@
 				AC507DD2207C2B9700D3B2F9 /* mocks.swift */,
 				ACCE5A55208959A800654F6C /* testExtensions.swift */,
 				AC484DB020AE4A6B006FEDEA /* functionsTests.swift */,
-				AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */,
 			);
 			path = certreminderTests;
 			sourceTree = "<group>";
@@ -448,6 +449,8 @@
 				AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */,
 				AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */,
 				ACD3FF642088037C007F6589 /* testNewExamVC.swift */,
+				ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */,
+				AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */,
 			);
 			path = TestControllers;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				ACEDA9E320855A63003A8365 /* testChooseCertificationVC.swift in Sources */,
 				AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */,
 				ACD3FF652088037C007F6589 /* testNewExamVC.swift in Sources */,
+				ACF2BF5522B3107900ACA350 /* testRestorePasswordVC.swift in Sources */,
 				AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */,
 				ACF2BF5322B30B3F00ACA350 /* TestUserService.swift in Sources */,
 				ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */,
