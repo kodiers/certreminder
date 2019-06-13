@@ -300,6 +300,10 @@ class MockUserService: UserServiceProtocol {
     func verifyToken(completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
+    
+    func restorePassword(for email: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
 }
 
 class MockVendorService: VendorServiceProtocol {
