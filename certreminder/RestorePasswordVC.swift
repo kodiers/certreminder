@@ -25,6 +25,7 @@ class RestorePasswordVC: UIViewController {
     override func loadView() {
         let view = RestorePasswordView(with: "Restore password")
         view.delegate = self
+        view.emailField.delegate = self
         view.addActions()
         self.view = view
     }
@@ -39,8 +40,6 @@ class RestorePasswordVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
 
 }
 
@@ -57,7 +56,7 @@ extension RestorePasswordVC: RestorePasswordDelegate {
         guard let view = self.view as? RestorePasswordView else {
             return
         }
-        let emailTxt = checkField(field: view.textField, header: "Email is empty", message: "Email cannot be blank.")
+        let emailTxt = checkField(field: view.emailField, header: "Email is empty", message: "Email cannot be blank.")
         guard let email = emailTxt else { return }
         if !validateEmail(str: email) {
             AlertService.showCancelAlert(header: "Email is invalid", message: "Email is not correct email.", viewController: self)
@@ -71,6 +70,16 @@ extension RestorePasswordVC: RestorePasswordDelegate {
             }
         }
     }
+}
+
+
+extension RestorePasswordVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }

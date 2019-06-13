@@ -37,7 +37,7 @@ class RestorePasswordView: CommonScreenView {
         return label
     }()
     
-    private(set) lazy var textField: UITextField = {
+    private(set) lazy var emailField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "enter your email"
         textField.textContentType = .emailAddress
@@ -92,7 +92,7 @@ class RestorePasswordView: CommonScreenView {
     
     private func configureView() {
         self.emailStackView.addArrangedSubview(fieldLabel)
-        self.emailStackView.addArrangedSubview(textField)
+        self.emailStackView.addArrangedSubview(emailField)
         self.addSubview(self.emailStackView)
         self.addSubview(self.restoreButton)
         self.addSubview(self.descriptionLabel)
