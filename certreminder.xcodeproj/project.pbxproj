@@ -26,6 +26,7 @@
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
 		AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DAE20AE4694006FEDEA /* Functions.swift */; };
 		AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DB020AE4A6B006FEDEA /* functionsTests.swift */; };
+		AC49966322B850AA00B061C0 /* testRestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */; };
 		AC507DC9207C232200D3B2F9 /* certreminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */; };
 		AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */; };
 		AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD2207C2B9700D3B2F9 /* mocks.swift */; };
@@ -136,6 +137,7 @@
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
 		AC484DAE20AE4694006FEDEA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AC484DB020AE4A6B006FEDEA /* functionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionsTests.swift; sourceTree = "<group>"; };
+		AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRestorePasswordVC.swift; sourceTree = "<group>"; };
 		AC507DC6207C232200D3B2F9 /* certreminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = certreminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certreminderUITests.swift; sourceTree = "<group>"; };
 		AC507DCA207C232200D3B2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,9 +249,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC49966122B8508A00B061C0 /* TestRestorePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */,
+			);
+			path = TestRestorePasswordVC;
+			sourceTree = "<group>";
+		};
 		AC507DC7207C232200D3B2F9 /* certreminderUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AC49966122B8508A00B061C0 /* TestRestorePasswordVC */,
 				AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */,
 				AC507DCA207C232200D3B2F9 /* Info.plist */,
 			);
@@ -681,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC49966322B850AA00B061C0 /* testRestorePasswordVC.swift in Sources */,
 				AC507DC9207C232200D3B2F9 /* certreminderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

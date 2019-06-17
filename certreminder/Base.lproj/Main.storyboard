@@ -2315,7 +2315,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="X1B-Gf-lqM">
-                                <rect key="frame" x="20" y="290.66666666666669" width="374" height="37"/>
+                                <rect key="frame" x="20" y="298.66666666666669" width="374" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exams:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzt-yV-D8F">
                                         <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="37"/>
@@ -2351,10 +2351,10 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-IF-Xyz">
-                                <rect key="frame" x="0.0" y="237.66666666666663" width="414" height="38"/>
+                                <rect key="frame" x="0.0" y="237.66666666666663" width="414" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-o4-hbZ">
-                                        <rect key="frame" x="15.999999999999993" y="4" width="100.33333333333331" height="30"/>
+                                        <rect key="frame" x="15.999999999999993" y="8" width="100.33333333333331" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2pl-O5-n00"/>
                                         </constraints>
@@ -2363,7 +2363,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsF-Qf-ggO">
-                                        <rect key="frame" x="376" y="8" width="30" height="22"/>
+                                        <rect key="frame" x="376" y="8" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="dih-gi-b4D"/>
                                         </constraints>
@@ -2409,7 +2409,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="59T-dK-DgN">
-                                <rect key="frame" x="0.0" y="335.66666666666674" width="414" height="400.33333333333326"/>
+                                <rect key="frame" x="0.0" y="343.66666666666674" width="414" height="392.33333333333326"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -2555,7 +2555,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UOi-Kr-oaH"/>
         <segue reference="7Ro-qa-nWV"/>
-        <segue reference="76v-pL-jsb"/>
+        <segue reference="PhL-AQ-snU"/>
         <segue reference="xnJ-mB-2Xg"/>
     </inferredMetricsTieBreakers>
 </document>

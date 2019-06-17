@@ -49,7 +49,7 @@ class RestorePasswordView: CommonScreenView {
         let restoreBtn = RoundedBorderButton()
         restoreBtn.cornerRadius = CORNER_RADIUS
         restoreBtn.backgroundColor = YELLOW_COLOR
-        restoreBtn.setupTitleLabel(with: "Restore email", color: MAIN_COLOR)
+        restoreBtn.setupTitleLabel(with: "Restore password", color: MAIN_COLOR)
         restoreBtn.preservesSuperviewLayoutMargins = true
         restoreBtn.translatesAutoresizingMaskIntoConstraints = false
         return restoreBtn;
