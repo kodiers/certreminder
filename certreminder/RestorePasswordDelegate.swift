@@ -14,5 +14,5 @@ protocol RestorePasswordDelegate {
     */
     func backBtnPressed()
     
-    func restorPasswordBtnPressed()
+    func restorePasswordBtnPressed()
 }

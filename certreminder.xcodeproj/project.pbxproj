@@ -420,7 +420,6 @@
 				ACDCFB64206463C100E7F659 /* Info.plist */,
 				ACDCFB6A2064648600E7F659 /* modelsTests.swift */,
 				AC82515120758DF700476BBD /* viewsTests.swift */,
-				AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */,
 				AC507DD2207C2B9700D3B2F9 /* mocks.swift */,
 				ACCE5A55208959A800654F6C /* testExtensions.swift */,
 				AC484DB020AE4A6B006FEDEA /* functionsTests.swift */,
@@ -439,6 +438,7 @@
 		ACF2BF5022B3093E00ACA350 /* TestControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */,
 				ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */,
 				ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */,
 				ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */,

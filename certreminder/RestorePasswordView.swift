@@ -129,7 +129,7 @@ class RestorePasswordView: CommonScreenView {
         guard let delegate = self.delegate else {
             return
         }
-        self.restoreButton.addTarget(delegate, action: #selector(RestorePasswordVC.restorPasswordBtnPressed), for: .touchUpInside)
+        self.restoreButton.addTarget(delegate, action: #selector(RestorePasswordVC.restorePasswordBtnPressed), for: .touchUpInside)
         self.backButton.addTarget(delegate, action: #selector(RestorePasswordVC.backBtnPressed), for: .touchUpInside)
     }
 

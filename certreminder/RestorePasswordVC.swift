@@ -41,7 +41,7 @@ extension RestorePasswordVC: RestorePasswordDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func restorPasswordBtnPressed() {
+    @objc func restorePasswordBtnPressed() {
         guard let view = self.view as? RestorePasswordView else {
             return
         }

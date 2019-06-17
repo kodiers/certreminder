@@ -306,6 +306,15 @@ class MockUserService: UserServiceProtocol {
     }
 }
 
+class MockUserServiceErrors: MockUserService {
+    /*
+     Override responses to return errors
+    */
+    override func restorePassword(for email: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(nil, NSError(domain: "TEST", code: 100500, userInfo: nil))
+    }
+}
+
 class MockVendorService: VendorServiceProtocol {
     /*
      Mock VendorService
