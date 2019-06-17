@@ -162,4 +162,17 @@ class UserService: RaiseErrorMixin, UserServiceProtocol {
             })
         }
     }
+    
+    func restorePassword(for email: String, completionHandler: @escaping RequestComplete) {
+        // Send data for restore password
+        let url = "v2/people/password/reset/"
+        let data: Parameters = ["email": email]
+        UserService.webservice.post(url: url, params: data) { (result, error) in
+            if error != nil {
+                completionHandler(nil, error)
+            } else {
+                completionHandler(true as AnyObject, nil)
+            }
+        }
+    }
 }

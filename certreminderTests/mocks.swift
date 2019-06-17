@@ -300,6 +300,19 @@ class MockUserService: UserServiceProtocol {
     func verifyToken(completionHandler: @escaping RequestComplete) {
         completionHandler(true as AnyObject, nil)
     }
+    
+    func restorePassword(for email: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(true as AnyObject, nil)
+    }
+}
+
+class MockUserServiceErrors: MockUserService {
+    /*
+     Override responses to return errors
+    */
+    override func restorePassword(for email: String, completionHandler: @escaping RequestComplete) {
+        completionHandler(nil, NSError(domain: "TEST", code: 100500, userInfo: nil))
+    }
 }
 
 class MockVendorService: VendorServiceProtocol {

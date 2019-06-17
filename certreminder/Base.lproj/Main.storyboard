@@ -192,10 +192,24 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C3z-oy-nES">
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-h5-Flt">
+                                <rect key="frame" x="132" y="384.33333333333331" width="150" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iYX-5a-X7Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Restore password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="restorePasswordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XFT-q8-wbW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.19215686274509802" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="oLf-Cj-kT8" secondAttribute="trailing" constant="8" id="8ni-9J-p8f"/>
+                            <constraint firstItem="g76-h5-Flt" firstAttribute="top" secondItem="Ec2-DR-4Qb" secondAttribute="bottom" constant="10" id="9L7-lK-4rZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Li-Ds-9OL" secondAttribute="bottom" id="Ate-Zf-NpC"/>
                             <constraint firstItem="oLf-Cj-kT8" firstAttribute="top" secondItem="myU-xm-pbm" secondAttribute="bottom" constant="25" id="B2e-zA-LQH"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BtR-zj-XXJ"/>
@@ -208,6 +222,7 @@
                             <constraint firstItem="2Li-Ds-9OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T8B-DQ-PwK"/>
                             <constraint firstItem="myU-xm-pbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="UIY-us-3Pw"/>
                             <constraint firstItem="lWW-Z0-DsF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8w-hB-fGJ"/>
+                            <constraint firstItem="g76-h5-Flt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aXd-OG-WLY"/>
                             <constraint firstItem="C3z-oy-nES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ci3-ty-4Hd"/>
                             <constraint firstItem="7Vc-Ue-boo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="hEi-lx-EJt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lWW-Z0-DsF" secondAttribute="bottom" constant="8" id="jZn-OU-Tct"/>
@@ -229,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="34"/>
+            <point key="canvasLocation" x="76.811594202898561" y="33.423913043478265"/>
         </scene>
         <!--RegistrationVC-->
         <scene sceneID="r1f-iz-DFM">
@@ -2539,8 +2554,8 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
         <segue reference="UOi-Kr-oaH"/>
-        <segue reference="W1w-jA-vkM"/>
-        <segue reference="76v-pL-jsb"/>
-        <segue reference="I99-sZ-nDK"/>
+        <segue reference="7Ro-qa-nWV"/>
+        <segue reference="PhL-AQ-snU"/>
+        <segue reference="xnJ-mB-2Xg"/>
     </inferredMetricsTieBreakers>
 </document>

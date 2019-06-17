@@ -15,6 +15,7 @@
 		AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */; };
 		AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */; };
 		AC17917D21000AA900397C19 /* testAddExistingExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */; };
+		AC18D16422A724DE00D76C96 /* ReminderLblStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */; };
 		AC1CEEB72086AD8000829506 /* testChooseExamDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */; };
 		AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */; };
 		AC1CEEBB2086BB1900829506 /* testNewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */; };
@@ -25,6 +26,7 @@
 		AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC34BCED206AF537005C3489 /* CertificationProtocol.swift */; };
 		AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DAE20AE4694006FEDEA /* Functions.swift */; };
 		AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC484DB020AE4A6B006FEDEA /* functionsTests.swift */; };
+		AC49966322B850AA00B061C0 /* testRestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */; };
 		AC507DC9207C232200D3B2F9 /* certreminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */; };
 		AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */; };
 		AC507DD3207C2B9700D3B2F9 /* mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC507DD2207C2B9700D3B2F9 /* mocks.swift */; };
@@ -55,6 +57,10 @@
 		ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8600120323E7F00D60C9E /* UserCertificationService.swift */; };
 		ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */; };
 		ACC469221FD605210070C738 /* UserExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC469211FD605210070C738 /* UserExam.swift */; };
+		ACCAB4FE22A9C0690059AF31 /* CommonScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */; };
+		ACCAB50222A9C46F0059AF31 /* RestorePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */; };
+		ACCCE0AD22A5D9B10081A2D3 /* RestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */; };
+		ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */; };
 		ACCE5A56208959A800654F6C /* testExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCE5A55208959A800654F6C /* testExtensions.swift */; };
 		ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */; };
 		ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */; };
@@ -76,6 +82,9 @@
 		ACEDA9E320855A63003A8365 /* testChooseCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDA9E220855A63003A8365 /* testChooseCertificationVC.swift */; };
 		ACEDA9E520855CBA003A8365 /* testAddExamsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEDA9E420855CBA003A8365 /* testAddExamsVC.swift */; };
 		ACEEFE011FBCF4C100688FDD /* ChoosedDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */; };
+		ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */; };
+		ACF2BF5322B30B3F00ACA350 /* TestUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BF5222B30B3F00ACA350 /* TestUserService.swift */; };
+		ACF2BF5522B3107900ACA350 /* testRestorePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */; };
 		ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */; };
 		ACF6CFC8207ECA8B007A87A4 /* testCertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */; };
 		ACF6CFCA207ED219007A87A4 /* testCertificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */; };
@@ -117,6 +126,7 @@
 		AC08AEFD1F9EAD920021AF14 /* ChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCertificationVC.swift; sourceTree = "<group>"; };
 		AC08AEFF1F9EADD50021AF14 /* AddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExamsVC.swift; sourceTree = "<group>"; };
 		AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAddExistingExamVC.swift; sourceTree = "<group>"; };
+		AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderLblStackView.swift; sourceTree = "<group>"; };
 		AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChooseExamDateVC.swift; sourceTree = "<group>"; };
 		AC1CEEB82086B07F00829506 /* ChoosedDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataServiceProtocol.swift; sourceTree = "<group>"; };
 		AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNewCertificationVC.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 		AC34BCED206AF537005C3489 /* CertificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationProtocol.swift; sourceTree = "<group>"; };
 		AC484DAE20AE4694006FEDEA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AC484DB020AE4A6B006FEDEA /* functionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionsTests.swift; sourceTree = "<group>"; };
+		AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRestorePasswordVC.swift; sourceTree = "<group>"; };
 		AC507DC6207C232200D3B2F9 /* certreminderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = certreminderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = certreminderUITests.swift; sourceTree = "<group>"; };
 		AC507DCA207C232200D3B2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,6 +170,10 @@
 		ACB8600120323E7F00D60C9E /* UserCertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationService.swift; sourceTree = "<group>"; };
 		ACBE2CAE1FABCCE000FF7DA9 /* CertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationService.swift; sourceTree = "<group>"; };
 		ACC469211FD605210070C738 /* UserExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExam.swift; sourceTree = "<group>"; };
+		ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonScreenView.swift; sourceTree = "<group>"; };
+		ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordView.swift; sourceTree = "<group>"; };
+		ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordVC.swift; sourceTree = "<group>"; };
+		ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageView.swift; sourceTree = "<group>"; };
 		ACCE5A55208959A800654F6C /* testExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testExtensions.swift; sourceTree = "<group>"; };
 		ACCF21BB201A867800BD9556 /* NewCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCertificationVC.swift; sourceTree = "<group>"; };
 		ACD054191FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedExamsWithDateTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +199,9 @@
 		ACEDA9E220855A63003A8365 /* testChooseCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testChooseCertificationVC.swift; sourceTree = "<group>"; };
 		ACEDA9E420855CBA003A8365 /* testAddExamsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testAddExamsVC.swift; sourceTree = "<group>"; };
 		ACEEFE001FBCF4C100688FDD /* ChoosedDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosedDataService.swift; sourceTree = "<group>"; };
+		ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePasswordDelegate.swift; sourceTree = "<group>"; };
+		ACF2BF5222B30B3F00ACA350 /* TestUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserService.swift; sourceTree = "<group>"; };
+		ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRestorePasswordVC.swift; sourceTree = "<group>"; };
 		ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testRegistrationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationVC.swift; sourceTree = "<group>"; };
 		ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testCertificationDetailVC.swift; sourceTree = "<group>"; };
@@ -231,9 +249,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC49966122B8508A00B061C0 /* TestRestorePasswordVC */ = {
+			isa = PBXGroup;
+			children = (
+				AC49966222B850AA00B061C0 /* testRestorePasswordVC.swift */,
+			);
+			path = TestRestorePasswordVC;
+			sourceTree = "<group>";
+		};
 		AC507DC7207C232200D3B2F9 /* certreminderUITests */ = {
 			isa = PBXGroup;
 			children = (
+				AC49966122B8508A00B061C0 /* TestRestorePasswordVC */,
 				AC507DC8207C232200D3B2F9 /* certreminderUITests.swift */,
 				AC507DCA207C232200D3B2F9 /* Info.plist */,
 			);
@@ -263,6 +290,42 @@
 				AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */,
 			);
 			name = services;
+			sourceTree = "<group>";
+		};
+		ACCAB4FF22A9C4300059AF31 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCE0AC22A5D9B10081A2D3 /* RestorePasswordVC.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		ACCAB50022A9C4400059AF31 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ACCAB50122A9C46F0059AF31 /* RestorePasswordView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		ACCCE0AB22A5D98E0081A2D3 /* RestorePassword */ = {
+			isa = PBXGroup;
+			children = (
+				ACF03FBF22AF12B300A5EF78 /* protocols */,
+				ACCAB50022A9C4400059AF31 /* views */,
+				ACCAB4FF22A9C4300059AF31 /* controller */,
+			);
+			name = RestorePassword;
+			sourceTree = "<group>";
+		};
+		ACCCE0AE22A5DB140081A2D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ACCCE0B122A5DBD10081A2D3 /* CityImageView.swift */,
+				AC18D16322A724DE00D76C96 /* ReminderLblStackView.swift */,
+				ACCAB4FD22A9C0690059AF31 /* CommonScreenView.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		ACD22E801F46461B0056E0D2 = {
@@ -296,6 +359,7 @@
 				ACFEBC771F4E4483007E8594 /* util */,
 				ACD22E9E1F4646270056E0D2 /* Model */,
 				ACD22E9F1F4646320056E0D2 /* View */,
+				ACCCE0AB22A5D98E0081A2D3 /* RestorePassword */,
 				ACD22EA01F46463B0056E0D2 /* Controller */,
 				ACD22E8C1F46461B0056E0D2 /* AppDelegate.swift */,
 				ACD22E901F46461B0056E0D2 /* Main.storyboard */,
@@ -323,6 +387,7 @@
 		ACD22E9F1F4646320056E0D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACCCE0AE22A5DB140081A2D3 /* Common */,
 				AC6147EB1F82E17600326C27 /* RoundedBorderButton.swift */,
 				AC6147ED1F82E50C00326C27 /* CertificationCell.swift */,
 				AC9F52341F86E7690024E94E /* RoundedView.swift */,
@@ -361,12 +426,30 @@
 		ACDCFB61206463C100E7F659 /* certreminderTests */ = {
 			isa = PBXGroup;
 			children = (
+				ACF2BF5122B3095200ACA350 /* TestServices */,
+				ACF2BF5022B3093E00ACA350 /* TestControllers */,
 				ACDCFB64206463C100E7F659 /* Info.plist */,
 				ACDCFB6A2064648600E7F659 /* modelsTests.swift */,
-				AC5A1740206C668700746C4F /* servicesTests.swift */,
 				AC82515120758DF700476BBD /* viewsTests.swift */,
-				AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */,
 				AC507DD2207C2B9700D3B2F9 /* mocks.swift */,
+				ACCE5A55208959A800654F6C /* testExtensions.swift */,
+				AC484DB020AE4A6B006FEDEA /* functionsTests.swift */,
+			);
+			path = certreminderTests;
+			sourceTree = "<group>";
+		};
+		ACF03FBF22AF12B300A5EF78 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ACF03FC022AF12E700A5EF78 /* RestorePasswordDelegate.swift */,
+			);
+			name = protocols;
+			sourceTree = "<group>";
+		};
+		ACF2BF5022B3093E00ACA350 /* TestControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC507DD0207C2AD700D3B2F9 /* testLoginVC.swift */,
 				ACF6CFC5207EC81F007A87A4 /* testRegistrationVC.swift */,
 				ACF6CFC7207ECA8B007A87A4 /* testCertificationVC.swift */,
 				ACF6CFC9207ED219007A87A4 /* testCertificationDetailVC.swift */,
@@ -377,11 +460,19 @@
 				AC1CEEB62086AD8000829506 /* testChooseExamDateVC.swift */,
 				AC1CEEBA2086BB1900829506 /* testNewCertificationVC.swift */,
 				ACD3FF642088037C007F6589 /* testNewExamVC.swift */,
-				ACCE5A55208959A800654F6C /* testExtensions.swift */,
-				AC484DB020AE4A6B006FEDEA /* functionsTests.swift */,
+				ACF2BF5422B3107900ACA350 /* testRestorePasswordVC.swift */,
 				AC17917C21000AA900397C19 /* testAddExistingExamVC.swift */,
 			);
-			path = certreminderTests;
+			path = TestControllers;
+			sourceTree = "<group>";
+		};
+		ACF2BF5122B3095200ACA350 /* TestServices */ = {
+			isa = PBXGroup;
+			children = (
+				AC5A1740206C668700746C4F /* servicesTests.swift */,
+				ACF2BF5222B30B3F00ACA350 /* TestUserService.swift */,
+			);
+			path = TestServices;
 			sourceTree = "<group>";
 		};
 		ACFD08661FAA6DEB009FE996 /* protocols */ = {
@@ -490,7 +581,6 @@
 				TargetAttributes = {
 					AC507DC5207C232200D3B2F9 = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = 493PFTF9Q4;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ACD22E881F46461B0056E0D2;
@@ -503,7 +593,6 @@
 					};
 					ACDCFB5F206463C100E7F659 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = 493PFTF9Q4;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ACD22E881F46461B0056E0D2;
@@ -603,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC49966322B850AA00B061C0 /* testRestorePasswordVC.swift in Sources */,
 				AC507DC9207C232200D3B2F9 /* certreminderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +713,7 @@
 				AC7196742076D34800CFF449 /* UserCertificationServiceProtocol.swift in Sources */,
 				ACBE2CAF1FABCCE000FF7DA9 /* CertificationService.swift in Sources */,
 				ACC469221FD605210070C738 /* UserExam.swift in Sources */,
+				ACCAB50222A9C46F0059AF31 /* RestorePasswordView.swift in Sources */,
 				AC7196762076DC3200CFF449 /* CertificationServiceProtocol.swift in Sources */,
 				ACF73E821FB50AE200F21D8D /* Exam.swift in Sources */,
 				AC5A1743206C692800746C4F /* WebRequestProtocol.swift in Sources */,
@@ -630,6 +721,7 @@
 				AC08AEFA1F9EACCA0021AF14 /* ChooseVendorVC.swift in Sources */,
 				ACD22E8F1F46461B0056E0D2 /* LoginVC.swift in Sources */,
 				AC1CEEB92086B07F00829506 /* ChoosedDataServiceProtocol.swift in Sources */,
+				ACCCE0AD22A5D9B10081A2D3 /* RestorePasswordVC.swift in Sources */,
 				AC065B541FA297C70098B0B3 /* ChooseExamDateVC.swift in Sources */,
 				ACD0541A1FBBA5BC002D524D /* ChoosedExamsWithDateTableViewCell.swift in Sources */,
 				AC31580120E5B3F500FA45A5 /* ExistingTableCell.swift in Sources */,
@@ -647,10 +739,13 @@
 				AC34BCEE206AF537005C3489 /* CertificationProtocol.swift in Sources */,
 				AC57D018219A376300DB5E80 /* TermsVC.swift in Sources */,
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
+				ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */,
 				ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */,
+				ACCAB4FE22A9C0690059AF31 /* CommonScreenView.swift in Sources */,
+				ACCCE0B222A5DBD10081A2D3 /* CityImageView.swift in Sources */,
 				AC08AEFC1F9EAD590021AF14 /* ChooseDateVC.swift in Sources */,
 				AC08AF001F9EADD50021AF14 /* AddExamsVC.swift in Sources */,
 				AC2B3B0920E462DF00939297 /* AddExistingExamVC.swift in Sources */,
@@ -659,6 +754,7 @@
 				ACB248F5202D075900693F48 /* UserService.swift in Sources */,
 				ACCF21BC201A867800BD9556 /* NewCertificationVC.swift in Sources */,
 				AC7196782076E58700CFF449 /* ExamServiceProtocol.swift in Sources */,
+				AC18D16422A724DE00D76C96 /* ReminderLblStackView.swift in Sources */,
 				ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */,
 				AC021DB51F4B9D3400D3529D /* RegistrationVC.swift in Sources */,
 				AC484DAF20AE4694006FEDEA /* Functions.swift in Sources */,
@@ -684,7 +780,9 @@
 				ACEDA9E320855A63003A8365 /* testChooseCertificationVC.swift in Sources */,
 				AC507DD1207C2AD700D3B2F9 /* testLoginVC.swift in Sources */,
 				ACD3FF652088037C007F6589 /* testNewExamVC.swift in Sources */,
+				ACF2BF5522B3107900ACA350 /* testRestorePasswordVC.swift in Sources */,
 				AC484DB120AE4A6B006FEDEA /* functionsTests.swift in Sources */,
+				ACF2BF5322B30B3F00ACA350 /* TestUserService.swift in Sources */,
 				ACF6CFC6207EC81F007A87A4 /* testRegistrationVC.swift in Sources */,
 				ACEDA9E520855CBA003A8365 /* testAddExamsVC.swift in Sources */,
 				ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */,
@@ -738,13 +836,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = certreminderUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -760,13 +859,14 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = certreminderUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -932,13 +1032,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = certreminderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -955,13 +1056,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 493PFTF9Q4;
+				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = certreminderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.techforline.certreminderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

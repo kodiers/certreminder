@@ -17,4 +17,6 @@ protocol UserServiceProtocol {
     func refreshToken(completionHandler: @escaping RequestComplete)
     
     func verifyToken(completionHandler: @escaping RequestComplete)
+    
+    func restorePassword(for email: String, completionHandler: @escaping RequestComplete)
 }

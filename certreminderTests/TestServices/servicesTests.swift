@@ -37,7 +37,6 @@ class servicesTests: XCTestCase {
     var MockVendorsRequestService: WebRequestProtocol!
     var vendorVC: VendorViewController!
     var MockCerticationRequestService: WebRequestProtocol!
-    var MockUserRequestService: WebRequestProtocol!
     var MockUserCertificationRequestService: WebRequestProtocol!
     var mockCertService: CertificationProtocol!
     var MockExamRequests: WebRequestProtocol!
@@ -54,7 +53,6 @@ class servicesTests: XCTestCase {
         MockVendorsRequestService = MockWebServiceVendors()
         vendorVC = VendorViewController()
         MockCerticationRequestService = MockWebServiceCertifications()
-        MockUserRequestService = MockWebServiceUser()
         MockUserCertificationRequestService = MockWebServiceUserCertification()
         mockCertService = MockCertSrv()
         MockExamRequests = MockExamWebRequestService()
@@ -156,58 +154,6 @@ class servicesTests: XCTestCase {
         XCTAssertEqual(ChoosedDataService.instance.userExams?[0].id, id2)
         let examIndex = ChoosedDataService.instance.getIndexInUsersExam(exam: exam)
         XCTAssertNotNil(examIndex)
-    }
-    
-    func testUserService() {
-        UserService.webservice = MockUserRequestService
-        var success: Bool = false
-        var error: NSError?
-        UserService.instance.registerUser(username: USER, email: email, password: title1, confirm_password: title1) { (resp, err) in
-            if err != nil {
-                error = err
-            } else {
-                success = true
-            }
-        }
-        XCTAssertNil(error)
-        XCTAssertTrue(success)
-        XCTAssertEqual(UserService.instance.user?.username, USER)
-        success = false
-        UserService.instance.loginUser(username: USER, password: USER) { (resp, err) in
-            if err != nil {
-                error = err
-            } else {
-                success = true
-            }
-        }
-        XCTAssertNil(error)
-        XCTAssertTrue(success)
-        XCTAssertEqual(UserService.instance.token, TOKEN)
-        success = false
-        UserService.instance.refreshToken { (resp, err) in
-            if err != nil {
-                error = err
-            } else {
-                success = true
-            }
-        }
-        XCTAssertNil(error)
-        XCTAssertTrue(success)
-        XCTAssertEqual(UserService.instance.token, TOKEN)
-        success = false
-        UserService.instance.verifyToken { (resp, err) in
-            if err != nil {
-                error = err
-            } else {
-                success = true
-            }
-        }
-        XCTAssertNil(error)
-        XCTAssertTrue(success)
-        XCTAssertEqual(UserService.instance.token, TOKEN)
-        UserService.instance.logoutUser()
-        XCTAssertNil(UserService.instance.user)
-        XCTAssertNil(UserService.instance.token)
     }
     
     func testUserCertificationService() {
