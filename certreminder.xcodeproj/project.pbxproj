@@ -72,6 +72,8 @@
 		ACD288831F901EB30017A5DE /* Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288821F901EB30017A5DE /* Vendor.swift */; };
 		ACD288891F9021CF0017A5DE /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD288881F9021CF0017A5DE /* CommonModel.swift */; };
 		ACD3FF652088037C007F6589 /* testNewExamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3FF642088037C007F6589 /* testNewExamVC.swift */; };
+		ACD49C0223441A2A00BD2F20 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ACD49C0123441A2A00BD2F20 /* debug.xcconfig */; };
+		ACD49C0323441A3100BD2F20 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = ACD49C00234419FB00BD2F20 /* release.xcconfig */; };
 		ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC4BE1F995E9200B08234 /* AlertService.swift */; };
 		ACDCC8EE204F4EB400E4CB6F /* RaiseErrorMixin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */; };
 		ACDCFB6B2064648600E7F659 /* modelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDCFB6A2064648600E7F659 /* modelsTests.swift */; };
@@ -187,6 +189,10 @@
 		ACD288821F901EB30017A5DE /* Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vendor.swift; sourceTree = "<group>"; };
 		ACD288881F9021CF0017A5DE /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		ACD3FF642088037C007F6589 /* testNewExamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testNewExamVC.swift; sourceTree = "<group>"; };
+		ACD49BFE2344192000BD2F20 /* debug.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.example.xcconfig; sourceTree = "<group>"; };
+		ACD49BFF2344196C00BD2F20 /* release.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.example.xcconfig; sourceTree = "<group>"; };
+		ACD49C00234419FB00BD2F20 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		ACD49C0123441A2A00BD2F20 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		ACDCC4BE1F995E9200B08234 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaiseErrorMixin.swift; sourceTree = "<group>"; };
 		ACDCFB60206463C100E7F659 /* certreminderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = certreminderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +359,8 @@
 		ACD22E8B1F46461B0056E0D2 /* certreminder */ = {
 			isa = PBXGroup;
 			children = (
+				ACD49BFF2344196C00BD2F20 /* release.example.xcconfig */,
+				ACD49BFE2344192000BD2F20 /* debug.example.xcconfig */,
 				AC7922BC1F4CEA4C000C1D46 /* services */,
 				AC5FD9C6204610B9000B35C4 /* extensions */,
 				ACFD08661FAA6DEB009FE996 /* protocols */,
@@ -366,6 +374,8 @@
 				ACD22E931F46461B0056E0D2 /* Assets.xcassets */,
 				ACD22E951F46461B0056E0D2 /* LaunchScreen.storyboard */,
 				ACD22E981F46461B0056E0D2 /* Info.plist */,
+				ACD49C00234419FB00BD2F20 /* release.xcconfig */,
+				ACD49C0123441A2A00BD2F20 /* debug.xcconfig */,
 			);
 			path = certreminder;
 			sourceTree = "<group>";
@@ -631,9 +641,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD49C0223441A2A00BD2F20 /* debug.xcconfig in Resources */,
 				ACD22E971F46461B0056E0D2 /* LaunchScreen.storyboard in Resources */,
 				ACD22E941F46461B0056E0D2 /* Assets.xcassets in Resources */,
 				ACD22E921F46461B0056E0D2 /* Main.storyboard in Resources */,
+				ACD49C0323441A3100BD2F20 /* release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,11 +667,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-certreminder/Pods-certreminder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -876,6 +890,7 @@
 		};
 		ACD22E991F46461B0056E0D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD49C0123441A2A00BD2F20 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -936,6 +951,7 @@
 		};
 		ACD22E9A1F46461B0056E0D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD49C00234419FB00BD2F20 /* release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;

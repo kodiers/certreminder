@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Sentry
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Create a Sentry client and start crash handler
+        if let sentry_dsn_string = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN_STRING") as? String, let sentry_dsn_number = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN_NUMBER") as? String {
+            let dsn = "https://\(sentry_dsn_string)@sentry.io/\(sentry_dsn_number)"
+            do {
+                Client.shared = try Client(dsn: dsn)
+                try Client.shared?.startCrashHandler()
+            } catch let error {
+                print("\(error)")
+            }
+            
+        }
         return true
     }
 

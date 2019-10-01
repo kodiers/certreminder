@@ -8,4 +8,5 @@ target 'certreminder' do
   # Pods for certreminder
   pod 'Alamofire'
   pod 'SwiftKeychainWrapper'
+  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '4.3.1'
 end

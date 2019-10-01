@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>SENTRY_DSN_STRING</key>
+	<string>$(SENTRY_DSN_STRING)</string>
+	<key>SENTRY_DSN_NUMBER</key>
+	<string>$(SENTRY_DSN_NUMBER)</string>
 </dict>
 </plist>

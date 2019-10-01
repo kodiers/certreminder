@@ -1,0 +1,13 @@
+//
+//  debug.example.xcconfig
+//  certreminder
+//
+//  Created by Viktor Yamchinov on 02/10/2019.
+//  Copyright © 2019 Viktor Yamchinov. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SENTRY_DSN_STRING = "<some-random-string>"
+SENTRY_DSN_NUMBER = "<some-random-number>"

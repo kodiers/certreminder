@@ -1,9 +1,13 @@
 PODS:
   - Alamofire (4.8.2)
+  - Sentry (4.3.1):
+    - Sentry/Core (= 4.3.1)
+  - Sentry/Core (4.3.1)
   - SwiftKeychainWrapper (3.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `4.3.1`)
   - SwiftKeychainWrapper
 
 SPEC REPOS:
@@ -11,10 +15,21 @@ SPEC REPOS:
     - Alamofire
     - SwiftKeychainWrapper
 
+EXTERNAL SOURCES:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.3.1
+
+CHECKOUT OPTIONS:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.3.1
+
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Sentry: 5267d493a398663538317e4dcc438c12c66202ed
   SwiftKeychainWrapper: 82c4c02cdc36f9a24f7edfcaab3e336401caa1a1
 
-PODFILE CHECKSUM: ba0936b8b24e95ad654791e7d81f9235f599fe27
+PODFILE CHECKSUM: 8fa199a346cdc820ab0e9386ffcf69176fc23eec
 
 COCOAPODS: 1.5.0
