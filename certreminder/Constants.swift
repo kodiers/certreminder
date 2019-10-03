@@ -32,4 +32,6 @@ let TRAILING_MARGIN: CGFloat = -16
 let LEADING_MARGIN: CGFloat = 16
 let DEFAULT_ELEMENT_SPACING: CGFloat = 20
 
+let TESTS_ENV = "TESTS"  // Used in enviroment variables (in schemes) to detect Test environment
+
 typealias RequestComplete = (AnyObject?, NSError?) -> ()

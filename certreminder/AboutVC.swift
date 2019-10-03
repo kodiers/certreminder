@@ -14,6 +14,8 @@ class AboutVC: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var emailBtn: RoundedBorderButton!
     @IBOutlet weak var siteBtn: RoundedBorderButton!
     
+    var sentryLogService = SentryLogService.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,6 +62,9 @@ class AboutVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let err = error {
+            self.sentryLogService.logError(message: err.localizedDescription, extra: nil)
+        }
         controller.dismiss(animated: true, completion: nil)
     }
 }

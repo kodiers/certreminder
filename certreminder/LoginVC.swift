@@ -79,6 +79,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func restorePasswordBtnPressed(_ sender: Any) {
         let restorePasswordVC = RestorePasswordVC()
+        restorePasswordVC.modalPresentationStyle = .fullScreen
         present(restorePasswordVC, animated: true, completion: nil)
     }
     

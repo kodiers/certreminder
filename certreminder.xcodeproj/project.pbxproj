@@ -52,6 +52,7 @@
 		AC9105942033ADEC00C1128B /* ExamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9105932033ADEC00C1128B /* ExamService.swift */; };
 		AC96B6501FA7DC6800140DC5 /* ColoredDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */; };
 		AC9F52351F86E7690024E94E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9F52341F86E7690024E94E /* RoundedView.swift */; };
+		ACA4E8BD2346A24C00A2BB3D /* SentryLogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4E8BC2346A24C00A2BB3D /* SentryLogService.swift */; };
 		ACAA4C0F1F4F9164002C6E8A /* CertificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */; };
 		ACB248F5202D075900693F48 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB248F4202D075900693F48 /* UserService.swift */; };
 		ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8600120323E7F00D60C9E /* UserCertificationService.swift */; };
@@ -167,6 +168,7 @@
 		AC9105932033ADEC00C1128B /* ExamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamService.swift; sourceTree = "<group>"; };
 		AC96B64F1FA7DC6800140DC5 /* ColoredDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDatePicker.swift; sourceTree = "<group>"; };
 		AC9F52341F86E7690024E94E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		ACA4E8BC2346A24C00A2BB3D /* SentryLogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentryLogService.swift; sourceTree = "<group>"; };
 		ACAA4C0E1F4F9164002C6E8A /* CertificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificationVC.swift; sourceTree = "<group>"; };
 		ACB248F4202D075900693F48 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		ACB8600120323E7F00D60C9E /* UserCertificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCertificationService.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				ACB8600120323E7F00D60C9E /* UserCertificationService.swift */,
 				AC9105932033ADEC00C1128B /* ExamService.swift */,
 				AC66D0AC203B8A5D00480FA3 /* UserExamService.swift */,
+				ACA4E8BC2346A24C00A2BB3D /* SentryLogService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -489,7 +492,6 @@
 			isa = PBXGroup;
 			children = (
 				ACFD08671FAA6E03009FE996 /* SetVendorsProtocol.swift */,
-				ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */,
 				AC34BCED206AF537005C3489 /* CertificationProtocol.swift */,
 				AC5A1742206C692800746C4F /* WebRequestProtocol.swift */,
 				AC7196732076D34800CFF449 /* UserCertificationServiceProtocol.swift */,
@@ -506,6 +508,7 @@
 		ACFEBC771F4E4483007E8594 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				ACDCC8ED204F4EB400E4CB6F /* RaiseErrorMixin.swift */,
 				ACFEBC781F4E4498007E8594 /* Constants.swift */,
 				AC484DAE20AE4694006FEDEA /* Functions.swift */,
 			);
@@ -755,6 +758,7 @@
 				AC5FD9C8204610D9000B35C4 /* UIViewControllerExtension.swift in Sources */,
 				ACF03FC122AF12E700A5EF78 /* RestorePasswordDelegate.swift in Sources */,
 				ACDCC4BF1F995E9200B08234 /* AlertService.swift in Sources */,
+				ACA4E8BD2346A24C00A2BB3D /* SentryLogService.swift in Sources */,
 				AC60B01A1F8AE5A0004DFB77 /* Certification.swift in Sources */,
 				AC08AEFE1F9EAD920021AF14 /* ChooseCertificationVC.swift in Sources */,
 				ACB8600220323E7F00D60C9E /* UserCertificationService.swift in Sources */,
