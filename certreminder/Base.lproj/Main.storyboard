@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -48,7 +47,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vc-Ue-boo">
-                                <rect key="frame" x="129.66666666666666" y="30" width="154.99999999999997" height="30"/>
+                                <rect key="frame" x="129.66666666666666" y="10" width="154.99999999999997" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kPR-ZD-LQG"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="wSm-WX-eXg"/>
@@ -58,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oLi-As-2Rw">
-                                <rect key="frame" x="128.66666666666669" y="68" width="156.66666666666669" height="45"/>
+                                <rect key="frame" x="128.66666666666669" y="48" width="156.66666666666669" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-cw-HCJ">
                                         <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="45"/>
@@ -78,10 +77,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="myU-xm-pbm">
-                                <rect key="frame" x="28" y="133" width="358" height="129.33333333333337"/>
+                                <rect key="frame" x="28" y="113.00000000000001" width="358" height="137.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-pa-nvH">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="59.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="63.666666666666664"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyt-K9-n3b">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="24.666666666666668"/>
@@ -90,15 +89,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qf6-KF-DmI">
-                                                <rect key="frame" x="0.0" y="29.666666666666657" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="29.666666666666657" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PtA-Br-zHD">
-                                        <rect key="frame" x="0.0" y="69.666666666666657" width="358" height="59.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="73.666666666666657" width="358" height="63.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr4-WI-cnT">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="24.666666666666668"/>
@@ -107,8 +105,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40p-vb-qdu">
-                                                <rect key="frame" x="0.0" y="29.666666666666686" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="29.666666666666686" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -117,7 +114,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-Cj-kT8" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="28" y="287.33333333333331" width="358" height="30"/>
+                                <rect key="frame" x="28" y="275.33333333333331" width="358" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cvc-Cc-Ucq"/>
@@ -136,7 +133,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ec2-DR-4Qb">
-                                <rect key="frame" x="107" y="342.33333333333331" width="200" height="32"/>
+                                <rect key="frame" x="107" y="330.33333333333331" width="200" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2J-FJ-fpI" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="95" height="32"/>
@@ -193,7 +190,7 @@
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-h5-Flt">
-                                <rect key="frame" x="132" y="384.33333333333331" width="150" height="37"/>
+                                <rect key="frame" x="132" y="372.33333333333331" width="150" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="iYX-5a-X7Z"/>
                                 </constraints>
@@ -249,7 +246,7 @@
         <!--RegistrationVC-->
         <scene sceneID="r1f-iz-DFM">
             <objects>
-                <viewController storyboardIdentifier="RegistrationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cxt-Sq-YcF" customClass="RegistrationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGN-Qn-5WS"/>
                         <viewControllerLayoutGuide type="bottom" id="4fF-Il-0jZ"/>
@@ -265,7 +262,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter information for registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-gz-ZVm">
-                                <rect key="frame" x="84.333333333333329" y="30" width="245.33333333333337" height="65.666666666666671"/>
+                                <rect key="frame" x="84.333333333333329" y="10" width="245.33333333333337" height="65.666666666666671"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="9br-7I-48n"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wDI-3m-XBe"/>
@@ -275,7 +272,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="rAR-Ud-g00">
-                                <rect key="frame" x="128.66666666666669" y="103.66666666666667" width="156.66666666666669" height="44.000000000000014"/>
+                                <rect key="frame" x="128.66666666666669" y="83.666666666666671" width="156.66666666666669" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-fF-KWU">
                                         <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="44"/>
@@ -292,10 +289,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-N7-mzp">
-                                <rect key="frame" x="28" y="167.66666666666663" width="358" height="263"/>
+                                <rect key="frame" x="28" y="147.66666666666663" width="358" height="279"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wk3-Lp-6Hu">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSc-bf-6ch">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="22"/>
@@ -304,15 +301,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDy-6i-Fgn">
-                                                <rect key="frame" x="0.0" y="27" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="27" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-bc-Fl4">
-                                        <rect key="frame" x="0.0" y="67" width="358" height="62"/>
+                                        <rect key="frame" x="0.0" y="71" width="358" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXg-G7-pYP">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="22"/>
@@ -321,15 +317,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbp-9x-WWf">
-                                                <rect key="frame" x="0.0" y="32.000000000000028" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="32" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g98-Oh-ckZ">
-                                        <rect key="frame" x="0.0" y="139.00000000000003" width="358" height="57"/>
+                                        <rect key="frame" x="0.0" y="147.00000000000003" width="358" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2m-76-Vcz">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="22"/>
@@ -338,15 +333,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kn7-0v-DeD">
-                                                <rect key="frame" x="0.0" y="27" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="27" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ndl-av-iIB">
-                                        <rect key="frame" x="0.0" y="206.00000000000003" width="358" height="56.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="218.00000000000003" width="358" height="60.999999999999972"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-Cr-Rqq">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="22"/>
@@ -355,8 +349,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZjV-eZ-LPz">
-                                                <rect key="frame" x="0.0" y="27" width="358" height="30"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="0.0" y="27" width="358" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -365,7 +358,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rw-cv-puX" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="28" y="455.66666666666669" width="358" height="30"/>
+                                <rect key="frame" x="28" y="451.66666666666669" width="358" height="30"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vzH-gl-vLS"/>
@@ -408,13 +401,13 @@
                                 <rect key="frame" x="188.66666666666666" y="224.66666666666666" width="37" height="36.999999999999972"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressing the 'Register' button you accept" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-lV-loc">
-                                <rect key="frame" x="79" y="505.66666666666669" width="256" height="19.333333333333314"/>
+                                <rect key="frame" x="79" y="501.66666666666669" width="256" height="19.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.82352941180000006" green="0.67450980390000004" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hX-ll-oxk" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="159.66666666666666" y="535" width="95" height="32"/>
+                                <rect key="frame" x="159.66666666666666" y="531" width="95" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="ICk-5y-OKI"/>
                                 </constraints>
@@ -486,7 +479,7 @@
         <!--TermsVC-->
         <scene sceneID="IsC-qj-JPU">
             <objects>
-                <viewController storyboardIdentifier="TermsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XJL-ug-fG4" customClass="TermsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XJL-ug-fG4" customClass="TermsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fYE-si-hd2"/>
                         <viewControllerLayoutGuide type="bottom" id="VvL-aB-dSS"/>
@@ -496,13 +489,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DP6-DF-AhH">
-                                <rect key="frame" x="20" y="30" width="374" height="33"/>
+                                <rect key="frame" x="20" y="10" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hix-vN-SZX">
-                                <rect key="frame" x="128.66666666666669" y="73" width="156.66666666666669" height="44"/>
+                                <rect key="frame" x="128.66666666666669" y="53" width="156.66666666666669" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILc-e5-HVY">
                                         <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="44"/>
@@ -525,7 +518,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQb-B8-NCD" customClass="RoundedBorderTextView" customModule="certreminder" customModuleProvider="target">
-                                <rect key="frame" x="20" y="127" width="374" height="529"/>
+                                <rect key="frame" x="20" y="107" width="374" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Re:Minder Terms of Use
 
@@ -606,7 +599,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--AboutVC-->
         <scene sceneID="pYT-rk-u2t">
             <objects>
-                <viewController id="ZOF-UG-mfe" customClass="AboutVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ZOF-UG-mfe" customClass="AboutVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hSc-AW-t2A"/>
                         <viewControllerLayoutGuide type="bottom" id="2wU-6e-UmX"/>
@@ -616,7 +609,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="A6V-5E-o5L">
-                                <rect key="frame" x="20" y="142" width="374" height="74"/>
+                                <rect key="frame" x="20" y="122" width="374" height="74"/>
                                 <string key="text">This is a simple application where you can create a list of certifications and add exams from the list to track their renewal dates.</string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -648,7 +641,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="616-CM-epS">
-                                <rect key="frame" x="128.66666666666669" y="88" width="156.66666666666669" height="44"/>
+                                <rect key="frame" x="128.66666666666669" y="68" width="156.66666666666669" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKh-Ic-grc">
                                         <rect key="frame" x="0.0" y="0.0" width="48.333333333333336" height="44"/>
@@ -665,19 +658,19 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-t4-Ndp">
-                                <rect key="frame" x="20" y="30" width="374" height="33"/>
+                                <rect key="frame" x="20" y="10" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can contact us:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8O-lI-y2M">
-                                <rect key="frame" x="20" y="246" width="374" height="33"/>
+                                <rect key="frame" x="20" y="226" width="374" height="33"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-hb-S4D">
-                                <rect key="frame" x="20" y="294" width="374" height="117"/>
+                                <rect key="frame" x="20" y="274" width="374" height="117"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkX-iq-cWm" customClass="RoundedBorderButton" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -768,7 +761,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--CertificationVC-->
         <scene sceneID="qPi-hn-7Sm">
             <objects>
-                <viewController storyboardIdentifier="CertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A8S-3n-4uh" customClass="CertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zjl-nm-S7s"/>
                         <viewControllerLayoutGuide type="bottom" id="IiD-Cu-vMx"/>
@@ -778,7 +771,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qj9-SK-iIY">
-                                <rect key="frame" x="0.0" y="64" width="414" height="592"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="612"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431372549018" green="0.24313725490196078" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
@@ -788,7 +781,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <rect key="frame" x="0.0" y="28" width="414" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8mB-af-m6b" id="4sF-f9-VdI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Microsoft" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-sj-PNV">
@@ -867,7 +860,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qK8-20-Sq1">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -926,7 +919,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Add CertificationVC-->
         <scene sceneID="lvb-7E-eZX">
             <objects>
-                <viewController storyboardIdentifier="AddCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="an7-cQ-EEe" customClass="AddCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCertificationVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="an7-cQ-EEe" customClass="AddCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DZA-f0-1RG"/>
                         <viewControllerLayoutGuide type="bottom" id="6wc-Li-SsQ"/>
@@ -936,7 +929,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agr-w7-22X">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -961,25 +954,25 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edr-it-qPh">
-                                <rect key="frame" x="20" y="74" width="374" height="27.333333333333329"/>
+                                <rect key="frame" x="20" y="54.000000000000007" width="374" height="27.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP7-t8-Eae">
-                                <rect key="frame" x="20" y="161.33333333333334" width="374" height="27.333333333333343"/>
+                                <rect key="frame" x="20" y="141.33333333333334" width="374" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx7-p1-sqw">
-                                <rect key="frame" x="20" y="248.66666666666666" width="374" height="27.333333333333343"/>
+                                <rect key="frame" x="20" y="228.66666666666666" width="374" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpK-X8-xDZ">
-                                <rect key="frame" x="0.0" y="106.33333333333331" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="86.333333333333329" width="414" height="44.999999999999986"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-lm-piz">
                                         <rect key="frame" x="16" y="8" width="120" height="29"/>
@@ -1014,7 +1007,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7u-4P-jfX">
-                                <rect key="frame" x="0.0" y="193.66666666666666" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="173.66666666666666" width="414" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04F-Jc-HNR">
                                         <rect key="frame" x="16" y="8" width="352" height="29"/>
@@ -1046,7 +1039,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBy-G4-V7D">
-                                <rect key="frame" x="0.0" y="281" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="261" width="414" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-ox-jUj">
                                         <rect key="frame" x="16" y="8" width="352" height="54"/>
@@ -1078,7 +1071,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="XnF-Nf-Oe8">
-                                <rect key="frame" x="20" y="371" width="374" height="37"/>
+                                <rect key="frame" x="20" y="351" width="374" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exams:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dz-Cf-n6v">
                                         <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="37"/>
@@ -1113,7 +1106,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q1z-EH-bcT">
-                                <rect key="frame" x="0.0" y="413" width="414" height="323"/>
+                                <rect key="frame" x="0.0" y="393" width="414" height="343"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1122,11 +1115,11 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0I-5g-Ql5" id="8d8-iD-tZw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ids-e5-xkh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXZ-zz-kQK">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
@@ -1148,16 +1141,16 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JIc-pV-h6H">
-                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="414" height="49.666666666666657"/>
+                                                            <rect key="frame" x="0.0" y="25" width="414" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sru-Af-yc2">
-                                                                    <rect key="frame" x="8" y="8" width="316" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="8" y="8" width="316" height="34"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXN-Ji-cBi">
-                                                                    <rect key="frame" x="334" y="8" width="72" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="334" y="8" width="72" height="34"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="72" id="R5j-BD-P9z"/>
                                                                     </constraints>
@@ -1251,7 +1244,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Choose DateVC-->
         <scene sceneID="8Bj-iJ-QWg">
             <objects>
-                <viewController id="Vbj-VS-g8H" customClass="ChooseDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Vbj-VS-g8H" customClass="ChooseDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H8e-rg-GjW"/>
                         <viewControllerLayoutGuide type="bottom" id="I0h-YQ-vMc"/>
@@ -1261,7 +1254,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ3-ap-kEJ">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1302,11 +1295,8 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                     <action selector="saveBtnPressed:" destination="Vbj-VS-g8H" eventType="touchUpInside" id="2hX-Pf-7Ga"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-Ij-FqG" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="5K2-Ij-FqG" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="47" y="260" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="530748445.68969101">
-                                    <!--2017-10-26 22:07:25 +0000-->
-                                </date>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1332,7 +1322,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Choose VendorVC-->
         <scene sceneID="ndM-qz-B9L">
             <objects>
-                <viewController storyboardIdentifier="ChooseVendorVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NKo-qE-5NQ" customClass="ChooseVendorVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseVendorVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NKo-qE-5NQ" customClass="ChooseVendorVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLt-2H-heH"/>
                         <viewControllerLayoutGuide type="bottom" id="qXe-1a-utr"/>
@@ -1342,7 +1332,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Tg-Ce-vdV">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1360,7 +1350,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOK-Qk-5Sg">
-                                <rect key="frame" x="0.0" y="94" width="414" height="375"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="375"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1416,7 +1406,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Choose CertificationVC-->
         <scene sceneID="4V5-cs-dXG">
             <objects>
-                <viewController storyboardIdentifier="ChooseCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCertificationVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HiH-yh-gm2" customClass="ChooseCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luY-iv-SZu"/>
                         <viewControllerLayoutGuide type="bottom" id="VP9-gt-5IT"/>
@@ -1426,7 +1416,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFw-aW-UXk">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1450,18 +1440,18 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dtx-0w-ano">
-                                <rect key="frame" x="0.0" y="64" width="414" height="577"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="597"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseCertificationTableCellCell" rowHeight="60" id="i9g-QB-zPw" customClass="ChooseCertificationTableCellCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i9g-QB-zPw" id="NdQ-qH-get">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="szu-yK-vRS">
-                                                    <rect key="frame" x="16" y="0.0" width="382" height="59.666666666666664"/>
+                                                    <rect key="frame" x="16" y="0.0" width="382" height="60"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-7g-fej">
                                                             <rect key="frame" x="0.0" y="8" width="382" height="44"/>
@@ -1555,7 +1545,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--New CertificationVC-->
         <scene sceneID="mLj-vr-SIe">
             <objects>
-                <viewController storyboardIdentifier="NewCertificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewCertificationVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ax8-kw-aLE" customClass="NewCertificationVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="woO-Ge-ATT"/>
                         <viewControllerLayoutGuide type="bottom" id="aL3-wX-kQ3"/>
@@ -1565,7 +1555,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jre-rO-4Xe">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1607,7 +1597,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utv-vD-92n">
-                                <rect key="frame" x="0.0" y="111.66666666666669" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="91.666666666666671" width="414" height="45.000000000000014"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNj-HY-e1R">
                                         <rect key="frame" x="16" y="10" width="390" height="25"/>
@@ -1627,19 +1617,18 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8n-Q6-nNm">
-                                <rect key="frame" x="20" y="171.66666666666666" width="374" height="27.333333333333343"/>
+                                <rect key="frame" x="20" y="151.66666666666666" width="374" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-Z6-HSH">
-                                <rect key="frame" x="20" y="209" width="374" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="189" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLM-eM-Rzw">
-                                <rect key="frame" x="20" y="74" width="374" height="27.666666666666671"/>
+                                <rect key="frame" x="20" y="53.999999999999993" width="374" height="27.666666666666664"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1686,7 +1675,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--New ExamVC-->
         <scene sceneID="B3a-hV-qPc">
             <objects>
-                <viewController storyboardIdentifier="NewExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewExamVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cfq-wX-rdl" customClass="NewExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s4J-4Y-tsk"/>
                         <viewControllerLayoutGuide type="bottom" id="c5t-79-RjL"/>
@@ -1696,7 +1685,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-vX-QkE">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1714,13 +1703,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vendor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcn-kN-Pgo">
-                                <rect key="frame" x="20" y="79" width="374" height="28"/>
+                                <rect key="frame" x="20" y="59" width="374" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F36-gB-kSj">
-                                <rect key="frame" x="0.0" y="117" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsS-Br-dOR">
                                         <rect key="frame" x="16" y="11" width="398" height="28"/>
@@ -1738,13 +1727,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4O-nX-y8t">
-                                <rect key="frame" x="20" y="182" width="374" height="28"/>
+                                <rect key="frame" x="20" y="162" width="374" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxH-tC-Kuk">
-                                <rect key="frame" x="0.0" y="225" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MCSA Windows Server 2016 Cloud Platform" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j13-FJ-yKc">
                                         <rect key="frame" x="16" y="0.0" width="351" height="73"/>
@@ -1760,20 +1749,18 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wil-DF-eOL">
-                                <rect key="frame" x="20" y="358" width="374" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="338" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exam title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSv-a6-x6T">
-                                <rect key="frame" x="20" y="403" width="374" height="28"/>
+                                <rect key="frame" x="20" y="387" width="374" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXI-LR-7bi">
-                                <rect key="frame" x="20" y="446" width="374" height="30"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="430" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1802,7 +1789,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exam number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9b-mL-0DJ">
-                                <rect key="frame" x="20" y="315" width="374" height="28"/>
+                                <rect key="frame" x="20" y="295" width="374" height="28"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1863,7 +1850,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Add Existing ExamVC-->
         <scene sceneID="W8W-hs-sAS">
             <objects>
-                <viewController storyboardIdentifier="AddExistingExamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WDR-Rt-3ia" customClass="AddExistingExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExistingExamVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WDR-Rt-3ia" customClass="AddExistingExamVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c6r-cp-G97"/>
                         <viewControllerLayoutGuide type="bottom" id="QF5-da-dum"/>
@@ -1876,7 +1863,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWp-0e-fHQ">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -1900,13 +1887,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ism-PZ-bUH">
-                                <rect key="frame" x="20" y="79" width="374" height="28"/>
+                                <rect key="frame" x="20" y="59.000000000000007" width="374" height="27.333333333333336"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsn-wl-zXC">
-                                <rect key="frame" x="0.0" y="117" width="414" height="55"/>
+                                <rect key="frame" x="0.0" y="96.333333333333329" width="414" height="54.999999999999986"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016 Cloud Platform" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="MFl-KD-HDF">
                                         <rect key="frame" x="8" y="5" width="398" height="45"/>
@@ -1951,7 +1938,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEn-RH-HOI">
-                                <rect key="frame" x="0.0" y="182" width="414" height="474"/>
+                                <rect key="frame" x="0.0" y="161.33333333333334" width="414" height="494.66666666666663"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
@@ -1959,7 +1946,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t85-wF-aBl" id="eBS-aU-JGL">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJh-Kk-X9w">
@@ -2049,7 +2036,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Add ExamsVC-->
         <scene sceneID="zSN-HV-OAz">
             <objects>
-                <viewController storyboardIdentifier="AddExamsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddExamsVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qiF-rI-shc" customClass="AddExamsVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6F-lN-t3e"/>
                         <viewControllerLayoutGuide type="bottom" id="KEb-cX-eFB"/>
@@ -2059,7 +2046,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgp-km-BnH">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -2083,14 +2070,14 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E4w-3S-tH5">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseExamTableCell" rowHeight="60" id="A0Q-qX-GWZ" customClass="ChooseExamTableCell" customModule="certreminder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A0Q-qX-GWZ" id="O0u-md-pLZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shevron" translatesAutoresizingMaskIntoConstraints="NO" id="f8p-2A-ciZ">
@@ -2154,7 +2141,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Choose Exam DateVC-->
         <scene sceneID="huL-WZ-1sD">
             <objects>
-                <viewController storyboardIdentifier="ChooseExamDateVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseExamDateVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B7i-lR-ORU" customClass="ChooseExamDateVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4B-Gp-D3P"/>
                         <viewControllerLayoutGuide type="bottom" id="KDw-bf-f9Q"/>
@@ -2164,7 +2151,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdc-HC-Ixh">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -2207,16 +2194,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vxg-Ye-tY2">
-                                <rect key="frame" x="20" y="79" width="374" height="22"/>
+                                <rect key="frame" x="20" y="59" width="374" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.79607843140000001" green="0.65098039220000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-cT-1h4" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-cT-1h4" customClass="ColoredDatePicker" customModule="certreminder" customModuleProvider="target">
                                 <rect key="frame" x="47" y="260" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="530748344.31151098">
-                                    <!--2017-10-26 22:05:44 +0000-->
-                                </date>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                         <color key="value" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2224,7 +2208,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </userDefinedRuntimeAttributes>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-nq-g41">
-                                <rect key="frame" x="20" y="116" width="374" height="60"/>
+                                <rect key="frame" x="20" y="96" width="374" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Gig-hg-BRr"/>
                                 </constraints>
@@ -2267,7 +2251,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <!--Certification DetailVC-->
         <scene sceneID="xUG-ob-Isa">
             <objects>
-                <viewController storyboardIdentifier="CertificationDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CertificationDetailVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8FM-FH-goS" customClass="CertificationDetailVC" customModule="certreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zZA-5d-W9V"/>
                         <viewControllerLayoutGuide type="bottom" id="0Hx-Sq-8ie"/>
@@ -2277,7 +2261,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pev-eH-oJA">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="8" width="414" height="44"/>
                                 <color key="barTintColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
@@ -2309,13 +2293,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-kg-YJd">
-                                <rect key="frame" x="20" y="80" width="374" height="49.333333333333343"/>
+                                <rect key="frame" x="20" y="60" width="374" height="49.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.79607843140000001" green="0.65098039220000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="X1B-Gf-lqM">
-                                <rect key="frame" x="20" y="298.66666666666669" width="374" height="37"/>
+                                <rect key="frame" x="20" y="278.66666666666669" width="374" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exams:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzt-yV-D8F">
                                         <rect key="frame" x="0.0" y="0.0" width="64.666666666666671" height="37"/>
@@ -2351,7 +2335,7 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-IF-Xyz">
-                                <rect key="frame" x="0.0" y="237.66666666666663" width="414" height="46"/>
+                                <rect key="frame" x="0.0" y="217.66666666666666" width="414" height="45.999999999999972"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.08.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo8-o4-hbZ">
                                         <rect key="frame" x="15.999999999999993" y="8" width="100.33333333333331" height="30"/>
@@ -2384,10 +2368,10 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iox-9A-RTF">
-                                <rect key="frame" x="0.0" y="137.33333333333334" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="117.33333333333331" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microsoft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHb-Ru-Kbn">
-                                        <rect key="frame" x="169.66666666666666" y="12.666666666666659" width="75" height="24.666666666666671"/>
+                                        <rect key="frame" x="169.66666666666666" y="12.666666666666673" width="75" height="24.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2403,13 +2387,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expire at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-t4-tqS">
-                                <rect key="frame" x="20" y="202.33333333333334" width="374" height="27.333333333333343"/>
+                                <rect key="frame" x="20" y="182.33333333333334" width="374" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.87450980389999999" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="59T-dK-DgN">
-                                <rect key="frame" x="0.0" y="343.66666666666674" width="414" height="392.33333333333326"/>
+                                <rect key="frame" x="0.0" y="323.66666666666674" width="414" height="412.33333333333326"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431369999999" green="0.24313725489999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -2418,11 +2402,11 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jj7-hc-E8O" id="hnz-QY-7F7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sd2-iS-bfk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74.666666666666671"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNo-6D-CMN">
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="25"/>
@@ -2444,16 +2428,16 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-Lu-dxJ">
-                                                            <rect key="frame" x="0.0" y="24.999999999999996" width="414" height="49.666666666666657"/>
+                                                            <rect key="frame" x="0.0" y="25" width="414" height="50"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="MCSA Windows Server 2016:  Virtualization and Cloud Platform" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-eI-UvX">
-                                                                    <rect key="frame" x="8" y="8" width="194" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="8" y="8" width="194" height="34"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70-443" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xW-Ah-As2">
-                                                                    <rect key="frame" x="362.33333333333331" y="8" width="43.666666666666686" height="33.666666666666664"/>
+                                                                    <rect key="frame" x="362.33333333333331" y="8" width="43.666666666666686" height="34"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -2549,13 +2533,13 @@ In order to ensure Re:Minder provides the best experience possible for everyone,
         <image name="city-bg" width="1331" height="596"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WNp-Uu-E5p"/>
-        <segue reference="VdF-O4-xgd"/>
+        <segue reference="5oY-to-PBg"/>
+        <segue reference="IfT-sl-7B9"/>
         <segue reference="TF2-wU-NEM"/>
         <segue reference="OCh-lh-1j8"/>
-        <segue reference="UOi-Kr-oaH"/>
-        <segue reference="7Ro-qa-nWV"/>
-        <segue reference="PhL-AQ-snU"/>
-        <segue reference="xnJ-mB-2Xg"/>
+        <segue reference="UA8-3F-Tfj"/>
+        <segue reference="H0c-jf-ZaI"/>
+        <segue reference="76v-pL-jsb"/>
+        <segue reference="I99-sZ-nDK"/>
     </inferredMetricsTieBreakers>
 </document>

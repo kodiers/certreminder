@@ -18,6 +18,7 @@ class WebRequestService: WebRequestProtocol {
     
     static let WEB_API_URL = "\(APP_API_URL)/api/"
     static let webservice = WebRequestService()
+    static var logService = SentryLogService()
     
     private let formatter = DateFormatter()
     
@@ -30,6 +31,12 @@ class WebRequestService: WebRequestProtocol {
         return headers
     }
     
+    func logError(status: Int, error: String, url: String, headers: [String: String]) {
+        // log error message
+        let errorMessage = "Http error. Status code: \(status). Url: \(url). Error: \(error)"
+        WebRequestService.logService.logError(message: errorMessage, extra: ["headers": headers, "url": url])
+    }
+    
     func post(url: String, params: Parameters, completionHandler: @escaping RequestComplete) {
         // Send post request
         let headers = self.createHeaders()
@@ -39,7 +46,7 @@ class WebRequestService: WebRequestProtocol {
             if result.isSuccess {
                 completionHandler(result.value as AnyObject, nil)
             } else {
-                print(result.error!)
+                self.logError(status: response.response!.statusCode, error: result.error.debugDescription, url: fullUrl, headers: headers)
                 completionHandler(nil, result.error! as NSError)
             }
         }
@@ -54,7 +61,7 @@ class WebRequestService: WebRequestProtocol {
             if result.isSuccess {
                 completionHandler(result.value as AnyObject, nil)
             } else {
-                print(result.error!)
+                self.logError(status: response.response!.statusCode, error: result.error.debugDescription, url: fullUrl, headers: headers)
                 completionHandler(nil, result.error! as NSError)
             }
         }
@@ -70,7 +77,7 @@ class WebRequestService: WebRequestProtocol {
                 // Return if deletion success, because no content
                 completionHandler(true as AnyObject, nil)
             } else {
-                print(result.error!)
+                self.logError(status: response.response!.statusCode, error: result.error.debugDescription, url: fullUrl, headers: headers)
                 completionHandler(nil, result.error! as NSError)
             }
         }
@@ -85,7 +92,7 @@ class WebRequestService: WebRequestProtocol {
             if result.isSuccess {
                 completionHandler(result.value as AnyObject, nil)
             } else {
-                print(result.error!)
+                self.logError(status: response.response!.statusCode, error: result.error.debugDescription, url: fullUrl, headers: headers)
                 completionHandler(nil, result.error! as NSError)
             }
         }
